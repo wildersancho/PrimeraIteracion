@@ -1,0 +1,380 @@
+body {
+    position: relative;
+    margin: 0;
+    min-height: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+main {
+    width: 100%;
+    height: 768px;
+    background-image: url(../imgs/pexels-ryan-miguel-capili-3993247.jpg);
+    background-size: cover;
+    padding-top: 100px;
+}
+
+html {
+    font-family: 'Montserrat', sans-serif;
+    /*Cambia la topografia*/
+    font-size: 16px;
+    /*Cambia el tamaño de la topografia*/
+}
+
+
+/*Inicio estilos del header*/
+
+.header_principal {
+    background: linear-gradient(to right, #ffca7b 5%, #9b2948 68%);
+    width: 100%;
+    height: 80px;
+}
+
+.header_principal nav {
+    width: 600px;
+    padding: 15px;
+    float: right;
+    padding-top: 50px;
+}
+
+.header_principal nav a {
+    color: #ffedbf;
+    text-decoration: none;
+    /*Eliminar subrayado*/
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 17px;
+}
+
+.header_principal nav a:hover {
+    color: #ffca7b;
+}
+
+
+/*Fin de estilos del header*/
+
+
+/*Estilos del main*/
+
+.slider {
+    width: 1000px;
+    height: 550px;
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+    perspective: 800px;
+    border: 2px solid #9b2948;
+    box-shadow: 0 20px 40px 0 #000;
+}
+
+.imgs {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%) rotateX(180deg);
+    transition: all 1s;
+}
+
+.imgs img {
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 20px 0 0 #000;
+}
+
+#img1 {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.imgs:target {
+    transform: translateX(0) rotateX(0deg);
+    opacity: 1;
+}
+
+.chevronLeft {
+    position: absolute;
+    top: 240px;
+    text-decoration: none;
+    color: #fff;
+    left: 0;
+    font-size: 40px;
+}
+
+.chevronRight {
+    position: absolute;
+    top: 240px;
+    text-decoration: none;
+    color: #fff;
+    right: 0;
+    font-size: 40px;
+}
+
+.contenidoImg2 h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.contenidoImg2 {
+    width: 600px;
+    line-height: 20px;
+    position: relative;
+    top: -390px;
+    margin: auto;
+    padding: 15px;
+    background: rgba(26, 28, 29, 0.877);
+    border-radius: 20px;
+    color: #fff;
+    text-align: center;
+    border-radius: 25px;
+    font-size: 17px;
+}
+
+.contenidoImg3 h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.contenidoImg3 {
+    width: 600px;
+    line-height: 20px;
+    position: relative;
+    top: -350px;
+    margin: auto;
+    padding: 15px;
+    background: rgba(26, 28, 29, 0.877);
+    border-radius: 20px;
+    color: #fff;
+    text-align: center;
+    border-radius: 25px;
+    font-size: 17px;
+}
+
+.contenidoImg4 h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.contenidoImg4 {
+    width: 600px;
+    line-height: 20px;
+    position: relative;
+    top: -450px;
+    margin: auto;
+    padding: 15px;
+    background: rgba(26, 28, 29, 0.877);
+    border-radius: 20px;
+    color: #fff;
+    border-radius: 25px;
+    font-size: 17px;
+}
+
+.contenidoImg5 {
+    width: 600px;
+    position: relative;
+    top: -330px;
+    margin: auto;
+    padding: 15px;
+    background: rgba(26, 28, 29, 0.877);
+    border-radius: 20px;
+    color: #fff;
+    text-align: center;
+    border-radius: 20px;
+    font-size: 25px;
+}
+
+.contenidoImg6 h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.contenidoImg6 {
+    width: 600px;
+    line-height: 20px;
+    position: relative;
+    top: -450px;
+    margin: auto;
+    padding: 15px;
+    background: rgba(26, 28, 29, 0.877);
+    border-radius: 20px;
+    color: #fff;
+    text-align: left;
+    border-radius: 25px;
+    font-size: 17px;
+}
+
+.slider dd {
+    margin-bottom: 10px;
+    margin-left: 50px;
+}
+
+.contenidoImg7 h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.contenidoImg7 {
+    width: 600px;
+    line-height: 20px;
+    position: relative;
+    top: -470px;
+    margin: auto;
+    padding: 15px;
+    background: rgba(26, 28, 29, 0.877);
+    border-radius: 20px;
+    color: #fff;
+    text-align: left;
+    border-radius: 25px;
+    font-size: 17px;
+}
+
+.contenidoImg8 h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.contenidoImg8 {
+    width: 600px;
+    line-height: 20px;
+    position: relative;
+    top: -460px;
+    margin: auto;
+    padding: 15px;
+    background: rgba(26, 28, 29, 0.877);
+    border-radius: 20px;
+    color: #fff;
+    text-align: left;
+    border-radius: 25px;
+    font-size: 17px;
+}
+
+.contenidoImg9 h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.contenidoImg9 {
+    width: 600px;
+    line-height: 20px;
+    position: relative;
+    top: -455px;
+    margin: auto;
+    padding: 15px;
+    background: rgba(26, 28, 29, 0.877);
+    border-radius: 20px;
+    color: #fff;
+    text-align: left;
+    border-radius: 25px;
+    font-size: 17px;
+}
+
+.contenidoImg10 h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.contenidoImg10 {
+    width: 600px;
+    line-height: 20px;
+    position: relative;
+    top: -460px;
+    margin: auto;
+    padding: 15px;
+    background: rgba(26, 28, 29, 0.877);
+    border-radius: 20px;
+    color: #fff;
+    text-align: left;
+    border-radius: 25px;
+    font-size: 17px;
+}
+
+.contenidoImg10 h2 {
+    text-align: center;
+}
+
+.contenidoImg11 {
+    width: 350px;
+    position: relative;
+    top: -325px;
+    margin: auto;
+    padding: 15px;
+    background: rgba(26, 28, 29, 0.877);
+    border-radius: 20px;
+    color: #fff;
+    text-align: center;
+    border-radius: 20px;
+    font-size: 17px;
+}
+
+
+/*Fin de estilos del main*/
+
+
+/*Inicio de estilos del footer*/
+
+.footerCopyRedes {
+    width: 100%;
+    background: #000;
+    border-top: 2px solid #9b2948;
+    color: #ffedbf;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.mainCopyRedes {
+    width: 98%;
+    max-width: 1366;
+    padding: 15px 0px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mainCopyRedes .footerCopy {
+    width: 70%;
+    font-size: 15px;
+}
+
+.mainCopyRedes .footerRedes {
+    width: 30%;
+    display: flex;
+}
+
+.mainCopyRedes .footerRedes a {
+    display: inline-block;
+    text-decoration: none;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    background: #9b2948;
+    color: #ffedbf;
+    text-align: center;
+    margin: 10px;
+}
+
+.mainCopyRedes .footerRedes .facebook:hover {
+    background: #3742fa;
+}
+
+.mainCopyRedes .footerRedes .twitter:hover {
+    background: #1e90ff;
+}
+
+.mainCopyRedes .footerRedes .instagram:hover {
+    background: linear-gradient(to top, #fed330, #EE5A24, #EA2027, #8e44ad)
+}
+
+
+/*Fin de estilos del footer*/

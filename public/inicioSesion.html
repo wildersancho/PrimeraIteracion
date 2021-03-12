@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Iniciar sesión</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet"  href="css/inicioSesion.css" />
+</head>
+<body>
+    <header>
+        <a href="http://localhost:3000/public/index.html"><img src="imgs/logo.png" alt=""></a>
+        <div id="menu">
+            <input type="checkbox" class="checkbox" id="menu-toogle" />
+            <label for="menu-toogle" class="menu-toogle"></label>
+            <nav class="nav">
+                <a href="http://localhost:3000/public/inicioSesion.html" class="nav__item">Iniciar sesión</a>
+                <a href="http://localhost:3000/public/registrarLinea.html" class="nav__item">Registrar en línea</a>
+                <a href="http://localhost:3000/public/landingPageEquipo.html" class="nav__item">Conózcanos</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <h1>
+            Iniciar sesión
+        </h1>
+        <section class="">
+            <form>
+            <div id="sct">
+                <div>
+                    <input type="text" id="txtUsuario" placeholder="Usuario">
+                </div>
+                <div>
+                    <input type="password" id="txtContrasenna" placeholder="Contraseña">
+                </div>
+                <div>
+                    <a href="recuperarContrasena.html">Recuperar contraseña</a>
+                </div>
+                <div>
+                    <button type="button" id="btnInicio">Iniciar sesión</button>
+                </div>
+            </div>
+            </form>
+        </section>
+    </main>
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
+    <script src="js/inicioSesionServicio.js" ></script>
+    <script src="js/inicioSesionControlador.js" ></script>
+</body>
+</html>
