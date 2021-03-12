@@ -5,7 +5,7 @@
     }
     
     .BannerPrincipal .logo {
-        background-image: url('imagenes/pet-hotel-sign-with-a-dog-and-a-cat-under-a-roof-line.png');
+        background-image: url('../imgs/pet-hotel-sign-with-a-dog-and-a-cat-under-a-roof-line.png');
         background-size: cover;
         height: 12px;
         width: 12px;
@@ -54,7 +54,7 @@
     }
     
     .pageInfo .mainImage {
-        background-image: url('imagenes/pexels-snapwire-46024.jpg');
+        background-image: url('../imgs/pexels-snapwire-46024.jpg');
         background-size: cover;
         background-position: center;
         min-height: 300px;
