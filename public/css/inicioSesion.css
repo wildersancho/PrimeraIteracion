@@ -1,146 +1,68 @@
-html{
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-}
-.errorInput{
-    border: 2px solid #eb4d4b;
-}
-/* Inicio: estilos del header */
-header{
-    background: #263137;
-    height: 64px;  
-}
-    
-header img{
-    width: 54px;
-    height: 54px;
-    margin-top: 5px;
-    margin-left: 3px;
-    float: left;
-    border-radius: 50%;
-}
-#lblUsuario {
-    color : #fff;
-    margin-top: 2%;
-    margin-left: 5px;
-    font: inherit;
-    z-index: 1;
-    position: absolute;
-    text-decoration: none;
-}
-.nav {
-    position: fixed;
-    width: 200px;
-    height: 100vh;
-    background-color: #37454d;
-    font-family: 'Montserrat', sans-serif;
-    transition: all .5s ease;
-    right: -220px;
-}
-    
-.nav__item {
-    display: block;
-    width: 100%;
-    line-height: 3.9;
-    text-align: center;
-    color: #fff;
-    text-decoration: none;  
+html {
+    font-family: Montserrat;
+    /*font-size: 16px;*/
 }
 
-.nav__item:hover{
-    background-color: rgba(0, 0, 0, 0.3);
-    color: #fff;
-}
-    
-.menu-toogle {
-    position: absolute;
-    width: 35px;
-    line-height: 1.2;
-    text-align: center;
-    top: 20px; 
-    left: 1306px;
-    transition: all .5s ease;    
-}
-    
-.menu-toogle::before {     
-    content: "☰";
-    font: inherit;
-    color: #fff;  
-}
-     
-.checkbox {
-    display: none;
-}
-    
-.checkbox:checked ~ .nav {
-    right: 0px; 
-    position: fixed;  
-}
-    
-.checkbox:checked ~ .main-w { 
-    margin-left: 200px;  
-}
-    
-.checkbox:checked ~ .menu-toogle {  
-    left: 1114px;
-    position: fixed;  
+.errorInput {
+    border: 4px solid #e9201d;
 }
 
-/* Fin: estilos del header */
+
 /* Inicio: estilos del main */
-main{
-    background: #dfe6e9;
-    background-size: cover;
-    min-height: 562px;
-    /* padding: 25px; */
+
+main section h1 {
+    font-size: 36px;
+    margin-bottom: 35px;
+    text-align: center;
+    color: black;
 }
+
+main section div {
+    text-align: center;
+}
+
+
 /* Fin: estilos del main */
+
+
 /* Inicio: estilos del form */
-form{
+
+form {
     width: 555px;
     height: 335px;
     float: center;
     margin: 0 auto;
-    background: rgba(0, 0, 0, 0.664);
-    border-top: 6px solid #38ada9;
+    background: #05386B;
+    border-top: 6px solid #05386B;
     border-radius: 20px;
     padding: 25px;
     color: #fff;
-    margin-top: 40px;
+    margin-top: 10%;
+    margin-bottom: 12%;
     text-align: center;
 }
-#formulario{
-    margin-top: 80px;
-}
-h1 {
-    font-size: 36px;
-    background: #38ada9;
-    padding-top: 15px;
-    margin-bottom: 5%;
-    height: 55px;
-    text-align: center;
-    color: #ffffff;
-    
-}
-form label{
+
+form label {
     width: 130px;
+    color: #fff;
     display: inline-block;
     margin-bottom: 4.93%;
 }
-form input{
+
+form input {
     display: inline-block;
     width: 250px;
     height: 30px;
-    background: rgba(0, 0, 0, 0.377);
-    color: #ffffff;
+    background: #ffffff;
+    color: rgba(0, 0, 0, 1);
     outline: none;
     border: none;
-    border-bottom: 2px solid #918f92;
-    font-family: 'Montserrat', sans-serif;
+    border-bottom: 2px solid #5CDB95;
     margin-bottom: 4.93%;
 }
-form button{
-    background: #38ada9;
+
+form button {
+    background: #5CDB95;
     color: #fff;
     font-size: 16px;
     padding: 10px 30px;
@@ -149,31 +71,20 @@ form button{
     border-radius: 5px;
     margin-top: 40px;
 }
-form a{
+
+form a {
     color: #fff;
     text-decoration: none;
     font-size: 15px;
 }
-#sct{
+
+#sct {
     margin-top: 45px;
 }
-#sct2{
-    margin-top: 90px;
+
+form button:hover {
+    background: #379683
 }
-form button:hover{
-    background: #45d5d0;
-    
-}
-#sct1{
-    margin-top: 20px
-}
-.ocultar{
-    display: none;
-}
-.desactivar {
-    pointer-events: none;
-    cursor: default;
-    text-decoration: none;
-}
+
 
 /* Fin: estilos del form */

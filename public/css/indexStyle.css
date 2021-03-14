@@ -5,18 +5,19 @@ body {
 }
 
 * {
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
 main {
     width: 100%;
     height: max-content;
-    
 }
 
 html {
-    font-family: 'Montserrat', sans-serif; /*Cambia la topografia*/
-    font-size: 16px; /*Cambia el tamaño de la topografia*/
+    font-family: 'Montserrat', sans-serif;
+    /*Cambia la topografia*/
+    font-size: 16px;
+    /*Cambia el tamaño de la topografia*/
 }
 
 .slider {
@@ -37,7 +38,7 @@ html {
     top: 0;
     left: 0;
     transform: translateY(-100%) rotateX(360deg);
-    transition: all 1s; 
+    transition: all 1s;
 }
 
 .imgs img {
@@ -53,7 +54,6 @@ html {
 .imgs:target {
     transform: translateY(0) rotateX(0deg);
     opacity: 1;
-
 }
 
 .chevronLeft {
@@ -70,7 +70,7 @@ html {
     top: 220px;
     text-decoration: none;
     color: #fff;
-    right: 0; 
+    right: 0;
     font-size: 40px;
 }
 
@@ -112,7 +112,7 @@ html {
     width: 600px;
     position: relative;
     top: -280px;
-    margin:auto;
+    margin: auto;
     padding: 15px;
     background: rgba(45, 52, 54, 0.6);
     color: #fff;
@@ -134,7 +134,7 @@ html {
     font-size: 30px;
 }
 
-#info {
+.info {
     float: center;
     margin: 0 auto;
     background: rgba(0, 0, 0, 0.3);
@@ -154,7 +154,7 @@ html {
     border: 1px solid rgba(0, 0, 0, 0);
 }
 
-#contenCardsActividades{
+#contenCardsActividades {
     width: 826px;
     margin-left: 16.1%;
     border: 1px solid rgba(0, 0, 0, 0);
@@ -175,25 +175,25 @@ main section h1 {
     color: #ffffff;
 }
 
-main section div{
+main section div {
     text-align: center;
 }
 
-main section label{
+main section label {
     display: inline-block;
     margin-right: 15px;
     color: #ffffff;
     width: 55.53px;
 }
 
-main section select{
+main section select {
     width: 204px;
     height: 36px;
     font-family: 'Montserrat', sans-serif;
     margin-bottom: 17.5px;
 }
 
-main section input{
+main section input {
     display: inline-block;
     width: 710px;
     height: 36px;
@@ -201,7 +201,7 @@ main section input{
     margin-right: -4px;
 }
 
-#btnBuscarLugares{
+#btnBuscarLugares {
     background: #000000;
     color: #ffffff;
     font-size: 16px;
@@ -211,11 +211,11 @@ main section input{
     border-radius: 5px;
 }
 
-#btnBuscarLugares:hover{
+#btnBuscarLugares:hover {
     background: rgba(0, 0, 0, 0.6);
 }
 
-#btnBuscarActividades{
+#btnBuscarActividades {
     background: #000;
     color: #ffffff;
     font-size: 16px;
@@ -225,11 +225,12 @@ main section input{
     border-radius: 5px;
 }
 
-#btnBuscarActividades:hover{
-    background: rgba(0, 0, 0, 0.6);;
+#btnBuscarActividades:hover {
+    background: rgba(0, 0, 0, 0.6);
+    ;
 }
 
-#btnBuscar{
+#btnBuscar {
     background: #000000;
     color: #ffffff;
     font-size: 16px;
@@ -239,11 +240,11 @@ main section input{
     border-radius: 5px;
 }
 
-#btnBuscar:hover{
+#btnBuscar:hover {
     background: rgba(0, 0, 0, 0.6);
 }
 
-.cardOrange{
+.cardOrange {
     background: rgba(211, 84, 0, 1.0);
     box-shadow: 0 10px 40px 0 rgba(70, 67, 67, 0.747);
     padding: 20px;
@@ -254,7 +255,7 @@ main section input{
     border-radius: 5px;
 }
 
-.cardNaranja{
+.cardNaranja {
     background: rgba(211, 84, 0, 1.0);
     box-shadow: 0 10px 40px 0 rgba(70, 67, 67, 0.747);
     display: inline-block;
@@ -267,7 +268,7 @@ main section input{
     min-height: 375px;
 }
 
-.cardBlue{
+.cardBlue {
     background: rgba(41, 128, 185, 1.0);
     box-shadow: 0 10px 40px 0 rgba(70, 67, 67, 0.747);
     padding: 20px;
@@ -278,7 +279,7 @@ main section input{
     border-radius: 5px;
 }
 
-.cardAzul{
+.cardAzul {
     background: rgba(41, 128, 185, 1.0);
     box-shadow: 0 10px 40px 0 rgba(70, 67, 67, 0.747);
     display: inline-block;
@@ -290,7 +291,7 @@ main section input{
     min-height: 375px;
 }
 
-.cardRed{
+.cardRed {
     background: rgba(192, 57, 43, 1.0);
     box-shadow: 0 10px 40px 0 rgba(70, 67, 67, 0.747);
     padding: 20px;
@@ -301,8 +302,8 @@ main section input{
     border-radius: 5px;
 }
 
-.cardRojo{
-    background:  rgba(192, 57, 43, 1.0);
+.cardRojo {
+    background: rgba(192, 57, 43, 1.0);
     box-shadow: 0 10px 40px 0 rgba(70, 67, 67, 0.747);
     display: inline-block;
     border-radius: 5px;
@@ -313,7 +314,7 @@ main section input{
     min-height: 375px;
 }
 
-.cardVerde{
+.cardVerde {
     background: rgb(74, 156, 41);
     box-shadow: 0 10px 40px 0 rgba(70, 67, 67, 0.747);
     display: inline-block;
@@ -326,14 +327,14 @@ main section input{
     min-height: 375px;
 }
 
-.foto{
+.foto {
     text-align: left;
     width: 209px;
     height: 209px;
     float: left;
 }
 
-.fotos{
+.fotos {
     text-align: center;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
@@ -341,7 +342,7 @@ main section input{
     height: 215px;
 }
 
-.nombreLugar{
+.nombreLugar {
     font-size: 20px;
     width: 558px;
     margin-left: 28%;
@@ -352,7 +353,7 @@ main section input{
     font-weight: bold;
 }
 
-.nombre{
+.nombre {
     font-family: 'Montserrat', sans-serif;
     font-size: 21px;
     width: 400px;
@@ -362,12 +363,12 @@ main section input{
     text-align: left;
 }
 
-.direccionExacta{
+.direccionExacta {
     margin-bottom: 2%;
     margin-left: 28%;
 }
 
-.descripcion{
+.descripcion {
     font-size: 14px;
     height: 45px;
     text-align: left;
@@ -376,7 +377,7 @@ main section input{
     margin-bottom: 1%;
 }
 
-.descripcionLugar{
+.descripcionLugar {
     font-size: 14px;
     margin-left: 28%;
     margin-top: 0%;
@@ -386,7 +387,7 @@ main section input{
     line-height: 25px;
 }
 
-.lugar{
+.lugar {
     font-size: 13px;
     text-align: left;
     font-family: 'Montserrat', sans-serif;
@@ -394,7 +395,7 @@ main section input{
     margin-bottom: 1%;
 }
 
-.ranking{
+.ranking {
     text-align: left;
     width: 155px;
     height: max-content;
@@ -403,7 +404,7 @@ main section input{
     margin-left: 2%;
 }
 
-.fecha{
+.fecha {
     font-size: 12px;
     text-align: left;
     font-family: 'Montserrat', sans-serif;
@@ -411,7 +412,7 @@ main section input{
     margin-bottom: 6%;
 }
 
-.calificacion{
+.calificacion {
     font-size: 18px;
     margin-right: 0%;
     background: #ffffff69;
@@ -422,7 +423,8 @@ main section input{
     text-align: center;
 }
 
-.calificacionAdministrador, .calificacionDueno{
+.calificacionAdministrador,
+.calificacionDueno {
     font-size: 18px;
     margin-right: 0%;
     background: #ffffff69;
@@ -433,7 +435,7 @@ main section input{
     margin-top: 21.5%;
 }
 
-.precio{
+.precio {
     font-size: 16px;
     font-family: 'Montserrat', sans-serif;
     text-align: left;
@@ -442,14 +444,16 @@ main section input{
     padding-right: 45%;
 }
 
-#estrella{
+#estrella {
     margin-top: 0.25%;
     margin-left: 0.25%;
     display: inline-block;
     text-align: center;
 }
 
-.botonCalificarOrange, .botonCalificarBlue, .botonCalificarRed{
+.botonCalificarOrange,
+.botonCalificarBlue,
+.botonCalificarRed {
     background: #000000;
     color: #ffffff;
     font-size: 16px;
@@ -464,13 +468,15 @@ main section input{
     border-radius: 5px;
 }
 
-.opciones{
+.opciones {
     display: block;
     float: right;
     width: 388px;
 }
 
-.calificacionesOrange, .calificacionesBlue, .calificacionesRed{
+.calificacionesOrange,
+.calificacionesBlue,
+.calificacionesRed {
     background: #000000;
     color: #ffffff;
     font-size: 16px;
@@ -485,7 +491,12 @@ main section input{
     border-radius: 5px;
 }
 
-.calificacionesOrangeAdministrador, .calificacionesBlueAdministrador, .calificacionesRedAdministrador, .calificacionesOrangeDueno, .calificacionesBlueDueno, .calificacionesRedDueno{
+.calificacionesOrangeAdministrador,
+.calificacionesBlueAdministrador,
+.calificacionesRedAdministrador,
+.calificacionesOrangeDueno,
+.calificacionesBlueDueno,
+.calificacionesRedDueno {
     background: #000000;
     color: #ffffff;
     font-size: 16px;
@@ -500,7 +511,9 @@ main section input{
     border-radius: 5px;
 }
 
-.botonSeguirOrange, .botonSeguirBlue, .botonSeguirRed{
+.botonSeguirOrange,
+.botonSeguirBlue,
+.botonSeguirRed {
     background: #000000;
     color: #ffffff;
     font-size: 20px;
@@ -508,7 +521,7 @@ main section input{
     border: none;
     width: 156px;
     height: 58px;
-    text-align: center;  
+    text-align: center;
     display: inline-block;
     cursor: pointer;
     float: right;
@@ -516,19 +529,34 @@ main section input{
     border-radius: 5px;
 }
 
-.botonCalificarOrange:hover, .calificacionesOrange:hover, .botonSeguirOrange:hover, .calificacionesOrangeAdministrador:hover, .calificacionesOrangeDueno:hover{
+.botonCalificarOrange:hover,
+.calificacionesOrange:hover,
+.botonSeguirOrange:hover,
+.calificacionesOrangeAdministrador:hover,
+.calificacionesOrangeDueno:hover {
     background: #e67e22;
 }
 
-.botonCalificarBlue:hover, .calificacionesBlue:hover, .botonSeguirBlue:hover, .calificacionesBlueAdministrador:hover, .calificacionesBlueDueno:hover{
+.botonCalificarBlue:hover,
+.calificacionesBlue:hover,
+.botonSeguirBlue:hover,
+.calificacionesBlueAdministrador:hover,
+.calificacionesBlueDueno:hover {
     background: #3498db;
 }
 
-.botonCalificarRed:hover, .calificacionesRed:hover, .botonSeguirRed:hover, .calificacionesRedAdministrador:hover, .calificacionesRedDueno:hover{
+.botonCalificarRed:hover,
+.calificacionesRed:hover,
+.botonSeguirRed:hover,
+.calificacionesRedAdministrador:hover,
+.calificacionesRedDueno:hover {
     background: #e74c3c;
 }
 
-.buttonVerMasNaranja, .buttonVerMasAzul, .buttonVerMasVerde, .buttonVerMasRojo{
+.buttonVerMasNaranja,
+.buttonVerMasAzul,
+.buttonVerMasVerde,
+.buttonVerMasRojo {
     padding: 10px 10px;
     background-color: #000;
     font-family: 'Montserrat', sans-serif;
@@ -540,29 +568,29 @@ main section input{
     display: inline;
 }
 
-.buttonVerMasNaranja:hover{
+.buttonVerMasNaranja:hover {
     background: #e67e22;
 }
 
-.buttonVerMasAzul:hover{
+.buttonVerMasAzul:hover {
     background: #3498db;
 }
 
-.buttonVerMasRojo:hover{
+.buttonVerMasRojo:hover {
     background: #e74c3c;
 }
 
-.buttonVerMasVerde:hover{
+.buttonVerMasVerde:hover {
     background: #A3CB38;
 }
 
 #sortDown {
-   background-color: rgba(59, 58, 58, 0.521);
-   width: 824px;
-   height: 40px;
-   padding-top: 10px;
-   margin-top: 5.5%;
-   margin-bottom: 2%;
+    background-color: rgba(59, 58, 58, 0.521);
+    width: 824px;
+    height: 40px;
+    padding-top: 10px;
+    margin-top: 5.5%;
+    margin-bottom: 2%;
 }
 
 #h2sortDown {
@@ -605,7 +633,7 @@ main section input{
     background-color: rgba(59, 58, 58, 0.521);
 }
 
-#busquedaAvanzadaActividades{
+#busquedaAvanzadaActividades {
     width: 177.5px;
     float: left;
     margin-top: 8.5%;
@@ -617,26 +645,30 @@ main section input{
     background-color: rgba(59, 58, 58, 0.521);
 }
 
-#txtProvincia, #txtCanton, #txtDistrito, #txtCategoria {
+#txtProvincia,
+#txtCanton,
+#txtDistrito,
+#txtCategoria {
     width: 165px;
     height: 36px;
     font-family: 'Montserrat', sans-serif;
     margin-bottom: 17.5px;
 }
 
-.filtroFechas .label1, .filtroFechas .label2{
+.filtroFechas .label1,
+.filtroFechas .label2 {
     float: left;
     margin-left: 50px;
 }
 
-.filtroFechas i{
+.filtroFechas i {
     float: left;
     margin-top: 20px;
     margin-left: 7px;
     cursor: pointer;
 }
 
-.filtroFechas input{
+.filtroFechas input {
     width: 140px;
     height: 36px;
     font-family: 'Montserrat', sans-serif;
@@ -645,7 +677,7 @@ main section input{
     margin-left: 10px;
 }
 
-.filtroFechas button{
+.filtroFechas button {
     background: #000000;
     color: #ffffff;
     font-size: 16px;
@@ -658,30 +690,30 @@ main section input{
     margin-left: 45px;
 }
 
-.filtroFechas button:hover{
+.filtroFechas button:hover {
     background: rgba(0, 0, 0, 0.6);
 }
 
-#labelCheckBox{
-width: 100px;
-float: left;
-margin-top: 10px; 
+#labelCheckBox {
+    width: 100px;
+    float: left;
+    margin-top: 10px;
 }
 
-input[type='checkbox']{
+input[type='checkbox'] {
     width: 15px;
     height: 15px;
     margin-right: 25px;
 }
 
-#ActividadesGratis{
+#ActividadesGratis {
     font-size: 16px;
-    margin-top: 10px; 
+    margin-top: 10px;
     margin-bottom: 35px;
     font-family: 'Montserrat', sans-serif;
 }
 
-#filtroPrecios{
+#filtroPrecios {
     margin-top: 25px;
     width: 160px;
     height: 36px;

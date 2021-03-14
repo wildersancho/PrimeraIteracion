@@ -3,31 +3,32 @@
 
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Documento HTML5">
     <title>Iniciar sesión</title>
     <link rel="stylesheet" href="css/reset.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="css/inicioSesion.css" />
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/general-media-query.css">
 </head>
 
 <body>
-    <header>
-        <a href="http://127.0.0.1:5500/public/index.html"><img src="imgs/logo.png" alt=""></a>
-        <div id="menu">
-            <input type="checkbox" class="checkbox" id="menu-toogle" />
-            <label for="menu-toogle" class="menu-toogle"></label>
-            <nav class="nav">
-                <a href="http://127.0.0.1:5500/public/inicioSesion.html" class="nav__item">Iniciar sesión</a>
-                <a href="http://127.0.0.1:5500/public/registrarLinea.html" class="nav__item">Registrar en línea</a>
-                <a href="http://127.0.0.1:5500/public/landingPageEquipo.html" class="nav__item">Conózcanos</a>
-            </nav>
-        </div>
+    <header id="header-principal" class="header-principal">
+        <nav>
+            <img src="imgs/IconoMenu.png" id="logo" />
+            <a href="http://www.abaanimal.org/">Inicio</a>
+            <a href="http://www.abaanimal.org/">Buscar un servicio</a>
+            <a href="http://www.abaanimal.org/">Ofrecer un servicio</a>
+            <a class="icono-menu" onclick="cambiar_estilo_navegacion();">☰</a>
+            <a href="http://www.abaanimal.org/">Mi Perfil</a>
+            <a class="cerrarSesion" href="http://www.abaanimal.org/">Cerrar Sesión</a>
+        </nav>
     </header>
     <main>
-        <h1>
-            Iniciar sesión
-        </h1>
-        <section class="">
+        <section>
+            <h1>Iniciar sesión</h1>
             <form>
                 <div id="sct">
                     <div>
@@ -43,11 +44,38 @@
                         <button type="button" id="btnInicio">Iniciar sesión</button>
                     </div>
                 </div>
-            </form>
         </section>
+        </form>
+        <footer>
+            <section class="footerCopyRedes">
+                <section class="mainCopyRedes">
+                    <section class="footerCopy">
+                        <h5>CONTÁCTENOS:</h5>
+                        <h6>Email</h6>
+                        <p> http://www.abaanimal.org/</p>
+                        <h6>Teléfono</h6>
+                        <p>(506) 8849-0592</p>
+                    </section>
+                    <section class="footerCopy2">
+                        <h5>POLITICAS</h5>
+                        <p>Costa Rica tiene ley contra el maltrato y crueldad animal, instamos a todos los ciudadanos a utilizar la nueva ley 9458. Por este medio les proveeremos información sobre como aplicar la ley de bienestar animal en los distintos
+                            casos que puedan presentarse.</p>
+
+                    </section>
+                    <section class="footerRedes" id="footerRedes">
+                        <a href="https://www.facebook.com/" class="fab fa-facebook-f facebook"></a>
+                        <a href="https://twitter.com/" class="fab fa-twitter twitter"></a>
+                        <a href="https://www.instagram.com/" class="fab fa-instagram instagram"></a>
+                    </section>
+                </section>
+        </footer>
+
     </main>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js " integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1 " crossorigin="anonymous "></script>
     <script src="js/inicioSesionControlador.js"></script>
+    <script src="js/controladorNav.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,87 @@
+/*podria ponerle 540 que es el maximo donde todos los elementos de menu se ven en una linea*/
+
+@media (max-width:480px) {
+    /*Oculta todos los elementos del menú menos el primero*/
+    .header-principal a:not(:first-child) {
+        display: none;
+    }
+    /*Muestra el icono que va a servir como menú desplegable. */
+    .header-principal a.icono-menu {
+        position: fixed;
+        right: 0px;
+        /*top 15 porque es el padding general que estan usando los otros elementos dentro de la barra de navegacion*/
+        top: 15px;
+        display: block;
+    }
+    /*Ahora vamos a crear estilos para mostrar los demás elementos del menú cuando está en pantallas pequeñas*/
+    .header-principal.responsive .icon {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+    .header-principal.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+        margin-bottom: 7px;
+    }
+    .footerCopy {
+        display: none;
+    }
+    .footerCopy2 {
+        display: none;
+    }
+    .footerRedes {
+        width: 100%;
+    }
+    /*FIN:Ahora vamos a crear estilos para mostrar los demás elementos del menú cuando está en pantallas pequeñas*/
+}
+
+@media (max-width:1020px) {
+    #sct-banner {
+        text-align: center;
+        background-image: url('../imgs/restbanner.jpg');
+        background-size: cover;
+        min-height: 200px;
+        background-position: center;
+        color: black;
+        /*padding:↑  →  ↓  ←*/
+        padding: 30px 0 30px 0;
+    }
+    #sct-banner div {
+        width: 75%;
+        padding: 20px 5px;
+    }
+    #sct-banner h1 {
+        font-size: 30px;
+    }
+    /*Servicios*/
+    .sct-servicios div {
+        min-height: 240px;
+        max-height: 240px;
+    }
+    .sct-servicios .info {
+        padding: 50px 20px;
+    }
+    .sct-servicios .info h2 {
+        font-size: 20px;
+    }
+    .sct-servicios .info p {
+        line-height: 17px;
+    }
+}
+
+@media (max-width:480px) {
+    /*Seccion Banner*/
+    #sct-banner h1 {
+        font-size: 25px;
+    }
+    /*Seccion Servicios*/
+    .sct-servicios div {
+        float: none;
+        width: 100%;
+    }
+    .sct-servicios .info h2 {
+        font-size: 17px;
+    }
+}

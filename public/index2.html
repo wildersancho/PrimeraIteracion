@@ -5,66 +5,114 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Documento HTML5">
     <title>Mascotas</title>
     <link rel="stylesheet" href="css/reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" href="css/Formato.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/general-media-query.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <body>
-    <header>
-        <main>
-            <section class="BannerPrincipal">
-                <div class="logo"></div>
-                <div class="menu">
-                    <a class="link1" href="http://www.abaanimal.org/">Inicio</a>
-                    <a class="link2" href="http://www.abaanimal.org/">Buscar un cuidador</a>
-                    <a class="link3" href="http://www.abaanimal.org/">Ser un cuidador</a>
-                </div>
-                <div class="registro">
-                    <a href="http://www.abaanimal.org/">Log in</a>
-                    <a href="http://www.abaanimal.org/">Sign in</a>
-                </div>
-            </section>
+    <header id="header-principal" class="header-principal">
+        <nav>
+            <img src="imgs/IconoMenu.png" id="logo" />
+            <a href="http://www.abaanimal.org/">Inicio</a>
+            <a href="http://www.abaanimal.org/">Buscar un servicio</a>
+            <a href="http://www.abaanimal.org/">Ofrecer un servicio</a>
+            <a class="icono-menu" onclick="cambiar_estilo_navegacion();">☰</a>
+            <a href="http://www.abaanimal.org/">Mi Perfil</a>
+            <a class="cerrarSesion" href="http://www.abaanimal.org/">Cerrar Sesión</a>
+        </nav>
     </header>
-    <section class="pageInfo">
-        <div class="mainImage"></div>
-        <div class="infoGeneral">
-            <h2>Acerca de nosotros</h2>
-            <p>Somos una Asociación sin fines de lucro dedicada a brindar bienestar y amparo animal por medio de actividades de Castración, Vacunación y Desparasitación de animales. Por medio de donaciones de organismos internacionales, de personas físicas
-                y la prestación de servicios de castración, generamos ingresos que nos permiten subsidiar y financiar los servicios de vacunación y desparasitación. La asociación ABAA Animal no cuenta con refugio de animales, más presta servicios de salud
-                en eventos y ferias de salud animal.</p>
-        </div>
-    </section>
-    <section class="opinions">
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="d-block w-100" src="imgs/pexels-anastasiya-lobanovskaya-792775.jpg " alt=" First slide ">
-                </div>
-                <div class="carousel-item ">
-                    <img class="d-block w-100 " src="imgs/pexels-leah-kelley-193035.jpg " alt="Second slide ">
-                </div>
-                <div class="carousel-item ">
-                    <img class="d-block w-100 " src="imgs/pexels-bekka-mongeau-1452717.jpg " alt="Third slide ">
-                </div>
+    <main class="main-content">
+        <section class="pageInfo">
+            <div class="mainImage"></div>
+            <div class="infoGeneral">
+                <h1>Acerca de nosotros</h1>
+                <p>Somos una Asociación sin fines de lucro dedicada a brindar bienestar y amparo animal por medio de actividades de Castración, Vacunación y Desparasitación de animales. Por medio de donaciones de organismos internacionales, de personas físicas
+                    y la prestación de servicios de castración, generamos ingresos que nos permiten subsidiar y financiar los servicios de vacunación y desparasitación. La asociación ABAA Animal no cuenta con refugio de animales, más presta servicios
+                    de salud en eventos y ferias de salud animal.</p>
             </div>
-            <a class="carousel-control-prev " href="#carouselExampleControls " role="button " data-slide="prev ">
-                <span class="carousel-control-prev-icon " aria-hidden="true "></span>
-                <span class="sr-only ">Previous</span>
-            </a>
-            <a class="carousel-control-next " href="#carouselExampleControls " role="button " data-slide="next ">
-                <span class="carousel-control-next-icon " aria-hidden="true "></span>
-                <span class="sr-only ">Next</span>
-            </a>
-        </div>
-    </section>
-    <section class="footer">
-        <div class="sct-footer"></div>
-    </section>
-    </main>
+        </section>
+        <section id="Servicios" class="Servicios">
+            <div class="botones">
 
+                <a class="btn1" href="http://www.abaanimal.org/"><img src="imgs/house.png"></a>
+                <a class="btn2" href="http://www.abaanimal.org/"><img src="imgs/Hotel.png"></a>
+                <a class="btn3" href="http://www.abaanimal.org/"><img src="imgs/food.png"></a>
+                <a class="btn4" href="http://www.abaanimal.org/"><img src="imgs/play.png"></a>
+                <a class="btn5" href="http://www.abaanimal.org/"><img src="imgs/care.jpg"></a>
+            </div>
+            <div><a type="button" href="http://www.abaanimal.org/" id='btnRegistrarme'>Registrarme ahora</a></div>
+        </section>
+        <section class="opinions">
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="imgs/pexels-anastasiya-lobanovskaya-792775.jpg " alt=" First slide ">
+                    </div>
+                    <div class="carousel-item ">
+                        <img class="d-block w-100 " src="imgs/pexels-leah-kelley-193035.jpg " alt="Second slide ">
+                    </div>
+                    <div class="carousel-item ">
+                        <img class="d-block w-100 " src="imgs/pexels-bekka-mongeau-1452717.jpg " alt="Third slide ">
+                    </div>
+                </div>
+                <a class="carousel-control-prev " href="#carouselExampleControls " role="button " data-slide="prev ">
+                    <span class="carousel-control-prev-icon " aria-hidden="true "></span>
+                    <span class="sr-only ">Previous</span>
+                </a>
+                <a class="carousel-control-next " href="#carouselExampleControls " role="button " data-slide="next ">
+                    <span class="carousel-control-next-icon " aria-hidden="true "></span>
+                    <span class="sr-only ">Next</span>
+                </a>
+            </div>
+        </section>
+        <section class="info">
+            <h1>Buscar Proveedores</h1>
+            <div>
+                <select name="filtros" class="txtFiltrar" id="txtTipo" onchange="mostrar('txtTipo')">
+                        <option value="" disabled selected>Filtrar</option>
+                        <option value="Perros">Perros</option>
+                        <option value="Gatos">Gatos</option>
+                    </select>
+            </div><br>
+            <div id="buscar">
+                <input type="text" id="txtBuscar" placeholder="Ingrese un criterio de búsqueda...">
+                <button type="button" id="btnBuscar">Buscar</button>
+            </div>
+        </section>
+        <footer>
+            <section class="footerCopyRedes">
+                <section class="mainCopyRedes">
+                    <section class="footerCopy">
+                        <h5>CONTÁCTENOS:</h5>
+                        <h6>Email</h6>
+                        <p> http://www.abaanimal.org/</p>
+                        <h6>Teléfono</h6>
+                        <p>(506) 8849-0592</p>
+                    </section>
+                    <section class="footerCopy2">
+                        <h5>POLITICAS</h5>
+                        <p>Costa Rica tiene ley contra el maltrato y crueldad animal, instamos a todos los ciudadanos a utilizar la nueva ley 9458. Por este medio les proveeremos información sobre como aplicar la ley de bienestar animal en los distintos
+                            casos que puedan presentarse.</p>
+
+                    </section>
+                    <section class="footerRedes" id="footerRedes">
+                        <a href="https://www.facebook.com/" class="fab fa-facebook-f facebook"></a>
+                        <a href="https://twitter.com/" class="fab fa-twitter twitter"></a>
+                        <a href="https://www.instagram.com/" class="fab fa-instagram instagram"></a>
+                    </section>
+                </section>
+        </footer>
+    </main>
+    <script src="js/controladorNav.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js " integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1 " crossorigin="anonymous "></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js " integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM " crossorigin="anonymous "></script>
