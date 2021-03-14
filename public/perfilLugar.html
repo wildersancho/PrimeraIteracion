@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <title>Perfil de lugar</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Página para ver el perfil de un lugar de DeTour">
+    <link rel="stylesheet" href="css/reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/perfilLugarStyle.css">
+</head>
+
+<body>
+    <header id="header">
+        <a href="http://localhost:3000/public/perfilCliente.html"><img src="imgs/foto.png" alt="" id="fotoUsuario"></a>
+        <a href="http://localhost:3000/public/perfilCliente.html" id="lblUsuario"></a>
+        <div id="menu">
+            <input type="checkbox" class="checkbox" id="menu-toogle" />
+            <label for="menu-toogle" class="menu-toogle"></label>
+            <nav class="nav" id="navPrincipal">
+                <a href="http://localhost:3000/public/registrarUsuario.html" class="nav__item">Registrar usuario</a>
+                <a href="http://localhost:3000/public/listarCategoria.html" class="nav__item">Categorías de lugares</a>
+                <a href="http://localhost:3000/public/listarIndustrias.html" class="nav__item">Tipos de industrias</a>
+                <a href="http://localhost:3000/public/listarDuenos.html" class="nav__item">Dueños</a>
+                <a href="http://localhost:3000/public/listarClientes.html" class="nav__item">Clientes</a>
+                <a href="http://localhost:3000/public/buscarLugares.html" class="nav__item">Buscar</a>
+                <a href="http://localhost:3000/public/listarPatrocinador.html" class="nav__item">Patrocinadores</a>
+                <a href="http://localhost:3000/public/listarLugares.html" class="nav__item">Lugares</a>
+                <a href="http://localhost:3000/public/listarActividades.html" class="nav__item">Actividades</a>
+                <a href="" class="nav__item" id="btnCerrarSesion">Cerrar sesión</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section id="info">
+            <section id="txtComentarios">
+                <div id="mensajeNoCalificaciones">
+                    <h3>¡Oops! No hay calificaciones</h3>
+                    <img src="imgs/logo.png" alt="">
+                </div>
+                <section>
+
+                </section>
+            </section>
+            <h1 id="txtNombre"></h1>
+            <p id="txtDireccionExacta"></p>
+            <div id="txtRanking"></div>
+            <section id="txtMapa">
+                <div id="map"></div>
+            </section>
+            <section id="fotos" class="slides">
+                <div id="mensajeNoFotos">
+                    <h3>¡Aún no se encuentran fotos!</h3>
+                    <img src="imgs/logo.png" alt="" class="mySlides">
+                </div>
+                <img id="img1">
+                <img id="img2">
+                <img id="img3">
+                <img id="img4">
+                <img id="img5">
+                <img id="img6">
+                <img id="img7">
+                <img id="img8">
+                <div id="botones">
+                    <button class="w3-button w3-display-left noneDisplay" onclick="plusDivs(-1)" id="btnLeft">&#10094;</button>
+                    <button class="w3-button w3-display-right noneDisplay" onclick="plusDivs(+1)" id="btnRight">&#10095;</button>
+                </div>
+            </section>
+            <section id="actividades" class="actividades">
+                <h2 id="tblTitulo"></h2>
+                <div>
+                    <select name="actividades" id="sltActividades" onchange="visualizarPerfilDeLugar()">
+                            <option value="cercanas">Cercanas</option>
+                            <option value="recientes">Recientes</option>
+                        </select>
+                </div>
+                <div id="mensajeNoActividades">
+                    <h3>Aún no hay actividades, lo sentimos</h3>
+                </div>
+                <section id="contenCardsActividades">
+                    <div id="cardsActividades"></div>
+                </section>
+            </section>
+        </section>
+    </main>
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src='https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js' type='text/javascript'></script>
+    <script src="https://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwlaGcsaeDlb18kscfFr2cxDJHr23zmfA&callback=initMap" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
+    <script src="js/controladorNav.js"></script>
+    <script src="js/perfilLugarControlador.js"></script>
+</body>
+
+</html>
