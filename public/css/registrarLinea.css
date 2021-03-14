@@ -1,6 +1,6 @@
 html {
     font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
+    /*font-size: 18px;*/
 }
 
 .errorInput {
@@ -13,177 +13,86 @@ html {
 }
 
 
-/* Inicio: estilos del header */
-
-header {
-    background: #263137;
-    height: 64px;
-}
-
-header img {
-    width: 54px;
-    height: 54px;
-    margin-top: 5px;
-    margin-left: 3px;
-    float: left;
-    border-radius: 50%;
-}
-
-#lblUsuario {
-    color: #fff;
-    margin-top: 2%;
-    margin-left: 5px;
-    font: inherit;
-    z-index: 1;
-    position: absolute;
-    text-decoration: none;
-}
-
-.nav {
-    position: fixed;
-    width: 200px;
-    height: 100vh;
-    background-color: #37454d;
-    font-family: 'Montserrat', sans-serif;
-    transition: all .5s ease;
-    right: -220px;
-}
-
-.nav__item {
-    display: block;
-    width: 100%;
-    line-height: 3.9;
-    text-align: center;
-    color: #fff;
-    text-decoration: none;
-}
-
-.nav__item:hover {
-    background-color: rgba(0, 0, 0, 0.3);
-    color: #fff;
-}
-
-.menu-toogle {
-    position: absolute;
-    width: 35px;
-    line-height: 1.2;
-    text-align: center;
-    top: 20px;
-    left: 1306px;
-    transition: all .5s ease;
-}
-
-.menu-toogle::before {
-    content: "☰";
-    font: inherit;
-    color: #fff;
-}
-
-.checkbox {
-    display: none;
-}
-
-.checkbox:checked~.nav {
-    right: 0px;
-    position: fixed;
-}
-
-.checkbox:checked~.main-w {
-    margin-left: 200px;
-}
-
-.checkbox:checked~.menu-toogle {
-    left: 1114px;
-    position: fixed;
-}
-
-.ocultar {
-    display: none;
-}
-
-
-/* Fin: estilos del header */
-
-
 /* Inicio: estilos del main */
 
 main {
     background-size: cover;
     padding: 40px 180px;
     height: -200px;
-    background-color: #dfe6e9;
+    background-color: #379683;
     /*background-color: rgba(0, 98, 102,0.1);*/
     /*background-image: url("../imgs/registrarLineaPalmeras.jpg");*/
 }
 
 form {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: #EDF5E1;
     border-radius: 15px;
     padding: 40px 50px;
-    background: rgba(0, 0, 0, 0.664)
+    background: #EDF5E1;
 }
 
 main h1 {
     font-size: 40px;
     margin-bottom: 50px;
-    color: white;
+    color: #05386B;
     text-align: center;
     padding-bottom: 5px;
-    border-bottom: #009432 solid;
+    border-bottom: #379683 solid;
 }
 
 #cliente1 {
     float: left;
+    width: 40%;
     margin-left: 40px;
     margin-right: 40px;
     padding-right: 40px;
     margin-bottom: 60px;
-    border-right: #dfe4ea solid 1px;
+    /*border-right: black solid 1px;*/
 }
 
 #sctFoto {
     padding: 20px;
     width: 260px;
-    background: #009432;
     display: inline-block;
     border-radius: 15px;
     margin-left: 6px;
 }
 
 #cliente3 {
-    display: inline-block;
+    display: flex;
 }
 
 #txtFotoCliente {
-    width: 220px;
-    height: 220px;
-    border-radius: 50%;
+    width: 320px;
+    height: 320px;
     margin-left: 15px;
-    border: solid 5px #009432;
+    border: solid 2px #05386B;
 }
 
 input {
-    border-radius: 8px;
-    color: white;
-    background: rgba(0, 0, 0, 0.377);
-    border-bottom: 2px solid #918f92;
+    color: black;
+    background: #05386B(0, 0, 0, 0.377);
 }
 
-textarea {
-    border-radius: 4px;
-    overflow-y: auto;
-    vertical-align: top;
-    font-family: 'Montserrat', sans-serif;
-    background: rgba(0, 0, 0, 0.377);
-    color: #ffffff;
-    border: none;
-    border-bottom: 2px solid #918f92;
-}
-
-form label {
+.cliente1 .sub-cliente1 label {
     width: 200px;
     display: inline-block;
-    color: white;
+    color: #05386B;
+    font-size: 18px;
+}
+
+.cliente1 .sub-cliente2 label {
+    width: 200px;
+    display: inline-block;
+    color: #05386B;
+    font-size: 18px;
+}
+
+.cliente1 .sub-cliente2 .buttons {
+    display: flex;
+    width: 200px;
+    font-size: 18px;
+    padding: 15px;
 }
 
 form div {
@@ -198,7 +107,7 @@ form input {
 }
 
 input[type="date"] {
-    color: white;
+    color: #05386B;
 }
 
 select {
@@ -207,11 +116,11 @@ select {
     height: 30px;
     border-radius: 5px;
     font-family: 'Montserrat', sans-serif;
-    background: rgba(0, 0, 0, 0.377);
-    color: #ffffff;
+    background: #05386B(0, 0, 0, 0.377);
+    color: black;
     outline: none;
     border: none;
-    border-bottom: 2px solid #918f92;
+    border-bottom: 2px solid #05386B;
 }
 
 form textarea {
@@ -221,7 +130,7 @@ form textarea {
 }
 
 button {
-    background-color: #016b25;
+    background-color: #5CDB95;
     color: #ffffff;
     border: none;
     border-radius: 5px;
@@ -229,7 +138,7 @@ button {
 }
 
 button:hover {
-    background-color: #A3CB38;
+    background-color: #379683;
 }
 
 #btnSubirFotoCliente {
@@ -245,6 +154,10 @@ button:hover {
     margin: auto;
     display: block;
     clear: both;
+}
+
+input[type="radio"]:checked+label {
+    font-weight: bold;
 }
 
 

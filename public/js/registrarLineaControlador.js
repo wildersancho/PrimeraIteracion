@@ -10,7 +10,7 @@ let inputsegundoApellidoCliente = document.querySelector('#txtsegundoApellidoCli
 let inputCorreoCliente = document.querySelector('#txtCorreoCliente');
 let inputFechaCliente = document.querySelector('#txtFechaCliente');
 let inputEdadCliente = document.querySelector('#txtEdadCliente');
-let elementoFotoCliente= document.querySelector('#txtFotoCliente');
+let elementoFotoCliente = document.querySelector('#txtFotoCliente');
 let divCaptcha = document.querySelector('#captcha');
 let accion = 'Registrar';
 let fecha = new Date().toLocaleString();
@@ -20,7 +20,7 @@ let botonRegistrarCliente = document.querySelector('#btnRegistrarCliente');
 botonRegistrarCliente.addEventListener('click', obtenerDatosCliente);
 
 
-async function obtenerDatosCliente(){
+async function obtenerDatosCliente() {
     let error = false;
     let tipoUsuario = 'cliente';
     let nombreUsuarioCliente = inputNombreUsuarioCliente.value;
@@ -37,63 +37,63 @@ async function obtenerDatosCliente(){
     let edadCliente = Number(inputEdadCliente.value);
     let captcha = document.querySelector('#g-recaptcha-response').value;
     let fotoCliente = elementoFotoCliente.src;
-    
+
     error = validarCliente(nombreUsuarioCliente, tipoIDCliente, identificacionCliente, primerNombreCliente, primerApellidoCliente, correoCliente, fechaSinFormato, edadCliente, fotoCliente, captcha);
 
 
 
-    if(error == true){
-        swal({
+    if (error == true) {
+        swal.fire({
             title: 'Registro incorrecto',
             text: 'No se pudo registrar su cuenta, revise los campos en rojo',
             type: 'warning',
             confirmButtonText: 'Entendido'
-          });
-    }else{
-        console.log("Iniciando backend");
+        });
+    } else {
+        console.log("Iniciar backend");
         //Validar primero con clientes
-        let usuarioRepetido = await verificarUsuarioCliente (nombreUsuarioCliente);
+        //Validar usuario ya registrador
+        let usuarioRepetido = await verificarUsuarioCliente(nombreUsuarioCliente);
 
         if (usuarioRepetido) {
-            
+
             inputNombreUsuarioCliente.classList.add('errorInput');
-            swal({
+            swal.fire({
                 title: 'Nombre de usuario ya registrado',
                 text: 'Por favor escoger un nombre de usuario diferente',
                 type: 'warning',
                 confirmButtonText: 'Entendido'
             });
-        }
-        else {
+        } else {
             inputNombreUsuarioCliente.classList.remove('errorInput');
-            //Validar ahora con duenos
-            usuarioRepetido = await verificarUsuarioDueno (nombreUsuarioCliente);
+            //Validar ahora con Proveedores
+            usuarioRepetido = await verificarUsuarioProveedor(nombreUsuarioCliente);
 
             if (usuarioRepetido) {
-                
+
                 inputNombreUsuarioCliente.classList.add('errorInput');
-                swal({
+                swal.fire({
                     title: 'Nombre de usuario ya registrado',
                     text: 'Por favor escoger un nombre de usuario diferente',
                     type: 'warning',
                     confirmButtonText: 'Entendido'
                 });
-            }else {
+            } else {
                 inputNombreUsuarioCliente.classList.remove('errorInput');
                 //Validar ahora correo con clientes
-                let correoRepetido = await verificarCorreoCliente (correoCliente);
+                let correoRepetido = await verificarCorreoCliente(correoCliente);
                 if (correoRepetido) {
                     inputCorreoCliente.classList.add('errorInput');
-                    swal({
+                    swal.fire({
                         title: 'Correo electrónico de cuenta ya registrado',
                         text: 'Por favor escoger un correo electrónico de cuenta diferente',
                         type: 'warning',
                         confirmButtonText: 'Entendido'
                     });
-                }else {
+                } else {
                     inputCorreoCliente.classList.remove('errorInput');
-                    //Validar ahora correo con duenos (correoNegocio)
-                    correoRepetido = await verificarCorreoDueno (correoCliente);
+                    //Validar ahora correo de Aministrador
+                    correoRepetido = await verificarCorreoAdministrador(correoCliente);
 
                     if (correoRepetido) {
                         inputCorreoCliente.classList.add('errorInput');
@@ -103,23 +103,23 @@ async function obtenerDatosCliente(){
                             type: 'warning',
                             confirmButtonText: 'Entendido'
                         });
-                    }else {
+                    } else {
                         inputCorreoCliente.classList.remove('errorInput');
-                        let respuesta = registrarLinea (tipoUsuario, nombreUsuarioCliente, tipoIDCliente, identificacionCliente, primerNombreCliente, segundoNombreCliente, primerApellidoCliente, segundoApellidoCliente, correoCliente, fechaCliente, edadCliente, fotoCliente, captcha);
+                        let respuesta = registrarLinea(tipoUsuario, nombreUsuarioCliente, tipoIDCliente, identificacionCliente, primerNombreCliente, segundoNombreCliente, primerApellidoCliente, segundoApellidoCliente, correoCliente, fechaCliente, edadCliente, fotoCliente, captcha);
                         registrarBitacora(nombreUsuarioCliente, accion, 'cliente', primerNombreCliente + ' ' + primerApellidoCliente, fecha);
-                        console.log("Terminando al backend");
-                        if(respuesta.success == true){
-                            swal({
+                        console.log("Terminar backend");
+                        if (respuesta.success == true) {
+                            swal.fire({
                                 title: 'Registro correcto',
                                 text: respuesta.msg,
                                 type: 'success',
                                 showConfirmButton: false
                             });
                             setTimeout(() => {
-                                location.href = "http://localhost:3000/public/inicioSesion.html"
+                                location.href = "http://127.0.0.1:5500/public/inicioSesion.html"
                             }, 3000);
-                        }else{
-                            swal({
+                        } else {
+                            swal.fire({
                                 title: 'Registro incorrecto',
                                 text: respuesta.msg,
                                 type: 'error',
@@ -134,77 +134,77 @@ async function obtenerDatosCliente(){
 };
 
 
-function validarCliente(pnombreUsuarioCliente, ptipoIDCliente, pidentificacionCliente, pprimerNombreCliente, pprimerApellidoCliente, pcorreoCliente, pfechaCliente, pedadCliente, pfotoCliente, pcaptcha){
-    let error = false; 
+function validarCliente(pnombreUsuarioCliente, ptipoIDCliente, pidentificacionCliente, pprimerNombreCliente, pprimerApellidoCliente, pcorreoCliente, pfechaCliente, pedadCliente, pfotoCliente, pcaptcha) {
+    let error = false;
     let expLetras = /^[a-z A-ZáéíóúñÑÁÉÍÓÚüÜ]+$/;
     let regExpNumeros = /^[0-9]+$/;
     let regExpAlfanumericos = /^[a-z A-ZáéíóúñÑÁÉÍÓÚüÜ0-9]+$/;
     let expCorreo = /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
     console.log("validando");
 
-    if (pnombreUsuarioCliente == ''){
+    if (pnombreUsuarioCliente == '') {
         error = true;
         inputNombreUsuarioCliente.classList.add('errorInput');
-    }else {
+    } else {
         inputNombreUsuarioCliente.classList.remove('errorInput');
     }
 
-    if (pprimerNombreCliente == '' || expLetras.test(pprimerNombreCliente) == false){
+    if (pprimerNombreCliente == '' || expLetras.test(pprimerNombreCliente) == false) {
         error = true;
         inputprimerNombreClienteCliente.classList.add('errorInput');
-    }else {
+    } else {
         inputprimerNombreClienteCliente.classList.remove('errorInput');
     }
 
-    if(pidentificacionCliente == '' || regExpNumeros.test(pidentificacionCliente) == false){
+    if (pidentificacionCliente == '' || regExpNumeros.test(pidentificacionCliente) == false) {
         error = true;
         inputIdentificacionCliente.classList.add('errorInput');
-    }else{
-        if((ptipoIDCliente == 'Cédula de Identidad' && (pidentificacionCliente.length == 9 || pidentificacionCliente.length == 10) && regExpNumeros.test(pidentificacionCliente) == true) || (ptipoIDCliente == 'Cédula de Residencia' && regExpAlfanumericos.test(pidentificacionCliente))){
+    } else {
+        if ((ptipoIDCliente == 'Cédula de Identidad' && (pidentificacionCliente.length == 9 || pidentificacionCliente.length == 10) && regExpNumeros.test(pidentificacionCliente) == true) || (ptipoIDCliente == 'Cédula de Residencia' && regExpAlfanumericos.test(pidentificacionCliente))) {
             inputIdentificacionCliente.classList.remove('errorInput');
-        }else{
+        } else {
             inputIdentificacionCliente.classList.add('errorInput');
         }
     }
 
-    if (pprimerApellidoCliente == '' || expLetras.test(pprimerApellidoCliente) == false){
+    if (pprimerApellidoCliente == '' || expLetras.test(pprimerApellidoCliente) == false) {
         error = true;
         inputprimerApellidoCliente.classList.add('errorInput');
-    }else {
+    } else {
         inputprimerApellidoCliente.classList.remove('errorInput');
     }
-    if (pcorreoCliente == '' || expCorreo.test(pcorreoCliente) == false){
+    if (pcorreoCliente == '' || expCorreo.test(pcorreoCliente) == false) {
         error = true;
         inputCorreoCliente.classList.add('errorInput');
-    }else {
+    } else {
         inputCorreoCliente.classList.remove('errorInput');
     }
 
-    if (pfechaCliente == 'Invalid Date'){
+    if (pfechaCliente == 'Invalid Date') {
         error = true;
         inputFechaCliente.classList.add('errorInput');
-    }else {
+    } else {
         inputFechaCliente.classList.remove('errorInput');
     }
 
-    if (pedadCliente == '' || pedadCliente < inputEdadCliente.min || pedadCliente > inputEdadCliente.max || regExpNumeros.test(inputEdadCliente.value) == false){
+    if (pedadCliente == '' || pedadCliente < inputEdadCliente.min || pedadCliente > inputEdadCliente.max || regExpNumeros.test(inputEdadCliente.value) == false) {
         error = true;
         inputEdadCliente.classList.add('errorInput');
-    }else {
+    } else {
         inputEdadCliente.classList.remove('errorInput');
     }
 
-    if (pfotoCliente == 'http://localhost:3000/public/imgs/foto.png'){
+    if (pfotoCliente == 'http://127.0.0.1:5500/public/imgs/foto.png') {
         error = true;
         elementoFotoCliente.classList.add('errorInput');
-    }else{
+    } else {
         elementoFotoCliente.classList.remove('errorInput');
     }
 
-    if( pcaptcha === undefined || pcaptcha === '' || pcaptcha === null){
+    if (pcaptcha === undefined || pcaptcha === '' || pcaptcha === null) {
         error = true;
         divCaptcha.classList.add('errorInput');
-    }else{
+    } else {
         divCaptcha.classList.remove('errorInput');
     }
 
@@ -226,15 +226,15 @@ inputFechaCliente.addEventListener('change', calcularEdad);
 //Para captcha (creo)
 $(document).ready(function() {
     $('#comment_form').submit(function() {
-      $(this).ajaxSubmit({
-        error: function(xhr) {
-          status('Error: ' + xhr.status);
-        },
-       success: function(response) {
-        console.log(response);
-       }
-      });
-      //Very important line, it disable the page refresh.
-      return false;
+        $(this).ajaxSubmit({
+            error: function(xhr) {
+                status('Error: ' + xhr.status);
+            },
+            success: function(response) {
+                console.log(response);
+            }
+        });
+        //Very important line, it disable the page refresh.
+        return false;
     });
-  });
+});

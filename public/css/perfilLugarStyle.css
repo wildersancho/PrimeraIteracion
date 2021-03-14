@@ -1,0 +1,490 @@
+html{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+}
+
+/* Inicio: estilos del header */
+
+header{
+    background: #263137;
+    height: 64px;  
+}
+    
+header img{
+    width: 54px;
+    height: 54px;
+    margin-top: 5px;
+    margin-left: 3px;
+    float: left;
+    border-radius: 50%;
+}
+
+#lblUsuario {
+    color : #fff;
+    margin-top: 2%;
+    margin-left: 5px;
+    font: inherit;
+    z-index: 1;
+    position: absolute;
+    text-decoration: none;
+}
+
+.nav {
+    position: fixed;
+    width: 200px;
+    height: 100vh;
+    background-color: #37454d;
+    font-family: 'Montserrat', sans-serif;
+    transition: all .5s ease;
+    right: -220px;
+}
+    
+.nav__item {
+    display: block;
+    width: 100%;
+    line-height: 3.9;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;  
+}
+
+.nav__item:hover{
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #fff;
+}
+    
+.menu-toogle {
+    position: absolute;
+    width: 35px;
+    line-height: 1.2;
+    text-align: center;
+    top: 20px; 
+    left: 1306px;
+    transition: all .5s ease;  
+}
+    
+.menu-toogle::before {     
+    content: "☰";
+    font: inherit;
+    color: #fff;  
+}
+     
+.checkbox {
+    display: none;
+}
+    
+.checkbox:checked ~ .nav {
+    right: 0px; 
+    position: fixed;  
+}
+    
+.checkbox:checked ~ .main-w { 
+    margin-left: 200px;  
+}
+    
+.checkbox:checked ~ .menu-toogle {  
+    left: 1114px;
+    position: fixed;  
+}
+
+/* Fin: estilos del header */
+
+/* Inicio: estilos del main */
+
+main{
+    background-size: cover;
+    background-color: #37454d;
+    height: max-content;
+    min-height: 562px;
+}
+
+#info{
+    float: center;
+    margin: 0 auto;
+    padding: 25px;
+    color: #ffffff;
+    min-height: 431px;
+    vertical-align: middle;
+}
+
+main section div{
+    text-align: center;
+}
+
+main section h1 {
+    font-size: 36px;
+    margin-bottom: 8.75px;
+    text-align: center;
+    color: #ffffff;
+}
+
+main section p{
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 17.5px;
+}
+
+.calificacion{
+    font-size: 18px;
+    margin-right: 0%;
+    background: #ffffff69;
+    width: 55px;
+    height: 16px;
+    padding: 4px;
+    display: inline-block;
+    text-align: center;
+}
+
+#txtMapa{
+    float: left;
+    margin-top: 2.5%;
+}
+
+.fa-trash-alt{
+    color: #37454d;
+    cursor: pointer;
+}
+
+#map{
+    width: 450px;
+    height: 300px;
+}
+
+#txtComentarios{
+    padding-left: 25px;
+    padding-bottom: 25px;
+    padding-right: 25px;
+    background-color: #3498db;
+    width: 325px;
+    height: 410px;
+    overflow-y: overlay;
+    float: right;
+}
+
+#fotos{
+    padding: 25px;
+    background-color: #e74c3c;
+    width: 325px;
+    height: 250px;
+    float: left;
+    margin-top: 2.5%;
+    margin-left: 4%;
+}
+
+.ocultar{
+    display: none;
+}
+
+.actividades{
+    padding: 25px;
+    background-color: #dfe6e9;
+    background: max-content;
+    height: max-content;
+    margin-top: 30%;
+}
+
+.unaActividad{
+    padding: 25px;
+    background-color: #dfe6e9;
+    width: 900px;
+    margin-left: 13.5%;
+    height: max-content;
+    margin-top: 30%;
+}
+
+.calificacionComentario{
+    background: #dfe6e9;
+    box-shadow: 0 10px 40px 0 rgba(70, 67, 67, 0.747);
+    padding: 20px;
+    background: cover;
+    min-height: 75px;
+    margin-top: 25px;
+}
+
+.fotoCalificador{
+    width: 75px;
+    height: 75px;
+    float: left;
+}
+
+.calificador{
+    font-size: 15px;
+    max-width: 187px;
+    width: 187px;
+    margin-bottom: 2%;
+    margin-left: 3%;
+    font-weight: bold;
+    float: left;
+    color: #37454d;
+    text-align: left;
+    max-height: 15px;
+}
+
+.comentarioLugar{
+    font-size: 13px;
+    min-height: 29px;
+    width: 201px;
+    max-width: 201px;
+    line-height: 25px;
+    float: left;
+    margin-left: 3%;
+    color: #37454d;
+    margin-bottom: 0%;
+    text-align: justify;
+    margin-bottom: 2%;
+    word-break: break-word;
+}
+
+.visibilityVisible {
+    visibility: visible;
+}
+
+.noneDisplay {
+    display: none;
+}
+
+.ratingCliente{
+    font-size: 14px;
+    background: #37454d5f;
+    width: 55px;
+    height: 12px;
+    padding: 4px;
+    float: left;
+    margin-left: 3%;
+    text-align: center;
+}
+
+.ratingClienteExpandido{
+    font-size: 14px;
+    background: #37454d5f;
+    width: 55px;
+    height: 12px;
+    padding: 4px;
+    float: left;
+    margin-left: 29%;
+    text-align: center;
+}
+
+.estrellas{
+    vertical-align: middle;
+    text-align: left;
+    color: #37454d;
+}
+
+#fotos img{
+    width: 325px;
+    height: 250px;
+}
+
+#mensajeNoCalificaciones{
+    background: cover;
+    height: 385px;
+    background-color: #dfe6e9ad;
+    color: #37454d;
+    font-weight: bold;
+    font-size: 40px;
+    z-index: 2;
+    margin-top: 25px;
+}
+
+#mensajeNoCalificaciones h3{
+    padding-top: 2%;
+}
+
+#mensajeNoCalificaciones img{
+    background: cover;
+    height: 311px;
+    z-index: 1;
+}
+
+#mensajeNoFotos{
+    background: cover;
+    background-color: #dfe6e9ad;
+    color: #37454d;
+    font-weight: bold;
+    font-size: 35px;
+    z-index: 2;
+}
+
+#mensajeNoFotos h3{
+    padding-top: 2%;
+}
+
+#mensajeNoFotos img{
+    width: 242px;
+    height: 175px;
+    z-index: 1;
+    margin: 0 auto;
+}
+
+#mensajeNoActividades{
+    background: cover;
+    color: #37454d;
+    font-weight: bold;
+    font-size: 40px;
+    z-index: 2;
+}
+
+#mensajeNoActividades h3{
+    padding-top: 2.5%;
+    padding-bottom: 2.5%;
+}
+
+.mySlides{
+    display: none; 
+}
+
+.slides img{
+    display: none;  
+}
+
+#botones{
+    text-align: center;
+    margin-top: 1%;
+}
+
+#botones button{
+    background-color: #37454d;
+    color: #fff;
+    border: none;
+    width: 55px;
+    cursor: pointer;
+}
+
+#botones button:hover{
+    background-color: #252e33;
+}
+
+#contenCardsActividades{
+    border: 1px solid rgba(0, 0, 0, 0);
+}
+
+.cardNaranja{
+    background: rgba(211, 84, 0, 1.0);
+    box-shadow: 0 10px 40px 0 rgba(70, 67, 67, 0.747);
+    display: inline-block;
+    border-radius: 5px;
+    padding-top: 1%;
+    width: 399.63px;
+    height: 385px;
+    min-height: 375px;
+    margin-bottom: 2.5%;
+}
+
+.cardAzul{
+    background: rgba(41, 128, 185, 1.0);
+    box-shadow: 0 10px 40px 0 rgba(70, 67, 67, 0.747);
+    display: inline-block;
+    border-radius: 5px;
+    padding-top: 1%;
+    width: 48.5%;
+    height: 385px;
+    margin-bottom: 2.5%;
+    min-height: 375px;
+    width: 399.63px;
+    margin-left: 1.5%;
+}
+
+.cardRojo{
+    background:  rgba(192, 57, 43, 1.0);
+    box-shadow: 0 10px 40px 0 rgba(70, 67, 67, 0.747);
+    display: inline-block;
+    border-radius: 5px;
+    padding-top: 1%;
+    width: 48.5%;
+    height: 385px;
+    margin-bottom: 2.5%;
+    min-height: 375px;
+    width: 399.63px;
+    margin-left: 1.5%;
+}
+
+.fotos{
+    text-align: center;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    width: 95%;
+    height: 215px;
+}
+
+.nombre{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 21px;
+    width: 400px;
+    margin-left: 3%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    text-align: left;
+}
+
+.descripcion{
+    font-size: 14px;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 3%;
+    margin-bottom: 1%;
+    min-height: 42px;
+}
+
+.lugar{
+    font-size: 13px;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 3%;
+    margin-bottom: 1%;
+}
+
+.fecha{
+    font-size: 12px;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 3.4%;
+    margin-bottom: 6%;
+}
+
+.precio{
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    text-align: left;
+    margin-left: 3.4%;
+    display: inline;
+    padding-right: 45%;
+}
+
+.buttonVerMasNaranja, .buttonVerMasAzul, .buttonVerMasRojo{
+    padding: 10px 10px;
+    background-color: #000;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline;
+}
+
+.buttonVerMasNaranja:hover{
+    background: #e67e22;
+}
+
+.buttonVerMasAzul:hover{
+    background: #3498db;
+}
+
+.buttonVerMasRojo:hover{
+    background: #e74c3c;
+}
+
+#tblTitulo{
+    font-size: 36px;
+    text-align: center;
+    color: #252e33;
+    margin-bottom: 1.25%;
+}
+
+#sltActividades{
+    width: 204px;
+    height: 36px;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 17.5px;
+}
