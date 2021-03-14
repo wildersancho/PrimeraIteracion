@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Documento HTML5">
     <title>Iniciar sesión</title>
@@ -10,20 +11,19 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="css/inicioSesion.css" />
-    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/general_2.css">
     <link rel="stylesheet" href="css/general-media-query.css">
 </head>
 
 <body>
     <header id="header-principal" class="header-principal">
-        <nav>
-            <img src="imgs/IconoMenu.png" id="logo" />
-            <a href="http://www.abaanimal.org/">Inicio</a>
-            <a href="http://www.abaanimal.org/">Buscar un servicio</a>
-            <a href="http://www.abaanimal.org/">Ofrecer un servicio</a>
-            <a class="icono-menu" onclick="cambiar_estilo_navegacion();">☰</a>
-            <a href="http://www.abaanimal.org/">Mi Perfil</a>
-            <a class="cerrarSesion" href="http://www.abaanimal.org/">Cerrar Sesión</a>
+        <nav class="nav-contenedor">
+            <a href="index.html"><img src="imgs/IconoMenu.png" id="logo" /></a>
+            <a href="inicioSesion.html">Inicio</a>
+            <a href="inicioSesion.html">Buscar un servicio</a>
+            <a href="inicioSesion.html">Ofrecer un servicio</a>
+            <a href="inicioSesion.html">Mi Perfil</a>
+            <a class="cerrarSesion" href="inicioSesion.html">Cerrar Sesión</a>
         </nav>
     </header>
     <main>
@@ -44,8 +44,8 @@
                         <button type="button" id="btnInicio">Iniciar sesión</button>
                     </div>
                 </div>
+            </form>
         </section>
-        </form>
         <footer>
             <section class="footerCopyRedes">
                 <section class="mainCopyRedes">
@@ -69,7 +69,6 @@
                     </section>
                 </section>
         </footer>
-
     </main>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>

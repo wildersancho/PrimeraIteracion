@@ -1,55 +1,29 @@
-body {
-    position: relative;
-    margin: 0;
-    min-height: 100%;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-main {
-    width: 100%;
-    height: 768px;
-    background-image: url(../imgs/pexels-ryan-miguel-capili-3993247.jpg);
-    background-size: cover;
-    padding-top: 100px;
-}
-
 html {
     font-family: 'Montserrat', sans-serif;
     /*Cambia la topografia*/
     font-size: 16px;
     /*Cambia el tamaño de la topografia*/
+    background-color: #8EE4AF;
+}
+
+main {
+    width: 100%;
+    height: 768px;
+    position: static;
+    background-image: url(../imgs/pexels-ryan-miguel-capili-3993247.jpg);
+    background-size: cover;
+    padding-top: 100px;
 }
 
 
 /*Inicio estilos del header*/
 
-.header_principal {
-    background: linear-gradient(to right, #ffca7b 5%, #9b2948 68%);
-    width: 100%;
-    height: 80px;
-}
-
-.header_principal nav {
-    width: 600px;
+.header-principal {
+    background: #379683;
     padding: 15px;
-    float: right;
-    padding-top: 50px;
-}
-
-.header_principal nav a {
-    color: #ffedbf;
-    text-decoration: none;
-    /*Eliminar subrayado*/
-    display: inline-block;
-    margin-right: 15px;
-    font-size: 17px;
-}
-
-.header_principal nav a:hover {
-    color: #ffca7b;
+    width: 100%;
+    /*Se hace position fixed para que siempre este en la misma posicion de la pantalla aunque haga scroll*/
+    top: 0;
 }
 
 
@@ -65,7 +39,7 @@ html {
     overflow: hidden;
     margin: auto;
     perspective: 800px;
-    border: 2px solid #9b2948;
+    border: 2px solid #05386B;
     box-shadow: 0 20px 40px 0 #000;
 }
 
@@ -75,7 +49,7 @@ html {
     position: absolute;
     top: 0;
     left: 0;
-    transform: translateX(-100%) rotateX(180deg);
+    transform: translateX(-100%);
     transition: all 1s;
 }
 
@@ -318,63 +292,7 @@ html {
 
 /*Fin de estilos del main*/
 
-
-/*Inicio de estilos del footer*/
-
-.footerCopyRedes {
-    width: 100%;
-    background: #000;
-    border-top: 2px solid #9b2948;
-    color: #ffedbf;
-    display: flex;
-    flex-wrap: wrap;
+.responsivePage {
+    background-color: #fff;
+    display: none;
 }
-
-.mainCopyRedes {
-    width: 98%;
-    max-width: 1366;
-    padding: 15px 0px;
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.mainCopyRedes .footerCopy {
-    width: 70%;
-    font-size: 15px;
-}
-
-.mainCopyRedes .footerRedes {
-    width: 30%;
-    display: flex;
-}
-
-.mainCopyRedes .footerRedes a {
-    display: inline-block;
-    text-decoration: none;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    border-radius: 50%;
-    background: #9b2948;
-    color: #ffedbf;
-    text-align: center;
-    margin: 10px;
-}
-
-.mainCopyRedes .footerRedes .facebook:hover {
-    background: #3742fa;
-}
-
-.mainCopyRedes .footerRedes .twitter:hover {
-    background: #1e90ff;
-}
-
-.mainCopyRedes .footerRedes .instagram:hover {
-    background: linear-gradient(to top, #fed330, #EE5A24, #EA2027, #8e44ad)
-}
-
-
-/*Fin de estilos del footer*/
