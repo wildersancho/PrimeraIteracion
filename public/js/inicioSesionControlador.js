@@ -11,7 +11,7 @@ function obtenerDatos() {
 
 
     let error = validar(usuario, contrasenna);
-    let expContrasena = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
+    //let expContrasena = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
     let usuarioAceptadoclientes = false;
     let usuarioAceptadoAdmin = false;
     let usuarioAceptadoProveedor = false;
