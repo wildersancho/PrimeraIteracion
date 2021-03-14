@@ -7,37 +7,35 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--<meta name="description" content="Landing page del equipo">-->
+    <meta name="description" content="Documento HTML5">
+    <meta name="description" content="Landing page del equipo">
     <link rel="stylesheet" href="css/reset.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" href="css/landingEquipoStyle.css">
+    <link rel="stylesheet" href="css/general-media-query.css">
     <link rel="stylesheet" href="css/general.css">
 
 </head>
 
 <body>
-
     <header id="header-principal" class="header-principal">
         <nav>
-            <img src="imgs/IconoMenu.png" id="logo" />
+            <a href="index.html"><img src="imgs/IconoMenu.png" id="logo" /></a>
             <a href="#img2">Misión</a>
             <a href="#img3">Visión</a>
             <a href="#img4">Valores</a>
             <a href="#img5">Detalle de los Integrantes</a>
-            <a href="../public/index2.html">Main</a>
+            <a class="icono-menu" onclick="cambiar_estilo_navegacion();">☰</a>
         </nav>
     </header>
 
-
-
     <main>
-
         <section class="slider">
 
             <section class="imgs" id="img1">
                 <a href="#img10" class="fa fa-chevron-left chevronLeft"></a>
-                <img src="imgs/pexels-ryan-miguel-capili-3993247.jpeg">
+                <img src="imgs/pexels-ryan-miguel-capili-3993247.jpg">
                 <a href="#img2" class="fa fa-chevron-right chevronRight"></a>
             </section>
 
@@ -64,7 +62,6 @@
                     </p>
                 </section>
             </section>
-
             <section class="imgs" id="img4">
                 <a href="#img3" class="fa fa-chevron-left chevronLeft"></a>
                 <img src="imgs/imgs4.png">
@@ -210,11 +207,47 @@
                 <section class="contenidoImg11">
                     <h3>Entrar a su casa y acompañarte en tu crecimiento tecnológico</h3>
                 </section>
-
-            </section>
-
     </main>
+    <section class="responsivePage">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h4>Misión</h4>
+        <p>
+            Cumplir con los estándares requeridos del curso y formar una simulación empresarial amable y eficaz para buscar soluciones técnicas juntos, apoyándonos el uno al otro.
+        </p>
+        <br>
+        <h4>Visión</h4>
+        <p>
+            Desarrollar métodos eficaces en el área empresarial y de emprendedurismo para obtener un producto eficiente para las necesidades de nuestros clientes.
+        </p>
+        <br>
+        <h4>Valores</h4>
+        <p>Responsabilidad: este valor es clave en la consecución de nuestros objetivos, ya que, si cada miembro de nuestro equipo cumple con sus tareas, es eficiente y responde a ellas, facilitará el buen funcionamiento del equipo.</p>
+        <p>Calidad: Como equipo nuestra meta es aportar valor a nuestro cliente, ofrecer los mejores estándares de calidad, condiciones de uso del producto o servicio superiores a las expectativas del cliente y de nosotros mismos como equipo.</p>
+        <p>Trabajo en equipo: Apoyarnos con ideas y soluciones eficaces, Cada quien aportando en su rol y responsabilidades, aprendiendo del uno a otro.</p>
+        <p>Puntualidad: Bajo la premisa de que nuestros clientes siempre quieren el trabajo entregado en el tiempo acordado. Internamente tenemos el compromiso de mantener la puntualidad. Además, por respeto a las agendas de los miembros del equipo.
+        </p>
+        <br>
+        <h4>Detalle de los integrantes</h4>
+        <h2>Michael McCrory Villalobos</h2>
+        <p>Correo electrónico:</p>
+        <p>mmccroryv@ucenfotec.ac.cr</p>
+        <p>Teléfono:</p>
+        <p>8808 3433</p>
+        <p>Dirección:</p>
+        <p>San Jorge, Heredia, Costa Rica</p>
+        <p>Fortalezas:</p>
+        <p>Soy una persona que aprende rápido con los recursos que se le da y puedo manejar bien las situaciones bajo estrés.
+        </p>
+        <p>Debilidades:</p>
+        <p>Mi debilidad es que soy perfeccionista, Me gusta tener todo ordenado y limpio.
+        </p>
 
+    </section>
+    </section>
     <footer>
         <section class="footerCopyRedes">
             <section class="mainCopyRedes">

@@ -1,4 +1,4 @@
-html{
+html {
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
 }
@@ -7,24 +7,20 @@ html{
     border: 2px solid #EE5A24;
 }
 
-
-
 .errorInputCaptcha {
     border: 2px solid #EE5A24;
     height: 81px;
 }
 
 
-
-
-
 /* Inicio: estilos del header */
-header{
+
+header {
     background: #263137;
-    height: 64px;  
+    height: 64px;
 }
-    
-header img{
+
+header img {
     width: 54px;
     height: 54px;
     margin-top: 5px;
@@ -34,7 +30,7 @@ header img{
 }
 
 #lblUsuario {
-    color : #fff;
+    color: #fff;
     margin-top: 2%;
     margin-left: 5px;
     font: inherit;
@@ -52,68 +48,70 @@ header img{
     transition: all .5s ease;
     right: -220px;
 }
-    
+
 .nav__item {
     display: block;
     width: 100%;
     line-height: 3.9;
     text-align: center;
     color: #fff;
-    text-decoration: none;  
+    text-decoration: none;
 }
 
-.nav__item:hover{
+.nav__item:hover {
     background-color: rgba(0, 0, 0, 0.3);
     color: #fff;
 }
-    
+
 .menu-toogle {
     position: absolute;
     width: 35px;
     line-height: 1.2;
     text-align: center;
-    top: 20px; 
+    top: 20px;
     left: 1306px;
-    transition: all .5s ease;    
+    transition: all .5s ease;
 }
-    
-.menu-toogle::before {     
+
+.menu-toogle::before {
     content: "☰";
     font: inherit;
-    color: #fff;  
+    color: #fff;
 }
-     
+
 .checkbox {
     display: none;
 }
-    
-.checkbox:checked ~ .nav {
-    right: 0px; 
-    position: fixed;  
+
+.checkbox:checked~.nav {
+    right: 0px;
+    position: fixed;
 }
-    
-.checkbox:checked ~ .main-w { 
-    margin-left: 200px;  
+
+.checkbox:checked~.main-w {
+    margin-left: 200px;
 }
-    
-.checkbox:checked ~ .menu-toogle {  
+
+.checkbox:checked~.menu-toogle {
     left: 1114px;
-    position: fixed;  
+    position: fixed;
 }
 
 .ocultar {
     display: none;
 }
 
+
 /* Fin: estilos del header */
 
 
 /* Inicio: estilos del main */
-main {    
+
+main {
     background-size: cover;
     padding: 40px 180px;
     height: -200px;
-    background-color: #dfe6e9;   
+    background-color: #dfe6e9;
     /*background-color: rgba(0, 98, 102,0.1);*/
     /*background-image: url("../imgs/registrarLineaPalmeras.jpg");*/
 }
@@ -142,7 +140,6 @@ main h1 {
     margin-bottom: 60px;
     border-right: #dfe4ea solid 1px;
 }
-
 
 #sctFoto {
     padding: 20px;
@@ -183,21 +180,22 @@ textarea {
     border-bottom: 2px solid #918f92;
 }
 
-form label{
+form label {
     width: 200px;
     display: inline-block;
     color: white;
 }
+
 form div {
-    margin-bottom:20px;
+    margin-bottom: 20px;
 }
+
 form input {
     display: inline-block;
     width: 200px;
     height: 25px;
     font-family: 'Montserrat', sans-serif;
 }
-
 
 input[type="date"] {
     color: white;
@@ -216,7 +214,7 @@ select {
     border-bottom: 2px solid #918f92;
 }
 
-form textarea{
+form textarea {
     display: inline-block;
     vertical-align: top;
     width: 200px;
@@ -230,7 +228,6 @@ button {
     font-family: 'Montserrat', sans-serif;
 }
 
-
 button:hover {
     background-color: #A3CB38;
 }
@@ -242,7 +239,6 @@ button:hover {
     margin-left: 48px;
 }
 
-
 #btnRegistrarCliente {
     font-size: 25px;
     padding: 12.5px 37.5px;
@@ -251,16 +247,22 @@ button:hover {
     clear: both;
 }
 
+
 /*Para que no salga una opcion de select*/
+
 select:required:invalid {
     color: gray;
 }
+
 option[value=""][disabled] {
     display: none;
 }
+
 option {
     color: black;
 }
+
+
 /********/
 
 #captcha {

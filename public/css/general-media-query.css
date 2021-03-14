@@ -34,54 +34,27 @@
     .footerRedes {
         width: 100%;
     }
-    /*FIN:Ahora vamos a crear estilos para mostrar los demás elementos del menú cuando está en pantallas pequeñas*/
-}
-
-@media (max-width:1020px) {
-    #sct-banner {
-        text-align: center;
-        background-image: url('../imgs/restbanner.jpg');
-        background-size: cover;
-        min-height: 200px;
-        background-position: center;
-        color: black;
-        /*padding:↑  →  ↓  ←*/
-        padding: 30px 0 30px 0;
+    .slider {
+        display: none;
     }
-    #sct-banner div {
-        width: 75%;
-        padding: 20px 5px;
+    main {
+        display: none;
     }
-    #sct-banner h1 {
-        font-size: 30px;
+    .responsivePage {
+        display: contents;
     }
-    /*Servicios*/
-    .sct-servicios div {
-        min-height: 240px;
-        max-height: 240px;
-    }
-    .sct-servicios .info {
-        padding: 50px 20px;
-    }
-    .sct-servicios .info h2 {
-        font-size: 20px;
-    }
-    .sct-servicios .info p {
-        line-height: 17px;
-    }
-}
-
-@media (max-width:480px) {
-    /*Seccion Banner*/
-    #sct-banner h1 {
-        font-size: 25px;
-    }
-    /*Seccion Servicios*/
-    .sct-servicios div {
-        float: none;
-        width: 100%;
-    }
-    .sct-servicios .info h2 {
-        font-size: 17px;
+    @media (max-width:480px) {
+        /*Seccion Banner*/
+        #sct-banner h1 {
+            font-size: 25px;
+        }
+        /*Seccion Servicios*/
+        .sct-servicios div {
+            float: none;
+            width: 100%;
+        }
+        .sct-servicios .info h2 {
+            font-size: 17px;
+        }
     }
 }

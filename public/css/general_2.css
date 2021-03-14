@@ -30,8 +30,12 @@ p {
     background: #379683;
     padding: 15px;
     width: 100%;
-    /*Se hace position fixed para que siempre este en la misma posicion de la pantalla aunque haga scroll*/
-    position: fixed;
+    /Se hace position fixed para que siempre este en la misma posicion de la pantalla aunque haga scroll/ position: fixed;
+    top: 0;
+}
+
+.nav-contenedor {
+    display: flex;
 }
 
 #logo {
@@ -39,9 +43,10 @@ p {
     max-height: 30px;
 }
 
-.header-principal .cerrarSesion {
-    float: right;
-    width: 15%;
+.header-principal {
+    width: 100%;
+    left: 0;
+    right: 0;
 }
 
 .header-principal nav a {
@@ -49,20 +54,15 @@ p {
     text-decoration: none;
     margin-right: 30px;
     padding-left: 40px;
+    margin-top: 10px;
 }
 
 .header-principal nav a:hover {
     color: #05386B;
 }
 
-.header-principal-flotante {
-    /*Float: Hace el elemento flotante para que se acomoden unos al lado de otros*/
-    float: left;
-    display: block;
-}
-
-.header-principal a.icono-menu {
-    display: none;
+.cerrarSesion {
+    margin-left: auto;
 }
 
 

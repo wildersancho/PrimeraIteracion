@@ -58,12 +58,6 @@ main section h1 {
     float: flex;
 }
 
-#carouselExampleControls {
-    width: 100%;
-    height: 35%;
-    float: flex;
-}
-
 .info {
     float: center;
     margin: 0 auto;
