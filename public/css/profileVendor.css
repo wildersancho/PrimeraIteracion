@@ -67,6 +67,10 @@ body {
     color: orange;
 }
 
+textarea {
+    resize: none;
+}
+
 
 /* Style For Profile Section */
 
@@ -171,4 +175,13 @@ body {
 .card-body {
     padding-top: 15px;
     padding-bottom: 15px;
+}
+
+#tabla {
+    margin-bottom: 50px;
+}
+
+#tabla tr {
+    background-color: white;
+    border: 1px solid #cde2f5;
 }

@@ -10,9 +10,15 @@ html {
 
 /* Inicio: estilos del main */
 
+.InicioSesion {
+    min-height: calc(100vh - 120px);
+    display: flex;
+    flex-direction: column;
+}
+
 main section h1 {
     font-size: 36px;
-    margin-top: 55px;
+    margin-top: 165px;
     margin-bottom: 55px;
     text-align: center;
     color: #05386B;
@@ -55,7 +61,6 @@ form input {
     width: 250px;
     height: 30px;
     background: #ffffff;
-    color: rgba(0, 0, 0, 0.1);
     outline: none;
     border: none;
     border-bottom: 2px solid #5CDB95;
