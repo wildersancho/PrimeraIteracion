@@ -25,11 +25,13 @@ function obtenerDatos() {
         });
     } else {
         usuarioAceptadoclientes = validarCredenciales(usuario, contrasenna);
-        if (usuarioAceptadoclientes) {} else {
+        if (usuarioAceptadoclientes) {
+            window.location.replace("http://127.0.0.1:5500/index.html");
+        } else {
             usuarioAceptadoAdmin = validarCredencialesAdmin(usuario, contrasenna);
-            if (usuarioAceptadoAdmin) {} else {
+            if (usuarioAceptadoAdmin) { window.location.replace("http://127.0.0.1:5500/index.html"); } else {
                 usuarioAceptadoProveedor = validarCredencialesProveedor(usuario, contrasenna);
-                if (usuarioAceptadoProveedor) {} else {
+                if (usuarioAceptadoProveedor) { window.location.replace("http://127.0.0.1:5500/index.html"); } else {
                     swal.fire({
                         title: 'Inicio de sesión incorrecto',
                         text: 'Por favor revise las credenciales',
@@ -40,6 +42,30 @@ function obtenerDatos() {
             }
         }
     }
+}
+
+function validarCredenciales(usuario, contrasenna) {
+    let usuarioAceptadoclientes = false;
+    if (usuario == 'Cliente' && contrasenna == 'Cliente123') {
+        usuarioAceptadoclientes = true;
+    }
+    return usuarioAceptadoclientes;
+}
+
+function validarCredencialesAdmin(usuario, contrasenna) {
+    let usuarioAceptadoAdmin = false;
+    if (usuario == 'Admin' && contrasenna == 'admin123') {
+        usuarioAceptadoAdmin = true;
+    }
+    return usuarioAceptadoAdmin;
+}
+
+function validarCredencialesProveedor(usuario, contrasenna) {
+    let usuarioAceptadoProveedor = false;
+    if (usuario == 'Proveedor' && contrasenna == 'Proveedor123') {
+        usuarioAceptadoProveedor = true;
+    }
+    return usuarioAceptadoProveedor;
 }
 
 function validar(pusuario, pcontrasenna) {

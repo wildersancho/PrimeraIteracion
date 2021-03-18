@@ -39,14 +39,15 @@
         </section>
         <section id="Servicios" class="Servicios">
             <div class="botones">
-
+                <div><button class="btnRegistrarme" onclick="window.location.href='http://www.abaanimal.org/';">
+                    Registrarme
+                  </button></div>
                 <a class="btn1" href="http://www.abaanimal.org/"><img src="imgs/house.png"></a>
                 <a class="btn2" href="http://www.abaanimal.org/"><img src="imgs/Hotel.png"></a>
                 <a class="btn3" href="http://www.abaanimal.org/"><img src="imgs/food.png"></a>
                 <a class="btn4" href="http://www.abaanimal.org/"><img src="imgs/play.png"></a>
                 <a class="btn5" href="http://www.abaanimal.org/"><img src="imgs/care.jpg"></a>
             </div>
-            <div><a type="button" href="http://www.abaanimal.org/" id='btnRegistrarme'>Registrarme ahora</a></div>
         </section>
         <section class="opinions">
         </section>
@@ -54,14 +55,39 @@
             <h1>Buscar Proveedores</h1>
             <div>
                 <select name="filtros" class="txtFiltrar" id="txtTipo" onchange="mostrar('txtTipo')">
-                        <option value="" disabled selected>Filtrar</option>
-                        <option value="Perros">Perros</option>
-                        <option value="Gatos">Gatos</option>
+                        <option value="" disabled selected>Tipo de Servicio</option>
+                        <option value="Perros">Grooming</option>
+                        <option value="Gatos">Hotel</option>
                     </select>
             </div><br>
             <div id="buscar">
                 <input type="text" id="txtBuscar" placeholder="Ingrese un criterio de búsqueda...">
                 <button type="button" id="btnBuscar">Buscar</button>
+            </div>
+            <div id="MainTable">
+                <table class="tbl-proveedores" id="tbl-proveedores">
+                    <tr>
+                        <th>Nombre de Empresa</th>
+                        <th>Correo</th>
+                        <th>Número</th>
+                        <th>Ubicación</th>
+                        <th>Tipo de Servicio</th>
+                    </tr>
+                    <tr>
+                        <td>Patitos</td>
+                        <td>patitos@gmail.com</td>
+                        <td>12345678</td>
+                        <td>Heredia</td>
+                        <td>Grooming</td>
+                    </tr>
+                    <tr>
+                        <td>Perritos</td>
+                        <td>perritos@gmail.com</td>
+                        <td>87654321</td>
+                        <td>San José</td>
+                        <td>Hotel</td>
+                    </tr>
+                </table>
             </div>
         </section>
         <footer>

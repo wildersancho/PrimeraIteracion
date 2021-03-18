@@ -1,166 +1,141 @@
 'use strict';
 
-function registrarLinea(ptipoUsuario, pnombreUsuarioCliente, ptipoIDCliente, pidentificacionCliente, pprimerNombreCliente, psegundoNombreCliente, pprimerApellidoCliente, psegundoApellidoCliente, pcorreoCliente, pfechaCliente, pedadCliente, pImagenURL, pcaptcha){
-    
+function registrarLinea(ptipoUsuario, pnombreUsuarioCliente, ptipoIDCliente, pidentificacionCliente, pprimerNombreCliente, psegundoNombreCliente, pprimerApellidoCliente, psegundoApellidoCliente, pcorreoCliente, pfechaCliente, pedadCliente, pImagenURL, pcaptcha) {
+
     let respuesta = '';
-    console.log("Valor de fecha: "+ pfechaCliente);
+    console.log("Valor de fecha: " + pfechaCliente);
     let peticion = $.ajax({
         url: 'http://localhost:4000/api/registrar_cliente',
         type: 'post',
         contentType: 'application/x-www-form-urlencoded; charset=utf-8',
-        dataType : 'json',
-        async:false,
-        data:{
-            tipoUsuario : ptipoUsuario,
-            nombreUsuarioCliente : pnombreUsuarioCliente,
-            tipoIDCliente : ptipoIDCliente,
-            identificacionCliente : pidentificacionCliente,
-            primerNombreCliente : pprimerNombreCliente,
-            segundoNombreCliente : psegundoNombreCliente,
-            primerApellidoCliente : pprimerApellidoCliente,
-            segundoApellidoCliente : psegundoApellidoCliente,
-            correoCliente : pcorreoCliente,
-            fechaCliente : pfechaCliente,
-            edadCliente : pedadCliente,
-            fotoCliente : pImagenURL,
-            captcha : pcaptcha
+        dataType: 'json',
+        async: false,
+        data: {
+            tipoUsuario: ptipoUsuario,
+            nombreUsuarioCliente: pnombreUsuarioCliente,
+            tipoIDCliente: ptipoIDCliente,
+            identificacionCliente: pidentificacionCliente,
+            primerNombreCliente: pprimerNombreCliente,
+            segundoNombreCliente: psegundoNombreCliente,
+            primerApellidoCliente: pprimerApellidoCliente,
+            segundoApellidoCliente: psegundoApellidoCliente,
+            correoCliente: pcorreoCliente,
+            fechaCliente: pfechaCliente,
+            edadCliente: pedadCliente,
+            fotoCliente: pImagenURL,
+            captcha: pcaptcha
         }
     });
     console.log(peticion.body);
-    peticion.done(function(response){
-    respuesta = response;
+    peticion.done(function(response) {
+        respuesta = response;
     });
 
-    peticion.fail(function(response){
-    respuesta = response;
+    peticion.fail(function(response) {
+        respuesta = response;
     });
 
-    return respuesta; 
+    return respuesta;
 };
 
-function verificarUsuarioCliente (pnombreUsuarioCliente){
+function verificarUsuarioCliente(pnombreUsuarioCliente) {
     let respuesta = '';
-    if (pnombreUsuarioCliente == 'admin'){
+    if (pnombreUsuarioCliente == 'admin') {
         respuesta = true;
-    }else {       
+    } else {
         let peticion = $.ajax({
             url: 'http://localhost:4000/api/verificar_usuario_cliente',
             type: 'post',
             contentType: 'application/x-www-form-urlencoded; charset=utf-8',
-            dataType : 'json',
-            async:false,
-            data:{
-                nombreUsuarioCliente : pnombreUsuarioCliente
+            dataType: 'json',
+            async: false,
+            data: {
+                nombreUsuarioCliente: pnombreUsuarioCliente
             }
         });
-        peticion.done(function(response){
+        peticion.done(function(response) {
             respuesta = response;
         });
 
-        peticion.fail(function(response){
-        });
+        peticion.fail(function(response) {});
     }
-    return respuesta; 
+    return respuesta;
 };
 
-function verificarUsuarioDueno (pnombreUsuarioCliente){
+function verificarUsuarioDueno(pnombreUsuarioCliente) {
     let respuesta = '';
-    if (pnombreUsuarioCliente == 'admin'){
+    if (pnombreUsuarioCliente == 'admin') {
         respuesta = true;
-    }else {       
+    } else {
         let peticion = $.ajax({
             url: 'http://localhost:4000/api/verificar_usuario_dueno',
             type: 'post',
             contentType: 'application/x-www-form-urlencoded; charset=utf-8',
-            dataType : 'json',
-            async:false,
-            data:{
-                NombreUsuario : pnombreUsuarioCliente
+            dataType: 'json',
+            async: false,
+            data: {
+                NombreUsuario: pnombreUsuarioCliente
             }
         });
-        
-        peticion.done(function(response){
+
+        peticion.done(function(response) {
             respuesta = response;
         });
 
-        peticion.fail(function(response){
-        });
+        peticion.fail(function(response) {});
     }
     console.log('Valor de respuesta: ');
     console.log(respuesta.body);
-    return respuesta; 
+    return respuesta;
 };
 
 
-function verificarCorreoCliente (pcorreoCliente){
+function verificarCorreoCliente(pcorreoCliente) {
     let respuesta = '';
     let peticion = $.ajax({
         url: 'http://localhost:4000/api/verificar_correo_cliente',
         type: 'post',
         contentType: 'application/x-www-form-urlencoded; charset=utf-8',
-        dataType : 'json',
-        async:false,
-        data:{
-            correoCliente : pcorreoCliente
+        dataType: 'json',
+        async: false,
+        data: {
+            correoCliente: pcorreoCliente
         }
     });
-    peticion.done(function(response){
+    peticion.done(function(response) {
         respuesta = response;
     });
 
-    peticion.fail(function(response){
-    });
+    peticion.fail(function(response) {});
 
-    return respuesta; 
+    return respuesta;
 };
 
-function verificarCorreoDueno (pcorreoCliente){
+function verificarCorreoDueno(pcorreoCliente) {
     let respuesta = '';
     let peticion = $.ajax({
         url: 'http://localhost:4000/api/verificar_correo_dueno',
         type: 'post',
         contentType: 'application/x-www-form-urlencoded; charset=utf-8',
-        dataType : 'json',
-        async:false,
-        data:{
-            correo : pcorreoCliente
+        dataType: 'json',
+        async: false,
+        data: {
+            correo: pcorreoCliente
         }
     });
-    peticion.done(function(response){
+    peticion.done(function(response) {
         respuesta = response;
     });
 
-    peticion.fail(function(response){
-    });
+    peticion.fail(function(response) {});
 
-    return respuesta; 
+    return respuesta;
 };
 
 let imagenUrl = '';
 let cont = 0;
 
-$(function() {
-    $.cloudinary.config({ cloud_name: 'andromeda-cenfo', api_key: '842839194878294'});
 
-    let uploadButton = $('#btnSubirFotoCliente');
-
-    uploadButton.on('click', function(e){
-
-        cloudinary.openUploadWidget({ cloud_name: 'andromeda-cenfo', upload_preset: 'proyecto', tags: ['cgal'], multiple: false},
-        function(error, result) {
-            if(error) console.log(error);
-        
-            let id = result[0].public_id;
-                
-            console.log(id);
-
-            imagenUrl = processImage(id);
-            console.log(imagenUrl);
-            document.querySelector('#txtFotoCliente').src = imagenUrl;
-            return imagenUrl;
-        });
-    });
-})
 
 function processImage(id) {
     let options = {
@@ -168,7 +143,3 @@ function processImage(id) {
     };
     return $.cloudinary.url(id, options);
 }
-
-
-
-

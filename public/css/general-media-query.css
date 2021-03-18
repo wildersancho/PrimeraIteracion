@@ -41,7 +41,7 @@
         display: none;
     }
     .responsivePage {
-        display: contents;
+        display: ;
     }
     @media (max-width:480px) {
         /*Seccion Banner*/
