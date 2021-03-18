@@ -97,7 +97,7 @@ async function obtenerDatosCliente() {
 
                     if (correoRepetido) {
                         inputCorreoCliente.classList.add('errorInput');
-                        swal({
+                        swal.fire({
                             title: 'Correo electrónico de cuenta ya registrado',
                             text: 'Por favor escoger un correo electrónico de cuenta diferente',
                             type: 'warning',

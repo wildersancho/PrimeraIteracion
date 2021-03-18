@@ -10,6 +10,7 @@ main section h1 {
 }
 
 .pageInfo .mainImage {
+    margin-top: 50px;
     background-image: url('../imgs/pexels-snapwire-46024.jpg');
     background-size: cover;
     background-position: center;
@@ -36,20 +37,62 @@ main section h1 {
 }
 
 .pageInfo .infoGeneral p {
-    text-align: center;
+    text-align: left;
     font-size: 20px;
     line-height: 27px;
 }
 
+.btnRegistrarme {
+    height: 75px;
+    width: 200px;
+    font-weight: bold;
+    background-color: #379683;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 30px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.btnRegistrarme:hover {
+    background-color: #05386B;
+    color: white;
+}
+
 .Servicios .botones img {
     background-repeat: no-repeat;
-    height: 100px;
-    width: 100px;
+    height: 250px;
+    width: 250px;
     background: #ffffff;
     background-position: center;
     border: 4px black solid;
     float: flex;
     margin-bottom: 25px;
+}
+
+.Servicios .botones .btn1:hover {
+    opacity: 0.3;
+}
+
+.Servicios .botones .btn2:hover {
+    opacity: 0.3;
+}
+
+.Servicios .botones .btn3:hover {
+    opacity: 0.3;
+}
+
+.Servicios .botones .btn4:hover {
+    opacity: 0.3;
+}
+
+.Servicios .botones .btn5:hover {
+    opacity: 0.3;
 }
 
 .opinions {
@@ -91,4 +134,32 @@ main section h1 {
     border: none;
     border-radius: 5px;
     margin-bottom: 35px;
+}
+
+#MainTable {
+    padding-top: 2%;
+    padding-left: 25%;
+    float: flex;
+}
+
+#tbl-proveedores td {
+    border: #05386B 2px solid;
+    font-size: 18px;
+    background-color: #ffffff;
+}
+
+#tbl-proveedores tr {
+    border: #05386B 2px solid;
+    font-size: 18px;
+    color: #05386B;
+    background-color: #ffffff;
+}
+
+#tbl-proveedores th {
+    padding: 5px;
+    border: #05386B 2px solid;
+    font-size: 30px;
+    color: #ffffff;
+    font-weight: bold;
+    background-color: #05386B;
 }
