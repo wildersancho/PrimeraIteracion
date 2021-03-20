@@ -16,7 +16,7 @@ let accion = 'Registrar';
 let fecha = new Date().toLocaleString();
 
 let botonRegistrarCliente = document.querySelector('#btnRegistrarCliente');
-
+//comentario
 botonRegistrarCliente.addEventListener('click', obtenerDatosCliente);
 
 
