@@ -19,6 +19,7 @@ main {
 /*Inicio estilos del header*/
 
 .header-principal {
+    z-index: 1;
     background: #379683;
     padding: 15px;
     width: 100%;
