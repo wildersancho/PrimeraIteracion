@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Documento HTML5">
+    <title>Mascotas</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/general_2.css">
+    <link rel="stylesheet" href="css/registrar-proveedor.css">
+    <link rel="stylesheet" href="css/registrar-tarjetas.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+    <title>Registro Proveedor</title>
+</head>
+
+<body>
+    <header id="header-principal" class="header-principal">
+        <nav class="nav-contenedor">
+            <a href="index.html"><img src="imgs/IconoMenu.png" id="logo" /></a>
+            <a href="http://www.abaanimal.org/">Buscar un servicio</a>
+            <a href="http://www.abaanimal.org/">Ofrecer un servicio</a>
+            <a href="perfil-usuario.html">Mi Perfil</a>
+            <a class="cerrarSesion" href="inicioSesion.html">Cerrar Sesión</a>
+        </nav>
+    </header>
+
+    <main class="main-content">
+
+        <div class="form-container">
+            <form action="#">
+
+
+                <h3 class="form-titulo">Crear cuenta de proveedor</h3>
+                <div class="name-container">
+                    <input type="text" name="id-encargado" id="id-encargado" placeholder="Nombre del encargado" />
+                    <input type="text" name="id-apellido" id="id-apellido" placeholder="Apellido" />
+                    <input type="text" name="id-apellido2" id="id-apellido2" placeholder="Segundo Apellido" />
+
+
+                </div>
+
+                <div class="form-titulo"> <input type="text" name="id-negocio" id="id-negocio" placeholder="Nombre del negocio" />
+                    <input type="number" name="id-phone" id="id-phone" placeholder="Numero" />
+                    <input class="id-email" id="id-email" type="email" name="id-email" placeholder="Email" />
+                </div>
+
+
+                <div class="doc-container">
+                    <h5 class="subtitulo-form">Tipo de documento:</h5>
+                    <label for="id-jur">Cedula Juridica</label>
+                    <input id="id-jur" type="radio" name="identificacion" />
+
+                    <label for="id-fis">Cedula Fisica</label>
+                    <input id="id-fis" type="radio" name="identificacion" />
+
+                    <label for="id-res">Cedula Residencia</label>
+                    <input id="id-res" type="radio" name="identificacion" />
+
+                    <label for="id-pass">Pasaporte</label>
+                    <input id="id-pass" type="radio" name="identificacion" />
+
+
+                </div>
+                <input class="id-text" type="number" name="id-num" id="id-num" placeholder="Numero de identificacion" />
+                <div></div>
+                <label class="hojaDelincuencia" for="id-hoja">Subir hoja de delincuencia</label>
+                <input class="hojaDelincuencia" type="file" id="id-hoja" name="id-hoja" accept="image/png, image/jpeg" style='display: none;'>
+
+
+                <div class="location-container">
+                    <h5>Locacion:</h5>
+                    <select class="id-provincia" id="id-provincia" onchange="asignarCanton()">
+                            <option>Provincia</option>
+                            <option id = "Heredia" value="Heredia">Heredia</option>
+                            <option id = "Cartago" value="Cartago">Cartago</option>
+                            <option id="SanJose" value="SanJose">San Jose</option>
+                        </select>
+
+                    <select class="id-canton" id="id-canton" onchange="asignarDistrito()">
+                        <option>Canton</option>
+                    </select>
+                    <select class="id-distrito" id="id-distrito">
+                        <option>Distrito</option>
+                    </select>
+                </div>
+
+
+                <textarea class="text-area" placeholder="Direccion Exacta" style="resize: none;"></textarea>
+                <label for="id-mascotas">Tipo de mascotas: </label>
+                <select name="id-mascotas" id="id-mascotas">
+                            <option value="animal">Gato</option>
+                            <option value="animal">Perro</option>
+                        </select>
+
+
+                <div class="map" id="map"></div>
+                <a id="registroCliente" href="">Registrarse como cliente</a>
+                <input id="botton-crear" type="button" value="Crear Cuenta">
+            </form>
+
+        </div>
+
+
+
+    </main>
+
+
+    <footer>
+
+        <section class="footerCopyRedes">
+            <section class="mainCopyRedes">
+                <section class="footerCopy">
+                    <h5>CONTÁCTENOS:</h5>
+                    <h6>Email</h6>
+                    <p> http://www.abaanimal.org/</p>
+                    <h6>Teléfono</h6>
+                    <p>(506) 8849-0592</p>
+                </section>
+                <section class="footerCopy2">
+                    <h5>POLITICAS</h5>
+                    <p>Costa Rica tiene ley contra el maltrato y crueldad animal, instamos a todos los ciudadanos a utilizar la nueva ley 9458. Por este medio les proveeremos información sobre como aplicar la ley de bienestar animal en los distintos casos
+                        que puedan presentarse.</p>
+
+                </section>
+                <section class="footerRedes" id="footerRedes">
+                    <a href="https://www.facebook.com/" class="fab fa-facebook-f facebook"></a>
+                    <a href="https://twitter.com/" class="fab fa-twitter twitter"></a>
+                    <a href="https://www.instagram.com/" class="fab fa-instagram instagram"></a>
+                </section>
+            </section>
+    </footer>
+
+</body>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAImgkkgiAf2iKBfHt9xE5xk8XZ8Hiv40g&callback=initMap"></script>
+<script src="js/registrar-proveedor.js"></script>
+<script src="js/validacion-provincias.js"></script>
+<script type="text/javascript" src="js/registrar-proveedor.js"></script>
+
+</html>

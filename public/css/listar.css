@@ -1,0 +1,42 @@
+body {
+    background: url(https://images.pexels.com/photos/1419923/pexels-photo-1419923.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background-repeat: no-repeat;
+}
+
+.main-content {
+    margin-top: 10%;
+    margin-left: 20%;
+    padding-bottom: 9%;
+}
+
+.Lista-container {
+    background-color: rgb(237, 245, 225);
+    width: 70%;
+    height: 300px;
+    text-align: center;
+    overflow-y: scroll;
+}
+
+.Lista-container>h3 {
+    padding: 10px;
+    background-color: rgba(5, 56, 107, 90%);
+    font-weight: bold;
+    color: rgb(237, 245, 225);
+}
+
+th {
+    font-weight: bold;
+    color: rgb(237, 245, 225);
+    background-color: rgba(5, 56, 107, 60%);
+}
+
+th,
+td {
+    border: 1px solid black;
+    padding: 5px;
+    width: 100%;
+}
+
+.footerCopyRedes {
+    bottom: 100vh;
+}
