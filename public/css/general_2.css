@@ -68,6 +68,12 @@ p {
 
 /*Inicio de estilos del footer*/
 
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
 .footerCopyRedes {
     width: 100%;
     background: #8EE4AF;

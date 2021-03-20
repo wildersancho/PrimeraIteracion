@@ -12,16 +12,14 @@ let inputsegundoApellidoCliente = document.querySelector('#txtSegundoApellidoCli
 
 let inputfechaCliente = document.querySelector('#txtFechaCliente');
 let inputedadCliente = document.querySelector('#txtEdadCliente');
-let inputcantidadMascota = document.querySelector('txtCantidadMascota')
+let inputcantidadMascota = document.querySelector('#txtCantidadMascotas');
 let elementoFotoCliente = document.querySelector('#txtFotoCliente');
 let divCaptcha = document.querySelector('#captcha');
 let accion = 'Registrar';
 let fecha = new Date().toLocaleString();
-
 let botonRegistrarCliente = document.querySelector('#btnRegistrarCliente');
 
 botonRegistrarCliente.addEventListener('click', obtenerDatosCliente);
-
 
 async function obtenerDatosCliente() {
     let error = false;
@@ -38,111 +36,63 @@ async function obtenerDatosCliente() {
     let fechaClienteSplit = inputfechaCliente.value.split("-");
     let fechaCliente = fechaClienteSplit[2] + '/' + fechaClienteSplit[1] + '/' + fechaClienteSplit[0];
     let edadCliente = Number(inputedadCliente.value);
-    let cantidadMascotas = inputcantidadMascota
+    let cantidadMascotas = Number(inputcantidadMascota.value);
     let captcha = document.querySelector('#g-recaptcha-response').value;
     let fotoCliente = elementoFotoCliente.src;
 
-    error = validarCliente(tipoIDCliente, identificacionCliente, nombreUsuario, nombreCliente, primerApellidoCliente, email,
-        fechaSinFormato, edadCliente, cantidadMascotas, fotoCliente, captcha);
-
+    error = validarCliente(nombreUsuario, tipoIDCliente, identificacionCliente, nombreCliente, primerApellidoCliente, email, fechaSinFormato, edadCliente, cantidadMascotas, fotoCliente, captcha);
 
 
     if (error == true) {
-        swal({
+        swal.fire({
             title: 'Registro incorrecto',
             text: 'No se pudo registrar su cuenta, revise los campos en rojo',
-            type: 'warning',
+            icon: 'warning',
             confirmButtonText: 'Entendido'
         });
     } else {
-        console.log("Iniciando backend");
-        //Validar primero con clientes
-        let usuarioRepetido = await verificarUsuarioCliente(nombreUsuario);
-
+        //Validar usuario ya registrado
+        let usuarioRepetido = false;
         if (usuarioRepetido) {
-
             inputnombreUsuario.classList.add('errorInput');
-            swal({
+            swal.fire({
                 title: 'Nombre de usuario ya registrado',
                 text: 'Por favor escoger un nombre de usuario diferente',
-                type: 'warning',
+                icon: 'warning',
                 confirmButtonText: 'Entendido'
             });
         } else {
             inputnombreUsuario.classList.remove('errorInput');
-            //Validar ahora con duenos
-            usuarioRepetido = await verificarUsuarioDueno(nombreUsuario);
-
-            if (usuarioRepetido) {
-
-                inputnombreUsuario.classList.add('errorInput');
-                swal({
-                    title: 'Nombre de usuario ya registrado',
-                    text: 'Por favor escoger un nombre de usuario diferente',
-                    type: 'warning',
-                    confirmButtonText: 'Entendido'
-                });
-            } else {
-                inputnombreUsuario.classList.remove('errorInput');
-                //Validar ahora correo con clientes
-                let emailRepetido = await verificarCorreoCliente(email);
-                if (emailRepetido) {
-                    inputemail.classList.add('errorInput');
-                    swal({
-                        title: 'Correo electrónico de cuenta ya registrado',
-                        text: 'Por favor escoger un correo electrónico de cuenta diferente',
-                        type: 'warning',
-                        confirmButtonText: 'Entendido'
+            let emailRepetido = false;
+            if (emailRepetido) {} else {
+                inputemail.classList.remove('errorInput');
+                registrarBitacora(tipoIDCliente, identificacionCliente, email, nombreUsuario, nombreCliente, primerApellidoCliente, fechaCliente, cantidadMascotas)
+                if (error == false) {
+                    swal.fire({
+                        title: 'Registro correcto',
+                        icon: 'success',
+                        showConfirmButton: false
                     });
                 } else {
-                    inputemail.classList.remove('errorInput');
-                    //Validar ahora correo con duenos (correoNegocio)
-                    emailRepetido = await verificarCorreoDueno(email);
-
-                    if (correoRepetido) {
-                        inputemail.classList.add('errorInput');
-                        swal({
-                            title: 'Correo electrónico de cuenta ya registrado',
-                            text: 'Por favor escoger un correo electrónico de cuenta diferente',
-                            type: 'warning',
-                            confirmButtonText: 'Entendido'
-                        });
-                    } else {
-                        inputemail.classList.remove('errorInput');
-                        let respuesta = registrarLinea(tipoUsuario, tipoIDCliente, identificacionCliente, nombreUsuario, nombreCliente, segundoNombreCliente, primerApellidoCliente, segundoApellidoCliente, email, fechaCliente, edadCliente, cantidadMascotas, fotoCliente, captcha);
-                        registrarBitacora(nombreUsuario, accion, 'cliente', primerNombreCliente + ' ' + primerApellidoCliente + ' ' + segundoApellidoCliente, fecha);
-                        console.log("Terminando al backend");
-                        if (respuesta.success == true) {
-                            swal({
-                                title: 'Registro correcto',
-                                text: respuesta.msg,
-                                type: 'success',
-                                showConfirmButton: false
-                            });
-                            setTimeout(() => {
-                                location.href = "http://localhost:3000/public/inicioSesion.html"
-                            }, 3000);
-                        } else {
-                            swal({
-                                title: 'Registro incorrecto',
-                                text: respuesta.msg,
-                                type: 'error',
-                                confirmButtonText: 'Entendido'
-                            });
-                        }
-                    }
+                    swal.fire({
+                        title: 'Registro incorrecto',
+                        icon: 'error',
+                        confirmButtonText: 'Entendido'
+                    });
                 }
+
             }
         }
     }
 };
 
 
-function validarCliente(pnombreUsuario, ptipoIDCliente, pidentificacionCliente, pnombreCliente, pprimerApellidoCliente, psegundoApellidoCliente, pemail, pfechaCliente, pedadCliente, pfotoCliente, pcaptcha) {
+function validarCliente(pnombreUsuario, ptipoIDCliente, pidentificacionCliente, pnombreCliente, pprimerApellidoCliente, pemail, pfechaCliente, pedadCliente, pcantidadMascotas, pfotoCliente, pcaptcha) {
     let error = false;
     let expLetras = /^[a-z A-ZáéíóúñÑÁÉÍÓÚüÜ]+$/;
     let regExpNumeros = /^[0-9]+$/;
-    let regExpAlfanumericos = /^[a-z A-ZáéíóúñÑÁÉÍÓÚüÜ0-9]+$/;
+    /*let regExpAlfanumericos = /^[a-z A-ZáéíóúñÑÁÉÍÓÚüÜ0-9]+$/;*/
+    let regExpAlfanumericos = /^[a-z]+$/;
     let expCorreo = /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
     console.log("validando");
 
@@ -164,7 +114,9 @@ function validarCliente(pnombreUsuario, ptipoIDCliente, pidentificacionCliente, 
         error = true;
         inputidentificacionCliente.classList.add('errorInput');
     } else {
-        if ((ptipoIDCliente == 'Cédula de Identidad' && (pidentificacionCliente.length == 9 || pidentificacionCliente.length == 10) && regExpNumeros.test(pidentificacionCliente) == true) || (ptipoIDCliente == 'Cédula de Residencia' && regExpAlfanumericos.test(pidentificacionCliente))) {
+        if ((ptipoIDCliente == 'Cédula de Identidad' && (pidentificacionCliente.length == 9 || pidentificacionCliente.length == 10) && regExpNumeros.test(pidentificacionCliente) == true)) {
+            inputidentificacionCliente.classList.remove('errorInput');
+        } else if (ptipoIDCliente != 'Cédula de Identidad' && regExpAlfanumericos.test(pidentificacionCliente) == true) {
             inputidentificacionCliente.classList.remove('errorInput');
         } else {
             inputidentificacionCliente.classList.add('errorInput');
@@ -176,13 +128,6 @@ function validarCliente(pnombreUsuario, ptipoIDCliente, pidentificacionCliente, 
         inputprimerApellidoCliente.classList.add('errorInput');
     } else {
         inputprimerApellidoCliente.classList.remove('errorInput');
-    }
-
-    if (psegundoApellidoCliente == '' || expLetras.test(psegundoApellidoCliente) == false) {
-        error = true;
-        inputsegundoApellidoCliente.classList.add('errorInput');
-    } else {
-        inputsegundoApellidoCliente.classList.remove('errorInput');
     }
 
     if (pemail == '' || expCorreo.test(pemail) == false) {
@@ -199,14 +144,14 @@ function validarCliente(pnombreUsuario, ptipoIDCliente, pidentificacionCliente, 
         inputfechaCliente.classList.remove('errorInput');
     }
 
-    if (pedadCliente == '' || pedadCliente < inputEdadCliente.min || pedadCliente > inputedadCliente.max || regExpNumeros.test(inputedadCliente.value) == false) {
+    if (pedadCliente == '' || pedadCliente < inputedadCliente.min || pedadCliente > inputedadCliente.max || regExpNumeros.test(inputedadCliente.value) == false) {
         error = true;
         inputedadCliente.classList.add('errorInput');
     } else {
         inputedadCliente.classList.remove('errorInput');
     }
 
-    if (pfotoCliente == 'http://localhost:3000/public/imgs/foto.png') {
+    if (pfotoCliente == 'http://127.0.0.1:5500/public/imgs/foto.png') { /*Arreglar*/
         error = true;
         elementoFotoCliente.classList.add('errorInput');
     } else {
@@ -218,6 +163,12 @@ function validarCliente(pnombreUsuario, ptipoIDCliente, pidentificacionCliente, 
         divCaptcha.classList.add('errorInput');
     } else {
         divCaptcha.classList.remove('errorInput');
+    }
+    if (pcantidadMascotas < 1) {
+        error = true;
+        inputcantidadMascota.classList.add('errorInput');
+    } else {
+        inputcantidadMascota.classList.remove('errorInput');
     }
 
     return error;
@@ -232,21 +183,24 @@ function calcularEdad() {
     inputedadCliente.value = edad;
 }
 
+function registrarBitacora(selecttipoIDCliente, inputidentificacionCliente, inputemail, inputnombreUsuario, inputnombreCliente, inputprimerApellidoCliente, inputfechaCliente, inputcantidadMascota) {
+    var infoTabla = new Array();
+    //Agregar elemento al arreglo:
+    let nuevo_item = [selecttipoIDCliente, inputidentificacionCliente, inputemail, inputnombreUsuario, inputnombreCliente, inputprimerApellidoCliente, inputfechaCliente, inputcantidadMascota];
+    infoTabla.push(nuevo_item);
+    createCookie(inputidentificacionCliente, infoTabla);
+};
+
+var createCookie = function(name, value, days) {
+    var expires;
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toGMTString();
+    } else {
+        expires = "";
+    }
+    document.cookie = name + "=" + value + expires + "; path=/";
+}
 
 inputfechaCliente.addEventListener('change', calcularEdad);
-
-//Para captcha (creo)
-$(document).ready(function() {
-    $('#comment_form').submit(function() {
-        $(this).ajaxSubmit({
-            error: function(xhr) {
-                status('Error: ' + xhr.status);
-            },
-            success: function(response) {
-                console.log(response);
-            }
-        });
-        //Very important line, it disable the page refresh.
-        return false;
-    });
-});

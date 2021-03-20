@@ -16,7 +16,7 @@ main {
     background-size: cover;
     padding: 40px 40px;
     height: -200px;
-    background-color: #8EE4AF;
+    background-color: #60a2ff;
     /*cambia color fondo de pantalla*/
     /*background-color: rgba(0, 98, 102,0.1);*/
     /*background-image: url("../imgs/registrarLineaPalmeras.jpg");*/
@@ -53,7 +53,7 @@ main h1 {
 #cliente1 {
     width: 50%;
     float: left;
-    margin-left: 20px;
+    margin-left: 40px;
     margin-right: 20px;
     padding-right: 0px;
     margin-bottom: 70px;
@@ -62,14 +62,13 @@ main h1 {
 }
 
 
-/* #cliente2 diuv {
-    width: 50%;
+/*#cliente2 {
     float: right;
-    margin-right: 20px;
+    margin-right: 90px;
     margin-left: 20px;
     padding-left: 0px;
-    margin-bottom: 60px;
-} */
+    margin-bottom: 5px;
+}*/
 
 #sctFoto {
     padding: 20px;
@@ -211,5 +210,33 @@ option {
 #captcha {
     margin-top: 40px;
     margin-left: 5px;
-    max-height: 56px;
+    max-height: 50px;
+}
+
+#cliente3 {
+    float: right;
+}
+
+
+/*tablas de clientes*/
+
+#tbl-clientes td {
+    border: #05386B 2px solid;
+    font-size: 12px;
+    background-color: #ffffff;
+}
+
+#tbl-clientes tr {
+    border: #05386B 2px solid;
+    color: #05386B;
+    background-color: #ffffff;
+}
+
+#tbl-clientes th {
+    padding: 5px;
+    border: #05386B 2px solid;
+    font-size: 15px;
+    color: #ffffff;
+    font-weight: bold;
+    background-color: #05386B;
 }
