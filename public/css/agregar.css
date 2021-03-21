@@ -1,0 +1,26 @@
+body {
+    background-image: url(https://images.pexels.com/photos/4492047/pexels-photo-4492047.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+main {
+    background-size: cover;
+    padding: 100px 50px;
+    height: -200px
+    /*cambia color fondo de pantalla*/
+    /*background-color: rgba(0, 98, 102,0.1);*/
+    /*background-image: url("../imgs/registrarLineaPalmeras.jpg");*/
+}
+
+form {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    padding: 20px 10px;
+    background: rgba(5, 56, 107, 90%)/*color del cudaro del form*/
+}
+
+form {
+    display: flow-root;
+    width: 40%;
+}
