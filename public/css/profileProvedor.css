@@ -1,237 +1,198 @@
-* {
-    box-sizing: border-box;
-}
-
-main section h1 {
-    font-size: 25px;
-    margin-bottom: 3px;
-    text-align: center;
-    color: #05386B;
-}
-
-main section h2 {
-    font-size: 20px;
-    color: #05386B;
-}
-
-main section p {
-    font-size: 16px;
-    margin-bottom: 3px;
-    color: black;
-}
-
 body {
-    margin: 0;
-    background-color: rgba(5, 56, 107, 70%);
-    font-family: sans-serif;
+    background-image: url(https://images.pexels.com/photos/7174/summer-grass.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: cover;
 }
 
-td,
-th {
-    border: 1px solid #dddddd;
-    text-align: left;
+.contenedor-perfil {
+    display: flex;
+    flex-direction: column;
+    width: 1000px;
+    height: 1350px;
+    margin-top: 2%;
+    margin-bottom: 1%;
+    margin-left: 22%;
+    background-color: rgba(5, 56, 107, 90%);
+    border-radius: 20px;
+}
+
+.sct-info h3 {
+    font-weight: bold;
+    color: white;
+    margin: 30px 0px 10px 110px;
+    font-size: 20px;
+}
+
+p {
+    color: white;
+}
+
+li {
+    color: white;
+}
+
+#titulo {
+    font-weight: bolder;
+    color: rgb(237, 245, 225);
+    padding: 10px;
+    margin-left: 42.9%;
+}
+
+.contenedor-perfil>img {
+    height: 200px;
+    width: 200px;
+    border-radius: 30px;
+    border: 15px solid rgba(237, 245, 225, 20%);
+    margin-bottom: 2%;
+    margin-left: 38%;
+}
+
+.submenu {
+    display: flex;
+    justify-content: space-around;
+    padding-right: 5%;
+    margin-bottom: 5px;
+    height: 30px;
+    flex-grow: inherit;
+}
+
+.submenu>a>input {
+    border-radius: 10px;
+    border: none;
+    text-decoration: none;
+    font-weight: lighter;
+    color: rgb(237, 245, 225);
+    background-color: rgba(92, 219, 149, 40%);
+    padding: 7px;
+    margin-right: auto;
+}
+
+.submenu>a>input:hover {
+    background-color: rgba(237, 245, 225, 20%);
     padding: 8px;
 }
 
-th {
-    font-size: 20px;
+#fecha-nacimiento {
+    margin-left: 23%;
+}
+
+.info-personal {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 3%;
+    color: rgb(237, 245, 225);
+    background-color: rgba(237, 245, 225, 10%);
+    height: 60px;
+    margin-top: -0px;
+}
+
+.info-personal>div>h3 {
     font-weight: bold;
 }
 
-table {
+.info-personal>div>p {
+    font-size: small;
+    margin-left: 10px;
+    margin-top: 1px;
+}
+
+.info-personal>div>h3,
+p {
+    margin-top: 12px;
+}
+
+.direccion-position {
+    margin-left: 30%;
+}
+
+.información {
     width: 400px;
-}
-
-.container {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-.containerFoto {
-    padding-top: 80px;
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-.button {
-    background-color: #05386B;
-    border: none;
-    padding: 15px 40px;
-    border-radius: 20px;
-    cursor: pointer;
-}
-
-.datos {
-    width: 1000px;
-    height: 360px;
+    height: 180px;
+    background-color: rgba(237, 245, 225, 20%);
     display: flex;
-    margin-right: 50px
+    align-items: center;
+    padding: 20px;
+    margin: 10px;
 }
 
-.card {
-    margin-right: 50px;
-    margin-top: 50px;
-    height: 350px;
+.información table tr {
+    border: 2px solid rgba(5, 56, 107, 90%);
+    height: 30px;
 }
 
-.container1 {
-    width: 450px;
-    display: flex;
-}
-
-.container1 .container {
-    width: 450px;
-}
-
-.container2 .container {
-    width: 450px;
-}
-
-.container2 {
-    width: 450px;
-    display: flex;
-}
-
-
-/* Style For Navigation */
-
-.nav {
-    height: 50px;
-    line-height: 50px;
-    background-color: white;
-    border-bottom: solid 2px #60a2ff;
-}
-
-.nav h1 {
-    color: #272727;
-    font-size: 18px;
-}
-
-
-/* Style For Content */
-
-.content {
-    width: 100%;
-    height: 100%;
-}
-
-.checked {
-    color: orange;
-}
-
-
-/* Style For Profile Section */
-
-.profile-section {
-    float: left;
-    width: 25%;
-    height: 100%;
+.información table td {
+    border: 2px solid rgba(5, 56, 107, 90%);
+    width: 200px;
     text-align: center;
-    padding-top: 30px;
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(255, 255, 255, 0.8)), url("../imgs/pexels-leah-kelley-193035.jpg");
-    background-size: cover;
-    background-position: top;
-}
-
-.card-body .buttonNotificacion {
-    background: #8EE4AF;
-    color: #05386B;
-    font-size: 16px;
-    padding: 8px 30px;
-    font-family: 'Montserrat', sans-serif;
-    border: none;
-    border-radius: 5px;
-    margin: 20px auto 20px 100px;
-}
-
-.profile-section .buttonNotificacion {
-    background: #8EE4AF;
-    color: #05386B;
-    font-size: 16px;
-    padding: 8px 30px;
-    font-family: 'Montserrat', sans-serif;
-    border: none;
-    border-radius: 5px;
-    margin-bottom: 35px;
-}
-
-.profile-section .buttonNotificacion:hover {
-    background-color: white;
-    color: #4c99b8;
-    transition: all 0.3s;
-}
-
-.profile-section .buttonHistorial {
-    background: #8EE4AF;
-    color: #05386B;
-    font-size: 16px;
-    padding: 8px 30px;
-    font-family: 'Montserrat', sans-serif;
-    border: none;
-    border-radius: 5px;
-    margin-bottom: 35px;
-}
-
-.profile-section .buttonHistorial:hover {
-    background-color: white;
-    color: #4c99b8;
-    transition: all 0.3s;
-}
-
-.profile-photo {
-    width: 50%;
-    height: 24%;
-    border: solid 3px white;
-    border-radius: 50%;
-}
-
-.profile-name {
-    color: #fff;
-    font-weight: bold;
-    font-size: 18px;
-}
-
-.profile-detail {
-    color: #fff;
-    font-size: 14px;
-    line-height: 25px;
-}
-
-.profile-follow {
-    background-color: #39b85d;
     color: white;
-    transition: all 0.3s;
-    font-size: 15px;
+    padding-top: 5px;
 }
 
-
-/* Style For Detail Section */
-
-.detail-section {
-    float: left;
-    width: 75%;
-    padding-top: 30px;
-}
-
-
-/* Card Style */
-
-.card {
-    background-color: rgba(237, 245, 225, 50%);
-    line-height: 25px;
-    margin-bottom: 15px;
-    border-radius: 20px;
-}
-
-.card-title {
+.información table th {
+    border: 2px solid rgba(5, 56, 107, 90%);
+    width: 200px;
+    text-align: center;
+    color: white;
+    padding-top: 5px;
     font-weight: bold;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    color: #2d2d2d;
-    border-bottom: solid 2px #dbdbdb;
 }
 
-.card-body {
-    padding-top: 15px;
-    padding-bottom: 15px;
+.información ul li {
+    text-decoration: double;
+    list-style: disc;
+    margin: 10px;
+}
+
+.información-comentarios ul li {
+    text-decoration: double;
+    list-style: disc;
+    margin: 10px;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.información-contacto {
+    width: 400px;
+    height: 180px;
+    background-color: rgba(237, 245, 225, 20%);
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    margin: 10px;
+}
+
+.información-comentarios {
+    width: 800px;
+    height: 180px;
+    background-color: rgba(237, 245, 225, 20%);
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    margin: 10px;
+}
+
+.información-contacto table tr {
+    border: 2px solid rgba(5, 56, 107, 90%);
+    height: 30px;
+}
+
+.información-contacto table td {
+    border: 2px solid rgba(5, 56, 107, 90%);
+    width: 200px;
+    color: white;
+    padding-top: 5px;
+    width: 300px;
+}
+
+.información-contacto table th {
+    border: 2px solid rgba(5, 56, 107, 90%);
+    width: 200px;
+    color: white;
+    padding-top: 5px;
+    font-weight: bold;
 }

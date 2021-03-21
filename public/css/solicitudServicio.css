@@ -3,6 +3,12 @@ html {
     /*font-size: 18px;*/
 }
 
+body {
+    background-image: url(https://images.pexels.com/photos/2194261/pexels-photo-2194261.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .errorInput {
     border: 2px solid #EE5A24;
 }
@@ -14,19 +20,21 @@ html {
 
 main {
     background-size: cover;
-    padding: 40px 40px;
+    padding: 100px 50px;
     height: -200px;
-    background-color: #8EE4AF;
     /*cambia color fondo de pantalla*/
     /*background-color: rgba(0, 98, 102,0.1);*/
     /*background-image: url("../imgs/registrarLineaPalmeras.jpg");*/
+    margin-bottom: 50px;
 }
 
 form {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
     border-radius: 15px;
     padding: 20px 10px;
-    background: rgba(0, 0, 0, 0.5)/*color del cudaro del form*/
+    background: rgba(5, 56, 107, 90%);
+    /*color del cudaro del form*/
+    margin-bottom: 50px;
 }
 
 form {

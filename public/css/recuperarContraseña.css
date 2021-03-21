@@ -7,6 +7,11 @@ html {
     border: 4px solid #e9201d;
 }
 
+body {
+    background-image: url(https://images.pexels.com/photos/406014/pexels-photo-406014.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background-size: cover;
+}
+
 
 /* Inicio: estilos del main */
 
@@ -26,11 +31,14 @@ main section div {
 /* Fin: estilos del main */
 
 h1 {
+    font-size: 36px;
     margin-top: 100px;
     display: flex;
     justify-content: center;
-    font-size: 30px;
-    font-weight: bold;
+    margin-top: 165px;
+    margin-bottom: 55px;
+    text-align: center;
+    color: #05386B
 }
 
 input {
@@ -47,14 +55,15 @@ p {
 
 form {
     width: 555px;
+    height: 335px;
     float: center;
     margin: 0 auto;
-    background: #05386B;
-    border-top: 6px solid #05386B;
+    background: rgba(5, 56, 107, 80%);
+    border-top: rgba(5, 56, 107, 80%);
     border-radius: 20px;
     padding: 25px;
-    color: white;
-    margin-top: 40px;
+    color: #fff;
+    margin-top: 5%;
     margin-bottom: 11%;
     text-align: center;
 }

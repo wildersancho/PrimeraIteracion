@@ -1,174 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <title>Perfil Usuario</title>
-    <meta charset="utf-8">
-    <meta name="description" content="Documento para registrarse en linea.">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Documento HTML5">
+    <title>Perfil Provedor</title>
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/general_2.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/profileProvedor.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/general_2.css">
+    <link rel="stylesheet" href="css/profileProvedor.css">
 </head>
 
+<body>
+    <header id="header-principal" class="header-principal">
+        <nav class="nav-contenedor">
+            <a href="index.html"><img src="imgs/IconoMenu.png" id="logo" /></a>
+            <a href="http://www.abaanimal.org/">Buscar un servicio</a>
+            <a href="http://www.abaanimal.org/">Ofrecer un servicio</a>
+            <a href="perfil-usuario.html">Mi Perfil</a>
+            <a class="cerrarSesion" href="inicioSesion.html">Cerrar Sesión</a>
+        </nav>
+    </header>
 
-<!-- Navbar -->
-<header id="header-principal" class="header-principal">
-    <nav class="nav-contenedor">
-        <a href="index.html"><img src="imgs/IconoMenu.png" id="logo" /></a>
-        <a href="inicioSesion.html">Inicio</a>
-        <a href="inicioSesion.html">Buscar un servicio</a>
-        <a href="inicioSesion.html">Ofrecer un servicio</a>
-        <a href="inicioSesion.html">Mi Perfil</a>
-        <a class="cerrarSesion" href="inicioSesion.html">Cerrar Sesión</a>
-    </nav>
-</header>
-<main>
-    <!-- Content -->
-    <section>
-        <div class="content">
+    <main class="main-content">
+        <div class="contenedor-perfil">
 
-            <!-- Profile Section -->
-            <div class="profile-section">
-                <div class="containerFoto">
-                    <img src="../public/imgs/pets.png" class="profile-photo">
-                    <br>
-                    <br>
-                    <p class="profile-name">PetCrew</p>
-                    <br>
-                    <p class="profile-detail">
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
-                        <br>
-                        <br>
-                        <button class="buttonNotificacion">Editar Perfil</button>
-                        <br>
-                        <br>
-                        <button class="buttonNotificacion">Notificaciones</button>
-                        <br>
+            <h1 id="titulo">Perfil Provedor</h1>
+            <img src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Fotos de perfil de perros">
+
+            <div class="submenu">
+                <a href="#"><input type="button" value="Editar Perfil"></a>
 
 
+            </div>
+            <div class="info-personal">
+
+            </div>
+            <div class="info-personal">
+                <div>
+                    <h3>Nombre: </h3>
+                    <p>Hotel Patitas</p>
+                </div>
+
+                <div class="apellido-position">
+                    <h3>Apellido: </h3>
+                    <p>Ipsum</p>
+                </div>
+
+
+
+                <div>
+                    <h3>Fecha de nacimiento: </h3>
+                    <p id="fecha-nacimiento">02/02/2020</p>
                 </div>
             </div>
+            <section class="cards">
 
-            <!-- Detail Section -->
-            <div class="detail-section">
-                <section class="datos">
+                <section class="sct-info">
 
-                    <div class="container1">
+                    <h3>Servicios y Precios</h3>
+                    <div class="información">
+                        <table>
+                            <tr>
+                                <th>Servicios</th>
+                                <th>Precio</th>
 
-                        <div class="card">
-                            <div class="container">
-                                <div class="card-title">
-                                    <h1>Mis Datos</h1>
-                                </div>
-                                <div class="card-body">
-                                    <h2>Nombre:</h2>
-                                    <p> Wilder</p>
-                                    <h2>Apellido:</h2>
-                                    <p>Sancho</p>
-                                    <h2>Fecha Nacimiento:</h2>
-                                    <p>Fecha Nacimiento: 25-06-1987</p>
-                                    <h2>Dirección</h2>
-                                    <p>El Carmen, Alajuela</p>
+                            </tr>
+                            <tr>
+                                <td>Paseo para perros</td>
+                                <td>10000</td>
 
-                                </div>
-                            </div>
+                            </tr>
+                            <tr>
+                                <td>Peluqueria</td>
+                                <td>30000</td>
 
-                        </div>
-                        <div class="container2">
+                            </tr>
+                            <tr>
+                                <td>Guarderia</td>
+                                <td>70000</td>
 
-                            <div class="card">
-                                <div class="container">
-                                    <div class="card-title">
-                                        <h1>Servicios</h1>
-                                    </div>
-                                    <div class="card-body">
-                                        <table>
-                                            <tr>
-                                                <th>Servicios</th>
-                                                <th>Precio</th>
+                            </tr>
+                            <tr>
+                                <td>Hotel</td>
+                                <td>12000</td>
 
-                                            </tr>
-                                            <tr>
-                                                <td>Paseo para perros</td>
-                                                <td>10000</td>
+                            </tr>
 
-                                            </tr>
-                                            <tr>
-                                                <td>Peluqueria</td>
-                                                <td>30000</td>
+                        </table>
+                    </div>
+                    <div class="submenu">
+                        <a href="#"><input type="button" value="Editar Servicios"></a>
 
-                                            </tr>
-                                            <tr>
-                                                <td>Guarderia</td>
-                                                <td>70000</td>
 
-                                            </tr>
-                                            <tr>
-                                                <td>Hotel</td>
-                                                <td>12000</td>
-
-                                            </tr>
-
-                                        </table>
-                                        <button class="buttonNotificacion">Modificar Servicios</button>
-                                    </div>
-                                </div>
-
-                            </div>
+                    </div>
                 </section>
+                <section class="sct-info">
 
-                <div class="card">
-                    <div class="container">
-                        <div class="card-title">
-                            <h1>Notificaciones Recientes</h1>
-                        </div>
-                        <div class="card-body">
-                            <p>Aún no hay notificaciones, lo sentimos</p>
-                        </div>
+                    <h3>Notificaciones</h3>
+                    <div class="información">
+                        <ul>
+                            <li>Carlos quiere un servicio de Hotel</li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
                     </div>
-                </div>
-                <div class="card">
-                    <div class="container">
-                        <div class="card-title">
-                            <h1>Comentarios</h1>
-                        </div>
-                        <div class="card-body">
-                            <p>Aún no tienes mascotas registradas</p>
-                        </div>
+                    <div class="submenu">
+                        <a href="#"><input type="button" value="Mas detalles"></a>
+
+
                     </div>
-                </div>
-                </div>
-                </div>
-            </div>
-            </body>
-    </section>
-</main>
+                </section>
+                <section class="sct-info">
+
+                    <h3>Informacion de Contacto</h3>
+                    <div class="información-contacto">
+                        <table>
+                            <tr>
+                                <th>Correo Eltronico</th>
+                            </tr>
+                            <tr>
+                                <td>correr@correo.com</td>
+
+                            </tr>
+                            <tr>
+                                <th>Direccion</th>
+                            </tr>
+                            <tr>
+                                <td>300m Sur de Multiplaza Escazu</td>
+
+                            </tr>
+
+                        </table>
+                    </div>
+
+
+
+
+
+
+                </section>
+                <section class="sct-info">
+
+                    <h3>Acerca de Nosotros</h3>
+                    <div class="información">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio debitis mollitia harum blanditiis rem maiores necessitatibus repellat molestiae ullam. Recusandae fugit optio esse odit assumenda at, obcaecati quaerat neque debitis.</p>
+                    </div>
+
+                </section>
+                <section class="sct-info">
+
+                    <h3 class="h3-comentarios">Comentarios</h3>
+                    <div class="información-comentarios">
+                        <ul>
+                            <li>Exelente servicio</li>
+                            <li>Muy amables, mis perros quedaron muy felices</li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+
+                </section>
+            </section>
+
+
+        </div>
+    </main>
+</body>
 <footer>
-    <section class="footerCopyRedes">
-        <section class="mainCopyRedes">
-            <section class="footerCopy">
+    <section class=" footerCopyRedes ">
+        <section class="mainCopyRedes ">
+            <section class="footerCopy ">
                 <h5>CONTÁCTENOS:</h5>
                 <h6>Email</h6>
                 <p> http://www.abaanimal.org/</p>
                 <h6>Teléfono</h6>
                 <p>(506) 8849-0592</p>
             </section>
-            <section class="footerCopy2">
+            <section class="footerCopy2 ">
                 <h5>POLITICAS</h5>
                 <p>Costa Rica tiene ley contra el maltrato y crueldad animal, instamos a todos los ciudadanos a utilizar la nueva ley 9458. Por este medio les proveeremos información sobre como aplicar la ley de bienestar animal en los distintos casos que
                     puedan presentarse.</p>
 
             </section>
-            <section class="footerRedes" id="footerRedes">
-                <a href="https://www.facebook.com/" class="fab fa-facebook-f facebook"></a>
-                <a href="https://twitter.com/" class="fab fa-twitter twitter"></a>
-                <a href="https://www.instagram.com/" class="fab fa-instagram instagram"></a>
+            <section class="footerRedes " id="footerRedes ">
+                <a href="https://www.facebook.com/ " class="fab fa-facebook-f facebook "></a>
+                <a href="https://twitter.com/ " class="fab fa-twitter twitter "></a>
+                <a href="https://www.instagram.com/ " class="fab fa-instagram instagram "></a>
             </section>
         </section>
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2 "></script>
+<script src="js/perfil-usuario.js "></script>
 
 </html>
