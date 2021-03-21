@@ -6,7 +6,6 @@ html {
 body {
     background-image: url(https://images.pexels.com/photos/2194261/pexels-photo-2194261.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
     background-repeat: no-repeat;
-    background-position: left;
     background-size: cover;
 }
 
@@ -216,6 +215,14 @@ option {
 
 
 /********/
+
+#registroCliente {
+    color: rgb(237, 245, 225);
+    font-weight: bold;
+    font-size: small;
+    text-decoration: none;
+    margin-top: 1%;
+}
 
 #captcha {
     margin-top: 10px;
