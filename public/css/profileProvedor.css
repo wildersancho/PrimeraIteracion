@@ -1,0 +1,237 @@
+* {
+    box-sizing: border-box;
+}
+
+main section h1 {
+    font-size: 25px;
+    margin-bottom: 3px;
+    text-align: center;
+    color: #05386B;
+}
+
+main section h2 {
+    font-size: 20px;
+    color: #05386B;
+}
+
+main section p {
+    font-size: 16px;
+    margin-bottom: 3px;
+    color: black;
+}
+
+body {
+    margin: 0;
+    background-color: rgba(5, 56, 107, 70%);
+    font-family: sans-serif;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+table {
+    width: 400px;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.containerFoto {
+    padding-top: 80px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.button {
+    background-color: #05386B;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.datos {
+    width: 1000px;
+    height: 360px;
+    display: flex;
+    margin-right: 50px
+}
+
+.card {
+    margin-right: 50px;
+    margin-top: 50px;
+    height: 350px;
+}
+
+.container1 {
+    width: 450px;
+    display: flex;
+}
+
+.container1 .container {
+    width: 450px;
+}
+
+.container2 .container {
+    width: 450px;
+}
+
+.container2 {
+    width: 450px;
+    display: flex;
+}
+
+
+/* Style For Navigation */
+
+.nav {
+    height: 50px;
+    line-height: 50px;
+    background-color: white;
+    border-bottom: solid 2px #60a2ff;
+}
+
+.nav h1 {
+    color: #272727;
+    font-size: 18px;
+}
+
+
+/* Style For Content */
+
+.content {
+    width: 100%;
+    height: 100%;
+}
+
+.checked {
+    color: orange;
+}
+
+
+/* Style For Profile Section */
+
+.profile-section {
+    float: left;
+    width: 25%;
+    height: 100%;
+    text-align: center;
+    padding-top: 30px;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(255, 255, 255, 0.8)), url("../imgs/pexels-leah-kelley-193035.jpg");
+    background-size: cover;
+    background-position: top;
+}
+
+.card-body .buttonNotificacion {
+    background: #8EE4AF;
+    color: #05386B;
+    font-size: 16px;
+    padding: 8px 30px;
+    font-family: 'Montserrat', sans-serif;
+    border: none;
+    border-radius: 5px;
+    margin: 20px auto 20px 100px;
+}
+
+.profile-section .buttonNotificacion {
+    background: #8EE4AF;
+    color: #05386B;
+    font-size: 16px;
+    padding: 8px 30px;
+    font-family: 'Montserrat', sans-serif;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 35px;
+}
+
+.profile-section .buttonNotificacion:hover {
+    background-color: white;
+    color: #4c99b8;
+    transition: all 0.3s;
+}
+
+.profile-section .buttonHistorial {
+    background: #8EE4AF;
+    color: #05386B;
+    font-size: 16px;
+    padding: 8px 30px;
+    font-family: 'Montserrat', sans-serif;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 35px;
+}
+
+.profile-section .buttonHistorial:hover {
+    background-color: white;
+    color: #4c99b8;
+    transition: all 0.3s;
+}
+
+.profile-photo {
+    width: 50%;
+    height: 24%;
+    border: solid 3px white;
+    border-radius: 50%;
+}
+
+.profile-name {
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.profile-detail {
+    color: #fff;
+    font-size: 14px;
+    line-height: 25px;
+}
+
+.profile-follow {
+    background-color: #39b85d;
+    color: white;
+    transition: all 0.3s;
+    font-size: 15px;
+}
+
+
+/* Style For Detail Section */
+
+.detail-section {
+    float: left;
+    width: 75%;
+    padding-top: 30px;
+}
+
+
+/* Card Style */
+
+.card {
+    background-color: rgba(237, 245, 225, 50%);
+    line-height: 25px;
+    margin-bottom: 15px;
+    border-radius: 20px;
+}
+
+.card-title {
+    font-weight: bold;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: #2d2d2d;
+    border-bottom: solid 2px #dbdbdb;
+}
+
+.card-body {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}

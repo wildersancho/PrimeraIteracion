@@ -3,13 +3,6 @@ html {
     /*font-size: 18px;*/
 }
 
-body {
-    background-image: url(https://images.pexels.com/photos/2194261/pexels-photo-2194261.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
-    background-repeat: no-repeat;
-    background-position: left;
-    background-size: cover;
-}
-
 .errorInput {
     border: 2px solid #EE5A24;
 }
@@ -21,9 +14,9 @@ body {
 
 main {
     background-size: cover;
-    padding: 100px 50px;
+    padding: 40px 40px;
     height: -200px;
-    /* background-color: #60a2ff; */
+    background-color: #8EE4AF;
     /*cambia color fondo de pantalla*/
     /*background-color: rgba(0, 98, 102,0.1);*/
     /*background-image: url("../imgs/registrarLineaPalmeras.jpg");*/
@@ -32,15 +25,12 @@ main {
 form {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
     border-radius: 15px;
-    padding: 10px 10px;
-    background: rgba(5, 56, 107, 90%)/*color del cudaro del form*/
+    padding: 20px 10px;
+    background: rgba(0, 0, 0, 0.5)/*color del cudaro del form*/
 }
 
 form {
     display: flow-root;
-    margin: 0 auto;
-    min-height: 400px;
-    /*para ponerlo en el centro*/
 }
 
 
@@ -72,19 +62,20 @@ main h1 {
 }
 
 
-/*#cliente2 {
+/* #cliente2 diuv {
+    width: 50%;
     float: right;
-    margin-right: 90px;
+    margin-right: 20px;
     margin-left: 20px;
     padding-left: 0px;
-    margin-bottom: 5px;
-}*/
+    margin-bottom: 60px;
+} */
 
 #sctFoto {
     padding: 20px;
     display: inline-block;
     border-radius: 15px;
-    margin-left: 0px;
+    margin-left: 150px;
 }
 
 #cliente3 {
@@ -117,7 +108,7 @@ textarea {
     background: rgba(0, 0, 0, 0.377);
     color: #f3f2f2;
     border: none;
-    border-bottom: 2px solid #a03ad3;
+    resize: none;
 }
 
 form label {
@@ -160,12 +151,13 @@ select {
     outline: none;
     border: none;
     border-bottom: 2px solid #379683;
+    margin-bottom: 20px;
 }
 
 form textarea {
     display: inline-block;
     vertical-align: top;
-    width: 200px;
+    width: 350px;
 }
 
 button {
@@ -216,13 +208,3 @@ option {
 
 
 /********/
-
-#captcha {
-    margin-top: 10px;
-    margin-left: 5px;
-    max-height: 20px;
-}
-
-#cliente3 {
-    float: right;
-}
