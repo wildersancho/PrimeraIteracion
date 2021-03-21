@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Documento HTML5">
+    <title>Perfil de Usuario</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/general_2.css">
+    <link rel="stylesheet" href="css/perfilProveedorCliente.css">
+</head>
+
+<body>
+    <header id="header-principal" class="header-principal">
+        <nav class="nav-contenedor">
+            <a href="index.html"><img src="imgs/IconoMenu.png" id="logo" /></a>
+            <a href="http://www.abaanimal.org/">Buscar un servicio</a>
+            <a href="http://www.abaanimal.org/">Ofrecer un servicio</a>
+            <a href="perfil-usuario.html">Mi Perfil</a>
+            <a class="cerrarSesion" href="inicioSesion.html">Cerrar Sesión</a>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="contenedor-perfil">
+            <div class="firstSection">
+                <h1 id="titulo">Perfil Proveedor</h1>
+                <img src="/imgs/pexels-kelvin-valerio-617278.jpg" alt="Fotos de perfil de perros">
+                <div class="DatosGenerales">
+                    <h3>Nombre</h3>
+                    <p>Patitos</p>
+                    <h3>Correo</h3>
+                    <p>patitos@gmail.com</p>
+                    <h3>Teléfono</h3>
+                    <p>12345678</p>
+                    <h3>Rating</h3>
+                    <p>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </p>
+
+                </div>
+                <div class="submenu">
+                    <a href="#"><input type="button" value="Solicitar Servicio"></a>
+                    <a href="#"><input type="button" value="Solicitar Servicios"></a>
+                    <a href="#"><input type="button" value="Calificar Servicio"></a>
+                    <a href=""><input type="button" value="Reportar"></a>
+                </div>
+            </div>
+            <div class="info-personal">
+
+                <div>
+                    <h3>Ubicación</h3>
+                    <p id="fecha-nacimiento">Heredia</p>
+                </div>
+                <div>
+                    <h3>Encargado</h3>
+                    <p id="fecha-nacimiento">Wilder Sancho</p>
+                </div>
+                <div>
+                    <h3>Tipo de Servicio</h3>
+                    <p id="fecha-nacimiento">Grooming</p>
+                </div>
+                <div>
+                    <h3>Estado</h3>
+                    <p id="fecha-nacimiento">Habilitado</p>
+                </div>
+            </div>
+            <div class="perfil-comentarios">
+                <div id="caja-comentarios" class="caja-comentarios">
+                    <h3>Comentarios</h3>
+                    <table id="tbl-comentarios" class="tabla-resultados" style="width: 100%">
+                        <tbody>
+                            <!--Registros-->
+                            <tr></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <input class="comentarios-text" id="comentarios-text" type="text">
+                <input class="comentarios-boton" id="comentarios-boton" type="button" value="Enviar Comentario">
+            </div>
+        </div>
+
+    </main>
+</body>
+<footer>
+    <section class=" footerCopyRedes ">
+        <section class="mainCopyRedes ">
+            <section class="footerCopy ">
+                <h5>CONTÁCTENOS:</h5>
+                <h6>Email</h6>
+                <p> http://www.abaanimal.org/</p>
+                <h6>Teléfono</h6>
+                <p>(506) 8849-0592</p>
+            </section>
+            <section class="footerCopy2 ">
+                <h5>POLITICAS</h5>
+                <p>Costa Rica tiene ley contra el maltrato y crueldad animal, instamos a todos los ciudadanos a utilizar la nueva ley 9458. Por este medio les proveeremos información sobre como aplicar la ley de bienestar animal en los distintos casos que
+                    puedan presentarse.</p>
+
+            </section>
+            <section class="footerRedes " id="footerRedes ">
+                <a href="https://www.facebook.com/ " class="fab fa-facebook-f facebook "></a>
+                <a href="https://twitter.com/ " class="fab fa-twitter twitter "></a>
+                <a href="https://www.instagram.com/ " class="fab fa-instagram instagram "></a>
+            </section>
+        </section>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2 "></script>
+<script src="js/solicitarServicioControlador.js"></script>
+
+</html>

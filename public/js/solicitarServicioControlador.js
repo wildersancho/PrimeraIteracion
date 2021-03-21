@@ -2,12 +2,12 @@
 'use strict';
 
 //Referencia de los campos HTMLs. (Elementos como tal, no su valor)
-const comentarios = document.querySelector('#txtComentarios');
-const boton_enviar = document.querySelector('#btn-enviar');
+const comentarios = document.querySelector('#comentarios-text');
+const boton_enviar = document.querySelector('#comentarios-boton');
 
 //TABLA dinamica ~ Variables
 var addComentarios = new Array();
-var tabla_reservas = document.querySelector('#tbl-reservaciones tbody');
+var tabla_reservas = document.querySelector('#tbl-comentarios tbody');
 
 const obtenerDatos = () => {
     console.log(`Nuevo Comentario: ${comentarios.value}`);
@@ -31,7 +31,7 @@ const llenar_tabla = () => {
 };
 
 function eraseText() {
-    document.getElementById("txtComentarios").value = "";
+    document.getElementById("comentarios-text").value = "";
 }
 
 boton_enviar.addEventListener('click', obtenerDatos);
