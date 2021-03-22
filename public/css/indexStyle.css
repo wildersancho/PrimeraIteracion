@@ -1,137 +1,104 @@
-body {
-    position: relative;
-    margin: 0;
-    min-height: 100%;
+main section div {
+    text-align: center;
 }
 
-* {
-    box-sizing: border-box;
+main section h1 {
+    font-size: 36px;
+    margin-bottom: 35px;
+    text-align: center;
+    color: #05386B;
 }
 
-main {
+.pageInfo .mainImage {
+    margin-top: 50px;
+    background-image: url('../imgs/pexels-snapwire-46024.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 300px;
     width: 100%;
-    height: max-content;
+    float: flex;
 }
 
-html {
-    font-family: 'Montserrat', sans-serif;
-    /*Cambia la topografia*/
+.pageInfo .infoGeneral {
+    display: flow-root;
+    width: 100%;
+    float: flex;
+}
+
+.pageInfo .infoGeneral {
+    padding: 20px 20px;
+}
+
+.pageInfo .infoGeneral h2 {
+    font-size: 34px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.pageInfo .infoGeneral p {
+    text-align: left;
+    font-size: 20px;
+    line-height: 27px;
+}
+
+.btnRegistrarme {
+    height: 75px;
+    width: 200px;
+    font-weight: bold;
+    background-color: #379683;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
     font-size: 16px;
-    /*Cambia el tamaño de la topografia*/
-}
-
-.slider {
-    width: 100%px;
-    height: 577px;
-    position: relative;
-    overflow: hidden;
-    margin: auto;
-    perspective: 800px;
-    box-shadow: 0 20px 40px 0 #000;
-    z-index: 1;
-}
-
-.imgs {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translateY(-100%) rotateX(360deg);
-    transition: all 1s;
-}
-
-.imgs img {
-    width: 100%;
-    height: 100%;
-}
-
-#img1 {
-    transform: translateY(0);
-    opacity: 1;
-}
-
-.imgs:target {
-    transform: translateY(0) rotateX(0deg);
-    opacity: 1;
-}
-
-.chevronLeft {
-    position: absolute;
-    top: 220px;
-    text-decoration: none;
-    color: #fff;
-    left: 0;
-    font-size: 40px;
-}
-
-.chevronRight {
-    position: absolute;
-    top: 220px;
-    text-decoration: none;
-    color: #fff;
-    right: 0;
-    font-size: 40px;
-}
-
-.contenidoImg1 {
-    width: 700px;
-    height: 250px;
-    position: relative;
-    top: -350px;
-    margin: auto;
-    padding: 15px;
-    background: rgba(45, 52, 54, 0.6);
-    color: #fff;
-    text-align: center;
-    border-radius: 20px;
-}
-
-.contenidoImg1 h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-
-.contenidoImg1 p {
-    line-height: 19px;
-    margin-bottom: 60px;
-}
-
-.contenidoImg1 a {
-    background: linear-gradient(#ff7251, #9b2948);
-    border: 0;
-    color: #dfe6e9;
-    text-decoration: none;
+    margin: 30px;
+    transition-duration: 0.4s;
     cursor: pointer;
-    border-radius: 20px;
-    padding: 15px 70px;
-    font-size: 15px;
 }
 
-.contenidoImg2 {
-    width: 600px;
-    position: relative;
-    top: -280px;
-    margin: auto;
-    padding: 15px;
-    background: rgba(45, 52, 54, 0.6);
-    color: #fff;
-    text-align: center;
-    border-radius: 20px;
-    font-size: 30px;
+.btnRegistrarme:hover {
+    background-color: #05386B;
+    color: white;
 }
 
-.contenidoImg8 {
-    width: 600px;
-    position: relative;
-    top: -320px;
-    margin-left: 200px;
-    padding: 15px;
-    background: rgba(45, 52, 54, 0.6);
-    color: #fff;
-    text-align: center;
-    border-radius: 20px;
-    font-size: 30px;
+.Servicios .botones img {
+    background-repeat: no-repeat;
+    height: 250px;
+    width: 250px;
+    background: #ffffff;
+    background-position: center;
+    border: 4px black solid;
+    float: flex;
+    margin-bottom: 25px;
+}
+
+.Servicios .botones .btn1:hover {
+    opacity: 0.3;
+}
+
+.Servicios .botones .btn2:hover {
+    opacity: 0.3;
+}
+
+.Servicios .botones .btn3:hover {
+    opacity: 0.3;
+}
+
+.Servicios .botones .btn4:hover {
+    opacity: 0.3;
+}
+
+.Servicios .botones .btn5:hover {
+    opacity: 0.3;
+}
+
+.opinions {
+    background-size: auto;
+    width: 100%;
+    float: flex;
 }
 
 .info {
@@ -148,90 +115,8 @@ html {
     vertical-align: middle;
 }
 
-#contenCardsLugares {
-    width: 822px;
-    margin-left: 16.1%;
-    border: 1px solid rgba(0, 0, 0, 0);
-}
-
-#contenCardsActividades {
-    width: 826px;
-    margin-left: 16.1%;
-    border: 1px solid rgba(0, 0, 0, 0);
-}
-
-.visibilityVisible {
-    visibility: visible;
-}
-
-.noneDisplay {
-    display: none;
-}
-
-main section h1 {
-    font-size: 36px;
-    margin-bottom: 35px;
-    text-align: center;
-    color: #ffffff;
-}
-
-main section div {
-    text-align: center;
-}
-
-main section label {
-    display: inline-block;
-    margin-right: 15px;
-    color: #ffffff;
-    width: 55.53px;
-}
-
-main section select {
-    width: 204px;
-    height: 36px;
-    font-family: 'Montserrat', sans-serif;
-    margin-bottom: 17.5px;
-}
-
-main section input {
-    display: inline-block;
-    width: 710px;
-    height: 36px;
-    font-family: 'Montserrat', sans-serif;
-    margin-right: -4px;
-}
-
-#btnBuscarLugares {
-    background: #000000;
-    color: #ffffff;
-    font-size: 16px;
-    padding: 8px 30px;
-    font-family: 'Montserrat', sans-serif;
-    border: none;
-    border-radius: 5px;
-}
-
-#btnBuscarLugares:hover {
-    background: rgba(0, 0, 0, 0.6);
-}
-
-#btnBuscarActividades {
-    background: #000;
-    color: #ffffff;
-    font-size: 16px;
-    padding: 8px 30px;
-    font-family: 'Montserrat', sans-serif;
-    border: none;
-    border-radius: 5px;
-}
-
-#btnBuscarActividades:hover {
-    background: rgba(0, 0, 0, 0.6);
-    ;
-}
-
 #btnBuscar {
-    background: #000000;
+    background: #05386B;
     color: #ffffff;
     font-size: 16px;
     padding: 8px 30px;
@@ -240,489 +125,40 @@ main section input {
     border-radius: 5px;
 }
 
-#btnBuscar:hover {
-    background: rgba(0, 0, 0, 0.6);
-}
-
-.cardOrange {
-    background: rgba(211, 84, 0, 1.0);
-    box-shadow: 0 10px 40px 0 rgba(70, 67, 67, 0.747);
-    padding: 20px;
-    width: 824px;
-    margin-top: 2%;
-    text-align: left;
-    min-height: 250px;
-    border-radius: 5px;
-}
-
-.cardNaranja {
-    background: rgba(211, 84, 0, 1.0);
-    box-shadow: 0 10px 40px 0 rgba(70, 67, 67, 0.747);
-    display: inline-block;
-    border-radius: 5px;
-    padding-top: 1%;
-    width: 48.5%;
-    margin-right: 3%;
-    margin-bottom: 3.5%;
-    height: 390px;
-    min-height: 375px;
-}
-
-.cardBlue {
-    background: rgba(41, 128, 185, 1.0);
-    box-shadow: 0 10px 40px 0 rgba(70, 67, 67, 0.747);
-    padding: 20px;
-    width: 825px;
-    margin-top: 2%;
-    text-align: left;
-    min-height: 250px;
-    border-radius: 5px;
-}
-
-.cardAzul {
-    background: rgba(41, 128, 185, 1.0);
-    box-shadow: 0 10px 40px 0 rgba(70, 67, 67, 0.747);
-    display: inline-block;
-    border-radius: 5px;
-    padding-top: 1%;
-    width: 48.5%;
-    height: 390px;
-    margin-bottom: 3.5%;
-    min-height: 375px;
-}
-
-.cardRed {
-    background: rgba(192, 57, 43, 1.0);
-    box-shadow: 0 10px 40px 0 rgba(70, 67, 67, 0.747);
-    padding: 20px;
-    width: 825px;
-    margin-top: 2%;
-    text-align: left;
-    min-height: 250px;
-    border-radius: 5px;
-}
-
-.cardRojo {
-    background: rgba(192, 57, 43, 1.0);
-    box-shadow: 0 10px 40px 0 rgba(70, 67, 67, 0.747);
-    display: inline-block;
-    border-radius: 5px;
-    padding-top: 1%;
-    width: 48.5%;
-    height: 390px;
-    margin-bottom: 3.5%;
-    min-height: 375px;
-}
-
-.cardVerde {
-    background: rgb(74, 156, 41);
-    box-shadow: 0 10px 40px 0 rgba(70, 67, 67, 0.747);
-    display: inline-block;
-    border-radius: 5px;
-    padding-top: 1%;
-    width: 48.5%;
-    height: 390px;
-    margin-right: 3%;
-    margin-bottom: 3.5%;
-    min-height: 375px;
-}
-
-.foto {
-    text-align: left;
-    width: 209px;
-    height: 209px;
-    float: left;
-}
-
-.fotos {
-    text-align: center;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-    width: 95%;
-    height: 215px;
-}
-
-.nombreLugar {
-    font-size: 20px;
-    width: 558px;
-    margin-left: 28%;
-    margin-top: 0%;
-    margin-right: 0%;
-    margin-bottom: 2%;
-    text-align: left;
-    font-weight: bold;
-}
-
-.nombre {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 21px;
-    width: 400px;
-    margin-left: 3%;
-    margin-top: 1%;
-    margin-bottom: 1%;
-    text-align: left;
-}
-
-.direccionExacta {
-    margin-bottom: 2%;
-    margin-left: 28%;
-}
-
-.descripcion {
-    font-size: 14px;
-    height: 45px;
-    text-align: left;
-    font-family: 'Montserrat', sans-serif;
-    margin-left: 3%;
-    margin-bottom: 1%;
-}
-
-.descripcionLugar {
-    font-size: 14px;
-    margin-left: 28%;
-    margin-top: 0%;
-    margin-right: 0%;
-    margin-bottom: 0%;
-    height: 85px;
-    line-height: 25px;
-}
-
-.lugar {
-    font-size: 13px;
-    text-align: left;
-    font-family: 'Montserrat', sans-serif;
-    margin-left: 3%;
-    margin-bottom: 1%;
-}
-
-.ranking {
-    text-align: left;
-    width: 155px;
-    height: max-content;
-    display: inline-block;
-    float: left;
-    margin-left: 2%;
-}
-
-.fecha {
-    font-size: 12px;
-    text-align: left;
-    font-family: 'Montserrat', sans-serif;
-    margin-left: 3.4%;
-    margin-bottom: 6%;
-}
-
-.calificacion {
-    font-size: 18px;
-    margin-right: 0%;
-    background: #ffffff69;
-    width: 64px;
-    height: 23px;
-    padding: 4px;
-    display: inline-block;
-    text-align: center;
-}
-
-.calificacionAdministrador,
-.calificacionDueno {
-    font-size: 18px;
-    margin-right: 0%;
-    background: #ffffff69;
-    width: max-content;
-    height: 16px;
-    padding: 4px;
-    display: inline-block;
-    margin-top: 21.5%;
-}
-
-.precio {
+#btnRegistrarme {
+    background: #8EE4AF;
+    color: #05386B;
     font-size: 16px;
-    font-family: 'Montserrat', sans-serif;
-    text-align: left;
-    margin-left: 3.4%;
-    display: inline;
-    padding-right: 45%;
-}
-
-#estrella {
-    margin-top: 0.25%;
-    margin-left: 0.25%;
-    display: inline-block;
-    text-align: center;
-}
-
-.botonCalificarOrange,
-.botonCalificarBlue,
-.botonCalificarRed {
-    background: #000000;
-    color: #ffffff;
-    font-size: 16px;
-    font-family: 'Montserrat', sans-serif;
-    border: none;
-    width: 155px;
-    height: 27px;
-    text-align: center;
-    display: inline-block;
-    cursor: pointer;
-    margin-top: 4%;
-    border-radius: 5px;
-}
-
-.opciones {
-    display: block;
-    float: right;
-    width: 388px;
-}
-
-.calificacionesOrange,
-.calificacionesBlue,
-.calificacionesRed {
-    background: #000000;
-    color: #ffffff;
-    font-size: 16px;
-    padding: 10px 30px;
-    font-family: 'Montserrat', sans-serif;
-    border: none;
-    width: 215px;
-    text-align: center;
-    display: inline-block;
-    cursor: pointer;
-    float: left;
-    border-radius: 5px;
-}
-
-.calificacionesOrangeAdministrador,
-.calificacionesBlueAdministrador,
-.calificacionesRedAdministrador,
-.calificacionesOrangeDueno,
-.calificacionesBlueDueno,
-.calificacionesRedDueno {
-    background: #000000;
-    color: #ffffff;
-    font-size: 16px;
-    padding: 10px 30px;
-    font-family: 'Montserrat', sans-serif;
-    border: none;
-    width: 215px;
-    text-align: center;
-    display: inline-block;
-    cursor: pointer;
-    float: right;
-    border-radius: 5px;
-}
-
-.botonSeguirOrange,
-.botonSeguirBlue,
-.botonSeguirRed {
-    background: #000000;
-    color: #ffffff;
-    font-size: 20px;
-    font-family: 'Montserrat', sans-serif;
-    border: none;
-    width: 156px;
-    height: 58px;
-    text-align: center;
-    display: inline-block;
-    cursor: pointer;
-    float: right;
-    margin-left: 0%;
-    border-radius: 5px;
-}
-
-.botonCalificarOrange:hover,
-.calificacionesOrange:hover,
-.botonSeguirOrange:hover,
-.calificacionesOrangeAdministrador:hover,
-.calificacionesOrangeDueno:hover {
-    background: #e67e22;
-}
-
-.botonCalificarBlue:hover,
-.calificacionesBlue:hover,
-.botonSeguirBlue:hover,
-.calificacionesBlueAdministrador:hover,
-.calificacionesBlueDueno:hover {
-    background: #3498db;
-}
-
-.botonCalificarRed:hover,
-.calificacionesRed:hover,
-.botonSeguirRed:hover,
-.calificacionesRedAdministrador:hover,
-.calificacionesRedDueno:hover {
-    background: #e74c3c;
-}
-
-.buttonVerMasNaranja,
-.buttonVerMasAzul,
-.buttonVerMasVerde,
-.buttonVerMasRojo {
-    padding: 10px 10px;
-    background-color: #000;
-    font-family: 'Montserrat', sans-serif;
-    text-decoration: none;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    display: inline;
-}
-
-.buttonVerMasNaranja:hover {
-    background: #e67e22;
-}
-
-.buttonVerMasAzul:hover {
-    background: #3498db;
-}
-
-.buttonVerMasRojo:hover {
-    background: #e74c3c;
-}
-
-.buttonVerMasVerde:hover {
-    background: #A3CB38;
-}
-
-#sortDown {
-    background-color: rgba(59, 58, 58, 0.521);
-    width: 824px;
-    height: 40px;
-    padding-top: 10px;
-    margin-top: 5.5%;
-    margin-bottom: 2%;
-}
-
-#h2sortDown {
-    color: #dad2d2;
-    text-align: left;
-    font-size: 20px;
-    margin-left: 8%;
-}
-
-.fa-sort-down {
-    color: #ccc4c4;
-    font-size: 60px;
-    margin-left: 1%;
-    margin-top: 19px;
-    position: absolute;
-    border: 1px solid #00000000;
-    cursor: pointer;
-}
-
-.fa-sort-up {
-    color: #ccc4c4;
-    font-size: 60px;
-    margin-left: 1%;
-    margin-top: 3.35%;
-    position: absolute;
-    border: 1px solid #00000000;
-    cursor: pointer;
-}
-
-#busquedaAvanzadaLugares {
-    width: 177.5px;
-    float: left;
-    margin-top: 8.5%;
-    margin-right: 1%;
-    border-right: 1px solid #ccc4c4;
-    padding-right: 6px;
-    padding-top: 10px;
-    padding-left: 6px;
-    padding-bottom: 14px;
-    background-color: rgba(59, 58, 58, 0.521);
-}
-
-#busquedaAvanzadaActividades {
-    width: 177.5px;
-    float: left;
-    margin-top: 8.5%;
-    margin-right: 1%;
-    border-right: 1px solid #ccc4c4;
-    padding-top: 10px;
-    padding-left: 6px;
-    padding-bottom: 14px;
-    background-color: rgba(59, 58, 58, 0.521);
-}
-
-#txtProvincia,
-#txtCanton,
-#txtDistrito,
-#txtCategoria {
-    width: 165px;
-    height: 36px;
-    font-family: 'Montserrat', sans-serif;
-    margin-bottom: 17.5px;
-}
-
-.filtroFechas .label1,
-.filtroFechas .label2 {
-    float: left;
-    margin-left: 50px;
-}
-
-.filtroFechas i {
-    float: left;
-    margin-top: 20px;
-    margin-left: 7px;
-    cursor: pointer;
-}
-
-.filtroFechas input {
-    width: 140px;
-    height: 36px;
-    font-family: 'Montserrat', sans-serif;
-    margin-bottom: 17.5px;
-    float: left;
-    margin-left: 10px;
-}
-
-.filtroFechas button {
-    background: #000000;
-    color: #ffffff;
-    font-size: 16px;
-    padding: 8px 8px;
+    padding: 8px 30px;
     font-family: 'Montserrat', sans-serif;
     border: none;
     border-radius: 5px;
-    margin-bottom: 15px;
-    float: left;
-    margin-left: 45px;
-}
-
-.filtroFechas button:hover {
-    background: rgba(0, 0, 0, 0.6);
-}
-
-#labelCheckBox {
-    width: 100px;
-    float: left;
-    margin-top: 10px;
-}
-
-input[type='checkbox'] {
-    width: 15px;
-    height: 15px;
-    margin-right: 25px;
-}
-
-#ActividadesGratis {
-    font-size: 16px;
-    margin-top: 10px;
     margin-bottom: 35px;
-    font-family: 'Montserrat', sans-serif;
 }
 
-#filtroPrecios {
-    margin-top: 25px;
-    width: 160px;
-    height: 36px;
+#MainTable {
+    padding-top: 2%;
+    padding-left: 20%;
+    float: flex;
 }
 
-#txtCategorias {
-    display: inline-block;
-    width: 144px;
-    height: 30px;
-    vertical-align: middle;
-    font-family: 'Montserrat', sans-serif;
+#tbl-proveedores td {
+    border: #05386B 2px solid;
+    font-size: 18px;
+    background-color: #ffffff;
+}
+
+#tbl-proveedores tr {
+    border: #05386B 2px solid;
+    color: #05386B;
+    background-color: #ffffff;
+}
+
+#tbl-proveedores th {
+    padding: 5px;
+    border: #05386B 2px solid;
+    font-size: 30px;
+    color: #ffffff;
+    font-weight: bold;
+    background-color: #05386B;
 }

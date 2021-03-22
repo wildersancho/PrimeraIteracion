@@ -31,7 +31,7 @@ p {
     padding: 15px;
     width: 100%;
     /*Se hace position fixed para que siempre este en la misma posicion de la pantalla aunque haga scroll*/
-    position: fixed;
+    position: absolute;
 }
 
 #logo {

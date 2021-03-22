@@ -1,37 +1,233 @@
-//Implementar el modo estricto en todos los JS
 'use strict';
-
-//Referencia de los campos HTMLs. (Elementos como tal, no su valor)
-const comentarios = document.querySelector('#txtComentarios');
-const boton_enviar = document.querySelector('#btn-enviar');
-
-//TABLA dinamica ~ Variables
-var addComentarios = new Array();
-var tabla_reservas = document.querySelector('#tbl-reservaciones tbody');
-
-const obtenerDatos = () => {
-    console.log(`Nuevo Comentario: ${comentarios.value}`);
-    //Agregar elemento al arreglo:
-    let nuevo_item = [comentarios.value];
-    addComentarios.push(nuevo_item);
-    //Llenar la tabla con los nevos valores
-    llenar_tabla();
-    eraseText();
-};
+//Datos de section de cliente
 
 
-//TABLA dinamica
-const llenar_tabla = () => {
-    let reservas = addComentarios;
-    tabla_reservas.innerHTML = ''; //Esto permite borrar el contenido del body de la tabla.
-    for (let i = 0; i < addComentarios.length; i++) {
-        let fila = tabla_reservas.insertRow(); //Inserta una nueva fila en la tabla
-        fila.insertCell().innerHTML = addComentarios[i][0]; //Comentarios
+
+let inputnombreUsuario = document.querySelector('#txtNombreUsuario');
+
+let inputsegundoNombreCliente = document.querySelector('#txtSegundoNombreCliente');
+
+
+
+let inputfechaCliente = document.querySelector('#txtFechaCliente');
+
+let inputcantidadMascota = document.querySelector('txtCantidadMascota')
+
+
+let accion = 'registrar';
+let fecha = new Date().toLocaleString();
+
+let botonRegistrarCliente = document.querySelector('#btnRegistrarCliente');
+
+botonRegistrarCliente.addEventListener('click', obtenerDatosCliente);
+
+
+async function obtenerDatosCliente() {
+    let error = false;
+
+
+    let nombreUsuario = inputnombreUsuario.value;
+
+
+
+    let fechaSinFormato = new Date(inputfechaCliente.value);
+    let fechaClienteSplit = inputfechaCliente.value.split("-");
+    let fechaCliente = fechaClienteSplit[2] + '/' + fechaClienteSplit[1] + '/' + fechaClienteSplit[0];
+    let edadCliente = Number(inputedadCliente.value);
+
+    error = validarCliente(nombreUsuario,
+        fechaSinFormato);
+
+
+
+    if (error == true) {
+        swal({
+            title: 'Registro incorrecto',
+            text: 'No se pudo registrar su cuenta, revise los campos en rojo',
+            type: 'warning',
+            confirmButtonText: 'Entendido'
+        });
+    } else {
+        console.log("Iniciando backend");
+        //Validar primero con clientes
+        let usuarioRepetido = await verificarUsuarioCliente(nombreUsuario);
+
+        if (usuarioRepetido) {
+
+            inputnombreUsuario.classList.add('errorInput');
+            swal({
+                title: 'Nombre de usuario ya registrado',
+                text: 'Por favor escoger un nombre de usuario diferente',
+                type: 'warning',
+                confirmButtonText: 'Entendido'
+            });
+        } else {
+            inputnombreUsuario.classList.remove('errorInput');
+            //Validar ahora con duenos
+            usuarioRepetido = await verificarUsuarioDueno(nombreUsuario);
+
+            if (usuarioRepetido) {
+
+                inputnombreUsuario.classList.add('errorInput');
+                swal({
+                    title: 'Nombre de usuario ya registrado',
+                    text: 'Por favor escoger un nombre de usuario diferente',
+                    type: 'warning',
+                    confirmButtonText: 'Entendido'
+                });
+            } else {
+                inputnombreUsuario.classList.remove('errorInput');
+                //Validar ahora correo con clientes
+                let emailRepetido = await verificarCorreoCliente(email);
+                if (emailRepetido) {
+                    inputemail.classList.add('errorInput');
+                    swal({
+                        title: 'Correo electrónico de cuenta ya registrado',
+                        text: 'Por favor escoger un correo electrónico de cuenta diferente',
+                        type: 'warning',
+                        confirmButtonText: 'Entendido'
+                    });
+                } else {
+                    inputemail.classList.remove('errorInput');
+                    //Validar ahora correo con duenos (correoNegocio)
+                    emailRepetido = await verificarCorreoDueno(email);
+
+                    if (correoRepetido) {
+                        inputemail.classList.add('errorInput');
+                        swal({
+                            title: 'Correo electrónico de cuenta ya registrado',
+                            text: 'Por favor escoger un correo electrónico de cuenta diferente',
+                            type: 'warning',
+                            confirmButtonText: 'Entendido'
+                        });
+                    } else {
+                        inputemail.classList.remove('errorInput');
+                        let respuesta = registrarLinea(tipoUsuario, tipoIDCliente, identificacionCliente, nombreUsuario, nombreCliente, segundoNombreCliente, primerApellidoCliente, segundoApellidoCliente, email, fechaCliente, edadCliente, cantidadMascotas, fotoCliente, captcha);
+                        registrarBitacora(nombreUsuario, accion, 'cliente', primerNombreCliente + ' ' + primerApellidoCliente + ' ' + segundoApellidoCliente, fecha);
+                        console.log("Terminando al backend");
+                        if (respuesta.success == true) {
+                            swal({
+                                title: 'Registro correcto',
+                                text: respuesta.msg,
+                                type: 'success',
+                                showConfirmButton: false
+                            });
+                            setTimeout(() => {
+                                location.href = "http://localhost:3000/public/inicioSesion.html"
+                            }, 3000);
+                        } else {
+                            swal({
+                                title: 'Registro incorrecto',
+                                text: respuesta.msg,
+                                type: 'error',
+                                confirmButtonText: 'Entendido'
+                            });
+                        }
+                    }
+                }
+            }
+        }
     }
 };
 
-function eraseText() {
-    document.getElementById("txtComentarios").value = "";
+
+function validarCliente(pnombreUsuario, ptipoIDCliente, pidentificacionCliente, pnombreCliente, pprimerApellidoCliente, psegundoApellidoCliente, pemail, pfechaCliente, pedadCliente, pfotoCliente, pcaptcha) {
+    let error = false;
+    let expLetras = /^[a-z A-ZáéíóúñÑÁÉÍÓÚüÜ]+$/;
+    let regExpNumeros = /^[0-9]+$/;
+    let regExpAlfanumericos = /^[a-z A-ZáéíóúñÑÁÉÍÓÚüÜ0-9]+$/;
+    let expCorreo = /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+    console.log("validando");
+
+    if (pnombreUsuario == '') {
+        error = true;
+        inputnombreUsuario.classList.add('errorInput');
+    } else {
+        inputnombreUsuario.classList.remove('errorInput');
+    }
+
+    if (pnombreCliente == '' || expLetras.test(pnombreCliente) == false) {
+        error = true;
+        inputnombreCliente.classList.add('errorInput');
+    } else {
+        inputnombreCliente.classList.remove('errorInput');
+    }
+
+    if (pidentificacionCliente == '' || regExpNumeros.test(pidentificacionCliente) == false) {
+        error = true;
+        inputidentificacionCliente.classList.add('errorInput');
+    } else {
+        if ((ptipoIDCliente == 'Cédula de Identidad' && (pidentificacionCliente.length == 9 || pidentificacionCliente.length == 10) && regExpNumeros.test(pidentificacionCliente) == true) || (ptipoIDCliente == 'Cédula de Residencia' && regExpAlfanumericos.test(pidentificacionCliente))) {
+            inputidentificacionCliente.classList.remove('errorInput');
+        } else {
+            inputidentificacionCliente.classList.add('errorInput');
+        }
+    }
+
+    if (pprimerApellidoCliente == '' || expLetras.test(pprimerApellidoCliente) == false) {
+        error = true;
+        inputprimerApellidoCliente.classList.add('errorInput');
+    } else {
+        inputprimerApellidoCliente.classList.remove('errorInput');
+    }
+
+    if (psegundoApellidoCliente == '' || expLetras.test(psegundoApellidoCliente) == false) {
+        error = true;
+        inputsegundoApellidoCliente.classList.add('errorInput');
+    } else {
+        inputsegundoApellidoCliente.classList.remove('errorInput');
+    }
+
+    if (pemail == '' || expCorreo.test(pemail) == false) {
+        error = true;
+        inputemail.classList.add('errorInput');
+    } else {
+        inputemail.classList.remove('errorInput');
+    }
+
+    if (pfechaCliente == 'Invalid Date') {
+        error = true;
+        inputfechaCliente.classList.add('errorInput');
+    } else {
+        inputfechaCliente.classList.remove('errorInput');
+    }
+
+    if (pedadCliente == '' || pedadCliente < inputEdadCliente.min || pedadCliente > inputedadCliente.max || regExpNumeros.test(inputedadCliente.value) == false) {
+        error = true;
+        inputedadCliente.classList.add('errorInput');
+    } else {
+        inputedadCliente.classList.remove('errorInput');
+    }
+
+
+
+    return error;
+};
+
+function calcularEdad() {
+    let fechaActual = new Date(); /**Obtener la fecha actual */
+    let fechaIngresada = new Date(inputfechaCliente.value);
+
+    let edad = fechaActual.getFullYear() - fechaIngresada.getFullYear(); /*Obtener la edad*/
+    console.log('Haciendo fecha');
+    inputedadCliente.value = edad;
 }
 
-boton_enviar.addEventListener('click', obtenerDatos);
+
+inputfechaCliente.addEventListener('change', calcularEdad);
+
+//Para captcha (creo)
+$(document).ready(function() {
+    $('#comment_form').submit(function() {
+        $(this).ajaxSubmit({
+            error: function(xhr) {
+                status('Error: ' + xhr.status);
+            },
+            success: function(response) {
+                console.log(response);
+            }
+        });
+        //Very important line, it disable the page refresh.
+        return false;
+    });
+});
