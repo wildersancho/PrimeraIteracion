@@ -17,13 +17,14 @@
     <header id="header-principal" class="header-principal">
         <nav class="nav-contenedor">
             <a href="index.html"><img src="imgs/IconoMenu.png" id="logo" /></a>
-            <a href="http://www.abaanimal.org/">Buscar un servicio</a>
-            <a href="http://www.abaanimal.org/">Ofrecer un servicio</a>
-            <a href="http://www.abaanimal.org/">Mi Perfil</a>
-            <a class="cerrarSesion" href="http://www.abaanimal.org/">Cerrar Sesión</a>
+            <a href="perfilAdministador.html">Mi Perfil</a>
+            <a href="agregarVarios.html">Agregar</a>
+            <a href="listarVacuna.html">Listar Vacunas</a>
+            <a href="listarPadecimientos.html">Listar Padecimientos</a>
+            <a href="listarRaza.html">Listar Razas</a>
+            <a class="cerrarSesion" href="inicioSesion.html">Cerrar Sesión</a>
         </nav>
     </header>
-
     <main>
         <section class="container">
 
@@ -32,12 +33,11 @@
 
                     <fieldset>
                         <legend>Agregar vacuna</legend>
-                        <label for="txtNombre">Nombre:</label>
-                        <input type="text" id="txtNombre" class="input-agregar" required placeholder=" Agregue vacuna">
+                        <label for="txtNombreVacuna">Nombre:</label>
+                        <input type="text" id="txtNombreVacuna" class="input-agregar">
                         <br><br>
                         <div class="submenu">
-
-                            <a href=""><input type="submit" value="Guardar"></a>
+                            <button type="button" id="btnRegistrarVacuna">Guardar</button>
                         </div>
                     </fieldset>
                 </section>
@@ -47,12 +47,11 @@
 
                     <fieldset>
                         <legend>Agregar padecimiento</legend>
-                        <label for="txtNombre">Nombre:</label>
-                        <input type="text" id="txtNombre" class="input-agregar" required placeholder=" Agregue padecimiento">
+                        <label for="txtNombrePadecimiento">Nombre:</label>
+                        <input type="text" id="txtNombrePadecimiento" class="input-agregar">
                         <br><br>
                         <div class="submenu">
-
-                            <a href=""><input type="submit" value="Guardar"></a>
+                            <button type="button" id="btnRegistrarPadecimiento">Guardar</button>
                         </div>
                     </fieldset>
                 </section>
@@ -62,18 +61,19 @@
 
                     <fieldset>
                         <legend>Agregar características especiales</legend>
-                        <label for="txtNombre">Nombre:</label>
-                        <input type="text" id="txtNombre" class="input-agregar" required placeholder=" Agregue caracteristica">
+                        <label for="txtNombreOtros">Nombre:</label>
+                        <input type="text" id="txtNombreOtros" class="input-agregar">
                         <br><br>
                         <div class="submenu">
-
-                            <a href=""><input type="submit" value="Guardar"></a>
+                            <button type="button" id="btnRegistrarOtros">Guardar</button>
                         </div>
                     </fieldset>
                 </section>
             </form>
         </section>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
+    <script src="js/agregarVariosControlador.js"></script>
     <footer>
         <section class=" footerCopyRedes ">
             <section class="mainCopyRedes ">
@@ -97,7 +97,6 @@
                 </section>
             </section>
     </footer>
-
 
 
 </body>
