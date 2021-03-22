@@ -30,13 +30,36 @@ th {
     background-color: rgba(5, 56, 107, 60%);
 }
 
+table {
+    width: 100%;
+}
+
 th,
 td {
     border: 1px solid black;
     padding: 5px;
-    width: 100%;
+    width: 30%;
 }
 
 .footerCopyRedes {
     bottom: 100vh;
+}
+
+.agregar th {
+    width: 1200px
+}
+
+th a input {
+    background-color: rgba(5, 56, 107, 90%);
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.aceptar {
+    background-color: rgba(55, 220, 131, 60%);
+}
+
+.rechazar {
+    background-color: rgba(250, 0, 0, 60%);
 }

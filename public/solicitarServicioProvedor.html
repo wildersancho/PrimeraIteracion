@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" href="css/general_2.css">
-    <link rel="stylesheet" href="css/perfilProveedorCliente.css">
+    <link rel="stylesheet" href="css/perfilProvedorCliente.css">
 </head>
 
 <body>
@@ -48,7 +48,7 @@
 
                 </div>
                 <div class="submenu">
-                    <a href="Solicitar Servicio.html"><input type="button" value="Solicitar Servicio"></a>
+                    <a href="#"><input type="button" value="Solicitar Servicio"></a>
                     <a href="#"><input type="button" value="Solicitar Servicios"></a>
                     <a href="#"><input type="button" value="Calificar Servicio"></a>
                     <a href=""><input type="button" value="Reportar"></a>
@@ -75,19 +75,69 @@
             </div>
             <div class="perfil-comentarios">
                 <div id="caja-comentarios" class="caja-comentarios">
-                    <h3>Comentarios</h3>
-                    <table id="tbl-comentarios" class="tabla-resultados" style="width: 100%">
-                        <tbody>
-                            <!--Registros-->
-                            <tr></tr>
-                        </tbody>
-                    </table>
+                    <section class="cards">
+
+                        <section class="sct-info">
+
+                            <h3>Servicios y Precios</h3>
+                            <div class="información">
+                                <table>
+                                    <tr>
+                                        <th>Servicios</th>
+                                        <th>Precio</th>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Paseo para perros</td>
+                                        <td>10000</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Peluqueria</td>
+                                        <td>30000</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Guarderia</td>
+                                        <td>70000</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Hotel</td>
+                                        <td>12000</td>
+
+                                    </tr>
+
+                                </table>
+                            </div>
+
+                        </section>
+                        <section class="sct-info">
+
+                            <h3>Acerca de Nosotros</h3>
+                            <div class="información">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio debitis mollitia harum blanditiis rem maiores necessitatibus repellat molestiae ullam. Recusandae fugit optio esse odit assumenda at, obcaecati quaerat
+                                    neque debitis.</p>
+                            </div>
+
+                        </section>
+
                 </div>
-                <input class="comentarios-text" id="comentarios-text" type="text">
-                <input class="comentarios-boton" id="comentarios-boton" type="button" value="Enviar Comentario">
+                <div class="div-comentarios">
+
+                    <input class="comentarios-text" id="comentarios-text" type="text">
+                    <input class="comentarios-boton" id="comentarios-boton" type="button" value="Enviar Comentario">
+                    <table id="tbl-comentarios" class="tabla-resultados" style="width: 100%">
+                </div>
+                <h3 class="h3-comentarios">Comentarios</h3>
+                <tbody>
+                    <!--Registros-->
+                    <tr></tr>
+                </tbody>
+                </table>
             </div>
         </div>
-
+        </section>
     </main>
 </body>
 <footer>

@@ -30,7 +30,7 @@ p {
     background: #379683;
     padding: 15px;
     width: 100%;
-    position: fixed;
+    position: absolute;
     top: 0;
 }
 
@@ -69,7 +69,6 @@ p {
 /*Inicio de estilos del footer*/
 
 footer {
-    position: fixed;
     bottom: 0%;
     width: 100%;
 }

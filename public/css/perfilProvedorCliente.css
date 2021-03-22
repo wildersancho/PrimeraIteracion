@@ -5,11 +5,33 @@ body {
     background-size: cover;
 }
 
+tbody {
+    color: white;
+}
+
+h3 {
+    color: white;
+    font-weight: bold;
+}
+
+.sct-info h3 {
+    margin: 30px 0px 10px 110px;
+    font-size: 20px;
+}
+
+.div-comentarios {
+    margin-top: 150px;
+}
+
+.h3-comentario {
+    margin-top: 30px;
+}
+
 .contenedor-perfil {
     display: flex;
     flex-direction: column;
-    width: 50%;
-    height: 40%;
+    width: 1000px;
+    height: 900px;
     margin-top: 2%;
     margin-bottom: 1%;
     margin-left: 22%;
@@ -37,8 +59,8 @@ body {
 }
 
 .contenedor-perfil .firstSection>img {
-    height: 30%;
-    width: 30%;
+    height: 300px;
+    width: 300px;
     border-radius: 30px;
     border: 10px solid rgba(237, 245, 225, 20%);
     margin-bottom: 2%;
@@ -123,7 +145,6 @@ p {
     width: 74.8%;
     padding: 0px;
     margin: 0%;
-    border-bottom-left-radius: 360px;
     background-color: rgba(255, 255, 255, 40%);
     color: rgb(237, 245, 225);
     height: 30px;
@@ -136,7 +157,6 @@ p {
     color: rgb(237, 245, 225);
     font-weight: bold;
     border: none;
-    border-bottom-right-radius: 360px;
     height: 30px;
     width: 24.6%;
 }
@@ -152,4 +172,95 @@ tbody tr {
 
 .checked {
     color: orange;
+}
+
+.información {
+    width: 400px;
+    height: 180px;
+    background-color: rgba(237, 245, 225, 20%);
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    margin: 10px;
+}
+
+.información table tr {
+    border: 2px solid rgba(5, 56, 107, 90%);
+    height: 30px;
+}
+
+.información table td {
+    border: 2px solid rgba(5, 56, 107, 90%);
+    width: 200px;
+    text-align: center;
+    color: white;
+    padding-top: 5px;
+}
+
+.información table th {
+    border: 2px solid rgba(5, 56, 107, 90%);
+    width: 200px;
+    text-align: center;
+    color: white;
+    padding-top: 5px;
+    font-weight: bold;
+}
+
+.información ul li {
+    text-decoration: double;
+    list-style: disc;
+    margin: 10px;
+}
+
+.información-comentarios ul li {
+    text-decoration: double;
+    list-style: disc;
+    margin: 10px;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.información-contacto {
+    width: 400px;
+    height: 180px;
+    background-color: rgba(237, 245, 225, 20%);
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    margin: 10px;
+}
+
+.información-comentarios {
+    width: 800px;
+    height: 180px;
+    background-color: rgba(237, 245, 225, 20%);
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    margin: 10px;
+}
+
+.información-contacto table tr {
+    border: 2px solid rgba(5, 56, 107, 90%);
+    height: 30px;
+}
+
+.información-contacto table td {
+    border: 2px solid rgba(5, 56, 107, 90%);
+    width: 200px;
+    color: white;
+    padding-top: 5px;
+    width: 300px;
+}
+
+.información-contacto table th {
+    border: 2px solid rgba(5, 56, 107, 90%);
+    width: 200px;
+    color: white;
+    padding-top: 5px;
+    font-weight: bold;
 }

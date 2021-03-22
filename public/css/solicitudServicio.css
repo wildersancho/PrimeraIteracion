@@ -22,24 +22,23 @@ main {
     background-size: cover;
     padding: 100px 50px;
     height: -200px;
-    /* background-color: #60a2ff; */
     /*cambia color fondo de pantalla*/
     /*background-color: rgba(0, 98, 102,0.1);*/
     /*background-image: url("../imgs/registrarLineaPalmeras.jpg");*/
+    margin-bottom: 50px;
 }
 
 form {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
     border-radius: 15px;
-    padding: 10px 10px;
-    background: rgba(5, 56, 107, 90%)/*color del cudaro del form*/
+    padding: 20px 10px;
+    background: rgba(5, 56, 107, 90%);
+    /*color del cudaro del form*/
+    margin-bottom: 50px;
 }
 
 form {
     display: flow-root;
-    margin: 0 auto;
-    min-height: 400px;
-    /*para ponerlo en el centro*/
 }
 
 
@@ -70,6 +69,37 @@ main h1 {
     /*color de la linea del centro y grosor*/
 }
 
+
+/* #cliente2 diuv {
+    width: 50%;
+    float: right;
+    margin-right: 20px;
+    margin-left: 20px;
+    padding-left: 0px;
+    margin-bottom: 60px;
+} */
+
+#sctFoto {
+    padding: 20px;
+    display: inline-block;
+    border-radius: 15px;
+    margin-left: 150px;
+}
+
+#cliente3 {
+    /*capcha*/
+    display: inline-block;
+}
+
+#txtFotoCliente {
+    width: 150px;
+    height: 150px;
+    /*border-radius: 50%;*/
+    margin-left: 15px;
+    border: solid 5px #379683;
+    /*cambia color radio de la foto*/
+}
+
 input {
     border-radius: 8px;
     color: white;
@@ -86,10 +116,7 @@ textarea {
     background: rgba(0, 0, 0, 0.377);
     color: #f3f2f2;
     border: none;
-    border-bottom: 2px solid #a03ad3;
     resize: none;
-    width: 200px;
-    height: 100px;
 }
 
 form label {
@@ -132,12 +159,13 @@ select {
     outline: none;
     border: none;
     border-bottom: 2px solid #379683;
+    margin-bottom: 20px;
 }
 
 form textarea {
     display: inline-block;
     vertical-align: top;
-    width: 200px;
+    width: 350px;
 }
 
 button {
@@ -154,7 +182,15 @@ button:hover {
     /*cambia color de botones cuando pasa el mause*/
 }
 
-#btnRegistrarServicio {
+#btnSubirFotoCliente {
+    /*Boton para subir la foto*/
+    font-size: 20px;
+    padding: 7.5px 30px;
+    margin-top: 15px;
+    margin-left: 18px;
+}
+
+#btnRegistrarCliente {
     font-size: 25px;
     /*tamaño de boton de registar*/
     padding: 15.5px 35.5px;
@@ -177,3 +213,6 @@ option[value=""][disabled] {
 option {
     color: rgb(20, 14, 14);
 }
+
+
+/********/
