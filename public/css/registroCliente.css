@@ -95,7 +95,7 @@ main h1 {
     width: 150px;
     height: 150px;
     /*border-radius: 50%;*/
-    margin-left: 15px;
+    margin-left: 190px;
     border: solid 5px #379683;
     /*cambia color radio de la foto*/
 }
@@ -186,7 +186,7 @@ button:hover {
     font-size: 20px;
     padding: 7.5px 30px;
     margin-top: 15px;
-    margin-left: 18px;
+    margin-left: 190px;
 }
 
 #btnRegistrarCliente {
@@ -196,6 +196,26 @@ button:hover {
     margin: auto;
     display: block;
     clear: both;
+}
+
+#registroCliente {
+    color: rgb(237, 245, 225);
+    font-weight: bold;
+    font-size: small;
+    text-decoration: none;
+    margin-top: 1%;
+}
+
+#registroTarjeta {
+    color: rgb(237, 245, 225);
+    font-weight: bold;
+    font-size: small;
+    text-decoration: none;
+    margin-left: 13%;
+}
+
+#btnAgergarMascota {
+    margin-left: 13%;
 }
 
 
@@ -215,14 +235,6 @@ option {
 
 
 /********/
-
-#registroCliente {
-    color: rgb(237, 245, 225);
-    font-weight: bold;
-    font-size: small;
-    text-decoration: none;
-    margin-top: 1%;
-}
 
 #captcha {
     margin-top: 10px;
