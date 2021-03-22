@@ -214,5 +214,24 @@ option {
     color: rgb(20, 14, 14);
 }
 
+#btnRegistrarServicio {
+    background-color: #379683;
+    /* Cambia el clor al boton registrar y subir foto */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: large;
+    width: 150px;
+    height: 50px;
+    position: relative;
+    margin-top: 10%;
+}
+
+#btnRegistrarServicio:hover {
+    background-color: #05386B;
+    /*cambia color de botones cuando pasa el mause*/
+}
+
 
 /********/

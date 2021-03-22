@@ -73,6 +73,7 @@ async function obtenerDatosCliente() {
                         icon: 'success',
                         showConfirmButton: false
                     });
+                    window.location.replace("http://127.0.0.1:5500/registrar-tarjetas.html")
                 } else {
                     swal.fire({
                         title: 'Registro incorrecto',

@@ -19,7 +19,6 @@ main {
 /*Inicio estilos del header*/
 
 .header-principal {
-    z-index: 1;
     background: #379683;
     padding: 15px;
     width: 100%;
@@ -89,8 +88,12 @@ main {
 }
 
 .contenidoImg2 h2 {
-    font-size: 28px;
+    font-size: 25px;
     margin-bottom: 15px;
+}
+
+.contenidoImg2 p {
+    font-size: 20px;
 }
 
 .contenidoImg2 {
@@ -105,27 +108,6 @@ main {
     color: #fff;
     text-align: center;
     border-radius: 25px;
-    font-size: 17px;
-}
-
-.contenidoImg3 h2 {
-    font-size: 28px;
-    margin-bottom: 15px;
-}
-
-.contenidoImg3 {
-    width: 600px;
-    line-height: 20px;
-    position: relative;
-    top: -350px;
-    margin: auto;
-    padding: 15px;
-    background: rgba(26, 28, 29, 0.877);
-    border-radius: 20px;
-    color: #fff;
-    text-align: center;
-    border-radius: 25px;
-    font-size: 17px;
 }
 
 .contenidoImg4 h2 {
@@ -145,7 +127,6 @@ main {
     border-radius: 20px;
     color: #fff;
     border-radius: 25px;
-    font-size: 17px;
 }
 
 .contenidoImg5 {
@@ -159,7 +140,6 @@ main {
     color: #fff;
     text-align: center;
     border-radius: 20px;
-    font-size: 25px;
 }
 
 .contenidoImg6 h2 {
@@ -168,7 +148,7 @@ main {
     margin-bottom: 15px;
 }
 
-.contenidoImg6 {
+.contenidoImg {
     width: 600px;
     line-height: 20px;
     position: relative;
@@ -180,7 +160,6 @@ main {
     color: #fff;
     text-align: left;
     border-radius: 25px;
-    font-size: 17px;
 }
 
 .slider dd {
@@ -188,92 +167,10 @@ main {
     margin-left: 50px;
 }
 
-.contenidoImg7 h2 {
+.contenidoImg h2 {
     text-align: center;
     font-size: 28px;
     margin-bottom: 15px;
-}
-
-.contenidoImg7 {
-    width: 600px;
-    line-height: 20px;
-    position: relative;
-    top: -470px;
-    margin: auto;
-    padding: 15px;
-    background: rgba(26, 28, 29, 0.877);
-    border-radius: 20px;
-    color: #fff;
-    text-align: left;
-    border-radius: 25px;
-    font-size: 17px;
-}
-
-.contenidoImg8 h2 {
-    text-align: center;
-    font-size: 28px;
-    margin-bottom: 15px;
-}
-
-.contenidoImg8 {
-    width: 600px;
-    line-height: 20px;
-    position: relative;
-    top: -460px;
-    margin: auto;
-    padding: 15px;
-    background: rgba(26, 28, 29, 0.877);
-    border-radius: 20px;
-    color: #fff;
-    text-align: left;
-    border-radius: 25px;
-    font-size: 17px;
-}
-
-.contenidoImg9 h2 {
-    text-align: center;
-    font-size: 28px;
-    margin-bottom: 15px;
-}
-
-.contenidoImg9 {
-    width: 600px;
-    line-height: 20px;
-    position: relative;
-    top: -455px;
-    margin: auto;
-    padding: 15px;
-    background: rgba(26, 28, 29, 0.877);
-    border-radius: 20px;
-    color: #fff;
-    text-align: left;
-    border-radius: 25px;
-    font-size: 17px;
-}
-
-.contenidoImg10 h2 {
-    text-align: center;
-    font-size: 28px;
-    margin-bottom: 15px;
-}
-
-.contenidoImg10 {
-    width: 600px;
-    line-height: 20px;
-    position: relative;
-    top: -460px;
-    margin: auto;
-    padding: 15px;
-    background: rgba(26, 28, 29, 0.877);
-    border-radius: 20px;
-    color: #fff;
-    text-align: left;
-    border-radius: 25px;
-    font-size: 17px;
-}
-
-.contenidoImg10 h2 {
-    text-align: center;
 }
 
 .contenidoImg11 {
@@ -290,10 +187,227 @@ main {
     font-size: 17px;
 }
 
+.resposive {
+    display: none;
+}
+
 
 /*Fin de estilos del main*/
 
-.responsivePage {
-    background-color: #fff;
-    display: none;
+@media screen and (max-width:450px) {
+    body {
+        background-color: white;
+    }
+    main {
+        background-image: none;
+        height: 100%;
+    }
+    h2 {
+        display: block;
+        font-weight: bold;
+        font-size: 30px;
+        text-align: center;
+        margin: 20px 0px;
+    }
+    /*Seccion Banner*/
+    #sct-banner h1 {
+        font-size: 25px;
+    }
+    /*Seccion Servicios*/
+    .sct-servicios div {
+        float: none;
+        width: 100%;
+    }
+    .sct-servicios .info h2 {
+        font-size: 17px;
+    }
+    .slider {
+        display: none;
+    }
+    .imgs {
+        /* display: none; */
+    }
+    #img1 {
+        /* display: none; */
+    }
+    .slider {
+        width: 100%;
+        border: none;
+        box-shadow: none;
+    }
+    .mainCopyRedes {
+        width: 100%;
+        display: block;
+    }
+    .mainCopyRedes ::selection {
+        width: 100%;
+        display: block;
+    }
+    .contenidoImg10 {
+        display: flex;
+    }
+    .resposive {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .contenidoGen {
+        width: 100%;
+        top: -450px;
+        margin-top: 10px;
+        padding: 25px;
+        background: rgba(26, 28, 29, 0.877);
+        border-radius: 20px;
+        color: #fff;
+        border-radius: 25px;
+    }
+    .contenidoGen h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    .contenidoGen dl dt {
+        font-size: 20px;
+    }
+    .contenidoGen dl dd {
+        margin-bottom: 10px;
+    }
+    p {
+        font-size: 15px;
+    }
+    .mainCopyRedes .footerCopy2 {
+        width: 100%;
+    }
+    .mainCopyRedes .footerRedes {
+        width: 100%;
+    }
+    .contenidoGen h2 {
+        color: white;
+        font-weight: bold;
+        font-size: 30px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .header-principal a:not(:first-child) {
+        display: none;
+    }
+    /*Muestra el icono que va a servir como menú desplegable. */
+    .header-principal a.icono-menu {
+        position: fixed;
+        right: 0px;
+        /*top 15 porque es el padding general que estan usando los otros elementos dentro de la barra de navegacion*/
+        top: 15px;
+        display: block;
+    }
+    /*Ahora vamos a crear estilos para mostrar los demás elementos del menú cuando está en pantallas pequeñas*/
+    .header-principal.responsive .icon {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+    .header-principal.responsive a {
+        /* float: none;
+        display: block;
+        text-align: left;
+        margin-bottom: 7px; */
+    }
+}
+
+@media screen and (max-width:836px) {
+    body {
+        background-color: white;
+    }
+    .sct-img {
+        background-color: #379683;
+        margin-top: -30px;
+    }
+    .sct-img2 {
+        background-color: #379683;
+    }
+    main {
+        background-image: none;
+        height: 100%;
+    }
+    h2 {
+        display: block;
+        font-weight: bold;
+        font-size: 30px;
+        text-align: center;
+        margin: 20px auto 20px auto;
+    }
+    /*Seccion Banner*/
+    #sct-banner h1 {
+        font-size: 25px;
+    }
+    /*Seccion Servicios*/
+    .sct-servicios div {
+        float: none;
+        width: 100%;
+    }
+    .sct-servicios .info h2 {
+        font-size: 17px;
+    }
+    .slider {
+        display: none;
+    }
+    .imgs {
+        /* display: none; */
+    }
+    #img1 {
+        /* display: none; */
+    }
+    .slider {
+        width: 100%;
+        border: none;
+        box-shadow: none;
+    }
+    .mainCopyRedes {
+        width: 100%;
+        display: block;
+    }
+    .mainCopyRedes ::selection {
+        width: 100%;
+        display: block;
+    }
+    .contenidoImg10 {
+        display: flex;
+    }
+    .resposive {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .contenidoGen {
+        width: 100%;
+        top: -450px;
+        margin-top: 10px;
+        padding: 25px;
+        background: rgba(26, 28, 29, 0.877);
+        border-radius: 20px;
+        color: #fff;
+        border-radius: 25px;
+    }
+    .contenidoGen h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    .contenidoGen dl dt {
+        font-size: 20px;
+    }
+    .contenidoGen dl dd {
+        margin-bottom: 10px;
+    }
+    p {
+        font-size: 15px;
+    }
+    .mainCopyRedes .footerCopy2 {
+        width: 100%;
+    }
+    .mainCopyRedes .footerRedes {
+        width: 100%;
+    }
+    .contenidoGen h2 {
+        color: white;
+        font-weight: bold;
+        font-size: 30px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
 }
