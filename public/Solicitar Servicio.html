@@ -3,14 +3,13 @@
 <html lang="es">
 
 <head>
-    <title>Registro de Cliente</title>
+    <title>Registro de Servicio</title>
     <meta charset="utf-8">
-    <meta name="description" content="Documento para registrarse en linea.">
+    <meta name="description" content="Documento para solicitar servicio">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="css/solicitudServicio.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <script src='https://www.google.com/recaptcha/api.js'></script>
     <link rel="stylesheet" href="css/general_2.css">
 
 </head>
@@ -36,93 +35,72 @@
                     Solicitar Servicio
                 </h1>
                 <section id="cliente1" class="cliente1">
-
                     <div class="datos">
-                        <label for="" class="label-tipoServicio">Tipo de servicio</label>
-                        <div>
-                            <input type="radio" class="input-radio">
-                            <label for="" class="label-radio">Paseo</label>
-                            <input type="radio" class="input-radio">
-                            <label for="" class="label-radio">Grooming </label>
-
+                        <label for="label-tipoServicio" id="label-tipoServicio" class="label-tipoServicio">Tipo de servicio</label><br><br>
+                        <div id="buttonBox">
+                            <input type="radio" class="input-radio" name="rbtServicio">
+                            <label for="" class="label-radio" value="P">Paseo</label>
+                            <input type="radio" class="input-radio" name="rbtServicio">
+                            <label for="" class="label-radio" value="G">Grooming </label>
                         </div>
-                        <div>
-
-                            <input type="radio" class="input-radio">
-                            <label for="" class="label-radio">Hotel</label>
-                            <input type="radio" class="input-radio">
-                            <label for="" class="label-radio">Guarderia</label>
+                        <div id="buttonBox">
+                            <input type="radio" class="input-radio" name="rbtServicio">
+                            <label class="label-radio" value="H">Hotel</label>
+                            <input type="radio" class="input-radio" name="rbtServicio">
+                            <label class="label-radio" value="U">Guarderia</label>
                         </div>
-                        <div class="datos">
-                            <label for="">Fecha del servicio</label>
-                            <input type="date">
+                        <div class="datos" id="txtFechaServicio">
+                            <label>Fecha del servicio</label>
+                            <input type="date" id="FechaServicio">
                         </div>
-
                         <div>
                             <label for="txtNombreUsuario" id="nombreUsuario">Nombre de Usuario</label>
                             <input type="text" id="txtNombreUsuario">
                         </div>
 
                         <div class="datos" name='formulario1'>
-
-                            <label for="">Provincia</label>
-                            <select name="cosa" id="" onchange="cambia()">
-                                <option value="1">San Jose</option>
-                                <option value="2">Puntarenas</option>
-                                <option value="3">Limon</option>
-                                <option value="4">Heredia</option>
-                                <option value="5">Guanacaste</option>
-                                <option value="6">Cartago</option>
-                                <option value="7">Alajuela</option>
-                                
-                            
+                            <label for="id-provincia">Provincia</label>
+                            <select class="id-provincia" id="id-provincia" onchange="asignarCanton()">
+                                <option>Provincia</option>
+                                <option id = "Heredia" value="Heredia">Heredia</option>
+                                <option id = "Cartago" value="Cartago">Cartago</option>
+                                <option id="SanJose" value="SanJose">San Jose</option>
                             </select>
-                            <div class="datos">
-                                <label for="">Canton</label>
-                                <select name="opt" id="">
-                                    <option value="-">-
-                                </select>
-
-                            </div>
-                            <div class="datos">
-
-                                <label for="">Distrito</label>
-                                <select name="" id="">
-                                    <option value="-">-
-                                </select>
-                            </div>
-
                         </div>
-
-                        <!---->
+                        <div class="datos">
+                            <label for="id-canton">Canton</label>
+                            <select class="id-canton" id="id-canton" onchange="asignarDistrito()">
+                                    <option>Canton</option>
+                                </select>
+                        </div>
+                        <div class="datos">
+                            <label for="id-distrito">Distrito</label>
+                            <select class="id-distrito" id="id-distrito">
+                                            <option>Distrito</option>
+                                        </select>
+                        </div>
 
                 </section>
 
                 <section id="cliente2">
                     <div class="datos">
-                        <label for="">Macotas</label>
-                        <select name="" id="">
-                               <option value="">Macota1</option>
-                               <option value="">Macota2</option>
-                               <option value="">Macota3</option>
+                        <label for="nombreMascota">Macotas</label>
+                        <select name="nombreMascota" id="">
+                               <option value="M1">Macota1</option>
+                               <option value="M2">Macota2</option>
+                               <option value="M3">Macota3</option>
                             </select>
                     </div>
                     <div>
 
-                        <label for="">Telefono de contacto</label>
-                        <input type="number">
+                        <label for="TelContacto">Telefono de contacto</label>
+                        <input type="text" id="TelContacto">
                     </div>
-                    <label for="">Observaciones</label>
-                    <textarea name="observaciones">
-    
-                </textarea>
-                    <!---->
-
-
-
-
-
-                    <button type="button" id="btnRegistrarCliente">Solicitar</button>
+                    <div>
+                        <label for="Observaciones">Observaciones</label>
+                        <textarea name="observaciones" wrap="off"></textarea>
+                    </div>
+                    <button type="button" id="btnRegistrarServicio">Solicitar</button>
 
             </form>
             </section>
@@ -152,12 +130,11 @@
     </footer>
 
     <!-- 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
-    <script src="https://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
-    <script src="js/registrarLineaServicio.js"></script>
     <script src="js/registroBitacoraServicio.js"></script> -->
-    <script src="js/registarCliente.js"></script>
-    <script src="js/Provincia.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
+    <script src="js/registarServicio.js"></script>
+    <script src="js/validacion-provincias.js"></script>
+    </script>
 </body>
 
 </html>
