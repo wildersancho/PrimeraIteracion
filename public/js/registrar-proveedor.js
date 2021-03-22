@@ -2,10 +2,20 @@
 // Validacion Correo:                                                                            //
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-let botonProveedor = document.querySelector('.botton-crear');
+let botonProveedor = document.querySelector('#botton-crear');
 let correoProveedor = document.querySelector('.id-email');
+let nombreUsuario = document.querySelector('#id-encargado');
+let apellido = document.querySelector('#id-apellido');
+let apellido2 = document.querySelector('#id-apellido2');
+let phone = document.querySelector('#id-phone');
+let idNegocio = document.querySelector('#id-negocio');
+let idNumber = document.querySelector('#id-num');
+let dirrecion = document.querySelector('.text-area');
 
-function validarCampos() {
+
+
+
+function validarCorreo(correoProveedor) {
 
     let regexMail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
 
@@ -13,13 +23,32 @@ function validarCampos() {
 
     console.log(testCorreo);
 
-    if (testCorreo == false) {
+    if (testCorreo == true) {
+        correoProveedor.className = ' ';
+        correoProveedor.placeholder = '';
+    } else {
+
         correoProveedor.className = ' required';
+        correoProveedor.placeholder = 'Formato incorrecto';
+        errorSweetAlert();
     }
 
 }
 
-botonProveedor.addEventListener('click', validarCampos);
+
+
+botonProveedor.addEventListener('click', function() {
+
+    validarCorreo(correoProveedor);
+    validarCampos(nombreUsuario);
+    validarCampos(apellido);
+    validarCampos(apellido2);
+    validarCampos(phone);
+    validarCampos(idNegocio);
+    validarCampos(idNumber);
+    validarCampos(dirrecion);
+
+});
 
 //Google map API
 function initMap() {
