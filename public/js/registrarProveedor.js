@@ -13,7 +13,7 @@ let idNumber = document.querySelector('#id-num');
 let dirrecion = document.querySelector('.text-area');
 
 
-function validarCorreo(correoProveedor) {
+function validarCorreo() {
 
     let regexMail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
 
@@ -38,37 +38,41 @@ function validarCorreo(correoProveedor) {
 function validacionSelect() {
 
 
-    if (provincia.value == "Provincia") {
+    if (provincia.value != "Provincia") {
+        provincia.style.borderColor = "";
+
+    } else {
         provincia.style.borderColor = "red";
         errorSweetAlert();
-    } else {
-        provincia.style.borderColor = "";
     }
-    if (canton.value == "Canton") {
-        canton.style.borderColor = "red";
-        selectDistrito.style.borderColor = "red";
-        errorSweetAlert();
-    } else {
+    if (canton.value != "Canton") {
+
         canton.style.borderColor = "";
         selectDistrito.style.borderColor = "";
+
+    } else {
+        errorSweetAlert();
+        canton.style.borderColor = "red";
+        selectDistrito.style.borderColor = "red";
+    }
+}
+
+function validationLoop() {
+
+    let arrayCampos = new Array(nombreUsuario, apellido, apellido2, phone, idNegocio, idNumber, dirrecion);
+
+    for (var i = 0; i < arrayCampos.length; i++) {
+        validarCampos(arrayCampos[i]);
     }
 }
 
 
 
-
-
 botonProveedor.addEventListener('click', function() {
 
-    validarCorreo(correoProveedor);
-    validarCampos(nombreUsuario);
-    validarCampos(apellido);
-    validarCampos(apellido2);
-    validarCampos(phone);
-    validarCampos(idNegocio);
-    validarCampos(idNumber);
-    validarCampos(dirrecion);
+    validarCorreo();
     validacionSelect();
+    validationLoop();
 
 });
 
