@@ -13,8 +13,6 @@ let idNumber = document.querySelector('#id-num');
 let dirrecion = document.querySelector('.text-area');
 
 
-
-
 function validarCorreo(correoProveedor) {
 
     let regexMail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
@@ -25,14 +23,39 @@ function validarCorreo(correoProveedor) {
 
     if (testCorreo == true) {
         correoProveedor.placeholder = '';
+        correoProveedor.className;
+        correoProveedor.style.borderColor = '';
     } else {
 
         correoProveedor.className = ' required';
         correoProveedor.placeholder = 'Formato incorrecto';
+        correoProveedor.style.borderColor = "red";
         errorSweetAlert();
     }
 
 }
+
+function validacionSelect() {
+
+
+    if (provincia.value == "Provincia") {
+        provincia.style.borderColor = "red";
+        errorSweetAlert();
+    } else {
+        provincia.style.borderColor = "";
+    }
+    if (canton.value == "Canton") {
+        canton.style.borderColor = "red";
+        selectDistrito.style.borderColor = "red";
+        errorSweetAlert();
+    } else {
+        canton.style.borderColor = "";
+        selectDistrito.style.borderColor = "";
+    }
+}
+
+
+
 
 
 botonProveedor.addEventListener('click', function() {
@@ -45,6 +68,7 @@ botonProveedor.addEventListener('click', function() {
     validarCampos(idNegocio);
     validarCampos(idNumber);
     validarCampos(dirrecion);
+    validacionSelect();
 
 });
 
