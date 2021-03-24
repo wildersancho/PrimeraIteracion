@@ -31,7 +31,7 @@ function confirmationSweetAlert() {
     Swal.fire({
         position: 'top-end',
         icon: 'success',
-        title: 'Se ha guardado su tarjeta!',
+        title: 'Se ha guardado su informacion!',
         showConfirmButton: false,
         timer: 1500
     })

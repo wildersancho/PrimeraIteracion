@@ -6,10 +6,8 @@ let inputemail = document.querySelector('#txtEmail');
 let inputnombreUsuario = document.querySelector('#txtNombreUsuario');
 let inputnombreCliente = document.querySelector('#txtNombreCliente');
 let inputsegundoNombreCliente = document.querySelector('#txtSegundoNombreCliente');
-
 let inputprimerApellidoCliente = document.querySelector('#txtPrimerApellidoCliente');
 let inputsegundoApellidoCliente = document.querySelector('#txtSegundoApellidoCliente');
-
 let inputfechaCliente = document.querySelector('#txtFechaCliente');
 let inputedadCliente = document.querySelector('#txtEdadCliente');
 let inputcantidadMascota = document.querySelector('#txtCantidadMascotas');
@@ -73,7 +71,6 @@ async function obtenerDatosCliente() {
                         icon: 'success',
                         showConfirmButton: false
                     });
-                    window.location.replace("http://127.0.0.1:5500/registrar-tarjetas.html")
                 } else {
                     swal.fire({
                         title: 'Registro incorrecto',

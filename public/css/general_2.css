@@ -68,11 +68,6 @@ p {
 
 /*Inicio de estilos del footer*/
 
-footer {
-    bottom: 0%;
-    width: 100%;
-}
-
 .footerCopyRedes {
     width: 100%;
     background: #8EE4AF;
@@ -80,6 +75,9 @@ footer {
     color: #05386B;
     display: flex;
     flex-wrap: wrap;
+    bottom: 0%;
+    width: 100%;
+    position: fixed;
 }
 
 .mainCopyRedes {
