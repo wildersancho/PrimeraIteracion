@@ -1,0 +1,68 @@
+body {
+    background-image: url(https://images.pexels.com/photos/1001684/pexels-photo-1001684.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+form {
+    width: 50%;
+    padding: 5px;
+    background: rgba(5, 56, 107, 90%);
+    /*color del cudaro del form*/
+    border-radius: 10px;
+}
+
+form {
+    display: flow-root;
+    margin: 30px 20px;
+}
+
+.main-content {
+    margin-top: 10%;
+    margin-left: 5%;
+    padding-bottom: 9%;
+}
+
+.Lista-container {
+    background-color: rgb(237, 245, 225);
+    height: 300px;
+    text-align: center;
+    overflow-y: scroll;
+}
+
+.Lista-container>h3 {
+    padding: 10px;
+    background-color: rgba(5, 56, 107, 90%);
+    font-weight: bold;
+    color: rgb(237, 245, 225);
+}
+
+th {
+    font-weight: bold;
+    color: rgb(237, 245, 225);
+    background-color: rgba(5, 56, 107, 60%);
+}
+
+th,
+td {
+    border: 1px solid black;
+    padding: 5px;
+    width: 100%;
+}
+
+#btnEditar {
+    font-size: 15px;
+    padding: 7.5px 30px;
+    margin-top: 10px;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+
+button:hover {
+    background-color: #379683;
+    /*cambia color de botones cuando pasa el mause*/
+}
+
+.footerCopyRedes {
+    bottom: 100vh;
+}

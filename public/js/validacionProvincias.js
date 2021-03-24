@@ -8,6 +8,7 @@ En el select de canton en el HTML se agrega: onchange="asignarDistrito()"
 
 let provincia = document.querySelector(".id-provincia");
 let canton = document.querySelector(".id-canton");
+let selectDistrito = document.getElementById('id-distrito');
 let heredia = document.getElementById("Heredia");
 let cartago = document.getElementById("Cartago");
 let sjo = document.getElementById("SanJose");
@@ -61,7 +62,6 @@ function asignarCanton() {
 function asignarDistrito() {
 
     //Heredia Distritos
-    let selectDistrito = document.getElementById('id-distrito');
 
     switch (canton.value) {
         //Carga los valores dependiendo de los arreglos de los cantones

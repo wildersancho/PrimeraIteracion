@@ -10,7 +10,7 @@ let apellido2 = document.querySelector('#id-apellido2');
 let phone = document.querySelector('#id-phone');
 let idNegocio = document.querySelector('#id-negocio');
 let idNumber = document.querySelector('#id-num');
-let dirrecion = document.querySelector('.text-area');
+let direccion = document.querySelector('.text-area');
 
 
 function validarCorreo() {
@@ -59,7 +59,7 @@ function validacionSelect() {
 
 function validationLoop() {
 
-    let arrayCampos = new Array(nombreUsuario, apellido, apellido2, phone, idNegocio, idNumber, dirrecion);
+    let arrayCampos = new Array(nombreUsuario, apellido, apellido2, phone, idNegocio, idNumber, direccion);
 
     for (var i = 0; i < arrayCampos.length; i++) {
         validarCampos(arrayCampos[i]);

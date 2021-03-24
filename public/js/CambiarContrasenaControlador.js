@@ -34,12 +34,6 @@ const validarFormulario = (e) => {
         case "password2":
             validarPassword2();
             break;
-            //case "correo":
-            //	validarCampo(expresiones.correo, e.target, 'correo');
-            //break;
-            //case "telefono":
-            //	validarCampo(expresiones.telefono, e.target, 'telefono');
-            //break;
     }
 }
 
