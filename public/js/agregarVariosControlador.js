@@ -28,6 +28,7 @@ async function obtenerDatosVacuna() {
             icon: 'success',
             confirmButtonText: 'Entendido'
         });
+        document.getElementById('txtNombreVacuna').value = '';
     }
 };
 
@@ -49,6 +50,7 @@ async function obtenerDatosPadecimiento() {
             icon: 'success',
             confirmButtonText: 'Entendido'
         });
+        document.getElementById('txtNombrePadecimiento').value = '';
     }
 };
 
@@ -70,6 +72,7 @@ async function obtenerDatosOtros() {
             icon: 'success',
             confirmButtonText: 'Entendido'
         });
+        document.getElementById('txtNombreOtros').value = '';
     }
 };
 
