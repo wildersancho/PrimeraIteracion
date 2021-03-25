@@ -18,9 +18,10 @@ let cantonesHeredia = new Array("Flores", "San Pablo", "Belén", "Santo Domingo"
 
 let cantonesCartago = new Array("La Unión", "Alvarado", "El Guarco", "Oreamuno", "Jiménez", "Cartago", "Paraíso", "Turrialba");
 
-var cantonesChepe = new Array("Tibás", "Montes de Oca", "Curridabat", "Alajuelita", "Moravia", "Goicoechea", "Escazú", "San José",
-    "Santa Ana", "Desamparados", "León Cortés", "Mora", "Aserrí", "Vázquez de Coronado", "Tarrazú", "Acosta", "Dota", "Turrubares",
-    "Puriscal", "Pérez Zeledón", );
+var cantonesChepe = new Array("Tibás", "Montes de Oca", "Curridabat");
+/*, "Alajuelita", "Moravia", "Goicoechea", "Escazú", "San José",
+"Santa Ana", "Desamparados", "León Cortés", "Mora", "Aserrí", "Vázquez de Coronado", "Tarrazú", "Acosta", "Dota", "Turrubares",
+"Puriscal", "Pérez Zeledón"*/
 
 //Function que agrega las opciones del arreglo al select
 function provinciaSelect(arreglo, select) {
@@ -153,6 +154,22 @@ function asignarDistrito() {
             provinciaSelect(cartagoTurri, selectDistrito);
             break;
 
-            //Distritos de chepe: 
+            //Distritos de chepe: "Tibás", "Montes de Oca", "Curridabat"
+
+        case cantonesChepe[0]:
+            let chepeTibás = new Array('San Juan', 'Cinco Esquinas', 'Anselmo llorente', 'León XIII', '	Colima');
+            provinciaSelect(chepeTibás, selectDistrito);
+            break;
+
+        case cantonesChepe[1]:
+            let chepeOca = new Array('San Pedro', 'Sabanilla', 'Mercedes', 'San Rafael');
+            provinciaSelect(chepeOca, selectDistrito);
+            break;
+
+        case cantonesChepe[2]:
+            let chepeCurri = new Array('Curridabat', 'Granadilla', 'Sánchez', 'Tirrases');
+            provinciaSelect(chepeCurri, selectDistrito);
+            break;
     }
+
 }

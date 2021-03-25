@@ -90,10 +90,11 @@ p {
     margin-left: 30%;
 }
 
-.caja-comentarios {
+.tabla-resultados {
+    overflow: auto;
     font-family: inherit;
-    margin: 0px;
-    padding: 0px;
+    color: rgb(237, 245, 225);
+    background-color: rgb(237, 245, 225, 15%);
     height: 155px;
     width: 100%;
 }
