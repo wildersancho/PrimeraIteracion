@@ -1,0 +1,65 @@
+body {
+    background-image: url(https://images.pexels.com/photos/5732468/pexels-photo-5732468.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+    background-size: 100% 250%;
+}
+
+.main-content {
+    margin-top: 7%;
+    margin-left: 5%;
+    padding-bottom: 9%;
+}
+
+.Lista-container {
+    background-color: rgb(237, 245, 225);
+    width: 55%;
+    height: 300px;
+    text-align: center;
+    overflow-y: scroll;
+}
+
+.Lista-container>h3 {
+    padding: 10px;
+    background-color: rgba(5, 56, 107, 90%);
+    font-weight: bold;
+    color: rgb(237, 245, 225);
+}
+
+th {
+    font-weight: bold;
+    color: rgb(237, 245, 225);
+    background-color: rgba(5, 56, 107, 60%);
+}
+
+table {
+    width: 100%;
+}
+
+th,
+td {
+    border: 1px solid black;
+    padding: 5px;
+    width: 30%;
+}
+
+.footerCopyRedes {
+    bottom: 100vh;
+}
+
+.agregar th {
+    width: 1200px
+}
+
+th a input {
+    background-color: rgba(5, 56, 107, 90%);
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.aceptar {
+    background-color: rgba(55, 220, 131, 60%);
+}
+
+.rechazar {
+    background-color: rgba(250, 0, 0, 60%);
+}

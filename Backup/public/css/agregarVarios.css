@@ -1,0 +1,76 @@
+body {
+    background-image: url(https://images.pexels.com/photos/4492047/pexels-photo-4492047.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+main {
+    background-size: cover;
+    padding: 100px 50px;
+    height: -200px
+    /*cambia color fondo de pantalla*/
+    /*background-color: rgba(0, 98, 102,0.1);*/
+    /*background-image: url("../imgs/registrarLineaPalmeras.jpg");*/
+}
+
+form {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    padding: 20px 10px;
+    background: rgba(5, 56, 107, 90%);
+    /*color del cudaro del form*/
+}
+
+form {
+    display: flow-root;
+    width: 40%;
+    padding: 50px;
+}
+
+label {
+    margin-bottom: 30px;
+    font-size: 20px;
+    color: rgb(237, 245, 225);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    margin: 66px 545px 0px -224px
+}
+
+legend {
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 22px;
+    color: rgb(237, 245, 225);
+    display: block;
+}
+
+.input-agregar {
+    width: 200px;
+    height: 30px;
+    margin-left: 30px;
+    border-radius: 10px;
+}
+
+.submenu {
+    display: flex;
+    justify-content: space-around;
+    padding-right: 5%;
+    margin-bottom: 5px;
+    height: 30px;
+    flex-grow: inherit;
+}
+
+.submenu>a>input {
+    border-radius: 5px;
+    border: none;
+    text-decoration: none;
+    font-weight: lighter;
+    color: rgb(237, 245, 225);
+    background-color: rgba(92, 219, 149, 40%);
+    padding: 7px;
+    margin-right: auto;
+    margin-top: 10px;
+}

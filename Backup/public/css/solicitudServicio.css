@@ -1,0 +1,237 @@
+html {
+    font-family: 'Montserrat', sans-serif;
+    /*font-size: 18px;*/
+}
+
+body {
+    background-image: url(https://images.pexels.com/photos/2194261/pexels-photo-2194261.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.errorInput {
+    border: 2px solid #EE5A24;
+}
+
+.errorInputCaptcha {
+    border: 2px solid #EE5A24;
+    height: 81px;
+}
+
+main {
+    background-size: cover;
+    padding: 100px 50px;
+    height: -200px;
+    /*cambia color fondo de pantalla*/
+    /*background-color: rgba(0, 98, 102,0.1);*/
+    /*background-image: url("../imgs/registrarLineaPalmeras.jpg");*/
+    margin-bottom: 50px;
+}
+
+form {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    padding: 20px 10px;
+    background: rgba(5, 56, 107, 90%);
+    /*color del cudaro del form*/
+    margin-bottom: 50px;
+}
+
+form {
+    display: flow-root;
+}
+
+
+/* .user-details{
+    display: flex;
+    flex-wrap: wrap;
+} */
+
+main h1 {
+    /*tutulo*/
+    font-size: 40px;
+    margin-bottom: 50px;
+    color: white;
+    text-align: center;
+    padding-bottom: 5px;
+    border-bottom: #379683 solid;
+    /*cambia color linea de registro de cliente*/
+}
+
+#cliente1 {
+    width: 50%;
+    float: left;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-right: 0px;
+    margin-bottom: 70px;
+    border-right: #dfe4ea solid 1px;
+    /*color de la linea del centro y grosor*/
+}
+
+
+/* #cliente2 diuv {
+    width: 50%;
+    float: right;
+    margin-right: 20px;
+    margin-left: 20px;
+    padding-left: 0px;
+    margin-bottom: 60px;
+} */
+
+#sctFoto {
+    padding: 20px;
+    display: inline-block;
+    border-radius: 15px;
+    margin-left: 150px;
+}
+
+#cliente3 {
+    /*capcha*/
+    display: inline-block;
+}
+
+#txtFotoCliente {
+    width: 150px;
+    height: 150px;
+    /*border-radius: 50%;*/
+    margin-left: 15px;
+    border: solid 5px #379683;
+    /*cambia color radio de la foto*/
+}
+
+input {
+    border-radius: 8px;
+    color: white;
+    /*color de las letras */
+    background: rgba(0, 0, 0, 0.377);
+    border-bottom: 2px solid #379683;
+}
+
+textarea {
+    border-radius: 4px;
+    overflow-y: auto;
+    vertical-align: top;
+    font-family: 'Montserrat', sans-serif;
+    background: rgba(0, 0, 0, 0.377);
+    color: #f3f2f2;
+    border: none;
+    resize: none;
+}
+
+form label {
+    width: 200px;
+    display: inline-block;
+    color: white;
+    /*color de letra de los div*/
+}
+
+form div {
+    /*Espacio entre lineas o div*/
+    margin-bottom: 20px;
+}
+
+form input {
+    /*cambiar tamaño a los botones div*/
+    display: inline-block;
+    width: 200px;
+    height: 25px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+input[type="date"] {
+    /*Fecha*/
+    color: rgb(243, 234, 234);
+}
+
+input[type="radio"] {
+    width: 50px;
+}
+
+select {
+    display: inline-block;
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    background: rgba(0, 0, 0, 0.377);
+    color: #ffffff;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #379683;
+    margin-bottom: 20px;
+}
+
+form textarea {
+    display: inline-block;
+    vertical-align: top;
+    width: 350px;
+}
+
+button {
+    background-color: #379683;
+    /* Cambia el clor al boton registrar y subir foto */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+button:hover {
+    background-color: #05386B;
+    /*cambia color de botones cuando pasa el mause*/
+}
+
+#btnSubirFotoCliente {
+    /*Boton para subir la foto*/
+    font-size: 20px;
+    padding: 7.5px 30px;
+    margin-top: 15px;
+    margin-left: 18px;
+}
+
+#btnRegistrarCliente {
+    font-size: 25px;
+    /*tamaño de boton de registar*/
+    padding: 15.5px 35.5px;
+    margin: auto;
+    display: block;
+    clear: both;
+}
+
+
+/*Para que no salga una opcion de select*/
+
+select:required:invalid {
+    color: rgb(223, 11, 11);
+}
+
+option[value=""][disabled] {
+    display: none;
+}
+
+option {
+    color: rgb(20, 14, 14);
+}
+
+#btnRegistrarServicio {
+    background-color: #379683;
+    /* Cambia el clor al boton registrar y subir foto */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: large;
+    width: 150px;
+    height: 50px;
+    position: relative;
+    margin-top: 10%;
+}
+
+#btnRegistrarServicio:hover {
+    background-color: #05386B;
+    /*cambia color de botones cuando pasa el mause*/
+}
+
+
+/********/

@@ -1,0 +1,265 @@
+body {
+    background-image: url('../imgs/pexels-pixabay-416160.jpg');
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: cover;
+    margin-bottom: 200px;
+}
+
+tbody {
+    color: white;
+}
+
+h3 {
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    line-height: 15px;
+    text-align: left;
+}
+
+.sct-info h3 {
+    margin: 30px 0px 10px 110px;
+    font-size: 20px;
+}
+
+.div-comentarios {
+    margin-top: 100px;
+}
+
+.h3-comentario {
+    margin-top: 30px;
+}
+
+.contenedor-perfil {
+    display: flex;
+    flex-direction: column;
+    width: 1000px;
+    height: 1100px;
+    margin-top: 2%;
+    margin-bottom: 1%;
+    margin-left: 22%;
+    background-color: rgba(5, 56, 107, 90%);
+    border-radius: 20px;
+}
+
+#titulo {
+    font-weight: bolder;
+    font-size: 30px;
+    color: rgb(237, 245, 225);
+    padding: 10px;
+    margin-left: 35.9%;
+}
+
+.contenedor-perfil .firstSection .DatosGenerales {
+    padding-top: 3%;
+    padding-bottom: 3%;
+    color: rgb(237, 245, 225);
+    margin-left: 45%;
+}
+
+.contenedor-perfil .firstSection .DatosGenerales>h3 {
+    font-weight: bold;
+}
+
+.contenedor-perfil .firstSection>img {
+    height: 300px;
+    width: 300px;
+    border-radius: 30px;
+    border: 10px solid rgba(237, 245, 225, 20%);
+    margin-bottom: 2%;
+    margin-left: 10%;
+    float: left;
+    position: relative;
+}
+
+.submenu {
+    display: flex;
+    justify-content: space-around;
+    padding-right: 5%;
+    margin-bottom: 5px;
+    height: 30px;
+    flex-grow: inherit;
+}
+
+.submenu>a>input {
+    border-radius: 10px;
+    border: none;
+    text-decoration: none;
+    font-weight: lighter;
+    color: rgb(237, 245, 225);
+    background-color: rgba(92, 219, 149, 40%);
+    padding: 7px;
+    margin-right: auto;
+}
+
+.submenu>a>input:hover {
+    background-color: rgba(237, 245, 225, 20%);
+    padding: 8px;
+}
+
+.info-personal {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 3%;
+    color: rgb(237, 245, 225);
+    background-color: rgba(237, 245, 225, 10%);
+    height: 80px;
+}
+
+.info-personal>div>h3 {
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.info-personal>div>p {
+    font-size: small;
+    margin-left: 10px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+.info-personal>div>h3>p {
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+.caja-comentarios {
+    font-family: inherit;
+    margin: 0px;
+    padding: 0px;
+    height: 155px;
+    width: 100%;
+    color: rgb(237, 245, 225);
+}
+
+.caja-comentarios h3 {
+    font-weight: bold;
+}
+
+.comentarios-text {
+    width: 74.8%;
+    padding: 0px;
+    margin: 0%;
+    background-color: rgba(255, 255, 255, 40%);
+    color: rgb(237, 245, 225);
+    border: solid 10px white;
+    height: 30px;
+    border: none;
+    text-align: end;
+}
+
+.comentarios-boton {
+    background-color: rgba(237, 245, 225, 40%);
+    color: rgb(237, 245, 225);
+    font-weight: bold;
+    border: none;
+    height: 30px;
+    width: 24.6%;
+}
+
+.comentarios-boton:hover {
+    background-color: rgba(237, 245, 225, 20%);
+}
+
+.caja-comentarios tbody tr {
+    background-color: rgba(237, 245, 225, 20%);
+    border-bottom: 1px solid rgb(237, 245, 225);
+    position: sticky;
+    border: solid 10px white;
+}
+
+.checked {
+    color: orange;
+}
+
+.información {
+    width: 400px;
+    height: 180px;
+    background-color: rgba(237, 245, 225, 20%);
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    margin: 10px;
+}
+
+.información table tr {
+    border: 2px solid rgba(5, 56, 107, 90%);
+    height: 30px;
+}
+
+.información table td {
+    border: 2px solid rgba(5, 56, 107, 90%);
+    width: 200px;
+    text-align: center;
+    color: white;
+    padding-top: 5px;
+}
+
+.información table th {
+    border: 2px solid rgba(5, 56, 107, 90%);
+    width: 200px;
+    text-align: center;
+    color: white;
+    padding-top: 5px;
+    font-weight: bold;
+}
+
+.información ul li {
+    text-decoration: double;
+    list-style: disc;
+    margin: 10px;
+}
+
+.información-comentarios ul li {
+    text-decoration: double;
+    list-style: disc;
+    margin: 10px;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.información-contacto {
+    width: 400px;
+    height: 180px;
+    background-color: rgba(237, 245, 225, 20%);
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    margin: 10px;
+}
+
+.información-comentarios {
+    width: 800px;
+    height: 180px;
+    background-color: rgba(237, 245, 225, 20%);
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    margin: 10px;
+}
+
+.información-contacto table tr {
+    border: 2px solid rgba(5, 56, 107, 90%);
+    height: 30px;
+}
+
+.información-contacto table td {
+    border: 2px solid rgba(5, 56, 107, 90%);
+    width: 200px;
+    color: white;
+    padding-top: 5px;
+    width: 300px;
+}
+
+.información-contacto table th {
+    border: 2px solid rgba(5, 56, 107, 90%);
+    width: 200px;
+    color: white;
+    padding-top: 5px;
+    font-weight: bold;
+}

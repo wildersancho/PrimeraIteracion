@@ -1,0 +1,183 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: 'Montserrat', sans-serif;
+    /*Cambia la topografia*/
+    font-size: 16px;
+    /*Cambia el tamaño de la topografia*/
+}
+
+.error_input {
+    border: 2px solid red;
+}
+
+.error_font {
+    color: red;
+}
+
+
+/* Inicio: estilos del header */
+
+
+/* Inicio: estilos del header */
+
+header {
+    background: #263137;
+    height: 64px;
+}
+
+header img {
+    width: 54px;
+    height: 54px;
+    margin-top: 5px;
+    margin-left: 3px;
+    float: left;
+    border-radius: 50%;
+}
+
+#lblUsuario {
+    color: #fff;
+    margin-top: 2%;
+    margin-left: 5px;
+    font: inherit;
+    z-index: 1;
+    position: absolute;
+    text-decoration: none;
+}
+
+.nav {
+    position: fixed;
+    width: 200px;
+    height: 100vh;
+    background-color: #37454d;
+    font-family: 'Montserrat', sans-serif;
+    transition: all .5s ease;
+    right: -220px;
+    z-index: 2;
+}
+
+.nav__item {
+    display: block;
+    width: 100%;
+    line-height: 3.9;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav__item:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #fff;
+}
+
+.menu-toogle {
+    position: absolute;
+    width: 35px;
+    line-height: 1.2;
+    text-align: center;
+    top: 20px;
+    left: 1306px;
+    transition: all .5s ease;
+    z-index: 2;
+}
+
+.menu-toogle::before {
+    content: "☰";
+    font: inherit;
+    color: #fff;
+}
+
+.checkbox {
+    display: none;
+}
+
+.checkbox:checked~.nav {
+    right: 0px;
+    position: fixed;
+}
+
+.checkbox:checked~.main-w {
+    margin-left: 200px;
+}
+
+.checkbox:checked~.menu-toogle {
+    left: 1114px;
+    position: fixed;
+}
+
+
+/* Fin: estilos del header */
+
+
+/* Fin: estilos del header */
+
+
+/*Inicio de estilos del footer*/
+
+.footerCopyRedes {
+    width: 100%;
+    background: #263137;
+    border-top: 3px solid #e7553c;
+    color: #ffffff;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.mainCopyRedes {
+    width: 98%;
+    max-width: 1366;
+    padding: 15px 0px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mainCopyRedes .footerCopy {
+    width: 70%;
+    font-size: 15px;
+}
+
+.mainCopyRedes .footerRedes {
+    width: 30%;
+    display: flex;
+}
+
+.mainCopyRedes .footerRedes a {
+    display: inline-block;
+    text-decoration: none;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50px;
+    background: #e7553c;
+    color: #ffffff;
+    text-align: center;
+    margin: 10px;
+}
+
+.mainCopyRedes .footerRedes .facebook:hover {
+    background: #3742fa;
+}
+
+.mainCopyRedes .footerRedes .twitter:hover {
+    background: #1e90ff;
+}
+
+.mainCopyRedes .footerRedes .instagram:hover {
+    background: linear-gradient(to top, #fed330, #EE5A24, #EA2027, #8e44ad)
+}
+
+.ocultar {
+    display: none;
+}
+
+.desactivar {
+    pointer-events: none;
+    cursor: default;
+    text-decoration: none;
+}

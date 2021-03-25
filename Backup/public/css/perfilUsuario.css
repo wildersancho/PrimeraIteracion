@@ -1,0 +1,126 @@
+body {
+    background-image: url(https://images.pexels.com/photos/7174/summer-grass.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: cover;
+}
+
+.contenedor-perfil {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 20%;
+    margin-top: 2%;
+    margin-bottom: 1%;
+    margin-left: 22%;
+    background-color: rgba(5, 56, 107, 90%);
+    border-radius: 20px;
+}
+
+#titulo {
+    font-weight: bolder;
+    color: rgb(237, 245, 225);
+    padding: 10px;
+    margin-left: 42.9%;
+}
+
+.contenedor-perfil>img {
+    height: 200px;
+    width: 200px;
+    border-radius: 30px;
+    border: 15px solid rgba(237, 245, 225, 20%);
+    margin-bottom: 2%;
+    margin-left: 38%;
+}
+
+.submenu {
+    display: flex;
+    justify-content: space-around;
+    padding-right: 5%;
+    margin-bottom: 5px;
+    height: 30px;
+    flex-grow: inherit;
+}
+
+.submenu>a>input {
+    border-radius: 10px;
+    border: none;
+    text-decoration: none;
+    font-weight: lighter;
+    color: rgb(237, 245, 225);
+    background-color: rgba(92, 219, 149, 40%);
+    padding: 7px;
+    margin-right: auto;
+}
+
+.submenu>a>input:hover {
+    background-color: rgba(237, 245, 225, 20%);
+    padding: 8px;
+}
+
+#fecha-nacimiento {
+    margin-left: 23%;
+}
+
+.info-personal {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 3%;
+    color: rgb(237, 245, 225);
+    background-color: rgba(237, 245, 225, 10%);
+    height: 60px;
+}
+
+.info-personal>div>h3 {
+    font-weight: bold;
+}
+
+.info-personal>div>p {
+    font-size: small;
+    margin-left: 10px;
+    margin-top: 1px;
+}
+
+.info-personal>div>h3,
+p {
+    margin-top: 12px;
+}
+
+.direccion-position {
+    margin-left: 30%;
+}
+
+.tabla-resultados {
+    overflow: auto;
+    font-family: inherit;
+    color: rgb(237, 245, 225);
+    background-color: rgb(237, 245, 225, 15%);
+    height: 155px;
+    width: 100%;
+}
+
+.comentarios-text {
+    width: 74.8%;
+    padding: 0px;
+    margin: 0%;
+    border-bottom-left-radius: 360px;
+    background-color: rgba(255, 255, 255, 40%);
+    color: rgb(237, 245, 225);
+    height: 30px;
+    border: none;
+    text-align: end;
+}
+
+.comentarios-boton {
+    background-color: rgba(237, 245, 225, 40%);
+    color: rgb(237, 245, 225);
+    font-weight: bold;
+    border: none;
+    border-bottom-right-radius: 360px;
+    height: 30px;
+    width: 24.6%;
+}
+
+.comentarios-boton:hover {
+    background-color: rgba(237, 245, 225, 20%);
+}

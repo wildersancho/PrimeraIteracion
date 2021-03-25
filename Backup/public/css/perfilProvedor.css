@@ -1,0 +1,198 @@
+body {
+    background-image: url(https://images.pexels.com/photos/7174/summer-grass.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: cover;
+}
+
+.contenedor-perfil {
+    display: flex;
+    flex-direction: column;
+    width: 1000px;
+    height: 1350px;
+    margin-top: 2%;
+    margin-bottom: 1%;
+    margin-left: 22%;
+    background-color: rgba(5, 56, 107, 90%);
+    border-radius: 20px;
+}
+
+.sct-info h3 {
+    font-weight: bold;
+    color: white;
+    margin: 30px 0px 10px 110px;
+    font-size: 20px;
+}
+
+p {
+    color: white;
+}
+
+li {
+    color: white;
+}
+
+#titulo {
+    font-weight: bolder;
+    color: rgb(237, 245, 225);
+    padding: 10px;
+    margin-left: 42.9%;
+}
+
+.contenedor-perfil>img {
+    height: 200px;
+    width: 200px;
+    border-radius: 30px;
+    border: 15px solid rgba(237, 245, 225, 20%);
+    margin-bottom: 2%;
+    margin-left: 38%;
+}
+
+.submenu {
+    display: flex;
+    justify-content: space-around;
+    padding-right: 5%;
+    margin-bottom: 5px;
+    height: 30px;
+    flex-grow: inherit;
+}
+
+.submenu>a>input {
+    border-radius: 10px;
+    border: none;
+    text-decoration: none;
+    font-weight: lighter;
+    color: rgb(237, 245, 225);
+    background-color: rgba(92, 219, 149, 40%);
+    padding: 7px;
+    margin-right: auto;
+}
+
+.submenu>a>input:hover {
+    background-color: rgba(237, 245, 225, 20%);
+    padding: 8px;
+}
+
+#fecha-nacimiento {
+    margin-left: 23%;
+}
+
+.info-personal {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 3%;
+    color: rgb(237, 245, 225);
+    background-color: rgba(237, 245, 225, 10%);
+    height: 60px;
+    margin-top: -0px;
+}
+
+.info-personal>div>h3 {
+    font-weight: bold;
+}
+
+.info-personal>div>p {
+    font-size: small;
+    margin-left: 10px;
+    margin-top: 1px;
+}
+
+.info-personal>div>h3,
+p {
+    margin-top: 12px;
+}
+
+.direccion-position {
+    margin-left: 30%;
+}
+
+.información {
+    width: 400px;
+    height: 180px;
+    background-color: rgba(237, 245, 225, 20%);
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    margin: 10px;
+}
+
+.información table tr {
+    border: 2px solid rgba(5, 56, 107, 90%);
+    height: 30px;
+}
+
+.información table td {
+    border: 2px solid rgba(5, 56, 107, 90%);
+    width: 200px;
+    text-align: center;
+    color: white;
+    padding-top: 5px;
+}
+
+.información table th {
+    border: 2px solid rgba(5, 56, 107, 90%);
+    width: 200px;
+    text-align: center;
+    color: white;
+    padding-top: 5px;
+    font-weight: bold;
+}
+
+.información ul li {
+    text-decoration: double;
+    list-style: disc;
+    margin: 10px;
+}
+
+.información-comentarios ul li {
+    text-decoration: double;
+    list-style: disc;
+    margin: 10px;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.información-contacto {
+    width: 400px;
+    height: 180px;
+    background-color: rgba(237, 245, 225, 20%);
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    margin: 10px;
+}
+
+.información-comentarios {
+    width: 800px;
+    height: 180px;
+    background-color: rgba(237, 245, 225, 20%);
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    margin: 10px;
+}
+
+.información-contacto table tr {
+    border: 2px solid rgba(5, 56, 107, 90%);
+    height: 30px;
+}
+
+.información-contacto table td {
+    border: 2px solid rgba(5, 56, 107, 90%);
+    width: 200px;
+    color: white;
+    padding-top: 5px;
+    width: 300px;
+}
+
+.información-contacto table th {
+    border: 2px solid rgba(5, 56, 107, 90%);
+    width: 200px;
+    color: white;
+    padding-top: 5px;
+    font-weight: bold;
+}
