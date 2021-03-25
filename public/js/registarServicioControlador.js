@@ -57,7 +57,7 @@ async function obtenerDatosServicio() {
 
 function validarCliente(pnombreUsuario, ptel, pProvincia, pCanton, pDistrito, pfechaCliente, pinputRadioButton) {
     let error = false;
-    let expTel = /[0-9]{8}$/;
+    let expTel = /^[0-9]{8}$/;
     console.log("validando");
 
     if (pnombreUsuario == '') {

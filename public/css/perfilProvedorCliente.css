@@ -3,6 +3,7 @@ body {
     background-repeat: no-repeat;
     background-position: left;
     background-size: cover;
+    margin-bottom: 200px;
 }
 
 tbody {
@@ -12,6 +13,9 @@ tbody {
 h3 {
     color: white;
     font-weight: bold;
+    padding: 5px;
+    line-height: 15px;
+    text-align: left;
 }
 
 .sct-info h3 {
@@ -20,7 +24,7 @@ h3 {
 }
 
 .div-comentarios {
-    margin-top: 150px;
+    margin-top: 100px;
 }
 
 .h3-comentario {
@@ -31,7 +35,7 @@ h3 {
     display: flex;
     flex-direction: column;
     width: 1000px;
-    height: 900px;
+    height: 1100px;
     margin-top: 2%;
     margin-bottom: 1%;
     margin-left: 22%;
@@ -94,10 +98,6 @@ h3 {
     padding: 8px;
 }
 
-#fecha-nacimiento {
-    margin-left: 23%;
-}
-
 .info-personal {
     display: flex;
     justify-content: space-around;
@@ -109,6 +109,7 @@ h3 {
 
 .info-personal>div>h3 {
     font-weight: bold;
+    margin-top: 15px;
 }
 
 .info-personal>div>p {
@@ -118,14 +119,9 @@ h3 {
     margin-bottom: 6px;
 }
 
-.info-personal>div>h3,
-p {
+.info-personal>div>h3>p {
     margin-top: 6px;
     margin-bottom: 6px;
-}
-
-.direccion-position {
-    margin-left: 30%;
 }
 
 .caja-comentarios {
@@ -147,6 +143,7 @@ p {
     margin: 0%;
     background-color: rgba(255, 255, 255, 40%);
     color: rgb(237, 245, 225);
+    border: solid 10px white;
     height: 30px;
     border: none;
     text-align: end;
@@ -165,9 +162,11 @@ p {
     background-color: rgba(237, 245, 225, 20%);
 }
 
-tbody tr {
+.caja-comentarios tbody tr {
     background-color: rgba(237, 245, 225, 20%);
     border-bottom: 1px solid rgb(237, 245, 225);
+    position: sticky;
+    border: solid 10px white;
 }
 
 .checked {

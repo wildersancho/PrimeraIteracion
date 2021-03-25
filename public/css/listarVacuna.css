@@ -1,28 +1,17 @@
 body {
     background-image: url(https://images.pexels.com/photos/5732468/pexels-photo-5732468.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
-    background-repeat: no-repeat;
     background-size: 100% 250%;
 }
 
-form {
-    width: 50%;
-    padding: 5px;
-    background: rgba(5, 56, 107, 90%)/*color del cudaro del form*/
-}
-
-form {
-    display: flow-root;
-    margin: 30px 20px;
-}
-
 .main-content {
-    margin-top: 10%;
+    margin-top: 7%;
     margin-left: 5%;
     padding-bottom: 9%;
 }
 
 .Lista-container {
     background-color: rgb(237, 245, 225);
+    width: 55%;
     height: 300px;
     text-align: center;
     overflow-y: scroll;
@@ -41,26 +30,36 @@ th {
     background-color: rgba(5, 56, 107, 60%);
 }
 
+table {
+    width: 100%;
+}
+
 th,
 td {
     border: 1px solid black;
     padding: 5px;
-    width: 100%;
-}
-
-#btnEditar {
-    font-size: 15px;
-    padding: 7.5px 30px;
-    margin-top: 10px;
-    border-radius: 10px;
-    margin-left: 10px;
-}
-
-button:hover {
-    background-color: #379683;
-    /*cambia color de botones cuando pasa el mause*/
+    width: 30%;
 }
 
 .footerCopyRedes {
     bottom: 100vh;
+}
+
+.agregar th {
+    width: 1200px
+}
+
+th a input {
+    background-color: rgba(5, 56, 107, 90%);
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.aceptar {
+    background-color: rgba(55, 220, 131, 60%);
+}
+
+.rechazar {
+    background-color: rgba(250, 0, 0, 60%);
 }
