@@ -3,28 +3,30 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Validación de Formulario con Javascript</title>
-    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Documento HTML5">
+    <title>Cambiar Contraseña</title>
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/general_2.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" href="css/cambiarContraseña.css">
-
-
+    <link rel="stylesheet" href="css/general_2.css">
 </head>
 
 <body>
     <header id="header-principal" class="header-principal">
-        <nav class="nav" id="navPrincipal">
-            <a href="index.html"> <img src="imgs/IconoMenu.png" id="logo" /> </a>
-            <a href="inicioSesion.html">Buscar un servicio</a>
-            <a href="inicioSesion.html">Ofrecer un servicio</a>
-            <a href="landingPageEquipo.html">Mi Perfil</a>
+        <nav class="nav-contenedor">
+            <a href="index.html"><img src="imgs/IconoMenu.png" id="logo" /></a>
+            <a href="perfilProveedorCliente.html">Buscar un servicio</a>
+            <a href="registrarProveedor.html">Ofrecer un servicio</a>
+            <a href="perfilUsuario.html">Perfil Cliente</a>
+            <a href="perfilProvedor.html">Perfil Proveedor</a>
+            <a href="perfilAdministador.html">Perfil Administrador</a>
             <a class="cerrarSesion" href="inicioSesion.html">Cerrar Sesión</a>
         </nav>
-        </div>
     </header>
+
     <main>
         <form action="" class="formulario" id="formulario">
             <h1>
@@ -111,9 +113,8 @@
                 </section>
             </section>
     </footer>
-
-    <script src="js/cambiarContraseña.js"></script>
-    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
+<script src="/js/cambiarContraseña.js"></script>
 
 </html>

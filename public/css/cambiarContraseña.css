@@ -1,82 +1,7 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    list-style-type: none;
-    text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
-}
-
 body {
     background-image: url(https://images.pexels.com/photos/1860907/pexels-photo-1860907.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260);
-    background-size: 100%;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-html {
-    font-family: Montserrat;
-}
-
-h4 {
-    font-size: 21px;
-    font-weight: bold;
-}
-
-h5 {
-    font-size: 19px;
-    font-weight: bold;
-}
-
-h6 {
-    font-size: 15px;
-    font-weight: bold;
-}
-
-p {
-    font-size: 13px;
-    line-height: 20px;
-}
-
-.header-principal {
-    background: #379683;
-    padding: 15px;
-    width: 100%;
-    position: fixed;
-    top: 0;
-}
-
-.nav-contenedor {
-    display: flex;
-}
-
-#logo {
-    max-width: 30px;
-    max-height: 30px;
-}
-
-.header-principal {
-    width: 100%;
-    left: 0;
-    right: 0;
-}
-
-.header-principal nav a {
-    color: #EDF5E1;
-    text-decoration: none;
-    margin-right: 30px;
-    padding-left: 40px;
-    margin-top: 10px;
-}
-
-.header-principal nav a:hover {
-    color: #05386B;
-}
-
-.cerrarSesion {
-    margin-left: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 main {
@@ -86,12 +11,29 @@ main {
     padding: 40px;
 }
 
+main h1 {
+    /*tutulo*/
+    font-size: 40px;
+    margin-bottom: 50px;
+    color: white;
+    text-align: center;
+    padding-bottom: 5px;
+    border-bottom: #379683 solid;
+    /*cambia color linea de registro de cliente*/
+}
+
 .formulario {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    padding: 70px;
+    background: rgba(5, 56, 107, 90%);
+    margin-bottom: 50px;
+    /*color del cudaro del form
     padding: 50px;
-    display: grid;
-    border-radius: 10px;
-    grid-template-columns: 1fr;
-    gap: 30px;
+	display: grid;
+    border-radius:10px;
+    grid-template-columns: 1fr ;
+    gap:30px;
     background: rgba(5, 56, 107, 70%)/*color del cudaro del form*/
 }
 
@@ -241,113 +183,4 @@ main {
     .formulario__btn {
         width: 100%;
     }
-}
-
-
-/*HEADER DEL PROYECTO*/
-
-* {
-    box-sizing: border-box;
-}
-
-html {
-    font-family: Montserrat;
-}
-
-h4 {
-    font-size: 21px;
-    font-weight: bold;
-}
-
-h5 {
-    font-size: 19px;
-    font-weight: bold;
-}
-
-h6 {
-    font-size: 15px;
-    font-weight: bold;
-}
-
-p {
-    font-size: 13px;
-    line-height: 20px;
-}
-
-
-/*Inicio de estilos del footer*/
-
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-.footerCopyRedes {
-    width: 100%;
-    background: #8EE4AF;
-    border-top: 3px solid #8EE4AF;
-    color: #05386B;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.mainCopyRedes {
-    width: 98%;
-    max-width: 1366;
-    padding: 15px 0px;
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.mainCopyRedes .footerCopy {
-    width: 30%;
-    font-size: 15px;
-}
-
-.mainCopyRedes .footerCopy2 {
-    width: 30%;
-    font-size: 15px;
-}
-
-.mainCopyRedes .footerRedes {
-    width: 20%;
-}
-
-.mainCopyRedes .footerRedes a {
-    display: inline-block;
-    text-decoration: none;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    border-radius: 50px;
-    background: #379683;
-    color: #EDF5E1;
-    text-align: center;
-    margin: 10px;
-}
-
-.mainCopyRedes .footerRedes .facebook:hover {
-    background: #3742fa;
-}
-
-.mainCopyRedes .footerRedes .twitter:hover {
-    background: #1e90ff;
-}
-
-.mainCopyRedes .footerRedes .instagram:hover {
-    background: linear-gradient(to top, #fed330, #EE5A24, #EA2027, #8e44ad)
-}
-
-.ocultar {
-    display: none;
-}
-
-.desactivar {
-    pointer-events: none;
-    cursor: default;
-    text-decoration: none;
 }

@@ -6,16 +6,27 @@ let inputemail = document.querySelector('#txtEmail');
 let inputnombreUsuario = document.querySelector('#txtNombreUsuario');
 let inputnombreCliente = document.querySelector('#txtNombreCliente');
 let inputsegundoNombreCliente = document.querySelector('#txtSegundoNombreCliente');
+
 let inputprimerApellidoCliente = document.querySelector('#txtPrimerApellidoCliente');
 let inputsegundoApellidoCliente = document.querySelector('#txtSegundoApellidoCliente');
+
 let inputfechaCliente = document.querySelector('#txtFechaCliente');
 let inputedadCliente = document.querySelector('#txtEdadCliente');
 let inputcantidadMascota = document.querySelector('#txtCantidadMascotas');
 let elementoFotoCliente = document.querySelector('#txtFotoCliente');
+
+var inputradios = document.querySelector('#label-tarjeta'); /** */
+let inputRadioButton = document.querySelectorAll('input[name="rbtTarjeta"]') /**/
+    /*Foto*/
+var img_perfil = document.getElementById("img-perfil");
+
 let divCaptcha = document.querySelector('#captcha');
 let accion = 'Registrar';
 let fecha = new Date().toLocaleString();
 let botonRegistrarCliente = document.querySelector('#btnRegistrarCliente');
+
+// const formulario = document.getElementById('formulario');
+// const inputs = document.querySelectorAll('#formulario input');
 
 botonRegistrarCliente.addEventListener('click', obtenerDatosCliente);
 
@@ -23,6 +34,7 @@ async function obtenerDatosCliente() {
     let error = false;
     let tipoUsuario = 'cliente';
     let tipoIDCliente = selecttipoIDCliente.value;
+    console.log(tipoIDCliente);
     let identificacionCliente = inputidentificacionCliente.value;
     let nombreUsuario = inputnombreUsuario.value;
     let nombreCliente = inputnombreCliente.value;
@@ -38,7 +50,7 @@ async function obtenerDatosCliente() {
     let captcha = document.querySelector('#g-recaptcha-response').value;
     let fotoCliente = elementoFotoCliente.src;
 
-    error = validarCliente(nombreUsuario, tipoIDCliente, identificacionCliente, nombreCliente, primerApellidoCliente, email, fechaSinFormato, edadCliente, cantidadMascotas, fotoCliente, captcha);
+    error = validarCliente(nombreUsuario, tipoIDCliente, identificacionCliente, nombreCliente, primerApellidoCliente, email, fechaSinFormato, edadCliente, cantidadMascotas, fotoCliente, inputRadioButton, captcha);
 
 
     if (error == true) {
@@ -64,7 +76,7 @@ async function obtenerDatosCliente() {
             let emailRepetido = false;
             if (emailRepetido) {} else {
                 inputemail.classList.remove('errorInput');
-                registrarBitacora(tipoIDCliente, identificacionCliente, email, nombreUsuario, nombreCliente, primerApellidoCliente, fechaCliente, cantidadMascotas)
+                /*registrarBitacora(nombreUsuario, accion, 'cliente', primerNombreCliente + ' ' + primerApellidoCliente + ' ' + segundoApellidoCliente, fecha);*/
                 if (error == false) {
                     swal.fire({
                         title: 'Registro correcto',
@@ -85,7 +97,7 @@ async function obtenerDatosCliente() {
 };
 
 
-function validarCliente(pnombreUsuario, ptipoIDCliente, pidentificacionCliente, pnombreCliente, pprimerApellidoCliente, pemail, pfechaCliente, pedadCliente, pcantidadMascotas, pfotoCliente, pcaptcha) {
+function validarCliente(pnombreUsuario, ptipoIDCliente, pidentificacionCliente, pnombreCliente, pprimerApellidoCliente, pemail, pfechaCliente, pedadCliente, pcantidadMascotas, pfotoCliente, pinputRadioButton, pcaptcha) {
     let error = false;
     let expLetras = /^[a-z A-ZáéíóúñÑÁÉÍÓÚüÜ]+$/;
     let regExpNumeros = /^[0-9]+$/;
@@ -169,8 +181,20 @@ function validarCliente(pnombreUsuario, ptipoIDCliente, pidentificacionCliente, 
         inputcantidadMascota.classList.remove('errorInput');
     }
 
+    for (const rb of pinputRadioButton) { /** */
+        if (rb.checked) {
+            inputradios.classList.remove('errorInput');
+            break;
+        } else {
+            error = true;
+            inputradios.classList.add('errorInput');
+        }
+    }
+
     return error;
 };
+
+
 
 function calcularEdad() {
     let fechaActual = new Date(); /**Obtener la fecha actual */
@@ -181,24 +205,29 @@ function calcularEdad() {
     inputedadCliente.value = edad;
 }
 
-function registrarBitacora(selecttipoIDCliente, inputidentificacionCliente, inputemail, inputnombreUsuario, inputnombreCliente, inputprimerApellidoCliente, inputfechaCliente, inputcantidadMascota) {
-    var infoTabla = new Array();
-    //Agregar elemento al arreglo:
-    let nuevo_item = [selecttipoIDCliente, inputidentificacionCliente, inputemail, inputnombreUsuario, inputnombreCliente, inputprimerApellidoCliente, inputfechaCliente, inputcantidadMascota];
-    infoTabla.push(nuevo_item);
-    createCookie(inputidentificacionCliente, infoTabla);
-};
 
-var createCookie = function(name, value, days) {
-    var expires;
-    if (days) {
-        var date = new Date();
-        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-        expires = "; expires=" + date.toGMTString();
-    } else {
-        expires = "";
-    }
-    document.cookie = name + "=" + value + expires + "; path=/";
-}
 
 inputfechaCliente.addEventListener('change', calcularEdad);
+
+
+
+
+// function cambiar_imagen(input) {
+//     let lector;
+//     //Si hay un archivo elegido
+//     if (input.files && input.files[0]) {
+//         lector = new FileReader();
+
+//         lector.onload = function(e) {
+//                 //le asigna al atributo fuente del elemento imagen, la imagen seleccionada
+//                 img_perfil.setAttribute('src', e.target.result);
+//             }
+//             //Metodo que lee el contenido del archivo.
+//         lector.readAsDataURL(input.files[0]);
+//     }
+// }
+
+// //Agregar un evento para que cuando ambie la imagen del input la muestre en el elemento img
+// input_archivo.addEventListener("change", function() {
+//     cambiar_imagen(this);
+// });

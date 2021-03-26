@@ -8,7 +8,7 @@
     <meta name="description" content="Documento para solicitar servicio">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/solicitudServicio.css">
+    <link rel="stylesheet" href="css/registroMascota.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="css/general_2.css">
 
@@ -32,75 +32,74 @@
 
                 <!-- ****** -->
                 <h1>
-                    Solicitar Servicio
+                    Registrar Mascota
                 </h1>
                 <section id="cliente1" class="cliente1">
                     <div class="datos">
-                        <label for="label-tipoServicio" id="label-tipoServicio" class="label-tipoServicio">Tipo de servicio</label><br><br>
+                        <label for="label-tipoMascota" id="label-tipoMascota" class="label-tipoMascota">Tipo de Mascota</label><br><br>
+                        <!-- botones para elejir el tipo de mascota-->
                         <div id="buttonBox">
-                            <input type="radio" class="input-radio" name="rbtServicio">
-                            <label for="" class="label-radio" value="P">Paseo</label>
-                            <input type="radio" class="input-radio" name="rbtServicio">
-                            <label for="" class="label-radio" value="G">Grooming </label>
-                        </div>
-                        <div id="buttonBox">
-                            <input type="radio" class="input-radio" name="rbtServicio">
-                            <label class="label-radio" value="H">Hotel</label>
-                            <input type="radio" class="input-radio" name="rbtServicio">
-                            <label class="label-radio" value="U">Guarderia</label>
-                        </div>
-                        <div class="datos" id="txtFechaServicio">
-                            <label>Fecha del servicio</label>
-                            <input type="date" id="FechaServicio">
+                            <input type="radio" class="input-radio" name="rbtMascota">
+                            <label for="" class="label-radio" value="P">Gato</label>
+                            <input type="radio" class="input-radio" name="rbtMascota">
+                            <label class="label-radio" value="H">Perro</label>
+
                         </div>
                         <div>
-                            <label for="txtNombreUsuario" id="nombreUsuario">Nombre de Usuario</label>
-                            <input type="text" id="txtNombreUsuario">
+                            <label for="txtNombreMascota" id="nombreMascota">Nombre de Mascota</label>
+                            <input type="text" id="txtNombreMascota">
                         </div>
 
                         <div class="datos" name='formulario1'>
-                            <label for="id-provincia">Provincia</label>
-                            <select class="id-provincia" id="id-provincia" onchange="asignarCanton()">
-                                <option>Provincia</option>
-                                <option id = "Heredia" value="Heredia">Heredia</option>
-                                <option id = "Cartago" value="Cartago">Cartago</option>
-                                <option id="SanJose" value="SanJose">San Jose</option>
+                            <label for="id-raza">Raza</label>
+                            <select class="id-raza" id="id-raza">
+                                <option>Tipo de Raza</option>
+                                <option id = "raza" value="raza1">Raza1</option>
+                                <option id = "raza" value="raza2">Raza2</option>
+                                <option id="raza" value="raza3">Raza3</option>
                             </select>
                         </div>
-                        <div class="datos">
-                            <label for="id-canton">Canton</label>
-                            <select class="id-canton" id="id-canton" onchange="asignarDistrito()">
-                                    <option>Canton</option>
-                                </select>
+                        <div class="datos" name='formulario1'>
+                            <label for="id-padecimientos">Padecimientos</label>
+                            <select class="id-padecimientos" id="id-padecimientos">
+                                <option>Tipo de Padecimientos</option>
+                                <option id = "padecimientos" value="padecimientos1">padecimientos1</option>
+                                <option id = "padecimientos" value="padecimientos2">padecimientos2</option>
+                                <option id="padecimientos" value="padecimientos3">padecimientos3</option>
+                            </select>
                         </div>
-                        <div class="datos">
-                            <label for="id-distrito">Distrito</label>
-                            <select class="id-distrito" id="id-distrito">
-                                            <option>Distrito</option>
-                                        </select>
+                        <div class="datos" name='formulario1'>
+                            <label for="id-vacunas">Vacunas</label>
+                            <select class="id-vacunas" id="id-vacunas">
+                                <option>Tipo de vacunas</option>
+                                <option id = "vacunas" value="vacunas1">vacunas1</option>
+                                <option id = "vacunas" value="vacunas2">vacunas2</option>
+                                <option id="vacunas" value="vacunas3">vacunas3</option>
+                            </select>
                         </div>
+
 
                 </section>
 
                 <section id="cliente2">
-                    <div class="datos">
-                        <label for="nombreMascota">Macotas</label>
-                        <select name="nombreMascota" id="">
-                               <option value="M1">Macota1</option>
-                               <option value="M2">Macota2</option>
-                               <option value="M3">Macota3</option>
-                            </select>
+                    <div>
+                        <p>Foto de Mascota</p>
+                        <!-- validation pending-->
+                        <div class="valores-ingreso">
+                            <input type="file" id="file-tag">
+                            <img src="" id="img-perfil" class="estilo-imagen">
+                        </div>
                     </div>
                     <div>
 
                         <label for="TelContacto">Telefono de contacto</label>
-                        <input type="text" id="TelContacto">
+                        <input type="text" id="telContacto">
                     </div>
                     <div>
-                        <label for="Observaciones">Observaciones</label>
-                        <textarea name="observaciones" wrap="off"></textarea>
+                        <label for="caracteristicas">Caracteristicas Especiales</label>
+                        <textarea name="caracteristicas" wrap="off"></textarea>
                     </div>
-                    <button type="button" id="btnRegistrarServicio">Solicitar</button>
+                    <button type="button" id="btnRegistrarMascota">Solicitar</button>
 
             </form>
             </section>
@@ -129,11 +128,10 @@
             </section>
     </footer>
 
-    <!-- 
+    <!--
     <script src="js/registroBitacoraServicio.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
-    <script src="js/registarServicioControlador.js"></script>
-    <script src="js/validacionProvincias.js"></script>
+    <script src="js/registarMascota.js"></script>
     </script>
 </body>
 

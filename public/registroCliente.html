@@ -20,16 +20,19 @@
         <header id="header-principal" class="header-principal">
             <nav class="nav-contenedor">
                 <a href="index.html"><img src="imgs/IconoMenu.png" id="logo" /></a>
-                <a href="http://www.abaanimal.org/">Buscar un servicio</a>
-                <a href="http://www.abaanimal.org/">Ofrecer un servicio</a>
-                <a href="perfilUsuario.html">Mi Perfil</a>
+                <a href="perfilProveedorCliente.html">Buscar un servicio</a>
+                <a href="registrarProveedor.html">Ofrecer un servicio</a>
+                <a href="perfilUsuario.html">Perfil Cliente</a>
+                <a href="perfilProvedor.html">Perfil Proveedor</a>
+                <a href="perfilAdministador.html">Perfil Administrador</a>
                 <a class="cerrarSesion" href="inicioSesion.html">Cerrar Sesión</a>
             </nav>
         </header>
     </div>
     <main>
         <section>
-            <form>
+
+            <form action="" class="formulario" id="formulario">
 
                 <!-- ****** -->
                 <h1>
@@ -92,11 +95,20 @@
 
 
                     <!---->
-                    <div class="tarjeta">
+                    <!-- <div class="tarjeta">
                         <label for="rbtRegitrarTarjeta">Registar tarjeta</label>
                         <input type="radio" name="rbtRegitrarTarjeta" value="S">Si
                         <input type="radio" name="rbtRegitrarTarjeta" value="N">No
+                    </div> -->
+
+                    <div id="buttonBox">
+                        <label for="label-tarjeta" id="label-tarjeta" class="label-tarjeta">Tarjeta</label>
+                        <input type="radio" class="input-radio" name="rbtTarjeta">
+                        <label class="label-radio" value="H">Si</label>
+                        <input type="radio" class="input-radio" name="rbtTarjeta">
+                        <label class="label-radio" value="U">No</label>
                     </div>
+
                     <a id="registroTarjeta" href="registrarTarjetas.html">Registrar tarjeta</a>
 
                 </section>
@@ -106,6 +118,7 @@
 
                     <div>
                         <img id="txtFotoCliente" src="imgs/foto.png" alt="Campo para la foto">
+
                     </div>
                     <div>
                         <button type="button" id="btnSubirFotoCliente">Subir foto</button>
@@ -116,13 +129,13 @@
                 </section>
 
                 <button type="button" id="btnRegistrarCliente">Registrar</button>
-                <a id="registroCliente" href="registrarProveedor.html">Registrarse como Proveedor</a>
+                <a id="registroCliente" href="registrar-proveedor.html">Registrarse como Proveedor</a>
             </form>
         </section>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
     <script src="https://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
-    <script src="js/registroClienteControlador.js"></script>
+    <script src="js/registarClienteControlador.js"></script>
 </body>
 <footer>
     <section class="footerCopyRedes">
