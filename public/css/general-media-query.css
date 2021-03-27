@@ -1,6 +1,9 @@
 /*podria ponerle 540 que es el maximo donde todos los elementos de menu se ven en una linea*/
 
 @media (max-width:480px) {
+    .footerCopyRedes {
+        display: none;
+    }
     /*Oculta todos los elementos del menú menos el primero*/
     .header-principal a:not(:first-child) {
         display: none;

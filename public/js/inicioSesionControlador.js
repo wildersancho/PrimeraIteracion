@@ -26,16 +26,16 @@ function obtenerDatos() {
     } else {
         usuarioAceptadoclientes = validarCredenciales(usuario, contrasenna);
         if (usuarioAceptadoclientes) {
-            window.location.replace("http://127.0.0.1:5500/index.html");
+            window.location.replace("index.html");
         } else {
             usuarioAceptadoAdmin = validarCredencialesAdmin(usuario, contrasenna);
-            if (usuarioAceptadoAdmin) { window.location.replace("http://127.0.0.1:5500/index.html"); } else {
+            if (usuarioAceptadoAdmin) { window.location.replace("index.html"); } else {
                 usuarioAceptadoProveedor = validarCredencialesProveedor(usuario, contrasenna);
-                if (usuarioAceptadoProveedor) { window.location.replace("http://127.0.0.1:5500/index.html"); } else {
+                if (usuarioAceptadoProveedor) { window.location.replace("index.html"); } else {
                     swal.fire({
                         title: 'Inicio de sesión incorrecto',
                         text: 'Por favor revise las credenciales',
-                        type: 'error',
+                        icon: 'error',
                         confirmButtonText: 'Entendido'
                     });
                 }
