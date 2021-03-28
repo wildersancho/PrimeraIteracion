@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <script src='https://www.google.com/recaptcha/api.js'></script>
     <link rel="stylesheet" href="css/general_2.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 
 </head>
 
@@ -103,13 +104,13 @@
 
                     <div id="buttonBox">
                         <label for="label-tarjeta" id="label-tarjeta" class="label-tarjeta">Tarjeta</label>
-                        <input type="radio" class="input-radio" name="rbtTarjeta">
+                        <input id="radio1" type="radio" class="input-radio" name="rbtTarjeta">
                         <label class="label-radio" value="H">Si</label>
-                        <input type="radio" class="input-radio" name="rbtTarjeta">
+                        <input id="radio2" type="radio" class="input-radio" name="rbtTarjeta">
                         <label class="label-radio" value="U">No</label>
                     </div>
 
-                    <a id="registroTarjeta" href="registrarTarjetas.html">Registrar tarjeta</a>
+                    <div id="registroTarjeta" class="registroTarjeta"></div>
 
                 </section>
 

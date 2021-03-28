@@ -205,7 +205,14 @@ function calcularEdad() {
     inputedadCliente.value = edad;
 }
 
+$("#radio1").click(function() {
+    $('#registroTarjeta').html('');
+    $('#registroTarjeta').append(' <a href="registrarTarjetas.html">Registrar tarjeta</a>');
+});
 
+$("#radio2").click(function() {
+    $('#registroTarjeta').html('');
+});
 
 inputfechaCliente.addEventListener('change', calcularEdad);
 

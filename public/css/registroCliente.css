@@ -206,12 +206,11 @@ button:hover {
     margin-top: 1%;
 }
 
-#registroTarjeta {
+.registroTarjeta a {
     color: rgb(237, 245, 225);
     font-weight: bold;
     font-size: small;
     text-decoration: none;
-    margin-left: 13%;
 }
 
 #btnAgergarMascota {
