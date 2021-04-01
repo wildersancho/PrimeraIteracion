@@ -6,12 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Documento HTML5">
-    <title>Listar Razas</title>
+    <title>Listar Padecimientos</title>
     <link rel="stylesheet" href="css/reset.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/listarRazas.css">
+    <link rel="stylesheet" href="css/listar.css">
     <link rel="stylesheet" href="css/general_2.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <link rel="stylesheet" href="css/agregarGeneral.css">
 </head>
 
 <body>
@@ -19,7 +21,6 @@
         <nav class="nav-contenedor">
             <a href="index.html"><img src="imgs/IconoMenu.png" id="logo" /></a>
             <a href="perfilAdministador.html">Mi Perfil</a>
-            <a href="agregarVarios.html">Agregar</a>
             <a href="listarVacuna.html">Listar Vacunas</a>
             <a href="listarPadecimientos.html">Listar Padecimientos</a>
             <a href="listarRaza.html">Listar Razas</a>
@@ -28,91 +29,109 @@
     </header>
 
     <main class="main-content">
-        <form>
-            <div class="Lista-container">
-                <h3>Lista de razas</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Raza</th>
-                            <th>Código</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Pumi</td>
-                            <td>1234</td>
-                        </tr>
-                        <tr>
-                            <td>Bandog</td>
-                            <td>1235</td>
-                        </tr>
-                        <tr>
-                            <td>Beagle</td>
-                            <td>1236</td>
-                        </tr>
-                        <tr>
-                            <td>Dogo argentino</td>
-                            <td>1237</td>
-                        </tr>
+        <div class="Lista-container">
+            <h3>Lista de razas</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Raza</th>
+                        <th>Código</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Pumi</td>
+                        <td>1234</td>
+                        <td><input type="button" value="Eliminar"></td>
+                    </tr>
+                    <tr>
+                        <td>Bandog</td>
+                        <td>1235</td>
+                        <td><input type="button" value="Eliminar"></td>
+                    </tr>
+                    <tr>
+                        <td>Beagle</td>
+                        <td>1236</td>
+                        <td><input type="button" value="Eliminar"></td>
+                    </tr>
+                    <tr>
+                        <td>Dogo argentino</td>
+                        <td>1237</td>
+                        <td><input type="button" value="Eliminar"></td>
+                    </tr>
 
-                        <tr>
-                            <td>Bóxer</td>
-                            <td>1238</td>
-                        </tr>
-                        <tr>
-                            <td>Pug</td>
-                            <td>1239</td>
-                        </tr>
-                        <tr>
-                            <td>Lorem Ipsum</td>
-                            <td>1238</td>
-                        </tr>
-                        <tr>
-                            <td>Lorem Ipsum</td>
-                            <td>1239</td>
-                        </tr>
-                        <tr>
-                            <td>Lorem Ipsum</td>
-                            <td>1238</td>
-                        </tr>
-                        <tr>
-                            <td>Lorem Ipsum</td>
-                            <td>1239</td>
-                        </tr>
-                        <tr>
-                            <td>Lorem Ipsum</td>
-                            <td>1238</td>
-                        </tr>
-                        <tr>
-                            <td>Lorem Ipsum</td>
-                            <td>1239</td>
-                        </tr>
-                        <tr>
-                            <td>Lorem Ipsum</td>
-                            <td>1238</td>
-                        </tr>
-                        <tr>
-                            <td>Lorem Ipsum</td>
-                            <td>1239</td>
-                        </tr>
-                        <tr>
-                            <td>Lorem Ipsum</td>
-                            <td>1238</td>
-                        </tr>
-                        <tr>
-                            <td>Lorem Ipsum</td>
-                            <td>1239</td>
-
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <button type="button" id="btnEditar">Editar </button>
-            <button type="button" id="btnEditar">Guardar cambios </button>
-
-        </form>
-
+                    <tr>
+                        <td>Bóxer</td>
+                        <td>1238</td>
+                        <td><input type="button" value="Eliminar"></td>
+                    </tr>
+                    <tr>
+                        <td>Pug</td>
+                        <td>1239</td>
+                        <td><input type="button" value="Eliminar"></td>
+                    </tr>
+                    <tr>
+                        <td>Lorem Ipsum</td>
+                        <td>1238</td>
+                        <td><input type="button" value="Eliminar"></td>
+                    </tr>
+                    <tr>
+                        <td>Lorem Ipsum</td>
+                        <td>1239</td>
+                        <td><input type="button" value="Eliminar"></td>
+                    </tr>
+                    <tr>
+                        <td>Lorem Ipsum</td>
+                        <td>1238</td>
+                        <td><input type="button" value="Eliminar"></td>
+                    </tr>
+                    <tr>
+                        <td>Lorem Ipsum</td>
+                        <td>1239</td>
+                        <td><input type="button" value="Eliminar"></td>
+                    </tr>
+                    <tr>
+                        <td>Lorem Ipsum</td>
+                        <td>1238</td>
+                        <td><input type="button" value="Eliminar"></td>
+                    </tr>
+                    <tr>
+                        <td>Lorem Ipsum</td>
+                        <td>1239</td>
+                        <td><input type="button" value="Eliminar"></td>
+                    </tr>
+                    <tr>
+                        <td>Lorem Ipsum</td>
+                        <td>1238</td>
+                        <td><input type="button" value="Eliminar"></td>
+                    </tr>
+                    <tr>
+                        <td>Lorem Ipsum</td>
+                        <td>1239</td>
+                        <td><input type="button" value="Eliminar"></td>
+                    </tr>
+                    <tr>
+                        <td>Lorem Ipsum</td>
+                        <td>1238</td>
+                        <td><input type="button" value="Eliminar"></td>
+                    </tr>
+                    <tr>
+                        <td>Lorem Ipsum</td>
+                        <td>1239</td>
+                        <td><input type="button" value="Eliminar"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="messagepop pop">
+            <form method="post" id="new_message" action="/messages">
+                <p><label for="codigoVacuna">Código</label><input type="number" name="codigoVacuna" id="codigoVacuna" /></p>
+                <p><label for="nombreVacuna">Nombre</label><input type="text" name="nombreVacuna" id="nombreVacuna" /></p>
+                <p><input type="submit" value="Agregar" name="commit" id="message_submit" /> o <a class="close" href="/">Cancelar</a></p>
+            </form>
+        </div>
+        <a href="/contact" id="contact">Agregar</a>
     </main>
     <footer>
         <section class="footerCopyRedes">
@@ -139,5 +158,6 @@
     </footer>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
+<script src="/public/js/listarControlador.js"></script>
 
 </html>

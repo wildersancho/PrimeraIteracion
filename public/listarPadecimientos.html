@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" href="css/listar.css">
     <link rel="stylesheet" href="css/general_2.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <link rel="stylesheet" href="css/agregarGeneral.css">
 </head>
 
 <body>
@@ -19,7 +21,6 @@
         <nav class="nav-contenedor">
             <a href="index.html"><img src="imgs/IconoMenu.png" id="logo" /></a>
             <a href="perfilAdministador.html">Mi Perfil</a>
-            <a href="agregarVarios.html">Agregar</a>
             <a href="listarVacuna.html">Listar Vacunas</a>
             <a href="listarPadecimientos.html">Listar Padecimientos</a>
             <a href="listarRaza.html">Listar Razas</a>
@@ -104,7 +105,14 @@
                 </tbody>
             </table>
         </div>
-
+        <div class="messagepop pop">
+            <form method="post" id="new_message" action="/messages">
+                <p><label for="codigoVacuna">Código</label><input type="number" name="codigoVacuna" id="codigoVacuna" /></p>
+                <p><label for="nombreVacuna">Nombre</label><input type="text" name="nombreVacuna" id="nombreVacuna" /></p>
+                <p><input type="submit" value="Agregar" name="commit" id="message_submit" /> o <a class="close" href="/">Cancelar</a></p>
+            </form>
+        </div>
+        <a href="/contact" id="contact">Agregar</a>
     </main>
     <footer>
         <section class="footerCopyRedes">
@@ -131,5 +139,6 @@
     </footer>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
+<script src="/public/js/listarControlador.js"></script>
 
 </html>
