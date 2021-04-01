@@ -4,14 +4,11 @@ const inputUsuario = document.querySelector('#txtUsuario');
 const inputContrasenna = document.querySelector('#txtContrasenna');
 const botonIniciar = document.querySelector('#btnInicio');
 
+let usuario = inputUsuario.value;
+let contrasenna = inputContrasenna.value;
 
 function obtenerDatos() {
-    let usuario = inputUsuario.value;
-    let contrasenna = inputContrasenna.value;
-
-
     let error = validar(usuario, contrasenna);
-    //let expContrasena = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
     let usuarioAceptadoclientes = false;
     let usuarioAceptadoAdmin = false;
     let usuarioAceptadoProveedor = false;
