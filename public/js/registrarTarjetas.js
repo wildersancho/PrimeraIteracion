@@ -21,19 +21,18 @@ let boton = document.querySelector(".tar-botton");
 
 function errorSweetAlert() {
     Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'Por favor llene todas las casillas marcadas!',
+        title: 'Registro incorrecto',
+        text: 'No se pudo registrar su cuenta, revise los campos en rojo',
+        icon: 'warning',
+        confirmButtonText: 'Entendido'
     });
 }
 
 function confirmationSweetAlert() {
     Swal.fire({
-        position: 'top-end',
+        title: 'Registro correcto',
         icon: 'success',
-        title: 'Se ha guardado su informacion!',
-        showConfirmButton: false,
-        timer: 1500
+        showConfirmButton: false
     })
 }
 

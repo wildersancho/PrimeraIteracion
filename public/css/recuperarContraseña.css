@@ -113,21 +113,21 @@ form button:hover {
 }
 
 .formulario__grupo-correcto .formulario__validacion-estado {
-    color: #1ed12d;
     opacity: 1;
 }
 
 .formulario__grupo-incorrecto .formulario__label {
-    color: #bb2929;
-}
-
-.formulario__grupo-incorrecto .formulario__validacion-estado {
-    color: #bb2929;
     opacity: 1;
 }
 
+.formulario__grupo-incorrecto .formulario__validacion-estado {
+    opacity: 1;
+    border: 4px solid #e9201d;
+}
+
 .formulario__grupo-incorrecto .formulario__input {
-    border: 3px solid #bb2929;
+    opacity: 1;
+    border: 4px solid #e9201d;
 }
 
 
