@@ -20,7 +20,7 @@ function obtenerDatos() {
     } else {
         swal.fire({
             title: 'Formulario Exitoso',
-            text: 'Se ha enviado correo de verificación',
+            text: 'Se ha enviado una contraseña temporal al correo: ' + correo,
             icon: 'success',
             confirmButtonText: 'Entendido',
             timer: 3000,

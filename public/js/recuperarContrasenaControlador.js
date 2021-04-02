@@ -23,9 +23,10 @@ function obtenerDatos() {
     } else {
         swal.fire({
             title: 'Formulario Exitoso',
-            text: 'Se ha enviado correo de verificación',
             icon: 'success',
             confirmButtonText: 'Entendido'
+        }).then(() => {
+            window.location.replace("cambiarContraseña.html");
         });
     }
 }
