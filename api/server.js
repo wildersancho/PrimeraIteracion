@@ -51,3 +51,4 @@ function handleError(res, reason, message, code) {
 
 // Conexión a todas la rutas.
 app.use('/api', require('./routes/comentarios.routes'));
+app.use('/api', require('./routes/clientes.routes'));

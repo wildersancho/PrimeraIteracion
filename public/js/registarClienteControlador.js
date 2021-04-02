@@ -80,6 +80,7 @@ async function obtenerDatosCliente() {
                         icon: 'success',
                         showConfirmButton: false
                     });
+                    registrar_cliente(tipoIDCliente, identificacionCliente, nombreUsuario, nombreCliente, segundoNombreCliente, primerApellidoCliente, segundoApellidoCliente, email, edadCliente, cantidadMascotas);
                 } else {
                     swal.fire({
                         title: 'Registro incorrecto',

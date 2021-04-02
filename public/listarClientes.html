@@ -26,114 +26,19 @@
     <main class="main-content">
         <div class="Lista-container">
             <h3>Lista de Clientes</h3>
-            <table>
+            <table id="tbl-comentarios">
                 <thead>
                     <tr>
                         <th>Nombre de usuario</th>
                         <th>Correo</th>
                         <th>Cédula</th>
-                        <th>Nombre Mascotas</th>
-                        <th>Código</th>
+                        <th>Cantidad Mascotas</th>
                         <th>Habilitado</th>
                         <th>Deshabilitado</th>
-
-
 
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Jonathan</td>
-                        <td>correro@correro.com</td>
-                        <td>117410322</td>
-                        <td>Toby</td>
-                        <td>123</td>
-                        <td><input type="radio" name="eliminar" checked></td>
-                        <td><input type="radio" name="eliminar"></td>
-                    </tr>
-                    <tr>
-                        <td>Jonathan</td>
-                        <td>correro@correro.com</td>
-                        <td>117410322</td>
-                        <td>Toby</td>
-                        <td>123</td>
-                        <td><input type="radio" name="eliminar1" checked></td>
-                        <td><input type="radio" name="eliminar1"></td>
-                    </tr>
-                    <tr>
-                        <td>Jonathan</td>
-                        <td>correro@correro.com</td>
-                        <td>117410322</td>
-                        <td>Toby</td>
-                        <td>123</td>
-                        <td><input type="radio" name="eliminar2" checked></td>
-                        <td><input type="radio" name="eliminar2"></td>
-                    </tr>
-                    <tr>
-                        <td>Jonathan</td>
-                        <td>correro@correro.com</td>
-                        <td>117410322</td>
-                        <td>Toby</td>
-                        <td>123</td>
-                        <td><input type="radio" name="eliminar3" checked></td>
-                        <td><input type="radio" name="eliminar3"></td>
-                    </tr>
-
-                    <tr>
-                        <td>Jonathan</td>
-                        <td>correro@correro.com</td>
-                        <td>117410322</td>
-                        <td>Toby</td>
-                        <td>123</td>
-                        <td><input type="radio" name="eliminar4" checked></td>
-                        <td><input type="radio" name="eliminar4"></td>
-                    </tr>
-                    <tr>
-                        <td>Jonathan</td>
-                        <td>correro@correro.com</td>
-                        <td>117410322</td>
-                        <td>Toby</td>
-                        <td>123</td>
-                        <td><input type="radio" name="eliminar5" checked></td>
-                        <td><input type="radio" name="eliminar5"></td>
-                    </tr>
-                    <tr>
-                        <td>Jonathan</td>
-                        <td>correro@correro.com</td>
-                        <td>117410322</td>
-                        <td>Toby</td>
-                        <td>123</td>
-                        <td><input type="radio" name="eliminar6" checked></td>
-                        <td><input type="radio" name="eliminar6"></td>
-                    </tr>
-                    <tr>
-                        <td>Jonathan</td>
-                        <td>correro@correro.com</td>
-                        <td>117410322</td>
-                        <td>Toby</td>
-                        <td>123</td>
-                        <td><input type="radio" name="eliminar7" checked></td>
-                        <td><input type="radio" name="eliminar7"></td>
-                    </tr>
-                    <tr>
-                        <td>Jonathan</td>
-                        <td>correro@correro.com</td>
-                        <td>117410322</td>
-                        <td>Toby</td>
-                        <td>123</td>
-                        <td><input type="radio" name="eliminar8" checked></td>
-                        <td><input type="radio" name="eliminar8"></td>
-                    </tr>
-                    <tr>
-                        <td>Jonathan</td>
-                        <td>correro@correro.com</td>
-                        <td>117410322</td>
-                        <td>Toby</td>
-                        <td>123</td>
-                        <td><input type="radio" name="eliminar9" checked></td>
-                        <td><input type="radio" name="eliminar9"></td>
-                    </tr>
-
                 </tbody>
             </table>
         </div>
@@ -164,5 +69,8 @@
     </footer>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="js/clientesServicio.js"></script>
+<script src="js/listarClientes.js"></script>
 
 </html>
