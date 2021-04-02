@@ -13,7 +13,6 @@ let inputsegundoApellidoCliente = document.querySelector('#txtSegundoApellidoCli
 let inputfechaCliente = document.querySelector('#txtFechaCliente');
 let inputedadCliente = document.querySelector('#txtEdadCliente');
 let inputcantidadMascota = document.querySelector('#txtCantidadMascotas');
-let elementoFotoCliente = document.querySelector('#txtFotoCliente');
 
 var inputradios = document.querySelector('#label-tarjeta'); /** */
 let inputRadioButton = document.querySelectorAll('input[name="rbtTarjeta"]') /**/
@@ -47,10 +46,8 @@ async function obtenerDatosCliente() {
     let fechaCliente = fechaClienteSplit[2] + '/' + fechaClienteSplit[1] + '/' + fechaClienteSplit[0];
     let edadCliente = Number(inputedadCliente.value);
     let cantidadMascotas = Number(inputcantidadMascota.value);
-    let captcha = document.querySelector('#g-recaptcha-response').value;
-    let fotoCliente = elementoFotoCliente.src;
 
-    error = validarCliente(nombreUsuario, tipoIDCliente, identificacionCliente, nombreCliente, primerApellidoCliente, email, fechaSinFormato, edadCliente, cantidadMascotas, fotoCliente, inputRadioButton, captcha);
+    error = validarCliente(nombreUsuario, tipoIDCliente, identificacionCliente, nombreCliente, primerApellidoCliente, email, fechaSinFormato, edadCliente, cantidadMascotas, inputRadioButton);
 
 
     if (error == true) {
@@ -97,7 +94,7 @@ async function obtenerDatosCliente() {
 };
 
 
-function validarCliente(pnombreUsuario, ptipoIDCliente, pidentificacionCliente, pnombreCliente, pprimerApellidoCliente, pemail, pfechaCliente, pedadCliente, pcantidadMascotas, pfotoCliente, pinputRadioButton, pcaptcha) {
+function validarCliente(pnombreUsuario, ptipoIDCliente, pidentificacionCliente, pnombreCliente, pprimerApellidoCliente, pemail, pfechaCliente, pedadCliente, pcantidadMascotas, pinputRadioButton) {
     let error = false;
     let expLetras = /^[a-z A-ZáéíóúñÑÁÉÍÓÚüÜ]+$/;
     let regExpNumeros = /^[0-9]+$/;
@@ -161,19 +158,6 @@ function validarCliente(pnombreUsuario, ptipoIDCliente, pidentificacionCliente, 
         inputedadCliente.classList.remove('errorInput');
     }
 
-    if (pfotoCliente == 'http://127.0.0.1:5500/public/imgs/foto.png') { /*Arreglar*/
-        error = true;
-        elementoFotoCliente.classList.add('errorInput');
-    } else {
-        elementoFotoCliente.classList.remove('errorInput');
-    }
-
-    if (pcaptcha === undefined || pcaptcha === '' || pcaptcha === null) {
-        error = true;
-        divCaptcha.classList.add('errorInput');
-    } else {
-        divCaptcha.classList.remove('errorInput');
-    }
     if (pcantidadMascotas < 1) {
         error = true;
         inputcantidadMascota.classList.add('errorInput');
