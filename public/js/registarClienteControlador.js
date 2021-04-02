@@ -16,10 +16,8 @@ let inputcantidadMascota = document.querySelector('#txtCantidadMascotas');
 
 var inputradios = document.querySelector('#label-tarjeta'); /** */
 let inputRadioButton = document.querySelectorAll('input[name="rbtTarjeta"]') /**/
-    /*Foto*/
 var img_perfil = document.getElementById("img-perfil");
 
-let divCaptcha = document.querySelector('#captcha');
 let accion = 'Registrar';
 let fecha = new Date().toLocaleString();
 let botonRegistrarCliente = document.querySelector('#btnRegistrarCliente');
@@ -33,7 +31,6 @@ async function obtenerDatosCliente() {
     let error = false;
     let tipoUsuario = 'cliente';
     let tipoIDCliente = selecttipoIDCliente.value;
-    console.log(tipoIDCliente);
     let identificacionCliente = inputidentificacionCliente.value;
     let nombreUsuario = inputnombreUsuario.value;
     let nombreCliente = inputnombreCliente.value;
@@ -48,7 +45,6 @@ async function obtenerDatosCliente() {
     let cantidadMascotas = Number(inputcantidadMascota.value);
 
     error = validarCliente(nombreUsuario, tipoIDCliente, identificacionCliente, nombreCliente, primerApellidoCliente, email, fechaSinFormato, edadCliente, cantidadMascotas, inputRadioButton);
-
 
     if (error == true) {
         swal.fire({
@@ -73,7 +69,6 @@ async function obtenerDatosCliente() {
             let emailRepetido = false;
             if (emailRepetido) {} else {
                 inputemail.classList.remove('errorInput');
-                /*registrarBitacora(nombreUsuario, accion, 'cliente', primerNombreCliente + ' ' + primerApellidoCliente + ' ' + segundoApellidoCliente, fecha);*/
                 if (error == false) {
                     swal.fire({
                         title: 'Registro correcto',
@@ -99,7 +94,6 @@ function validarCliente(pnombreUsuario, ptipoIDCliente, pidentificacionCliente, 
     let error = false;
     let expLetras = /^[a-z A-ZáéíóúñÑÁÉÍÓÚüÜ]+$/;
     let regExpNumeros = /^[0-9]+$/;
-    /*let regExpAlfanumericos = /^[a-z A-ZáéíóúñÑÁÉÍÓÚüÜ0-9]+$/;*/
     let regExpAlfanumericos = /^[a-z]+$/;
     let expCorreo = /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
     console.log("validando");
@@ -166,13 +160,14 @@ function validarCliente(pnombreUsuario, ptipoIDCliente, pidentificacionCliente, 
         inputcantidadMascota.classList.remove('errorInput');
     }
 
-    for (const rb of pinputRadioButton) { /** */
+    for (const rb of pinputRadioButton) {
         if (rb.checked) {
             inputradios.classList.remove('errorInput');
             break;
         } else {
             error = true;
             inputradios.classList.add('errorInput');
+            console.log(inputradios.value)
         }
     }
 
