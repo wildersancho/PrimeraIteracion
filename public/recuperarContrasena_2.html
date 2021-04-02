@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Recuperar contraseña</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <meta name="description" content="Documento HTML5">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/general_2.css">
+    <link rel="stylesheet" href="css/recuperarContraseña.css">
+</head>
+
+<body>
+    <header>
+        <header id="header-principal" class="header-principal">
+            <nav class="nav-contenedor">
+                <a href="index.html"><img src="imgs/IconoMenu.png" id="logo" /></a>
+                <a href="perfilProveedorCliente.html">Buscar un servicio</a>
+                <a href="registrarProveedor.html">Ofrecer un servicio</a>
+                <a href="perfilUsuario.html">Perfil Cliente</a>
+                <a href="perfilProvedor.html">Perfil Proveedor</a>
+                <a href="perfilAdministador.html">Perfil Administrador</a>
+                <a class="cerrarSesion" href="inicioSesion.html">Cerrar Sesión</a>
+            </nav>
+        </header>
+        <main>
+            <h1>
+                Recuperar contraseña
+            </h1>
+            <form class="formulario" id="formulario">
+                <!-- Grupo: Correo Electronico -->
+                <div class="formulario__grupo" id="grupo__correo">
+                    <label for="txt-correo" class="formulario__label">Correo Electrónico</label>
+                    <input type="email" class="formulario__input" name="correo" id="txt-correo">
+
+                </div>
+                <button type="button" class="formulario__btn" id="button-enviar">Enviar</button>
+            </form>
+            </section>
+        </main>
+        <footer>
+            <section class="footerCopyRedes ">
+                <section class="mainCopyRedes ">
+                    <section class="footerCopy ">
+                        <h5>CONTÁCTENOS:</h5>
+                        <h6>Email</h6>
+                        <p> http://www.abaanimal.org/</p>
+                        <h6>Teléfono</h6>
+                        <p>(506) 8849-0592</p>
+                    </section>
+                    <section class="footerCopy2 ">
+                        <h5>POLITÍCAS</h5>
+                        <p>Costa Rica tiene ley contra el maltrato y crueldad animal, instamos a todos los ciudadanos a utilizar la nueva ley 9458. Por este medio les proveeremos información sobre como aplicar la ley de bienestar animal en los distintos
+                            casos que puedan presentarse.</p>
+
+                    </section>
+                    <section class="footerRedes " id="footerRedes ">
+                        <a href="https://www.facebook.com/ " class="fab fa-facebook-f facebook "></a>
+                        <a href="https://twitter.com/ " class="fab fa-twitter twitter "></a>
+                        <a href="https://www.instagram.com/ " class="fab fa-instagram instagram "></a>
+                    </section>
+                </section>
+        </footer>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
+<script src="js/recuperarContrasenaControlador_2.js"></script>
+
+</html>
