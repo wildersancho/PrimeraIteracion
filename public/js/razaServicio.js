@@ -40,3 +40,29 @@ const obtener_razas = async() => {
     });
     return lista_razas;
 }
+
+
+const eliminar_raza = async(_id) => {
+    await axios({
+        method: 'delete',
+        url: 'http://localhost:3000/api/eliminar-raza',
+        responseType: 'json',
+        data: {
+            _id: _id
+        }
+    }).then((response) => {
+        Swal.fire({
+            'title': 'La raza ha sido eliminada',
+            'icon': 'success',
+            'text': response.msj
+        }).then(() => {
+            mostrar_razas();
+        });
+    }).catch((response) => {
+        Swal.fire({
+            'title': response.msj,
+            'icon': 'error',
+            'text': response.err
+        })
+    });
+};

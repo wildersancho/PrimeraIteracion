@@ -32,105 +32,16 @@
     <main class="main-content">
         <div class="Lista-container">
             <h3>Lista de razas</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Raza</th>
-                        <th>Código</th>
-                        <th>Eliminar</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Pumi</td>
-                        <td>1234</td>
-                        <td><input type="button" value="Eliminar"></td>
-                    </tr>
-                    <tr>
-                        <td>Bandog</td>
-                        <td>1235</td>
-                        <td><input type="button" value="Eliminar"></td>
-                    </tr>
-                    <tr>
-                        <td>Beagle</td>
-                        <td>1236</td>
-                        <td><input type="button" value="Eliminar"></td>
-                    </tr>
-                    <tr>
-                        <td>Dogo argentino</td>
-                        <td>1237</td>
-                        <td><input type="button" value="Eliminar"></td>
-                    </tr>
-
-                    <tr>
-                        <td>Bóxer</td>
-                        <td>1238</td>
-                        <td><input type="button" value="Eliminar"></td>
-                    </tr>
-                    <tr>
-                        <td>Pug</td>
-                        <td>1239</td>
-                        <td><input type="button" value="Eliminar"></td>
-                    </tr>
-                    <tr>
-                        <td>Lorem Ipsum</td>
-                        <td>1238</td>
-                        <td><input type="button" value="Eliminar"></td>
-                    </tr>
-                    <tr>
-                        <td>Lorem Ipsum</td>
-                        <td>1239</td>
-                        <td><input type="button" value="Eliminar"></td>
-                    </tr>
-                    <tr>
-                        <td>Lorem Ipsum</td>
-                        <td>1238</td>
-                        <td><input type="button" value="Eliminar"></td>
-                    </tr>
-                    <tr>
-                        <td>Lorem Ipsum</td>
-                        <td>1239</td>
-                        <td><input type="button" value="Eliminar"></td>
-                    </tr>
-                    <tr>
-                        <td>Lorem Ipsum</td>
-                        <td>1238</td>
-                        <td><input type="button" value="Eliminar"></td>
-                    </tr>
-                    <tr>
-                        <td>Lorem Ipsum</td>
-                        <td>1239</td>
-                        <td><input type="button" value="Eliminar"></td>
-                    </tr>
-                    <tr>
-                        <td>Lorem Ipsum</td>
-                        <td>1238</td>
-                        <td><input type="button" value="Eliminar"></td>
-                    </tr>
-                    <tr>
-                        <td>Lorem Ipsum</td>
-                        <td>1239</td>
-                        <td><input type="button" value="Eliminar"></td>
-                    </tr>
-                    <tr>
-                        <td>Lorem Ipsum</td>
-                        <td>1238</td>
-                        <td><input type="button" value="Eliminar"></td>
-                    </tr>
-                    <tr>
-                        <td>Lorem Ipsum</td>
-                        <td>1239</td>
-                        <td><input type="button" value="Eliminar"></td>
-                    </tr>
-                </tbody>
+            <table id="tbl-razas" class="tbl-razas">
+                <tbody></tbody>
             </table>
         </div>
         <div class="messagepop pop">
             <form id="new_message">
+                <p><label for="tipoMascota">Mascota</label><select name="tipoMascota" id="tipoMascota"><option value="Perro">Perro</option><option value="Gato">Gato</option></select></p>
                 <p><label for="nombreRaza">Nombre</label><input type="text" name="nombreRaza" id="nombreRaza"></p>
-                <p><label for="tipoMascota">Mascota</label><input type="text" name="tipoMascota" id="tipoMascota"></p>
                 <button type="button" id="message_submit">Agregar</button>
-                <a class="close" href="/">Cancelar</a></p>
+                <a class="close" id="close" href="/">Cancelar</a></p>
             </form>
         </div>
         <a id="contact">Agregar</a>
@@ -164,6 +75,7 @@
 <script src="/public/js/listarControlador.js"></script>
 <script src="/public/js/razaServicio.js"></script>
 <script src="/public/js/registrarRaza.js"></script>
+<script src="/public/js/listarRazas.js"></script>
 
 
 </html>

@@ -52,4 +52,6 @@ function validarRaza(raza, tipoMascota) {
 const limpiar = () => {
     razaSel.value = '';
     tipoMascotaSel.value = '';
+    const botonAgregar = document.getElementById('close');
+    botonAgregar.click();
 }

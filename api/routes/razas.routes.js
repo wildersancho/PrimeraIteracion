@@ -42,4 +42,21 @@ router.post('/registrar-raza', (req, res) => {
     });
 });
 
+//eliminar
+router.delete('/eliminar-raza', (req, res) => {
+    let _id = req.body._id;
+    raza.findOneAndRemove({ _id: _id }, (err) => {
+        if (err) {
+            res.json({
+                msj: 'No se pudo eliminar la raza',
+                err
+            });
+        } else {
+            res.json({
+                msj: 'La raza se eliminó correctamente'
+            });
+        }
+    });
+});
+
 module.exports = router;
