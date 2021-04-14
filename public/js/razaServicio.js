@@ -7,7 +7,7 @@ const registrar_raza = async(raza, tipoMascota) => {
         responseType: 'json',
         data: {
             raza: raza,
-            tipoMascota: tipoMascota,
+            tipoMascota: tipoMascota
         }
     }).then((response) => {
         Swal.fire({

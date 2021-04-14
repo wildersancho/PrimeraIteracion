@@ -1,30 +1,33 @@
 'use strict';
-let botonRegistrarRaza = document.getElementById('message_submit');
+let razaSel = document.getElementById('nombreRaza');
+const tipoMascotaSel = document.getElementById('tipoMascota');
+const botonRegistrarRaza = document.getElementById('message_submit');
 
-function regRaza() {
-    let raza = document.getElementById('nombreRaza').value;
-    let tipoMascota = document.getElementById('tipoMascota').value;
+botonRegistrarRaza.addEventListener('click', regRaza);
+
+
+async function regRaza() {
+    let error = false;
+    let raza = razaSel.value;
+    let tipoMascota = tipoMascotaSel.value;
     console.log("validando");
     error = validarRaza(raza, tipoMascota);
+    console.log(error);
     if (error == true) {
         swal.fire({
             title: 'Registro incorrecto',
-            text: 'No se pudo registrar su cuenta, revise los campos en rojo',
-            icon: 'warning',
+            icon: 'error',
             confirmButtonText: 'Entendido'
         });
     } else {
-        alert("test");
         swal.fire({
             title: 'Registro correcto',
-            text: 'No se pudo registrar su cuenta, revise los campos en rojo',
-            icon: 'warning',
-            confirmButtonText: 'Entendido'
+            icon: 'success',
+            showConfirmButton: false
         });
     }
-    alert("test");
     registrar_raza(raza, tipoMascota);
-}
+};
 
 
 function validarRaza(raza, tipoMascota) {
@@ -46,4 +49,7 @@ function validarRaza(raza, tipoMascota) {
     return error;
 }
 
-botonRegistrarRaza.addEventListener('click', regRaza);
+const limpiar = () => {
+    razaSel.value = '';
+    tipoMascotaSel.value = '';
+}

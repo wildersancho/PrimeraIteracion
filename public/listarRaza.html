@@ -127,9 +127,10 @@
         </div>
         <div class="messagepop pop">
             <form id="new_message">
-                <p><label for="nombreRaza">Nombre</label><input type="text" name="nombreRaza" id="nombreRaza" /></p>
-                <p><label for="tipoMascota">Mascota</label><input type="text" name="tipoMascota" id="tipoMascota" /></p>
-                <p><input type="submit" value="Agregar" name="commit" id="message_submit" /> o <a class="close" href="/">Cancelar</a></p>
+                <p><label for="nombreRaza">Nombre</label><input type="text" name="nombreRaza" id="nombreRaza"></p>
+                <p><label for="tipoMascota">Mascota</label><input type="text" name="tipoMascota" id="tipoMascota"></p>
+                <button type="button" id="message_submit">Agregar</button>
+                <a class="close" href="/">Cancelar</a></p>
             </form>
         </div>
         <a id="contact">Agregar</a>
@@ -158,7 +159,7 @@
             </section>
     </footer>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="/public/js/listarControlador.js"></script>
 <script src="/public/js/razaServicio.js"></script>

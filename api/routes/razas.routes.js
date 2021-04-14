@@ -3,7 +3,7 @@
 const express = require('express');
 
 const router = express.Router();
-const raza = require('../models/razas.model');
+const raza = require('../models/razas.models');
 
 //req --> Peticion
 //res --> respuesta
@@ -24,7 +24,7 @@ router.get('/listar-razas', (req, res) => {
 router.post('/registrar-raza', (req, res) => {
     let nuevo_raza = new raza({
         raza: req.body.raza,
-        tipoMascota: req.body.tipoMascota,
+        tipoMascota: req.body.tipoMascota
     });
 
     nuevo_raza.save((err, raza_db) => {
@@ -41,3 +41,5 @@ router.post('/registrar-raza', (req, res) => {
         }
     });
 });
+
+module.exports = router;
