@@ -126,13 +126,13 @@
             </table>
         </div>
         <div class="messagepop pop">
-            <form method="post" id="new_message" action="/messages">
-                <p><label for="codigoVacuna">Código</label><input type="number" name="codigoVacuna" id="codigoVacuna" /></p>
-                <p><label for="nombreVacuna">Nombre</label><input type="text" name="nombreVacuna" id="nombreVacuna" /></p>
+            <form id="new_message">
+                <p><label for="nombreRaza">Nombre</label><input type="text" name="nombreRaza" id="nombreRaza" /></p>
+                <p><label for="tipoMascota">Mascota</label><input type="text" name="tipoMascota" id="tipoMascota" /></p>
                 <p><input type="submit" value="Agregar" name="commit" id="message_submit" /> o <a class="close" href="/">Cancelar</a></p>
             </form>
         </div>
-        <a href="/contact" id="contact">Agregar</a>
+        <a id="contact">Agregar</a>
     </main>
     <footer>
         <section class="footerCopyRedes">
@@ -159,6 +159,10 @@
     </footer>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="/public/js/listarControlador.js"></script>
+<script src="/public/js/razaServicio.js"></script>
+<script src="/public/js/registrarRaza.js"></script>
+
 
 </html>

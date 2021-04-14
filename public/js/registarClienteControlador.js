@@ -21,10 +21,6 @@ var img_perfil = document.getElementById("img-perfil");
 let accion = 'Registrar';
 let fecha = new Date().toLocaleString();
 let botonRegistrarCliente = document.querySelector('#btnRegistrarCliente');
-
-// const formulario = document.getElementById('formulario');
-// const inputs = document.querySelectorAll('#formulario input');
-
 botonRegistrarCliente.addEventListener('click', obtenerDatosCliente);
 
 async function obtenerDatosCliente() {
@@ -195,26 +191,3 @@ $("#radio2").click(function() {
 });
 
 inputfechaCliente.addEventListener('change', calcularEdad);
-
-
-
-
-// function cambiar_imagen(input) {
-//     let lector;
-//     //Si hay un archivo elegido
-//     if (input.files && input.files[0]) {
-//         lector = new FileReader();
-
-//         lector.onload = function(e) {
-//                 //le asigna al atributo fuente del elemento imagen, la imagen seleccionada
-//                 img_perfil.setAttribute('src', e.target.result);
-//             }
-//             //Metodo que lee el contenido del archivo.
-//         lector.readAsDataURL(input.files[0]);
-//     }
-// }
-
-// //Agregar un evento para que cuando ambie la imagen del input la muestre en el elemento img
-// input_archivo.addEventListener("change", function() {
-//     cambiar_imagen(this);
-// });
