@@ -40,7 +40,7 @@
 
                 <fieldset class="tarjeta-container">
                     <small class="titulo-tar">Registrar Tarjeta</small>
-                    <input class="tar-name" type="text" name="tar-name" placeholder="Nombre de tarjeta" />
+                    <input class="tar-name" id="tar-name" type="text" name="tar-name" placeholder="Nombre de tarjeta" />
 
                     <input class="tar-num" id="tar-num" type="number" name="tar-num" placeholder="Número de tarjeta" />
 
@@ -51,7 +51,7 @@
 
 
                     <input class="tar-botton" type="button" value="Registrar info" />
-                    <small class="tipo-tar"></small>
+                    <small class="tipo-tar" id="tipo-tar"></small>
                 </fieldset>
             </form>
         </div>
@@ -88,6 +88,7 @@
 </body>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-<script type="text/javascript" src="js/registrarTarjetas.js"></script>
+<script src="js/registrarTarjetas.js"></script>
+<script src="js/tarjetaServicio.js"></script>
 
 </html>
