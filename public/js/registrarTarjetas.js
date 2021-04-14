@@ -14,7 +14,7 @@ let fechaTarjeta = document.querySelector(".tar-fecha");
 let numeroCode = document.querySelector(".tar-code");
 let tipoTarjeta = document.querySelector(".tipo-tar");
 let boton = document.querySelector(".tar-botton");
-
+let userName = "wsanchor";
 
 
 //Sweetalert Popups
@@ -75,9 +75,11 @@ function validarCampos(campoValidar) {
 
     } else {
         campoValidar.className = ' ';
+        window.localStorage.setItem('user', userName);
+        let usuario = window.localStorage.getItem('user');
+        registrar_tarjeta(usuario, numeroTarjeta, nombreTarjeta, fechaTarjeta, numeroCode, tipoTarjeta);
         confirmationSweetAlert();
     }
-
 
 }
 
@@ -100,3 +102,32 @@ boton.addEventListener('click', function() {
     validationTarjeta();
 
 });
+
+
+const registrar_tarjeta = async(usuario, numeroTarjeta, nombreTarjeta, fechaTarjeta, numeroCode, tipoTarjeta) => {
+    await axios({
+        method: 'post',
+        url: 'http://localhost:3000/api/registrar-tarjeta',
+        responseType: 'json',
+        data: {
+            usuario: usuario,
+            numeroTarjeta: numeroTarjeta,
+            nombreTarjeta: nombreTarjeta,
+            fechaTarjeta: fechaTarjeta,
+            numeroCode: numeroCode,
+            tipoTarjeta: tipoTarjeta
+        }
+    }).then((response) => {
+        Swal.fire({
+            'icon': 'success',
+            'title': 'Su tarjeta ha sido registrada',
+            'text': response.msj
+        }).then(() => {});
+    }).catch((response) => {
+        Swal.fire({
+            'icon': 'error',
+            'text': response.msj,
+            'title': 'Ocurrió un error inesperado',
+        }).then(() => {});
+    });
+};

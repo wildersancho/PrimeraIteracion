@@ -4,6 +4,7 @@ const express = require("express");
 const body_parser = require("body-parser");
 const cors = require('cors');
 const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
 require('dotenv').config();
 
 //Se declaran todos los accesos de los archivos routes.
@@ -50,5 +51,6 @@ function handleError(res, reason, message, code) {
 }
 
 // Conexión a todas la rutas.
+app.use('/api', require('./routes/tarjetas.routes'));
 app.use('/api', require('./routes/comentarios.routes'));
 app.use('/api', require('./routes/clientes.routes'));
