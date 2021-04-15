@@ -22,14 +22,12 @@ router.get('/listar-tarjetas', (req, res) => {
 
 //Endpoint para registrar hoteles
 router.post('/registrar-tarjeta', (req, res) => {
-    //const salt = bcrypt.genSaltSync(saltRounds);
-    //const hash = bcrypt.hashSync(req.body.numeroCode, salt);
     let nueva_tarjeta = new tarjeta({
         usuario: req.body.usuario,
         tarjeta: req.body.numeroTarjeta,
-        nombreTarjeta: req.body.tarjeta,
+        nombreTarjeta: req.body.nombreTarjeta,
         fechaTarjeta: req.body.fechaTarjeta,
-        codSeguridad: req.body.codSeguridad,
+        codSeguridad: hash,
         tipoTarjeta: req.body.tipoTarjeta
     });
 

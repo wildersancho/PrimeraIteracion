@@ -12,6 +12,7 @@ const registrar_tarjeta = async(usuario, tarjeta, nombreTarjeta, fechaTarjeta, n
         data: {
             usuario: usuario,
             tarjeta: tarjeta,
+            numeroTarjeta: tarjeta,
             nombreTarjeta: nombreTarjeta,
             fechaTarjeta: fechaTarjeta,
             codSeguridad: numeroCode,

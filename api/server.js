@@ -50,8 +50,9 @@ function handleError(res, reason, message, code) {
     res.status(code || 500).json({ "error": message });
 }
 
+
+
 // Conexión a todas la rutas.
 app.use('/api', require('./routes/tarjetas.routes'));
-//app.use('/api', require('./routes/comentarios.routes'));
 app.use('/api', require('./routes/clientes.routes'));
 app.use('/api', require('./routes/razas.routes'));

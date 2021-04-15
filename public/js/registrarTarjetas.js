@@ -36,7 +36,7 @@ function confirmationSweetAlert() {
     })
 }
 
-
+//4012888888881881
 //Validacion de la tarjeta, si es Mastercard o Visa
 
 function validationTarjeta(tTarjeta) {
