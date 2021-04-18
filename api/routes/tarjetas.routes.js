@@ -62,9 +62,9 @@ router.get('/listar-tarjetas', (req, res) => {
 });
 
 router.get('/listar-tarjetas2', (req, res) => {
-    let usuario = req.body.usuario;
+    let usuario = req.query.usuario;
     //console.log(usuario);
-    tarjeta.find({ usuario: 'wsanchor' }, (err, lista_tarjetas) => {
+    tarjeta.find({ usuario: usuario }, (err, lista_tarjetas) => {
         if (err) {
             res.json({
                 msj: "No se pudieron mostrar las tarjetas",

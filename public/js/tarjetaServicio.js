@@ -39,7 +39,7 @@ const obtener_tarjetas = async(usuario) => {
         method: 'get',
         url: 'http://localhost:3000/api/listar-tarjetas2',
         responseType: 'json',
-        data: {
+        params: {
             usuario: usuario
         }
     }).then((response) => {
