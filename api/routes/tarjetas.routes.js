@@ -2,14 +2,14 @@
 
 const express = require('express');
 const bcrypt = require('bcrypt');
-
 const router = express.Router();
 const tarjeta = require('../models/tarjetas.models');
+const usuario = require('../models/tarjetas.models');
 
 //req --> Peticion
 //res --> respuesta
 router.get('/listar-tarjetas', (req, res) => {
-    hotel.find((err, lista_tarjetas) => {
+    tarjeta.find((err, lista_tarjetas) => {
         if (err) {
             res.json({
                 msj: "No se pudieron mostrar los comentarios",
@@ -21,15 +21,15 @@ router.get('/listar-tarjetas', (req, res) => {
     })
 });
 
-encriptar()
-    //Endpoint para registrar hoteles
+//encriptar()
+//Endpoint para registrar hoteles
 router.post('/registrar-tarjeta', (req, res) => {
     let nueva_tarjeta = new tarjeta({
         usuario: req.body.usuario,
         tarjeta: req.body.numeroTarjeta,
         nombreTarjeta: req.body.nombreTarjeta,
         fechaTarjeta: req.body.fechaTarjeta,
-        codSeguridad: encriptar(req.body.codSeguridad), //req.body.codSeguridad,
+        codSeguridad: req.body.codSeguridad, //req.body.codSeguridad,
         tipoTarjeta: req.body.tipoTarjeta
     });
 
@@ -48,12 +48,11 @@ router.post('/registrar-tarjeta', (req, res) => {
     });
 });
 
-router.get('/listar-tarjetas2', (req, res) => {
-    let codigo = req.query.usuario;
-    hotel.find({ usuario: codigo }, (err, lista_tarjetas) => {
+router.get('/listar-tarjetas', (req, res) => {
+    tarjeta.find((err, lista_tarjetas) => {
         if (err) {
             res.json({
-                msj: "No se pudieron mostrar los comentarios",
+                msj: "No se pudieron mostrar las tarjetas",
                 err
             });
         } else {
@@ -62,7 +61,39 @@ router.get('/listar-tarjetas2', (req, res) => {
     })
 });
 
-const saltRounds = 10;
+router.get('/listar-tarjetas2', (req, res) => {
+    let usuario = req.body.usuario;
+    //console.log(usuario);
+    tarjeta.find({ usuario: 'wsanchor' }, (err, lista_tarjetas) => {
+        if (err) {
+            res.json({
+                msj: "No se pudieron mostrar las tarjetas",
+                err
+            });
+        } else {
+            res.json({ lista_tarjetas })
+        }
+    })
+});
+
+//eliminar
+router.delete('/eliminar-tarjeta', (req, res) => {
+    let _id = req.body._id;
+    tarjeta.findOneAndRemove({ _id: _id }, (err) => {
+        if (err) {
+            res.json({
+                msj: 'No se pudo eliminar la tarjeta',
+                err
+            });
+        } else {
+            res.json({
+                msj: 'La tarjeta se eliminó correctamente'
+            });
+        }
+    });
+});
+
+/*const saltRounds = 10;
 
 function encriptar(valor) {
     bcrypt.genSalt(saltRounds, function(err, salt) {
@@ -73,5 +104,5 @@ function encriptar(valor) {
     });
     return valor;
 }
-
+*/
 module.exports = router;
