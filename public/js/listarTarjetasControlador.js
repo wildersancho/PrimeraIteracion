@@ -10,7 +10,7 @@ const mostrar_tarjetas = async() => {
     console.log(usuario);
     let lista_tarjetas = await obtener_tarjetas(usuario);
     tabla.innerHTML = ''; //Limpia el TBody
-    tabla.innerHTML = '<th>NúmeroTarjeta</th><th>FechaVencimiento</th><th>Proveedor</th><th>Propietario</th>';
+    tabla.innerHTML = '<th>NúmeroTarjeta</th><th>FechaVencimiento</th><th>Proveedor</th><th>Propietario</th><th>Eliminar</th>';
     lista_tarjetas.forEach((tarjeta) => {
         let fila = tabla.insertRow();
         fila.insertCell().innerHTML = tarjeta.tarjeta;

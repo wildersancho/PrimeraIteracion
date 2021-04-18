@@ -38,16 +38,16 @@
                     <div class="datos">
                         <label for="label-tipoServicio" id="label-tipoServicio" class="label-tipoServicio">Tipo de servicio</label><br><br>
                         <div id="buttonBox">
-                            <input type="radio" class="input-radio" name="rbtServicio">
-                            <label for="" class="label-radio" value="P">Paseo</label>
-                            <input type="radio" class="input-radio" name="rbtServicio">
-                            <label for="" class="label-radio" value="G">Grooming </label>
+                            <input type="radio" class="input-radio" name="rbtServicio" value="Paseo">
+                            <label for="label-tipoServicio" class="label-radio1" value="0">Paseo</label>
+                            <input type="radio" class="input-radio" name="rbtServicio" value="Grooming">
+                            <label for="label-tipoServicio" class="label-radio2" value="1">Grooming </label>
                         </div>
                         <div id="buttonBox">
-                            <input type="radio" class="input-radio" name="rbtServicio">
-                            <label class="label-radio" value="H">Hotel</label>
-                            <input type="radio" class="input-radio" name="rbtServicio">
-                            <label class="label-radio" value="U">Guardería</label>
+                            <input type="radio" class="input-radio" name="rbtServicio" value="Hotel">
+                            <label for="label-tipoServicio" class="label-radio3" value="3">Hotel</label>
+                            <input type="radio" class="input-radio" name="rbtServicio" value="Guarderia">
+                            <label for="label-tipoServicio" class="label-radio4" value="4">Guardería</label>
                         </div>
                         <div class="datos" id="txtFechaServicio">
                             <label>Fecha del servicio</label>
@@ -85,10 +85,10 @@
                 <section id="cliente2">
                     <div class="datos">
                         <label for="nombreMascota">Macotas</label>
-                        <select name="nombreMascota" id="">
-                               <option value="M1">Macota1</option>
-                               <option value="M2">Macota2</option>
-                               <option value="M3">Macota3</option>
+                        <select name="nombreMascota" id="nombreMascota">
+                               <option value="Macota1">Macota1</option>
+                               <option value="Macota2">Macota2</option>
+                               <option value="Macota3">Macota3</option>
                             </select>
                     </div>
                     <div>
@@ -98,7 +98,7 @@
                     </div>
                     <div>
                         <label for="Observaciones">Observaciones</label>
-                        <textarea name="observaciones" wrap="off"></textarea>
+                        <textarea name="observaciones" id="observaciones" wrap="off"></textarea>
                     </div>
                     <button type="button" id="btnRegistrarServicio">Solicitar</button>
 
@@ -131,10 +131,12 @@
 
     <!-- 
     <script src="js/registroBitacoraServicio.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
-    <script src="js/registarServicioControlador.js"></script>
+    <script src="https://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
     <script src="js/validacionProvincias.js"></script>
-    </script>
+    <script src="js/registarServicioControlador.js"></script>
+    <script src="js/serviciosServicio.js"></script>
 </body>
 
 </html>

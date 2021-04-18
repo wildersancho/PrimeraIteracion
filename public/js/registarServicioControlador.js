@@ -6,27 +6,37 @@ let input_tel = document.querySelector('#TelContacto');
 let inputProvincia = document.querySelector('#id-provincia');
 let inputCanton = document.querySelector('#id-canton');
 let inputDistrito = document.querySelector('#id-distrito');
+let inputObservaciones = document.querySelector('#observaciones');
 var inputradios = document.querySelector('#label-tipoServicio');
+var selectMascota = document.querySelector('#nombreMascota');
 let inputRadioButton = document.querySelectorAll('input[name="rbtServicio"]')
 let accion = 'Registrar';
-let fecha = new Date().toLocaleString();
 let botonRegistrarCliente = document.querySelector('#btnRegistrarServicio');
+
 
 botonRegistrarCliente.addEventListener('click', obtenerDatosServicio);
 
 async function obtenerDatosServicio() {
+    let Servicio = '';
+    let radios = document.getElementsByName('rbtServicio');
+
+    for (let i = 0, length = radios.length; i < length; i++) {
+        if (radios[i].checked) {
+            Servicio = radios[i].value;
+            break;
+        }
+    }
     let error = false;
+    let nombreMascota = selectMascota.value;
     let nombreUsuario = inputnombreUsuario.value;
     let tel = input_tel.value;
     let Provincia = inputProvincia.value;
     let Canton = inputCanton.value;
     let Distrito = inputDistrito.value;
-    let fechaSinFormato = new Date(inputfechaCliente.value);
-    let fechaClienteSplit = inputfechaCliente.value.split("-");
-    let fechaCliente = fechaClienteSplit[2] + '/' + fechaClienteSplit[1] + '/' + fechaClienteSplit[0];
+    let Observaciones = inputObservaciones.value;
+    let fecha = inputfechaCliente.value;
 
-    error = validarCliente(nombreUsuario, tel, Provincia, Canton, Distrito, fechaSinFormato, inputRadioButton);
-
+    error = validarCliente(nombreUsuario, tel, Provincia, Canton, Distrito, fecha, inputRadioButton);
 
     if (error == true) {
         swal.fire({
@@ -36,13 +46,23 @@ async function obtenerDatosServicio() {
             confirmButtonText: 'Entendido'
         });
     } else {
-        registrarBitacora(nombreUsuario, tel, Provincia, Canton, Distrito, fechaCliente)
+        console.log(nombreUsuario);
+        console.log(tel);
+        console.log(Provincia);
+        console.log(Canton);
+        console.log(Distrito);
+        console.log(Servicio);
+        console.log(nombreMascota);
+        console.log(Observaciones);
+        console.log(fecha);
+        registrar_servicio(nombreUsuario, tel, Provincia, Canton, Distrito, Servicio, nombreMascota, Observaciones, fecha);
         if (error == false) {
             swal.fire({
                 title: 'Registro correcto',
                 icon: 'success',
                 showConfirmButton: false
             });
+
         } else {
             swal.fire({
                 title: 'Registro incorrecto',
@@ -63,46 +83,54 @@ function validarCliente(pnombreUsuario, ptel, pProvincia, pCanton, pDistrito, pf
     if (pnombreUsuario == '') {
         error = true;
         inputnombreUsuario.classList.add('errorInput');
+        console.log("error usuario");
     } else {
         inputnombreUsuario.classList.remove('errorInput');
     }
     if (ptel == '' || expTel.test(ptel) == false) {
         error = true;
         input_tel.classList.add('errorInput');
+        console.log("error telefono");
     } else {
         input_tel.classList.remove('errorInput');
     }
     if (pfechaCliente == 'Invalid Date') {
         error = true;
         inputfechaCliente.classList.add('errorInput');
+        console.log("error fecha");
     } else {
         inputfechaCliente.classList.remove('errorInput');
     }
     if (pProvincia == 'Provincia') {
         error = true;
         inputProvincia.classList.add('errorInput');
+        console.log("error Provincia");
     } else {
         inputProvincia.classList.remove('errorInput');
     }
-    if (pCanton == 'Canton') {
+    if (pCanton == 'Cantón') {
         error = true;
         inputCanton.classList.add('errorInput');
+        console.log("error Canton");
     } else {
         inputCanton.classList.remove('errorInput');
     }
     if (pDistrito == 'Distrito') {
         error = true;
         inputDistrito.classList.add('errorInput');
+        console.log("error Distrito");
     } else {
         inputDistrito.classList.remove('errorInput');
     }
     for (const rb of pinputRadioButton) {
         if (rb.checked) {
             inputradios.classList.remove('errorInput');
+            error = false;
             break;
         } else {
             error = true;
             inputradios.classList.add('errorInput');
+            console.log("error Radios");
         }
     }
     return error;
@@ -126,4 +154,30 @@ var createCookie = function(name, value, days) {
         expires = "";
     }
     document.cookie = name + "=" + value + expires + "; path=/";
+}
+
+
+const limpiar = () => {
+    inputnombreUsuario.value = '';
+    inputfechaCliente.value = '';
+    input_tel.value = '';
+    inputProvincia.value = 'Provincia';
+    inputCanton.value = 'Cantón';
+    inputDistrito.value = 'Distrito';
+    inputObservaciones.value = '';
+}
+
+function getRadioVal(form, name) {
+    var val;
+    // get list of radio buttons with specified name
+    var radios = form.elements[name];
+
+    // loop through list of radio buttons
+    for (var i = 0, len = radios.length; i < len; i++) {
+        if (radios[i].checked) { // radio checked?
+            val = radios[i].value; // if so, hold its value in val
+            break; // and break out of for loop
+        }
+    }
+    return val; // return value of checked radio or undefined if none checked
 }

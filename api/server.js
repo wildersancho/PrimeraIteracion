@@ -54,3 +54,4 @@ function handleError(res, reason, message, code) {
 app.use('/api', require('./routes/tarjetas.routes'));
 app.use('/api', require('./routes/clientes.routes'));
 app.use('/api', require('./routes/razas.routes'));
+app.use('/api', require('./routes/servicios.routes'));
