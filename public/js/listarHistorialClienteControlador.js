@@ -10,7 +10,7 @@ const mostrar_servicios = async() => {
     console.log(usuario);
     let lista_servicios = await obtener_servicios(usuario);
     tabla.innerHTML = ''; //Limpia el TBody
-    tabla.innerHTML = '<th>NombreServicio</th><th>FechaServicio</th><th>Proveedor</th><th>MascotasAtendidas</th><th>Status</th><th>Banneado</th><th>Eliminar</th><th>Bannear</th><th>Desbannear</th>';
+    tabla.innerHTML = '<th>NombreServicio</th><th>FechaServicio</th><th>Proveedor</th><th>MascotasAtendidas</th><th>Status</th><th>Banneado</th><th>Cancelar</th><th>Bannear</th><th>Desbannear</th>';
     lista_servicios.forEach((servicio) => {
         let fila = tabla.insertRow();
         fila.insertCell().innerHTML = servicio.servicio;
@@ -30,7 +30,7 @@ const mostrar_servicios = async() => {
         boton_eliminar.classList.add("fa-trash-alt")
         celda_eliminar.appendChild(boton_eliminar);
         celda_eliminar.addEventListener('click', async() => {
-            eliminar_servicio(servicio._id)
+            cancelar_servicio(servicio._id)
         });
         let celda_bannear = fila.insertCell();
         let boton_bannear = document.createElement('button');

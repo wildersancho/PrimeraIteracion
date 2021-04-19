@@ -56,17 +56,18 @@ const obtener_servicios = async(usuario) => {
 }
 
 
-const eliminar_servicio = async(_id) => {
+const cancelar_servicio = async(_id) => {
     await axios({
-        method: 'delete',
-        url: 'http://localhost:3000/api/eliminar-servicio',
+        method: 'put',
+        url: 'http://localhost:3000/api/cancelar-servicio',
         responseType: 'json',
         data: {
-            _id: _id
+            _id: _id,
+            status: 'cancelado'
         }
     }).then((response) => {
         Swal.fire({
-            'title': 'La servicio ha sido eliminada',
+            'title': 'La servicio ha sido cancelado',
             'icon': 'success',
             'text': response.msj
         }).then(() => {

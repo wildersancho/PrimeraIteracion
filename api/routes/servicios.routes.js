@@ -52,18 +52,24 @@ router.get('/listar-servicios', (req, res) => {
 });
 
 //eliminar
-router.delete('/eliminar-servicio', (req, res) => {
-    let _id = req.body._id;
-    servicio.findOneAndRemove({ _id: _id }, (err) => {
+router.put('/cancelar-servicio', (req, res) => {
+    servicio.updateOne({
+        _id: req.body._id
+    }, {
+        $set: {
+            status: req.body.status,
+        }
+    }, (err, info) => {
         if (err) {
             res.json({
-                msj: 'No se pudo eliminar la servicio',
+                msj: "No se pudo banear el servicio",
                 err
             });
         } else {
             res.json({
-                msj: 'La servicio se eliminó correctamente'
-            });
+                msj: "El servicio fue baneado exitosamente",
+                info
+            })
         }
     });
 });
