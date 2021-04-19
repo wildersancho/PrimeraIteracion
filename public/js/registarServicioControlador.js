@@ -29,18 +29,18 @@ $(inputnombreUsuario).val(usuario)
 $(inputnombreProveedor).val(proveedor)
 
 async function obtenerDatosServicio() {
-    let Servicio = '';
+    let servicio = '';
     let radios = document.getElementsByName('rbtServicio');
 
     for (let i = 0, length = radios.length; i < length; i++) {
         if (radios[i].checked) {
-            Servicio = radios[i].value;
+            servicio = radios[i].value;
             break;
         }
     }
     let error = false;
     let nombreMascota = selectMascota.value;
-    let nombreUsuario = inputnombreUsuario.value;
+    usuario = inputnombreUsuario.value;
     let nombreProveedor = inputnombreProveedor.value;
     let tel = input_tel.value;
     let Provincia = inputProvincia.value;
@@ -49,7 +49,7 @@ async function obtenerDatosServicio() {
     let Observaciones = inputObservaciones.value;
     let fecha = inputfechaCliente.value;
 
-    error = validarCliente(nombreUsuario, tel, Provincia, Canton, Distrito, fecha, inputRadioButton);
+    error = validarCliente(usuario, tel, Provincia, Canton, Distrito, fecha, inputRadioButton);
 
     if (error == true) {
         swal.fire({
@@ -59,16 +59,16 @@ async function obtenerDatosServicio() {
             confirmButtonText: 'Entendido'
         });
     } else {
-        console.log(nombreUsuario);
+        console.log(usuario);
         console.log(tel);
         console.log(Provincia);
         console.log(Canton);
         console.log(Distrito);
-        console.log(Servicio);
+        console.log(servicio);
         console.log(nombreMascota);
         console.log(Observaciones);
         console.log(fecha);
-        registrar_servicio(nombreUsuario, nombreProveedor, tel, Provincia, Canton, Distrito, Servicio, nombreMascota, Observaciones, fecha);
+        registrar_servicio(usuario, nombreProveedor, tel, Provincia, Canton, Distrito, servicio, nombreMascota, Observaciones, fecha);
         if (error == false) {
             swal.fire({
                 title: 'Registro correcto',
@@ -171,7 +171,6 @@ var createCookie = function(name, value, days) {
 
 
 const limpiar = () => {
-    inputnombreUsuario.value = '';
     inputfechaCliente.value = '';
     input_tel.value = '';
     inputProvincia.value = 'Provincia';
