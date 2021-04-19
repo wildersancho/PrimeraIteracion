@@ -1,12 +1,13 @@
 'use strict';
 
-const registrar_servicio = async(nombreUsuario, tel, Provincia, Canton, Distrito, Servicio, nombreMascota, Observaciones, fecha) => {
+const registrar_servicio = async(nombreUsuario, nombreProveedor, tel, Provincia, Canton, Distrito, Servicio, nombreMascota, Observaciones, fecha) => {
     await axios({
         method: 'post',
         url: 'http://localhost:3000/api/registrar-servicio',
         responseType: 'json',
         data: {
             nombreUsuario: nombreUsuario,
+            nombreProveedor: nombreProveedor,
             tel: tel,
             Provincia: Provincia,
             Canton: Canton,
@@ -14,7 +15,9 @@ const registrar_servicio = async(nombreUsuario, tel, Provincia, Canton, Distrito
             Servicio: Servicio,
             nombreMascota: nombreMascota,
             Observaciones: Observaciones,
-            fecha: fecha
+            fecha: fecha,
+            status: 'enviado',
+            banned: false
         }
     }).then((response) => {
         Swal.fire({

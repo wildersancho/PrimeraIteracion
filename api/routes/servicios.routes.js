@@ -9,6 +9,7 @@ const servicio = require('../models/servicios.models');
 router.post('/registrar-servicio', (req, res) => {
     let nuevo_servicio = new servicio({
         nombreUsuario: req.body.nombreUsuario,
+        nombreProveedor: req.body.nombreProveedor,
         tel: req.body.tel,
         Provincia: req.body.Provincia,
         Canton: req.body.Canton,
@@ -16,7 +17,9 @@ router.post('/registrar-servicio', (req, res) => {
         Servicio: req.body.Servicio,
         nombreMascota: req.body.nombreMascota,
         Observaciones: req.body.Observaciones,
-        fecha: req.body.fecha
+        fecha: req.body.fecha,
+        status: req.body.status,
+        banned: req.body.banned
     });
     nuevo_servicio.save((err, servicio_db) => {
         if (err) {

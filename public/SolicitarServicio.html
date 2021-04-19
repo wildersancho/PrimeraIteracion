@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="css/solicitudServicio.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <link rel="stylesheet" href="css/general_2.css">
 
 </head>
@@ -36,6 +37,10 @@
                 </h1>
                 <section id="cliente1" class="cliente1">
                     <div class="datos">
+                        <div>
+                            <label for="txtNombreProveedor" id="nombreProveedor">Nombre de Proveedor</label>
+                            <input type="text" id="txtNombreProveedor" readonly="readonly">
+                        </div>
                         <label for="label-tipoServicio" id="label-tipoServicio" class="label-tipoServicio">Tipo de servicio</label><br><br>
                         <div id="buttonBox">
                             <input type="radio" class="input-radio" name="rbtServicio" value="Paseo">
@@ -55,7 +60,7 @@
                         </div>
                         <div>
                             <label for="txtNombreUsuario" id="nombreUsuario">Nombre de Usuario</label>
-                            <input type="text" id="txtNombreUsuario">
+                            <input type="text" id="txtNombreUsuario" readonly="readonly">
                         </div>
 
                         <div class="datos" name='formulario1'>

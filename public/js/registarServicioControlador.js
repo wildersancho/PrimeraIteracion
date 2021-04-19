@@ -1,6 +1,7 @@
 'use strict';
 //Datos de section de cliente
 let inputnombreUsuario = document.querySelector('#txtNombreUsuario');
+let inputnombreProveedor = document.querySelector('#txtNombreProveedor');
 let inputfechaCliente = document.querySelector('#FechaServicio');
 let input_tel = document.querySelector('#TelContacto');
 let inputProvincia = document.querySelector('#id-provincia');
@@ -16,6 +17,17 @@ let botonRegistrarCliente = document.querySelector('#btnRegistrarServicio');
 
 botonRegistrarCliente.addEventListener('click', obtenerDatosServicio);
 
+let userName = "wsanchor";;
+window.localStorage.setItem('user', userName);
+let usuario = window.localStorage.getItem('user');
+
+let provName = "Patitos";;
+window.localStorage.setItem('provName', provName);
+let proveedor = window.localStorage.getItem('provName');
+
+$(inputnombreUsuario).val(usuario)
+$(inputnombreProveedor).val(proveedor)
+
 async function obtenerDatosServicio() {
     let Servicio = '';
     let radios = document.getElementsByName('rbtServicio');
@@ -29,6 +41,7 @@ async function obtenerDatosServicio() {
     let error = false;
     let nombreMascota = selectMascota.value;
     let nombreUsuario = inputnombreUsuario.value;
+    let nombreProveedor = inputnombreProveedor.value;
     let tel = input_tel.value;
     let Provincia = inputProvincia.value;
     let Canton = inputCanton.value;
@@ -55,7 +68,7 @@ async function obtenerDatosServicio() {
         console.log(nombreMascota);
         console.log(Observaciones);
         console.log(fecha);
-        registrar_servicio(nombreUsuario, tel, Provincia, Canton, Distrito, Servicio, nombreMascota, Observaciones, fecha);
+        registrar_servicio(nombreUsuario, nombreProveedor, tel, Provincia, Canton, Distrito, Servicio, nombreMascota, Observaciones, fecha);
         if (error == false) {
             swal.fire({
                 title: 'Registro correcto',
@@ -165,19 +178,4 @@ const limpiar = () => {
     inputCanton.value = 'Cantón';
     inputDistrito.value = 'Distrito';
     inputObservaciones.value = '';
-}
-
-function getRadioVal(form, name) {
-    var val;
-    // get list of radio buttons with specified name
-    var radios = form.elements[name];
-
-    // loop through list of radio buttons
-    for (var i = 0, len = radios.length; i < len; i++) {
-        if (radios[i].checked) { // radio checked?
-            val = radios[i].value; // if so, hold its value in val
-            break; // and break out of for loop
-        }
-    }
-    return val; // return value of checked radio or undefined if none checked
 }
