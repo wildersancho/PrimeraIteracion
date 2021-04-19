@@ -68,5 +68,26 @@ router.delete('/eliminar-servicio', (req, res) => {
     });
 });
 
+router.put('/bannear-servicio', (req, res) => {
+    servicio.updateOne({
+        _id: req.body._id
+    }, {
+        $set: {
+            banned: req.body.banned,
+        }
+    }, (err, info) => {
+        if (err) {
+            res.json({
+                msj: "No se pudo banear el servicio",
+                err
+            });
+        } else {
+            res.json({
+                msj: "El servicio fue baneado exitosamente",
+                info
+            })
+        }
+    });
+});
 
 module.exports = router;

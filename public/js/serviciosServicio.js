@@ -80,3 +80,57 @@ const eliminar_servicio = async(_id) => {
         })
     });
 };
+
+
+const bannear_servicio = async(_id) => {
+    await axios({
+        method: 'put',
+        url: 'http://localhost:3000/api/bannear-servicio',
+        responseType: 'json',
+        data: {
+            _id: _id,
+            banned: true
+        }
+    }).then((response) => {
+        Swal.fire({
+            'icon': 'success',
+            'title': 'El servicio ha sido baneado',
+            'text': response.msj
+        }).then(() => {
+            mostrar_servicios();
+        });
+    }).catch((response) => {
+        Swal.fire({
+            'icon': 'error',
+            'text': response.msj,
+            'title': 'Ocurrió un error inesperado',
+        }).then(() => {});
+    });
+};
+
+
+const desbannear_servicio = async(_id) => {
+    await axios({
+        method: 'put',
+        url: 'http://localhost:3000/api/bannear-servicio',
+        responseType: 'json',
+        data: {
+            _id: _id,
+            banned: false
+        }
+    }).then((response) => {
+        Swal.fire({
+            'icon': 'success',
+            'title': 'El servicio ha sido desbanneado',
+            'text': response.msj
+        }).then(() => {
+            mostrar_servicios();
+        });
+    }).catch((response) => {
+        Swal.fire({
+            'icon': 'error',
+            'text': response.msj,
+            'title': 'Ocurrió un error inesperado',
+        }).then(() => {});
+    });
+};
