@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" href="css/listar.css">
     <link rel="stylesheet" href="css/general_2.css">
+    <link rel="stylesheet" href="css/perfilMascota.css">
 </head>
 
 <body>
@@ -30,174 +31,26 @@
 
     <main class="main-content">
         <div class="Lista-container">
+
             <h3>Lista de Mascotas</h3>
-            <table>
+            <input type="text" placeholder="Filtrar Nombre o raza" id="filtrar-name">
+
+            <table id="table-mascotas">
                 <thead>
                     <tr>
-                        <th>Felix</th>
+                        <th>Nombre</th>
                         <th>Tipo de mascota</th>
                         <th>Raza</th>
                         <th>Padecimientos</th>
                         <th>Vacunas</th>
                         <th>Teléfono de contacto</th>
-                        <th>Código</th>
+                        <th>ID Mascota</th>
+                        <th>Perfil</th>
+                        <th>Modificar info</th>
                         <th>Eliminar</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Felix</td>
-                        <td>Gato</td>
-                        <td>Bengala</td>
-                        <td>Ninguno</td>
-                        <td>Al dia</td>
-                        <td>1112-2223</td>
-                        <td>1234</td>
-                        <td><input type="button" value="Eliminar"></td>
-
-                    </tr>
-                    <tr>
-                        <td>Felix</td>
-                        <td>Gato</td>
-                        <td>Bengala</td>
-                        <td>Ninguno</td>
-                        <td>Al dia</td>
-                        <td>1112-2223</td>
-                        <td>1234</td>
-                        <td><input type="button" value="Eliminar"></td>
-                    </tr>
-                    <tr>
-                        <td>Felix</td>
-                        <td>Gato</td>
-                        <td>Bengala</td>
-                        <td>Ninguno</td>
-                        <td>Al dia</td>
-                        <td>1112-2223</td>
-                        <td>1234</td>
-                        <td><input type="button" value="Eliminar"></td>
-                    </tr>
-                    <tr>
-                        <td>Felix</td>
-                        <td>Gato</td>
-                        <td>Bengala</td>
-                        <td>Ninguno</td>
-                        <td>Al dia</td>
-                        <td>1112-2223</td>
-                        <td>1234</td>
-                        <td><input type="button" value="Eliminar"></td>
-                    </tr>
-
-                    <tr>
-                        <td>Felix</td>
-                        <td>Gato</td>
-                        <td>Bengala</td>
-                        <td>Ninguno</td>
-                        <td>Al dia</td>
-                        <td>1112-2223</td>
-                        <td>1234</td>
-                        <td><input type="button" value="Eliminar"></td>
-                    </tr>
-                    <tr>
-                        <td>Felix</td>
-                        <td>Gato</td>
-                        <td>Bengala</td>
-                        <td>Ninguno</td>
-                        <td>Al dia</td>
-                        <td>1112-2223</td>
-                        <td>1234</td>
-                        <td><input type="button" value="Eliminar"></td>
-                    </tr>
-                    <tr>
-                        <td>Felix</td>
-                        <td>Gato</td>
-                        <td>Bengala</td>
-                        <td>Ninguno</td>
-                        <td>Al dia</td>
-                        <td>1112-2223</td>
-                        <td>1234</td>
-                        <td><input type="button" value="Eliminar"></td>
-                    </tr>
-                    <tr>
-                        <td>Felix</td>
-                        <td>Gato</td>
-                        <td>Bengala</td>
-                        <td>Ninguno</td>
-                        <td>Al dia</td>
-                        <td>1112-2223</td>
-                        <td>1234</td>
-                        <td><input type="button" value="Eliminar"></td>
-                    </tr>
-                    <tr>
-                        <td>Felix</td>
-                        <td>Gato</td>
-                        <td>Bengala</td>
-                        <td>Ninguno</td>
-                        <td>Al dia</td>
-                        <td>1112-2223</td>
-                        <td>1234</td>
-                        <td><input type="button" value="Eliminar"></td>
-                    </tr>
-                    <tr>
-                        <td>Felix</td>
-                        <td>Gato</td>
-                        <td>Bengala</td>
-                        <td>Ninguno</td>
-                        <td>Al dia</td>
-                        <td>1112-2223</td>
-                        <td>1234</td>
-                        <td><input type="button" value="Eliminar"></td>
-                    </tr>
-                    <tr>
-                        <td>Felix</td>
-                        <td>Gato</td>
-                        <td>Bengala</td>
-                        <td>Ninguno</td>
-                        <td>Al dia</td>
-                        <td>1112-2223</td>
-                        <td>1234</td>
-                        <td><input type="button" value="Eliminar"></td>
-                    </tr>
-                    <tr>
-                        <td>Felix</td>
-                        <td>Gato</td>
-                        <td>Bengala</td>
-                        <td>Ninguno</td>
-                        <td>Al dia</td>
-                        <td>1112-2223</td>
-                        <td>1234</td>
-                        <td><input type="button" value="Eliminar"></td>
-                    </tr>
-                    <tr>
-                        <td>Felix</td>
-                        <td>Gato</td>
-                        <td>Bengala</td>
-                        <td>Ninguno</td>
-                        <td>Al dia</td>
-                        <td>1112-2223</td>
-                        <td>1234</td>
-                        <td><input type="button" value="Eliminar"></td>
-                    </tr>
-                    <tr>
-                        <td>Felix</td>
-                        <td>Gato</td>
-                        <td>Bengala</td>
-                        <td>Ninguno</td>
-                        <td>Al dia</td>
-                        <td>1112-2223</td>
-                        <td>1234</td>
-                        <td><input type="button" value="Eliminar"></td>
-                    </tr>
-                    <tr>
-                        <td>Felix</td>
-                        <td>Gato</td>
-                        <td>Bengala</td>
-                        <td>Ninguno</td>
-                        <td>Al dia</td>
-                        <td>1112-2223</td>
-                        <td>1234</td>
-                        <td><input type="button" value="Eliminar"></td>
-                    </tr>
-
                 </tbody>
             </table>
             <table>
@@ -236,7 +89,11 @@
                 </section>
             </section>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js "></script>
+    <script src="js/registrarMascotas.Servicios.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
+    <script src="js/listarMascotasControlador.js"></script>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
+
 
 </html>

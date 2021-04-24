@@ -26,20 +26,36 @@
     <main class="main-content">
         <div class="Lista-container">
             <h3>Lista de Clientes</h3>
-            <table id="tbl-comentarios">
+            <input type="text" placeholder="Filtrar Nombre" id="filtrar-name">
+            <table id="table-usuarios">
                 <thead>
                     <tr>
                         <th>Nombre de usuario</th>
+                        <th>Username</th>
                         <th>Correo</th>
+                        <th>Edad</th>
                         <th>Cédula</th>
                         <th>Cantidad Mascotas</th>
-                        <th>Habilitado</th>
-                        <th>Deshabilitado</th>
+                        <th>Perfil</th>
+                        <th>Modificar info</th>
+                        <th>Estado Usuario</th>
+                        <th colspan="2">Cambiar estado</th>
+                        <th>Eliminar</th>
 
                     </tr>
                 </thead>
                 <tbody>
                 </tbody>
+            </table>
+            <table>
+
+
+                <tr class="agregar">
+                    <th>
+
+                        <a href="registroCliente.html"><input type="button" value="Agregar Cliente"></a>
+                    </th>
+                </tr>
             </table>
         </div>
 
@@ -68,9 +84,11 @@
             </section>
     </footer>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script src="js/clientesServicio.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
+<script src="js/registrarCliente.Servicios.js"></script>
 <script src="js/listarClientesControlador.js"></script>
+
+</body>
 
 </html>

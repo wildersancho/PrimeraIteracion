@@ -17,13 +17,8 @@ let inputVacunas = document.querySelector('#id-vacunas');
 
 var inputradiosMascotas = document.querySelector('#label-tipoMascota');
 
-
-let accion = 'registrar';
-
-
 let botonRegistrarMascota = document.querySelector('#btnRegistrarMascota');
-
-botonRegistrarMascota.addEventListener('click', obtenerDatosCliente);
+let imagen = imgPlaceholder;
 
 
 
@@ -32,87 +27,92 @@ async function obtenerDatosCliente() {
 
 
     let nombreMascota = inputnombreMascota.value;
-	let telContacto = inputTelContacto.value;
-	let tipoRaza = inputTipoRaza.value;
-	let padecimientos = inputPadecimientos.value;
-	let vacunas = inputVacunas.value;
+    let telContacto = inputTelContacto.value;
+    let tipoRaza = inputTipoRaza.value;
+    let padecimientos = inputPadecimientos.value;
+    let cargarImg = imagen.scr;
 
+    //Radio Mascota
+    let radioGato = document.getElementById('gato');
+    let radioPerro = document.getElementById('perro');
+    let radiusMascota;
+
+    if (radioGato.checked) {
+        radiusMascota = "Gato";
+    } else if (radioPerro.checked) {
+        radiusMascota = "Perro";
+    }
+
+    let vacunas = inputVacunas.value;
+
+    let caracteristicas = document.getElementById('caracteristicas').value;
 
 
 
     error = validarCliente(nombreMascota,
-        telContacto,inputRadioButtonMascota,tipoRaza,padecimientos,vacunas);
+        telContacto, radioGato, radioPerro, tipoRaza, padecimientos, vacunas);
 
+    if (error == true) {
+        swal.fire({
+            title: 'Registro incorrecto',
+            text: 'No se pudo registrar su cuenta, revise los campos en rojo',
+            icon: 'warning',
+            confirmButtonText: 'Entendido'
+        });
+    }
+    if (error == false) {
 
+        registrarMascotas(radiusMascota, nombreMascota, tipoRaza, padecimientos, vacunas, cargarImg, telContacto, caracteristicas);
+        console.log(cargarImg);
 
-		if (error == true) {
-			swal.fire({
-				title: 'Registro incorrecto',
-				text: 'No se pudo registrar su cuenta, revise los campos en rojo',
-				icon: 'warning',
-				confirmButtonText: 'Entendido'
-			});
-		} else {
-			if (error == false) {
-				swal.fire({
-					title: 'Registro correcto',
-					icon: 'success',
-					showConfirmButton: false
-				});
-			} else {
-				swal.fire({
-					title: 'Registro incorrecto',
-					icon: 'error',
-					confirmButtonText: 'Entendido'
-				});
-			}
+    }
 
-		}
-	};
+};
 
-	function validarCliente(pnombreMascota,ptelContacto,pradioButtonMascota,ptipoRaza,pPadecimientos,pVacunas ){
-		let error = false;
-		let expTel = /^[0-9]{8}$/;
-		console.log("validando");
-		if (pnombreMascota == '') {
-			error = true;
-			inputnombreMascota.classList.add('errorInput');
-		} else {
-			inputnombreMascota.classList.remove('errorInput');
-		}
+function validarCliente(pnombreMascota, ptelContacto, pRadioGato, pRadioPerro, ptipoRaza, pPadecimientos, pVacunas) {
+    let error = false;
+    let expTel = /^[0-9]{8}$/;
+    console.log("validando");
+    if (pnombreMascota == '') {
+        error = true;
+        inputnombreMascota.classList.add('errorInput');
+    } else {
+        inputnombreMascota.classList.remove('errorInput');
+    }
 
-		if (ptelContacto == '' || expTel.test(ptelContacto) == false) {
-			error = true;
-			inputTelContacto.classList.add('errorInput');
-		} else {
-			inputTelContacto.classList.remove('errorInput');
-		}
-		if (ptipoRaza == 'Tipo de Raza') {
-			error = true;
-			inputTipoRaza.classList.add('errorInput');
-		} else {
-			inputTipoRaza.classList.remove('errorInput');
-		}
-		if (pPadecimientos == 'Tipo de Padecimientos') {
-			error = true;
-			inputPadecimientos.classList.add('errorInput');
-		} else {
-			inputPadecimientos.classList.remove('errorInput');
-		}
-		if (pVacunas == 'Tipo de vacunas') {
-			error = true;
-			inputVacunas.classList.add('errorInput');
-		} else {
-			inputVacunas.classList.remove('errorInput');
-		}
-		for (const rb of pradioButtonMascota) {
-			if (rb.checked) {
-				inputradiosMascotas.classList.remove('errorInput');
-				break;
-			} else {
-				error = true;
-				inputradiosMascotas.classList.add('errorInput');
-			}
-		}
-		return error;
-	};
+    if (ptelContacto == '' || expTel.test(ptelContacto) == false) {
+        error = true;
+        inputTelContacto.classList.add('errorInput');
+    } else {
+        inputTelContacto.classList.remove('errorInput');
+    }
+    if (ptipoRaza == 'Tipo de Raza') {
+        error = true;
+        inputTipoRaza.classList.add('errorInput');
+    } else {
+        inputTipoRaza.classList.remove('errorInput');
+    }
+    if (pPadecimientos == 'Tipo de Padecimientos') {
+        error = true;
+        inputPadecimientos.classList.add('errorInput');
+    } else {
+        inputPadecimientos.classList.remove('errorInput');
+    }
+    if (pVacunas == 'Tipo de vacunas') {
+        error = true;
+        inputVacunas.classList.add('errorInput');
+    } else {
+        inputVacunas.classList.remove('errorInput');
+    }
+
+    if (pRadioGato.checked || pRadioPerro.checked) {
+        inputradiosMascotas.classList.remove('errorInput');
+
+    } else {
+        error = true;
+        inputradiosMascotas.classList.add('errorInput');
+    }
+    return error;
+};
+
+botonRegistrarMascota.addEventListener('click', obtenerDatosCliente);

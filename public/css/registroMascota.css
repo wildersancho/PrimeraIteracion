@@ -237,3 +237,15 @@ option {
     background-color: #05386B;
     /*cambia color de botones cuando pasa el mause*/
 }
+
+#btn-subida {
+    background-color: #379683;
+    width: 7%;
+    border: none;
+    border-radius: 5px;
+    height: 10%;
+}
+
+#btn-subida:hover {
+    background-color: #05386B;
+}

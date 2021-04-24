@@ -52,6 +52,7 @@ function handleError(res, reason, message, code) {
 
 // Conexión a todas la rutas.
 app.use('/api', require('./routes/tarjetas.routes'));
-app.use('/api', require('./routes/clientes.routes'));
 app.use('/api', require('./routes/razas.routes'));
 app.use('/api', require('./routes/servicios.routes'));
+app.use('/api', require('./routes/registro-mascotas.routes'));
+app.use('/api', require('./routes/registro-cliente.routes'));

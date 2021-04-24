@@ -21,11 +21,15 @@ var img_perfil = document.getElementById("img-perfil");
 let accion = 'Registrar';
 let fecha = new Date().toLocaleString();
 let botonRegistrarCliente = document.querySelector('#btnRegistrarCliente');
-botonRegistrarCliente.addEventListener('click', obtenerDatosCliente);
+let imagen = imgPlaceholder;
+
+
+
 
 async function obtenerDatosCliente() {
+
+    let cargarImg = imagen.scr;
     let error = false;
-    let tipoUsuario = 'cliente';
     let tipoIDCliente = selecttipoIDCliente.value;
     let identificacionCliente = inputidentificacionCliente.value;
     let nombreUsuario = inputnombreUsuario.value;
@@ -40,7 +44,10 @@ async function obtenerDatosCliente() {
     let edadCliente = Number(inputedadCliente.value);
     let cantidadMascotas = Number(inputcantidadMascota.value);
 
+
     error = validarCliente(nombreUsuario, tipoIDCliente, identificacionCliente, nombreCliente, primerApellidoCliente, email, fechaSinFormato, edadCliente, cantidadMascotas, inputRadioButton);
+    let nombre = nombreCliente + " " + segundoNombreCliente + " " + primerApellidoCliente + " " + segundoApellidoCliente;
+
 
     if (error == true) {
         swal.fire({
@@ -66,23 +73,13 @@ async function obtenerDatosCliente() {
             if (emailRepetido) {} else {
                 inputemail.classList.remove('errorInput');
                 if (error == false) {
-                    swal.fire({
-                        title: 'Registro correcto',
-                        icon: 'success',
-                        showConfirmButton: false
-                    });
-                    registrar_cliente(tipoIDCliente, identificacionCliente, nombreUsuario, nombreCliente, segundoNombreCliente, primerApellidoCliente, segundoApellidoCliente, email, edadCliente, cantidadMascotas);
-                } else {
-                    swal.fire({
-                        title: 'Registro incorrecto',
-                        icon: 'error',
-                        confirmButtonText: 'Entendido'
-                    });
+                    registrarClientes(tipoIDCliente, identificacionCliente, email, nombreUsuario, nombre, fechaSinFormato, edadCliente, cantidadMascotas, cargarImg);
                 }
 
             }
         }
     }
+
 };
 
 
@@ -190,4 +187,6 @@ $("#radio2").click(function() {
     $('#registroTarjeta').html('');
 });
 
+
+botonRegistrarCliente.addEventListener('click', obtenerDatosCliente);
 inputfechaCliente.addEventListener('change', calcularEdad);
