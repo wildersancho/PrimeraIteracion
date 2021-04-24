@@ -115,3 +115,13 @@ boton.addEventListener('click', function() {
         registrar_tarjeta(usuario, tarjeta, nombreTarjeta, fechaTarjeta, numeroCode, tipoTarjeta);
     }
 });
+
+
+const limpiar = () => {
+
+    tarjeta.value = '';
+    nombreTarjeta.value = '';
+    fechaTarjeta.value = '';
+    numeroCode.value = '';
+    tipoTarjeta.value = '';
+}

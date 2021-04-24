@@ -23,7 +23,9 @@ const registrar_tarjeta = async(usuario, tarjeta, nombreTarjeta, fechaTarjeta, n
             'icon': 'success',
             'title': 'Su tarjeta ha sido registrada',
             'text': response.msj
-        }).then(() => {});
+        }).then(() => {
+            limpiar();
+        });
     }).catch((response) => {
         Swal.fire({
             'icon': 'error',

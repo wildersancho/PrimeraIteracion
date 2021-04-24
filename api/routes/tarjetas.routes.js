@@ -1,7 +1,7 @@
 'use strict';
 
 const express = require('express');
-const bcrypt = require('bcrypt');
+const bcrypt = require("bcrypt"); //Usamos la libreria de encriptacion bcrypt
 const router = express.Router();
 const tarjeta = require('../models/tarjetas.models');
 const usuario = require('../models/tarjetas.models');
@@ -23,13 +23,14 @@ router.get('/listar-tarjetas', (req, res) => {
 
 //encriptar()
 //Endpoint para registrar hoteles
-router.post('/registrar-tarjeta', (req, res) => {
+router.post('/registrar-tarjeta', async(req, res) => {
+    let nuevoCodSeguridad = await encriptar(req.body.codSeguridad);
     let nueva_tarjeta = new tarjeta({
         usuario: req.body.usuario,
         tarjeta: req.body.numeroTarjeta,
         nombreTarjeta: req.body.nombreTarjeta,
         fechaTarjeta: req.body.fechaTarjeta,
-        codSeguridad: req.body.codSeguridad, //req.body.codSeguridad,
+        codSeguridad: nuevoCodSeguridad, //nuevoCodSeguridad,
         tipoTarjeta: req.body.tipoTarjeta
     });
 
@@ -93,16 +94,12 @@ router.delete('/eliminar-tarjeta', (req, res) => {
     });
 });
 
-/*const saltRounds = 10;
-
-function encriptar(valor) {
-    bcrypt.genSalt(saltRounds, function(err, salt) {
-        bcrypt.hash(valor, salt, function(err, hash) {
-            valor = salt.toString();
-            console.log(valor);
-        });
-    });
-    return valor;
+const encriptar = async(cod) => {
+    // generar bits aleatorios que se usan para encriptar
+    const salt = await bcrypt.genSalt(10);
+    // hacer el hash: es un algoritmo que va a encriptar nuestra contraseña
+    let cod_nuevo = await bcrypt.hash(cod, salt);
+    return cod_nuevo;
 }
-*/
+
 module.exports = router;
