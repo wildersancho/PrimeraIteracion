@@ -83,19 +83,20 @@ const cancelar_servicio = async(_id) => {
 };
 
 
-const bannear_servicio = async(_id) => {
+const bannear_servicio = async(_id, comentarios) => {
     await axios({
         method: 'put',
         url: 'http://localhost:3000/api/bannear-servicio',
         responseType: 'json',
         data: {
             _id: _id,
-            banned: true
+            banned: true,
+            comentarios: comentarios
         }
     }).then((response) => {
         Swal.fire({
             'icon': 'success',
-            'title': 'El servicio ha sido baneado',
+            'title': 'El servicio ha sido reportado',
             'text': response.msj
         }).then(() => {
             mostrar_servicios();
@@ -117,12 +118,13 @@ const desbannear_servicio = async(_id) => {
         responseType: 'json',
         data: {
             _id: _id,
-            banned: false
+            banned: false,
+            comentarios: ''
         }
     }).then((response) => {
         Swal.fire({
             'icon': 'success',
-            'title': 'El servicio ha sido desbanneado',
+            'title': 'Se ha cancelado el reporte del servicio',
             'text': response.msj
         }).then(() => {
             mostrar_servicios();
