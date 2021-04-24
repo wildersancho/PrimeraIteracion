@@ -19,7 +19,8 @@ router.post('/registrar-servicio', (req, res) => {
         Observaciones: req.body.Observaciones,
         fecha: req.body.fecha,
         status: req.body.status,
-        banned: req.body.banned
+        banned: req.body.banned,
+        comentarios: req.body.comentarios
     });
     nuevo_servicio.save((err, servicio_db) => {
         if (err) {
@@ -80,16 +81,17 @@ router.put('/bannear-servicio', (req, res) => {
     }, {
         $set: {
             banned: req.body.banned,
+            comentarios: req.body.comentarios
         }
     }, (err, info) => {
         if (err) {
             res.json({
-                msj: "No se pudo banear el servicio",
+                msj: "No se pudo reportar el servicio",
                 err
             });
         } else {
             res.json({
-                msj: "El servicio fue baneado exitosamente",
+                msj: "El servicio fue reportado exitosamente",
                 info
             })
         }

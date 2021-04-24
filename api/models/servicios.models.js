@@ -14,7 +14,8 @@ const schema_registroServicios = mongoose.Schema({
     Observaciones: { type: String, required: true, unique: false },
     fecha: { type: String, required: true, unique: false },
     status: { type: String, required: true, unique: false },
-    banned: { type: Boolean, required: true, unique: false }
+    banned: { type: Boolean, required: true, unique: false },
+    comentarios: { type: String, required: false, unique: false }
 });
 
 module.exports = mongoose.model('servicio', schema_registroServicios, 'Servicios');

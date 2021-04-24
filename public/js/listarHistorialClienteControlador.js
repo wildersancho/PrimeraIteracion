@@ -10,7 +10,7 @@ const mostrar_servicios = async() => {
     console.log(usuario);
     let lista_servicios = await obtener_servicios(usuario);
     tabla.innerHTML = ''; //Limpia el TBody
-    tabla.innerHTML = '<th>NombreServicio</th><th>FechaServicio</th><th>Proveedor</th><th>MascotasAtendidas</th><th>Status</th><th>Banneado</th><th>Cancelar</th><th>Bannear</th><th>Desbannear</th>';
+    tabla.innerHTML = '<th>NombreServicio</th><th>FechaServicio</th><th>Proveedor</th><th>MascotasAtendidas</th><th>Status</th><th>Reportado</th><th>Cancelar</th><th>Reportar</th><th>CancelarReporte</th>';
     lista_servicios.forEach((servicio) => {
         let fila = tabla.insertRow();
         fila.insertCell().innerHTML = servicio.servicio;
@@ -39,7 +39,7 @@ const mostrar_servicios = async() => {
         boton_bannear.classList.add("fa-ban")
         celda_bannear.appendChild(boton_bannear);
         celda_bannear.addEventListener('click', async() => {
-            bannear_servicio(servicio._id);
+            mensajeReportar(servicio._id);
         });
         let celda_desbannear = fila.insertCell();
         let boton_desbannear = document.createElement('button');
@@ -54,3 +54,31 @@ const mostrar_servicios = async() => {
 };
 
 mostrar_servicios();
+
+const mensajeReportar = async(servicio) => {
+    const { value: formValues } = await Swal.fire({
+        title: 'Reportar',
+        html: `Ingrese el motivo de su reporte
+            <br>
+            <textarea id="report" name="report" rows="4" cols="50"></textarea>`,
+        showCancelButton: true,
+        showConfirmButton: true,
+        focusConfirm: false,
+        preConfirm: () => {
+            return [
+                document.querySelector('#report').value
+            ]
+        }
+    });
+    if (formValues) {
+        const { value: accept } = await Swal.fire({
+            icon: 'warning',
+            text: 'Está seguro que desea reportar',
+            confirmButtonText: `Si`,
+            showCancelButton: true
+        });
+        if (accept) {
+            bannear_servicio(servicio, formValues[0]);
+        }
+    }
+}
