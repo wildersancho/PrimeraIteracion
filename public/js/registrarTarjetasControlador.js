@@ -77,13 +77,11 @@ function validarCampos(campoValidar, _error) {
         campoValidar.className = ' required';
         errorSweetAlert();
         _error = true;
-
     } else {
         campoValidar.className = ' '
         confirmationSweetAlert();
     }
     return _error;
-
 }
 
 //valida el tipo de tarjeta con un solo enter
@@ -99,13 +97,13 @@ addEventListener('keypress', function(e) {
 boton.addEventListener('click', function() {
     let _error = false;
     let tTarjeta = '';
-    validarCampos(tarjeta, _error);
-    validarCampos(nombreTarjeta, _error);
-    validarCampos(fechaTarjeta, _error);
-    validarCampos(numeroCode, _error);
+    _error = validarCampos(tarjeta, _error);
+    _error = validarCampos(nombreTarjeta, _error);
+    _error = validarCampos(fechaTarjeta, _error);
+    _error = validarCampos(numeroCode, _error);
     tTarjeta = validationTarjeta(tTarjeta);
     if (!_error) {
-        let userName = "wsanchor";;
+        let userName = "wsanchor";
         window.localStorage.setItem('user', userName);
         let usuario = window.localStorage.getItem('user');
         let tarjeta = document.getElementById("tar-num").value;
