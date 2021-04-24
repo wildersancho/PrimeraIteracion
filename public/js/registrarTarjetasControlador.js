@@ -61,7 +61,7 @@ function validationTarjeta(tTarjeta) {
         tTarjeta = "MasterCard";
     } else {
         tipoTarjeta.innerHTML = "Su tarjeta es de otra empresa o no es valida.";
-        tipoTarjeta.style.color = "Red";
+        tipoTarjeta.style.color = "White";
         tarjeta.className = ' required';
         tTarjeta = "Otro";
         errorSweetAlert();
@@ -75,6 +75,7 @@ function validarCampos(campoValidar, _error) {
 
     if (campoValidar.value === "") {
         campoValidar.className = ' required';
+        campoValidar.classList.add('error-input');
         errorSweetAlert();
         _error = true;
     } else {

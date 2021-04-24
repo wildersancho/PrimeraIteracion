@@ -15,4 +15,4 @@ const schema_registro = new mongoose.Schema({
 
 });
 
-module.exports = mongoose.model('RegistrarMascota', schema_registro, 'RegistrarMascota');
+module.exports = mongoose.model('Mascota', schema_registro, 'Mascotas');

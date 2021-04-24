@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 
 const schema_cliente = new mongoose.Schema({
     tipo_ID: { type: String, required: true, unique: false },
-    num_ID: { type: String, required: true, unique: false },
+    num_ID: { type: String, required: true, unique: true },
     correo: { type: String, required: true, unique: false },
     usuario: { type: String, required: true, unique: true },
     nombre: { type: String, required: true, unique: false },

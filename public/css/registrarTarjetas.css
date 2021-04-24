@@ -19,7 +19,7 @@
             }
             
             .tarjeta-container {
-                background-color: rgba(237, 245, 225, 50%);
+                background-color: rgb(55, 150, 131);
                 margin-top: 27vh;
                 margin-left: -20vh;
                 display: flex;
@@ -31,7 +31,7 @@
             
             .titulo-tar {
                 font-weight: bold;
-                color: rgb(5, 56, 107);
+                color: rgb(237, 245, 225);
                 margin-left: 23%;
             }
             
@@ -62,13 +62,13 @@
             }
             
             .tarjeta-container>input {
-                border: 1px solid rgba(237, 245, 225, 70%);
+                border: 1px solid rgb(142, 228, 175);
                 margin: 5px;
                 height: 25px;
                 width: 250px;
             }
             
             .required {
-                background-color: rgba(255, 0, 0, 15%);
+                background-color: rgb(225, 171, 171);
                 font-weight: bold;
             }

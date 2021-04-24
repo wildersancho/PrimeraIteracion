@@ -249,3 +249,15 @@ option {
 #btn-subida:hover {
     background-color: #05386B;
 }
+
+#link-lista {
+    position: relative;
+    color: rgb(237, 245, 225);
+    font-weight: bold;
+    font-size: small;
+    text-decoration: none;
+}
+
+#link-lista:hover {
+    text-decoration: underline;
+}
