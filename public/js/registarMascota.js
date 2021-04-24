@@ -21,14 +21,35 @@ let botonRegistrarMascota = document.querySelector('#btnRegistrarMascota');
 let imagen = imgPlaceholder;
 
 
+//Select raza cargarlo desde otro DB
+let select_raza = document.getElementById("id-raza");
+
+
+async function cambiarRaza() {
+    let lista_razas = await obtener_razas();
+
+
+    lista_razas.forEach((raza) => {
+
+        var option = document.createElement('option');
+        option.text = raza.raza;
+        select_raza.add(option);
+
+
+    });
+
+    return select_raza;
+}
+
+cambiarRaza();
+
 
 async function obtenerDatosCliente() {
+
     let error = false;
-
-
     let nombreMascota = inputnombreMascota.value;
     let telContacto = inputTelContacto.value;
-    let tipoRaza = inputTipoRaza.value;
+    let tipoRaza = select_raza.value;
     let padecimientos = inputPadecimientos.value;
     let cargarImg = imagen.scr;
 
