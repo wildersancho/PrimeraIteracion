@@ -4,6 +4,8 @@ let tabla = document.querySelector('#table-mascotas tbody');
 
 let inputFiltro = document.querySelector('#filtrar-name');
 
+let usuario = window.localStorage.getItem('user');
+
 //Sweatalert modificar popup
 const mostrar_editar = async(usuario) => {
     const { value: formValues } = await Swal.fire({
