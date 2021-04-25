@@ -11,7 +11,7 @@ const cambiar_estilo_navegacion = () => {
 //Vamos a tener un arreglo para los usuarios administrador, otro para los proveedores y otro para los clientes que previamente existen en el sistema.
 //const lista_usuarios_cliente = new Array("Mike", "Axel", "Jonathan");
 
-const configurar_app = () => {
+/*const configurar_app = () => {
     //valida, si los datos no existen en sesion y los agrega
     if (!localStorage.getItem("lista_admins")) {
         localStorage.setItem("lista_admins", lista_usuarios_admin);
@@ -26,3 +26,4 @@ const configurar_app = () => {
 
 
 configurar_app();
+*/

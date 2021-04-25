@@ -24,7 +24,7 @@ const obtenerDatos = async() => {
             Swal.fire({
                 'icon': 'warning',
                 'title': 'Usuario Incorrecto',
-                'text': 'El usuario no está registrado'
+                'text': 'El usuario no está registrado o la contraseña es incorrecta'
             });
         } else {
             guardar_info(tipoUsuario);
@@ -34,28 +34,50 @@ const obtenerDatos = async() => {
     }
 }
 
-//let lista_usuarios_cliente = new Array("Fulano");
 
 const validar_tipo_usuario = async() => {
-    const lista_usuarios_admin = new Array("Yessica", "Mario");
+    const lista_usuarios_admin = new Array("Administrador");
+    const passAdmin = "Admin123";
     const lista_usuarios_proveedor = new Array("Wilder", "Yensy");
     let lista_usuarios_cliente = await obtener_clientes();
-    var arrClientes = new Array(100);;
+    var arrClientes = new Array(100);
+    var arrPass = new Array(100);
+    let validacionPass;
     lista_usuarios_cliente.forEach((cliente) => {
         arrClientes.push(cliente.usuario);
         console.log(cliente.usuario);
     });
+    lista_usuarios_cliente.forEach((pass) => {
+        arrPass.push(pass.password);
+        console.log(pass.password);
+    });
     let tipo = 4;
     console.log(tipo);
     if (lista_usuarios_admin.find(nombre => nombre.toLowerCase() == input_nombre.value.toLowerCase())) {
-        tipo = 1;
+        validacionPass = validarPass(passAdmin);
+        if (validacionPass) {
+            tipo = 1;
+        }
     } else if (lista_usuarios_proveedor.find(nombre => nombre.toLowerCase() == input_nombre.value.toLowerCase())) {
         tipo = 2;
     } else if (arrClientes.find(nombre => nombre == input_nombre.value)) {
-        console.log("Cliente");
-        tipo = 3;
+        let t1 = input_nombre.value
+        let indx = arrClientes.indexOf(t1);
+        let passwd = arrPass[indx];
+        validacionPass = (validarPass(passwd));
+        if (validacionPass) {
+            tipo = 3;
+        }
     }
     return tipo;
+}
+
+function validarPass(password) {
+    let autenficado = false;
+    if (password == input_contrasenna.value) {
+        autenficado = true;
+    }
+    return autenficado;
 }
 
 function validar(pusuario, pcontrasenna) {
