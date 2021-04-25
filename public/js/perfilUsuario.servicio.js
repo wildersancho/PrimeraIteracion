@@ -1,5 +1,7 @@
+'use strict';
+
 const mostrarPerfil = async(usuario) => {
-    let lista_servicios = []
+    let lista_datos = []
     await axios({
         method: 'get',
         url: 'http://localhost:3000/api/perfil',
@@ -8,11 +10,11 @@ const mostrarPerfil = async(usuario) => {
             usuario: usuario
         }
     }).then((response) => {
-        lista_servicios = response.data.lista_servicios;
+        lista_datos = response.data.lista_clientes;
     }).catch((response) => {
         console.log(response.data.err);
     });
-    return lista_servicios;
+    return lista_datos;
 }
 
 
@@ -21,8 +23,10 @@ const modificarPerfil = async(usuario, nombre, correo, num_edad, num_ID, cant_ma
         method: 'put',
         url: 'http://localhost:3000/api/modificar-perfil',
         responseType: 'json',
+        params: {
+            usuario: usuario
+        },
         data: {
-            usuario: usuario,
             nombre: nombre,
             correo: correo,
             num_edad: num_edad,
