@@ -1,5 +1,14 @@
 'use strict';
 
+const validar_tipo_usuario_2 = () => {
+    let tipo = 4;
+
+    if (localStorage.getItem("user_type").toString() != "4") {
+        tipo = localStorage.getItem("user_type").toString();
+    }
+    return tipo;
+}
+
 
 const navAdmin = () => {
     if (localStorage.getItem("user") !== null) {
