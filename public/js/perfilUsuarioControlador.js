@@ -2,25 +2,27 @@
 'use strict';
 
 let btnEditar = document.getElementById("btn-editar");
-let storedUser = "Micheal";
+
 
 //Campos del HTML
 let nombrePerfil = document.getElementById("name-placeholder");
 let idPerfil = document.getElementById("id-placeholder");
 let edadPerfil = document.getElementById("age-placeholder");
 let correoPerfil = document.getElementById("email-placeholder");
+let fotoPerfil = document.getElementById("foto-perfil");
 
 
 const mostrarPerfilInfo = async() => {
 
+    let usuario = window.localStorage.getItem('user');
+    let cargarInfo = await mostrarPerfil(usuario);
 
-    let cargarInfo = await mostrarPerfil(storedUser);
-
-    cargarInfo.forEach((usuario) => {
-        nombrePerfil.innerHTML = usuario.nombre;
-        idPerfil.innerHTML = usuario.num_ID;
-        edadPerfil.innerHTML = usuario.num_edad;
-        correoPerfil.innerHTML = usuario.correo;
+    cargarInfo.forEach((infoUsers) => {
+        nombrePerfil.innerHTML = infoUsers.nombre;
+        idPerfil.innerHTML = infoUsers.num_ID;
+        edadPerfil.innerHTML = infoUsers.num_edad;
+        correoPerfil.innerHTML = infoUsers.correo;
+        fotoPerfil.src = infoUsers.foto_perfil;
 
     });
 
@@ -29,7 +31,7 @@ const mostrarPerfilInfo = async() => {
 mostrarPerfilInfo();
 
 //Boton Editar
-const mostrar_editar = async(usuario) => {
+const mostrar_editar = async(infoPerfil) => {
     const { value: formValues } = await Swal.fire({
         title: 'Editar Cliente',
         html: `
@@ -37,30 +39,30 @@ const mostrar_editar = async(usuario) => {
         
         <div>        
             <label for="nombre">Editar Nombre: </label>
-            <input type="text" id="nombre" class="emptyFields" value=${usuario.nombre}>
+            <input type="text" id="nombre" class="emptyFields" value=${infoPerfil.nombre}>
         </div>
 
         <div>        
             <label for="Username">Numero identidad: </label>
-            <input type="text" id="Username" class="emptyFields" value=${usuario.usuario} disabled>
+            <input type="text" id="Username" class="emptyFields" value=${infoPerfil.infoPerfil} disabled>
         </div>
       
         <div>        
             <label for="Edad">Edad: </label>
-            <input type="Number" id="Edad" class="emptyFields" value=${usuario.num_edad}>
+            <input type="Number" id="Edad" class="emptyFields" value=${infoPerfil.num_edad}>
         </div>
 
          
         <div>        
             <label for="Correo">Correo: </label>
-            <input type="email" id="Correo" class="emptyFields" value=${usuario.correo} disabled>
+            <input type="email" id="Correo" class="emptyFields" value=${infoPerfil.correo} disabled>
         </div>
 
         </div>`,
         focusConfirm: false,
         preConfirm: () => {
             return [
-                usuario._id,
+                infoPerfil._id,
                 document.querySelector('#nombre').value,
                 document.querySelector('#Username').value,
                 document.querySelector('#Correo').value,

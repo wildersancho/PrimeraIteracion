@@ -8,8 +8,8 @@ const formModelo = require('../models/registro-mascotas.model');
 
 
 router.get('/listar-mascotas', (req, res) => {
-
-    formModelo.find((err, lista_mascota) => {
+    let usuario = req.query.usuario;
+    formModelo.find({ usuario: usuario }, (err, lista_mascota) => {
         if (err) {
             res.json({
                 msj: 'No se pudo registrar la mascota',
@@ -26,7 +26,7 @@ router.get('/listar-mascotas', (req, res) => {
 
 router.post('/registrar-mascota', (req, res) => {
     let nuevo_form = new formModelo({
-
+        usuario: req.body.usuario,
         tipoMascota: req.body.tipoMascota,
         nombreMascota: req.body.nombreMascota,
         Raza: req.body.Raza,

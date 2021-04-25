@@ -3,29 +3,28 @@
 let tabla = document.querySelector('#table-mascotas tbody');
 
 let inputFiltro = document.querySelector('#filtrar-name');
-
 let usuario = window.localStorage.getItem('user');
 
 //Sweatalert modificar popup
-const mostrar_editar = async(usuario) => {
+const mostrar_editar = async(mascota) => {
     const { value: formValues } = await Swal.fire({
         title: 'Editar Mascota',
         html: `
         <div class="datos">
         <div>
             <label for="txtNombreMascota" id="nombreMascota">Nombre de Mascota</label>
-            <input type="text" id="txtNombreMascota" class="emptyFields" value=${usuario.nombreMascota}>
+            <input type="text" id="txtNombreMascota" class="emptyFields" value=${mascota.nombreMascota}>
         </div>
         <div>        
             <label for="TelContacto">Teléfono de contacto</label>
-            <input type="number" id="telContacto" maxlength="8" class="emptyFields" value=${usuario.Numero}>
+            <input type="number" id="telContacto" maxlength="8" class="emptyFields" value=${mascota.Numero}>
         </div>
 
         <div class="datos" name='formulario1'>
             <label for="id-raza">Raza</label>
             <select id="id-raza" class="emptyFields" class="swal2-input">
                 <option>Tipo de Raza</option>
-                <option  value="raza1"  >${usuario.Raza}</option >
+                <option  value="raza1"  >${mascota.Raza}</option >
             </select>
         </div>
         
@@ -33,21 +32,21 @@ const mostrar_editar = async(usuario) => {
             <label for="id-padecimientos">Padecimientos</label>
             <select id="id-padecimientos" class="emptyFields" class="swal2-input">
                 <option>Tipo de Padecimientos</option>
-                    <option class="padecimientos" value="padecimientos1">${usuario.Padecimientos}</option>
+                    <option class="padecimientos" value="padecimientos1">${mascota.Padecimientos}</option>
                     </select>
         </div>
         <div class="datos" name='formulario1'>
             <label for="id-vacunas">Vacunas</label>
             <select class="emptyFields" id="id-vacunas" class="swal2-input">
                 <option >Tipo de vacunas</option>
-                <option class= "vacunas" value="vacunas1">${usuario.Vacunas}</option>
+                <option class= "vacunas" value="vacunas1">${mascota.Vacunas}</option>
                 
             </select>
         </div>`,
         focusConfirm: false,
         preConfirm: () => {
             return [
-                usuario._id,
+                mascota._id,
                 document.querySelector('#txtNombreMascota').value,
                 document.querySelector('#telContacto').value,
                 document.querySelector('#id-raza').value,
@@ -73,9 +72,9 @@ const mostrar_editar = async(usuario) => {
 
 
 
-const verPerfil = async(usuario) => {
+const verPerfil = async(mascota) => {
     const { value: formValues } = await Swal.fire({
-        imageUrl: `${usuario.FotoMascota}`,
+        imageUrl: `${mascota.FotoMascota}`,
         imageHeight: 400,
         imageAlt: 'Perfil de mascota',
         title: 'Perfil de Mascota: ',
@@ -85,37 +84,37 @@ const verPerfil = async(usuario) => {
 
         <div>        
             <h2>Nombre: </h2>
-            <p>${usuario.nombreMascota}</p>
+            <p>${mascota.nombreMascota}</p>
         </div>
 
         <div>        
             <h2>Tipo de Mascota: </h2>
-            <p>${usuario.tipoMascota}</p>
+            <p>${mascota.tipoMascota}</p>
         </div>
 
         <div>        
             <h2>Raza: </h2>
-            <p>${usuario.Raza}</p>
+            <p>${mascota.Raza}</p>
         </div>
        
         <div>        
             <h2>Padecimientos: </h2>
-            <p> ${usuario.Padecimientos}</p>
+            <p> ${mascota.Padecimientos}</p>
         </div>
 
         <div>        
             <h2>Vacunas: </h2>
-            <p>${usuario.Vacunas}</p>
+            <p>${mascota.Vacunas}</p>
         </div>
 
         <div>        
             <h2>Numero del Dueño(a): </h2>
-            <p>${usuario.Numero}</p>
+            <p>${mascota.Numero}</p>
         </div>
 
         <div>        
         <h2>Caracteres Especiales: </h2>
-        <p>${usuario.Comentario}</p>
+        <p>${mascota.Comentario}</p>
         </div>`,
 
 
@@ -129,23 +128,26 @@ const verPerfil = async(usuario) => {
 //Muestra el listar
 
 const mostrarMascotas = async() => {
-
-    let listaTareas = await listarMascotas();
+    let usuario = window.localStorage.getItem('user');
+    console.log(usuario);
+    let listaTareas = await listarMascotas(usuario);
     let filtro = inputFiltro.value.toUpperCase();
+
+
     tabla.innerHTML = '';
 
-    listaTareas.forEach((usuario) => {
+    listaTareas.forEach((mascotas) => {
             let fila = tabla.insertRow();
 
-            if (usuario.nombreMascota.toUpperCase().includes(filtro) || usuario.Raza.toUpperCase().includes(filtro)) {
-                fila.insertCell().innerHTML = usuario.nombreMascota;
+            if (mascotas.nombreMascota.toUpperCase().includes(filtro) || mascotas.Raza.toUpperCase().includes(filtro)) {
+                fila.insertCell().innerHTML = mascotas.nombreMascota;
 
-                fila.insertCell().innerHTML = usuario.tipoMascota;
-                fila.insertCell().innerHTML = usuario.Raza;
-                fila.insertCell().innerHTML = usuario.Padecimientos;
-                fila.insertCell().innerHTML = usuario.Vacunas;
-                fila.insertCell().innerHTML = usuario.Numero;
-                fila.insertCell().innerHTML = usuario._id;
+                fila.insertCell().innerHTML = mascotas.tipoMascota;
+                fila.insertCell().innerHTML = mascotas.Raza;
+                fila.insertCell().innerHTML = mascotas.Padecimientos;
+                fila.insertCell().innerHTML = mascotas.Vacunas;
+                fila.insertCell().innerHTML = mascotas.Numero;
+                fila.insertCell().innerHTML = mascotas._id;
 
                 let btnPerfil = document.createElement('button');
                 btnPerfil.type = "button";
@@ -153,7 +155,7 @@ const mostrarMascotas = async() => {
                 fila.insertCell().appendChild(btnPerfil);
 
                 btnPerfil.addEventListener('click', function() {
-                    verPerfil(usuario);
+                    verPerfil(mascotas);
 
                 })
 
@@ -165,7 +167,7 @@ const mostrarMascotas = async() => {
                 fila.insertCell().appendChild(mod_perfil);
 
                 mod_perfil.addEventListener('click', function() {
-                    mostrar_editar(usuario);
+                    mostrar_editar(mascotas);
 
                 })
 
@@ -177,7 +179,7 @@ const mostrarMascotas = async() => {
                 fila.insertCell().appendChild(btn_delete);
 
                 btn_delete.addEventListener('click', function() {
-                    eliminarCampos(usuario._id);
+                    eliminarCampos(mascotas._id);
 
                 });
 

@@ -200,15 +200,15 @@ router.put('/modificar-perfil', (req, res) => {
 
 
 router.get('/perfil', (req, res) => {
-    let name = req.query.usuario;
-    name.findOne({ usuario: usuario }, (err, usuario_db) => {
+    let usuario = req.query.usuario;
+    formModelo.find({ usuario: usuario }, (err, lista_clientes) => {
         if (err) {
             res.json({
                 msj: "No se pudieron mostrar los usuarios",
                 err
             });
         } else {
-            res.json({ usuario_db })
+            res.json({ lista_clientes })
         }
     })
 });
@@ -218,7 +218,7 @@ router.get('/perfil', (req, res) => {
 
 
 router.put('/modificar-password', (req, res) => {
-    usuario.updateOne({
+    formModelo.updateOne({
         _id: req.body._id
     }, {
         $set: {
@@ -243,8 +243,8 @@ router.put('/modificar-password', (req, res) => {
 
 
 router.get('/get-username', (req, res) => {
-    let name = req.query.usuario;
-    Usuario.findOne({ usuario: usuario }, (err, usuario_db) => {
+    let usuario = req.query.usuario;
+    formModelo.findOne({ usuario: usuario }, (err, usuario_db) => {
         if (err) {
             res.json({
                 msj: "No se pudieron mostrar los usuarios",
