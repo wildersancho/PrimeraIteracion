@@ -5,13 +5,10 @@ const input_nombre = document.querySelector('#txtUsuario');
 const input_contrasenna = document.querySelector('#txtContrasenna');
 const botonIniciar = document.querySelector('#btnInicio');
 
-
-
-function obtenerDatos() {
+const obtenerDatos = async() => {
+    ///function obtenerDatos() {
     let usuario = input_nombre.value;
     let contrasenna = input_contrasenna.value;
-    console.log(usuario);
-    console.log(contrasenna);
     let error = validar(usuario, contrasenna);
     if (error) {
         swal.fire({
@@ -21,7 +18,8 @@ function obtenerDatos() {
             confirmButtonText: 'Entendido'
         });
     } else {
-        let tipoUsuario = validar_tipo_usuario();
+        let tipoUsuario = await validar_tipo_usuario();
+        console.log(tipoUsuario);
         if (tipoUsuario == 4) {
             Swal.fire({
                 'icon': 'warning',
@@ -36,13 +34,25 @@ function obtenerDatos() {
     }
 }
 
-const validar_tipo_usuario = () => {
+//let lista_usuarios_cliente = new Array("Fulano");
+
+const validar_tipo_usuario = async() => {
+    const lista_usuarios_admin = new Array("Yessica", "Mario");
+    const lista_usuarios_proveedor = new Array("Wilder", "Yensy");
+    let lista_usuarios_cliente = await obtener_clientes();
+    var arrClientes = new Array(100);;
+    lista_usuarios_cliente.forEach((cliente) => {
+        arrClientes.push(cliente.usuario);
+        console.log(cliente.usuario);
+    });
     let tipo = 4;
+    console.log(tipo);
     if (lista_usuarios_admin.find(nombre => nombre.toLowerCase() == input_nombre.value.toLowerCase())) {
         tipo = 1;
     } else if (lista_usuarios_proveedor.find(nombre => nombre.toLowerCase() == input_nombre.value.toLowerCase())) {
         tipo = 2;
-    } else if (lista_usuarios_cliente.find(nombre => nombre.toLowerCase() == input_nombre.value.toLowerCase())) {
+    } else if (arrClientes.find(nombre => nombre == input_nombre.value)) {
+        console.log("Cliente");
         tipo = 3;
     }
     return tipo;
