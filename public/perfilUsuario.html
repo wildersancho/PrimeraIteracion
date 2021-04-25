@@ -34,31 +34,32 @@
             <img src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Fotos de perfil de perros">
 
             <div class="submenu">
-                <a href=""><input type="button" value="Editar Perfil"></a>
+                <a><input id="btn-editar" type="button" value="Editar Perfil"></a>
                 <a href="listarSolicitudesCliente.html"><input type="button" value="Notificaciones"></a>
                 <a href="listarTarjetas.html"><input type="button" value="Tarjetas"></a>
                 <a href="listarHistorialCliente.html"><input type="button" value="Historial de Servicios"></a>
                 <a href="listarMascotas.html"><input type="button" value="Mis Mascotas"></a>
+                <a href="registroMascota.html"><input type="button" value="Agregar Mascotas"></a>
             </div>
             <div class="info-personal">
                 <div>
-                    <h3>Nombre: </h3>
-                    <p>Lorem</p>
+                    <h3>Nombre Completo: </h3>
+                    <p id="name-placeholder"></p>
                 </div>
 
                 <div class="apellido-position">
-                    <h3>Apellido: </h3>
-                    <p>Ipsum</p>
+                    <h3>Numero de identidad: </h3>
+                    <p id="id-placeholder"></p>
                 </div>
 
                 <div>
-                    <h3 class="direccion-position">Dirección: </h3>
-                    <p>Lorem ipsum dolor sit amet. </p>
+                    <h3 class="direccion-position">Edad: </h3>
+                    <p id="age-placeholder"></p>
                 </div>
 
                 <div>
-                    <h3>Fecha de nacimiento: </h3>
-                    <p id="fecha-nacimiento">02/02/2020</p>
+                    <h3>Correo: </h3>
+                    <p id="email-placeholder"></p>
                 </div>
             </div>
 
@@ -102,7 +103,10 @@
             </section>
         </section>
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2 "></script>
-<script src="/js/perfilProveedorClienteControlador.js"></script>
+<script src="js/registrarCliente.Servicios.js"></script>
+<script src="js/perfilUsuario.servicio.js"></script>
+<script src="js/perfilUsuarioControlador.js"></script>
 
 </html>

@@ -174,10 +174,34 @@ router.put('/modificar-cliente', (req, res) => {
 });
 
 
+router.put('/modificar-perfil', (req, res) => {
+    formModelo.updateOne({
+        usuario: req.body.usuario
+    }, {
+        $set: req.body
+    }, (err, info) => {
+        if (err) {
+            res.json({
+                msj: "No se pudo modificar la cuenta",
+                err
+            });
+        } else {
+            res.json({
+                msj: "La cuenta fue modificada exitosamente",
+                info
+            })
+        }
+    });
+});
 
-router.get('/get-username', (req, res) => {
+
+
+
+
+
+router.get('/perfil', (req, res) => {
     let name = req.query.usuario;
-    Usuario.findOne({ usuario: usuario }, (err, usuario_db) => {
+    name.findOne({ usuario: usuario }, (err, usuario_db) => {
         if (err) {
             res.json({
                 msj: "No se pudieron mostrar los usuarios",
@@ -188,7 +212,6 @@ router.get('/get-username', (req, res) => {
         }
     })
 });
-
 
 
 
@@ -217,5 +240,20 @@ router.put('/modificar-password', (req, res) => {
     });
 });
 
+
+
+router.get('/get-username', (req, res) => {
+    let name = req.query.usuario;
+    Usuario.findOne({ usuario: usuario }, (err, usuario_db) => {
+        if (err) {
+            res.json({
+                msj: "No se pudieron mostrar los usuarios",
+                err
+            });
+        } else {
+            res.json({ usuario_db })
+        }
+    })
+});
 
 module.exports = router;
