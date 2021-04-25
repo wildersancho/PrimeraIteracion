@@ -1,8 +1,8 @@
 'use strict';
 
 const tabla = document.querySelector("#tbl-histCliente tbody");
-let userName = "wsanchor";
-window.localStorage.setItem('user', userName);
+//let userName = "wsanchor";
+//window.localStorage.setItem('user', userName);
 const usuario = window.localStorage.getItem('user');
 
 const mostrar_servicios = async() => {
