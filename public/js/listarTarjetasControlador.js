@@ -1,9 +1,9 @@
 'use strict';
 
 const tabla = document.querySelector("#tbl-tarjetas tbody");
-let userName = "wsanchor";
-window.localStorage.setItem('user', userName);
-const usuario = window.localStorage.getItem('user');
+//let userName = "wsanchor";
+//window.localStorage.setItem('user', userName);
+//const usuario = window.localStorage.getItem('user');
 
 const mostrar_tarjetas = async() => {
     let usuario = window.localStorage.getItem('user');

@@ -1,18 +1,18 @@
 'use strict';
 
-const inputUsuario = document.querySelector('#txtUsuario');
-const inputContrasenna = document.querySelector('#txtContrasenna');
+
+const input_nombre = document.querySelector('#txtUsuario');
+const input_contrasenna = document.querySelector('#txtContrasenna');
 const botonIniciar = document.querySelector('#btnInicio');
 
-let usuario = inputUsuario.value;
-let contrasenna = inputContrasenna.value;
+
 
 function obtenerDatos() {
+    let usuario = input_nombre.value;
+    let contrasenna = input_contrasenna.value;
+    console.log(usuario);
+    console.log(contrasenna);
     let error = validar(usuario, contrasenna);
-    let usuarioAceptadoclientes = false;
-    let usuarioAceptadoAdmin = false;
-    let usuarioAceptadoProveedor = false;
-
     if (error) {
         swal.fire({
             title: 'Inicio de sesión incorrecto',
@@ -21,71 +21,63 @@ function obtenerDatos() {
             confirmButtonText: 'Entendido'
         });
     } else {
-        usuarioAceptadoclientes = validarCredenciales(usuario, contrasenna);
-        if (usuarioAceptadoclientes) {
-            window.location.replace("index.html");
+        let tipoUsuario = validar_tipo_usuario();
+        if (tipoUsuario == 4) {
+            Swal.fire({
+                'icon': 'warning',
+                'title': 'Usuario Incorrecto',
+                'text': 'El usuario no está registrado'
+            });
         } else {
-            usuarioAceptadoAdmin = validarCredencialesAdmin(usuario, contrasenna);
-            if (usuarioAceptadoAdmin) { window.location.replace("index.html"); } else {
-                usuarioAceptadoProveedor = validarCredencialesProveedor(usuario, contrasenna);
-                if (usuarioAceptadoProveedor) { window.location.replace("index.html"); } else {
-                    swal.fire({
-                        title: 'Inicio de sesión incorrecto',
-                        text: 'Por favor revise las credenciales',
-                        icon: 'error',
-                        confirmButtonText: 'Entendido'
-                    });
-                }
-            }
+            guardar_info(tipoUsuario);
+            limpiar_pantalla();
+            window.location.replace("./index.html");
         }
     }
 }
 
-function validarCredenciales(usuario, contrasenna) {
-    let usuarioAceptadoclientes = false;
-    if (usuario == 'Cliente' && contrasenna == 'Cliente123') {
-        usuarioAceptadoclientes = true;
+const validar_tipo_usuario = () => {
+    let tipo = 4;
+    if (lista_usuarios_admin.find(nombre => nombre.toLowerCase() == input_nombre.value.toLowerCase())) {
+        tipo = 1;
+    } else if (lista_usuarios_proveedor.find(nombre => nombre.toLowerCase() == input_nombre.value.toLowerCase())) {
+        tipo = 2;
+    } else if (lista_usuarios_cliente.find(nombre => nombre.toLowerCase() == input_nombre.value.toLowerCase())) {
+        tipo = 3;
     }
-    return usuarioAceptadoclientes;
-}
-
-function validarCredencialesAdmin(usuario, contrasenna) {
-    let usuarioAceptadoAdmin = false;
-    if (usuario == 'Admin' && contrasenna == 'admin123') {
-        usuarioAceptadoAdmin = true;
-    }
-    return usuarioAceptadoAdmin;
-}
-
-function validarCredencialesProveedor(usuario, contrasenna) {
-    let usuarioAceptadoProveedor = false;
-    if (usuario == 'Proveedor' && contrasenna == 'Proveedor123') {
-        usuarioAceptadoProveedor = true;
-    }
-    return usuarioAceptadoProveedor;
+    return tipo;
 }
 
 function validar(pusuario, pcontrasenna) {
     let error = false;
     if (pusuario == '') {
         error = true;
-        inputUsuario.classList.add('errorInput');
+        input_nombre.classList.add('errorInput');
     } else {
-        inputUsuario.classList.remove('errorInput');
+        input_nombre.classList.remove('errorInput');
     }
 
     if (pcontrasenna == '') {
         error = true;
-        inputContrasenna.classList.add('errorInput');
+        input_contrasenna.classList.add('errorInput');
     } else {
-        inputContrasenna.classList.remove('errorInput');
+        input_contrasenna.classList.remove('errorInput');
     }
 
 
     return error;
 }
 
+const guardar_info = (tipo_usuario) => {
+    localStorage.setItem('user', input_nombre.value);
+    //localStorage.setItem('user_pass', input_contrasenna.value);
+    localStorage.setItem('user_type', tipo_usuario);
+}
 
 
+const limpiar_pantalla = () => {
+    input_nombre.value = '';
+    input_contrasenna.value = '';
+}
 
 botonIniciar.addEventListener('click', obtenerDatos);

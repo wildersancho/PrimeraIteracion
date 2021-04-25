@@ -104,8 +104,8 @@ boton.addEventListener('click', function() {
     _error = validarCampos(numeroCode, _error);
     tTarjeta = validationTarjeta(tTarjeta);
     if (!_error) {
-        let userName = "wsanchor";
-        window.localStorage.setItem('user', userName);
+        //let userName = "wsanchor";
+        ///window.localStorage.setItem('user', userName);
         let usuario = window.localStorage.getItem('user');
         let tarjeta = document.getElementById("tar-num").value;
         let nombreTarjeta = document.getElementById("tar-name").value;
