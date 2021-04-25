@@ -1,9 +1,10 @@
-const registrarMascotas = async(tipoMascota, nombreMascota, Raza, Padecimientos, Vacunas, FotoMascota, Numero, Comentario) => {
+const registrarMascotas = async(usuario, tipoMascota, nombreMascota, Raza, Padecimientos, Vacunas, FotoMascota, Numero, Comentario) => {
     await axios({
         method: 'post',
         url: 'http://localhost:3000/api/registrar-mascota',
         responseType: 'json',
         data: {
+            usuario: usuario,
             tipoMascota: tipoMascota,
             nombreMascota: nombreMascota,
             Raza: Raza,
@@ -33,13 +34,16 @@ const registrarMascotas = async(tipoMascota, nombreMascota, Raza, Padecimientos,
 };
 
 
-const listarMascotas = async() => {
+const listarMascotas = async(usuario) => {
     let arregloMascota = [];
 
     await axios({
         method: 'get',
         url: 'http://localhost:3000/api/listar-mascotas',
         responseType: 'json',
+        params: {
+            usuario: usuario
+        }
     }).then((response) => {
         arregloMascota = response.data.lista_mascota;
         //lista_usuarios se encuentra declarada en el route de get

@@ -82,10 +82,8 @@ async function obtenerDatosCliente() {
         });
     }
     if (error == false) {
-
-        registrarMascotas(radiusMascota, nombreMascota, tipoRaza, padecimientos, vacunas, cargarImg, telContacto, caracteristicas);
-        console.log(cargarImg);
-
+        let usuario = window.localStorage.getItem('user');
+        registrarMascotas(usuario, radiusMascota, nombreMascota, tipoRaza, padecimientos, vacunas, cargarImg, telContacto, caracteristicas);
     }
 
 };

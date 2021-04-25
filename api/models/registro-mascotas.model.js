@@ -3,6 +3,7 @@
 const mongoose = require('mongoose');
 
 const schema_registro = new mongoose.Schema({
+    usuario: { type: String, required: true, unique: false },
     tipoMascota: { type: String, required: true, unique: false },
     nombreMascota: { type: String, required: true, unique: false },
     Raza: { type: String, required: true, unique: false },
