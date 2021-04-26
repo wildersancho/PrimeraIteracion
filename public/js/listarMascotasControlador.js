@@ -121,10 +121,6 @@ const verPerfil = async(mascota) => {
     });
 }
 
-
-
-
-
 //Muestra el listar
 
 const mostrarMascotas = async() => {
@@ -137,11 +133,13 @@ const mostrarMascotas = async() => {
     tabla.innerHTML = '';
 
     listaTareas.forEach((mascotas) => {
+
             let fila = tabla.insertRow();
 
             if (mascotas.nombreMascota.toUpperCase().includes(filtro) || mascotas.Raza.toUpperCase().includes(filtro)) {
-                fila.insertCell().innerHTML = mascotas.nombreMascota;
+                // localStorage.setItem("nameMascota", mascotas.nombreMascota);
 
+                fila.insertCell().innerHTML = mascotas.nombreMascota;
                 fila.insertCell().innerHTML = mascotas.tipoMascota;
                 fila.insertCell().innerHTML = mascotas.Raza;
                 fila.insertCell().innerHTML = mascotas.Padecimientos;
