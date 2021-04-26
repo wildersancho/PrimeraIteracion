@@ -2,33 +2,14 @@
 'use strict';
 
 let btnEditar = document.getElementById("btn-editar");
+let btnFoto = document.getElementById("btn-foto");
+
+let usuario = window.localStorage.getItem('user');
 
 
-//Campos del HTML
-let nombrePerfil = document.getElementById("name-placeholder");
-let idPerfil = document.getElementById("id-placeholder");
-let edadPerfil = document.getElementById("age-placeholder");
-let correoPerfil = document.getElementById("email-placeholder");
-let fotoPerfil = document.getElementById("foto-perfil");
+let btnImagen = document.querySelector('#btn-foto');
+let imgPlaceholder = document.querySelector('#img-mascota');
 
-
-const mostrarPerfilInfo = async() => {
-
-    let usuario = window.localStorage.getItem('user');
-    let cargarInfo = await mostrarPerfil(usuario);
-
-    cargarInfo.forEach((infoUsers) => {
-        nombrePerfil.innerHTML = infoUsers.nombre;
-        idPerfil.innerHTML = infoUsers.num_ID;
-        edadPerfil.innerHTML = infoUsers.num_edad;
-        correoPerfil.innerHTML = infoUsers.correo;
-        fotoPerfil.src = infoUsers.foto_perfil;
-
-    });
-
-}
-
-mostrarPerfilInfo();
 
 //Boton Editar
 const mostrar_editar = async(infoPerfil) => {
@@ -43,8 +24,8 @@ const mostrar_editar = async(infoPerfil) => {
         </div>
 
         <div>        
-            <label for="Username">Numero identidad: </label>
-            <input type="text" id="Username" class="emptyFields" value=${infoPerfil.infoPerfil} disabled>
+            <label for="cedula">Numero identidad: </label>
+            <input type="text" id="cedula" class="emptyFields" value=${infoPerfil.num_ID} disabled>
         </div>
       
         <div>        
@@ -62,13 +43,11 @@ const mostrar_editar = async(infoPerfil) => {
         focusConfirm: false,
         preConfirm: () => {
             return [
-                infoPerfil._id,
+                infoPerfil.usuario,
                 document.querySelector('#nombre').value,
-                document.querySelector('#Username').value,
-                document.querySelector('#Correo').value,
+                document.querySelector('#cedula').value,
                 document.querySelector('#Edad').value,
                 document.querySelector('#Correo').value,
-
             ]
         }
     });
@@ -80,24 +59,68 @@ const mostrar_editar = async(infoPerfil) => {
             showCancelButton: true
         });
         if (accept) {
-            modificar_cliente(formValues[0], formValues[1], formValues[2], formValues[3], formValues[4], formValues[5], formValues[6]);
+            //modificarPerfil(usuario, nombre, num_ID, num_edad, correo)
+            modificarPerfil(formValues[0], formValues[1], formValues[2], formValues[3], formValues[4]);
             location.reload();
         }
     }
 }
 
+//Campos del HTML
+let nombrePerfil = document.getElementById("name-placeholder");
+let idPerfil = document.getElementById("id-placeholder");
+let edadPerfil = document.getElementById("age-placeholder");
+let correoPerfil = document.getElementById("email-placeholder");
+let fotoPerfil = document.getElementById("foto-perfil");
 
 
-
-btnEditar.addEventListener('click', mostrar_editar);
-
+const mostrarPerfilInfo = async() => {
 
 
+    let cargarInfo = await mostrarPerfil(usuario);
+
+    cargarInfo.forEach((infoUsers) => {
+        nombrePerfil.innerHTML = infoUsers.nombre;
+        idPerfil.innerHTML = infoUsers.num_ID;
+        edadPerfil.innerHTML = infoUsers.num_edad;
+        correoPerfil.innerHTML = infoUsers.correo;
+        fotoPerfil.src = infoUsers.foto_perfil;
 
 
+        if (fotoPerfil.src != infoUsers.foto_perfil) {
+            fotoPerfil.src = 'imgs/profile_default.jpg';
+        }
+
+        btnEditar.addEventListener('click', function() {
+            mostrar_editar(infoUsers);
+        });
+    });
 
 
+}
 
+
+/*
+let newImg = '';
+var widget_cloud = cloudinary.createUploadWidget({
+    cloudName: 'dxxi2soek',
+    uploadPreset: 'preset_proyectoFinal'
+}, (error, result) => {
+    if (!error && result && result.event === "success") {
+        console.log('Se ha subido correctamente: ', result.info);
+        newImg = result.info.secure_url;
+    }
+})
+
+
+btnImagen.addEventListener("click", function() {
+    widget_cloud.open();
+    cambiarFoto(usuario, newImg);
+}, false);
+
+*/
+
+mostrarPerfilInfo();
 
 
 
