@@ -5,14 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Documento HTML5">
-    <title>Lista de servicios de proveedores</title>
+    <title>Lista de servicios de Administrador</title>
     <link rel="stylesheet" href="css/reset.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" href="css/listar.css">
+    <link rel="stylesheet" href="css/agregarGeneral.css">
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <link rel="stylesheet" href="css/general_2.css">
-    <link rel="stylesheet" href="css/agregarGeneral.css">
+
 
 </head>
 
@@ -32,55 +33,28 @@
     <main class="main-content">
         <form>
             <div class="Lista-container">
-                <h3>Lista de servicios de proveedores</h3>
-                <table>
+                <h3>Lista de servicios Administrador</h3>
+                <table id="tbl-serviciosAdministrador">
                     <thead>
                         <tr>
-                            <th>ID</th>
+                            <th>Codigo</th>
                             <th>Nombre de servicio</th>
+                            <th>Editar</th>
                             <th>Eliminar</th>
 
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>304</td>
-                            <td>Paseo</td>
-                            <td><button type="button" id="btnEmilinar" class="eliminar">Eliminar</td>
-                            </td>
 
-
-                        </tr>
-                        <tr>
-                            <td>304</td>
-                            <td>Cuidado a domisilio</td>
-                            <td><button type="button" id="btnEmilinar" class="eliminar">Eliminar</td>
-                        </tr>
-                        <tr>
-                            <td>304</td>
-                            <td>Alojamiento</td>
-                            <td><button type="button" id="btnEmilinar" class="eliminar">Eliminar</td>
-                        </tr>
-                        <tr>
-                            <td>304</td>
-                            <td>Guarderia</td>
-                            <td><button type="button" id="btnEmilinar" class="eliminar">Eliminar</td>
-                        </tr>
-
-                        <tr>
-                            <td>304</td>
-                            <td>Grooming</td>
-                            <td><button type="button" id="btnEmilinar" class="eliminar">Eliminar</td>
-                        </tr>
                     </tbody>
                 </table>
             </div>
         </form>
         <div class="messagepop pop">
             <form method="post" id="new_message" action="/messages">
-                <p><label for="codigoVacuna">Código</label><input type="number" name="codigoVacuna" id="codigoVacuna" /></p>
-                <p><label for="nombreVacuna">Nombre</label><input type="text" name="nombreVacuna" id="nombreVacuna" /></p>
-                <p><input type="submit" value="Agregar" name="commit" id="message_submit" /> o <a class="close" href="/">Cancelar</a></p>
+                <p><label for="codigoPadecimiento">Código</label><input type="text" name="codigoServicio" id="codigoServicio" required/></p>
+                <p><label for="nombrePadecimiento">Nombre</label><input type="text" name="nombreServicio" id="nombreServicio" required/></p>
+                <p><button type="button" id="btn-agregar">Agregar</button> o <a class="close" href="/">Cancelar</a></p>
             </form>
         </div>
         <a href="/contact" id="contact">Agregar</a>
@@ -109,6 +83,13 @@
             </section>
     </footer>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
-<script src="/public/js/listarControlador.js"></script>
+<script src="js/agregarServiciosAd.servicios.js"></script>
+<script src="js/controladorAgregarServicioAd.js"></script>
+<script src="js/listarControlador.js"></script>
+<script src="js/listarServiciosAd.js"></script>
+
+
+
 </html>

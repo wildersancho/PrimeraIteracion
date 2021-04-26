@@ -1,5 +1,6 @@
 'use strict';
 
+
 const validar_tipo_usuario_2 = () => {
     let tipo = 4;
 
@@ -33,7 +34,7 @@ const navProveedor = () => {
             <a href="registrarProveedor.html">Ofrecer un servicio</a>
             <a class="icono-menu" onclick="cambiar_estilo_navegacion();">☰</a>
             <a href="perfilProvedor.html">Mi Perfil</a>
-            <a class="cerrarSesion" href="inicioSesion.html">Cerrar Sesión</a>`;
+            <a class="cerrarSesion" href="inicioSesion.html"onclick="cerrarSesion()" >Cerrar Sesión</a>`;
         }
     }
 }
@@ -50,6 +51,26 @@ const navCliente = () => {
         }
     }
 }
+const navGeneral = () => {
+    if (localStorage.getItem("user") === null) {
+        document.getElementById('navDinamico').innerHTML = `<a href="index.html"><img src="imgs/IconoMenu.png" id="logo" /></a>
+            <a href="perfilProveedorCliente.html">Buscar un servicio</a>
+            <a href="registrarProveedor.html">Ofrecer un servicio</a>
+            <a class="icono-menu" onclick="cambiar_estilo_navegacion();">☰</a>
+            <a class="cerrarSesion" href="inicioSesion.html">Inicio Sesion</a>`;
+
+    }
+}
+
 navAdmin();
 navCliente();
 navProveedor();
+navGeneral();
+
+let botonCerrarSesion = document.querySelector('.cerrarSesion');
+
+function cerrarSesion() {
+    localStorage.clear();
+}
+
+botonCerrarSesion.addEventListener('click', cerrarSesion);

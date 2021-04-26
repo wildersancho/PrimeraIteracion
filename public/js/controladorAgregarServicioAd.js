@@ -2,8 +2,8 @@
 
 
 const botonAgregar = document.querySelector('#btn-agregar');
-const input_codigo = document.querySelector('#codigoPadecimiento');
-const input_nombre = document.querySelector('#nombrePadecimiento');
+const input_codigo = document.querySelector('#codigoServicio');
+const input_nombre = document.querySelector('#nombreServicio');
 
 
 
@@ -13,12 +13,12 @@ const input_nombre = document.querySelector('#nombrePadecimiento');
 
 
 const obtenerDatos = () => {
-    let codigoPadecimiento = input_codigo.value;
-    let nombrePadecimiento = input_nombre.value;
+    let codigoServicio = input_codigo.value;
+    let nombreServicio = input_nombre.value;
 
 
 
-    registrar_padecimiento(codigoPadecimiento, nombrePadecimiento);
+    registrar_Servicio(codigoServicio, nombreServicio);
 
 
 };
