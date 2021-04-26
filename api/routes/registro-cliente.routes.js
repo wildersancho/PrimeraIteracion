@@ -195,10 +195,6 @@ router.put('/modificar-perfil', (req, res) => {
 });
 
 
-
-
-
-
 router.get('/perfil', (req, res) => {
     let usuario = req.query.usuario;
     formModelo.find({ usuario: usuario }, (err, lista_clientes) => {

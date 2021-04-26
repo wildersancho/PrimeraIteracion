@@ -18,7 +18,7 @@ const mostrarPerfil = async(usuario) => {
 }
 
 
-const modificarPerfil = async(usuario, nombre, correo, num_edad, num_ID, cant_mascotas) => {
+const modificarPerfil = async(usuario, nombre, num_ID, num_edad, correo) => {
     await axios({
         method: 'put',
         url: 'http://localhost:3000/api/modificar-perfil',
@@ -27,19 +27,46 @@ const modificarPerfil = async(usuario, nombre, correo, num_edad, num_ID, cant_ma
             usuario: usuario
         },
         data: {
+            usuario: usuario,
             nombre: nombre,
-            correo: correo,
-            num_edad: num_edad,
             num_ID: num_ID,
-            cant_mascotas: cant_mascotas
+            num_edad: num_edad,
+            correo: correo
         }
     }).then((response) => {
         Swal.fire({
             'icon': 'success',
             'title': 'Su usuario ha sido actualizado',
             'text': response.msj
-        }).then(() => {
-            listarMascotas();
+        });
+    }).catch((response) => {
+        Swal.fire({
+            'icon': 'error',
+            'text': response.msj,
+            'title': 'Ocurrió un error inesperado',
+        }).then(() => {});
+    });
+};
+
+
+
+const cambiarFoto = async(usuario, foto_perfil) => {
+    await axios({
+        method: 'put',
+        url: 'http://localhost:3000/api/modificar-perfil',
+        responseType: 'json',
+        params: {
+            usuario: usuario
+        },
+        data: {
+            usuario: usuario,
+            foto_perfil: foto_perfil
+        }
+    }).then((response) => {
+        Swal.fire({
+            'icon': 'success',
+            'title': 'Su foto de perfil se ha cambiado',
+            'text': response.msj
         });
     }).catch((response) => {
         Swal.fire({

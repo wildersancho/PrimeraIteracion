@@ -34,6 +34,25 @@ const registrarMascotas = async(usuario, tipoMascota, nombreMascota, Raza, Padec
 };
 
 
+
+const listarMascotasAdmin = async() => {
+    let arregloMascota = [];
+
+    await axios({
+        method: 'get',
+        url: 'http://localhost:3000/api/listar-mascotasAdmin',
+        responseType: 'json',
+    }).then((response) => {
+        arregloMascota = response.data.lista_mascota;
+
+        //lista_usuarios se encuentra declarada en el route de get
+    }).catch((response) => {
+        console.log(response.data.err);
+    })
+    return arregloMascota;
+}
+
+
 const listarMascotas = async(usuario) => {
     let arregloMascota = [];
 
@@ -52,6 +71,7 @@ const listarMascotas = async(usuario) => {
     })
     return arregloMascota;
 }
+
 
 const eliminarCampos = async(_id) => {
     await axios({

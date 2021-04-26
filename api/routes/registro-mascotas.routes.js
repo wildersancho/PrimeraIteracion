@@ -21,6 +21,21 @@ router.get('/listar-mascotas', (req, res) => {
     })
 });
 
+router.get('/listar-mascotasAdmin', (req, res) => {
+
+    formModelo.find((err, lista_mascota) => {
+        if (err) {
+            res.json({
+                msj: 'No se pudo registrar la mascota',
+                err
+            });
+        } else {
+            res.json({ lista_mascota });
+        }
+    })
+});
+
+
 
 
 
@@ -108,7 +123,7 @@ router.put('/modificar-mascotas', (req, res) => {
             });
         } else {
             res.json({
-                msj: "La mascotaue modificada exitosamente",
+                msj: "La mascota fue modificada exitosamente",
                 info
             })
         }
