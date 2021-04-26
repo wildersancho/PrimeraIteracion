@@ -35,7 +35,7 @@
 
             <div class="submenu">
                 <a><input id="btn-editar" type="button" value="Editar Perfil"></a>
-                <a><input id="btn-foto" type="button" value="Cambiar Foto perfil"></a>
+                <a><input id="btn-subida" type="button" value="Cambiar Foto"></a>
                 <a href="listarSolicitudesCliente.html"><input type="button" value="Notificaciones"></a>
                 <a href="listarTarjetas.html"><input type="button" value="Tarjetas"></a>
                 <a href="listarHistorialCliente.html"><input type="button" value="Historial de Servicios"></a>
@@ -43,6 +43,12 @@
 
             </div>
             <div class="info-personal">
+
+                <div>
+                    <h3>Usuario: </h3>
+                    <p id="user-placeholder"></p>
+                </div>
+
                 <div>
                     <h3>Nombre Completo: </h3>
                     <p id="name-placeholder"></p>
@@ -73,8 +79,7 @@
                         <tr></tr>
                     </tbody>
                 </table>
-                <input class="comentarios-text" id="comentarios-text" type="text">
-                <input class="comentarios-boton" id="comentarios-boton" value="Enviar Comentario" type="button">
+
             </div>
 
         </div>
@@ -108,6 +113,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="https://widget.cloudinary.com/v2.0/global/all.js"></script>
+<script src="js/controladorImagen.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2 "></script>
 <script src="js/perfilUsuario.servicio.js"></script>
 <script src="js/perfilUsuarioControlador.js"></script>

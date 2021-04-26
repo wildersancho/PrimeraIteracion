@@ -5,10 +5,7 @@ let btnEditar = document.getElementById("btn-editar");
 let btnFoto = document.getElementById("btn-foto");
 
 let usuario = window.localStorage.getItem('user');
-
-
-let btnImagen = document.querySelector('#btn-foto');
-let imgPlaceholder = document.querySelector('#img-mascota');
+let imagen = modificarImg;
 
 
 //Boton Editar
@@ -67,6 +64,7 @@ const mostrar_editar = async(infoPerfil) => {
 }
 
 //Campos del HTML
+let usuarioPerfil = document.getElementById("user-placeholder");
 let nombrePerfil = document.getElementById("name-placeholder");
 let idPerfil = document.getElementById("id-placeholder");
 let edadPerfil = document.getElementById("age-placeholder");
@@ -76,10 +74,12 @@ let fotoPerfil = document.getElementById("foto-perfil");
 
 const mostrarPerfilInfo = async() => {
 
-
     let cargarInfo = await mostrarPerfil(usuario);
 
     cargarInfo.forEach((infoUsers) => {
+
+        cambiarFoto(usuario, imagen);
+        usuarioPerfil.innerHTML = infoUsers.usuario;
         nombrePerfil.innerHTML = infoUsers.nombre;
         idPerfil.innerHTML = infoUsers.num_ID;
         edadPerfil.innerHTML = infoUsers.num_edad;
@@ -99,26 +99,7 @@ const mostrarPerfilInfo = async() => {
 
 }
 
-
-/*
-let newImg = '';
-var widget_cloud = cloudinary.createUploadWidget({
-    cloudName: 'dxxi2soek',
-    uploadPreset: 'preset_proyectoFinal'
-}, (error, result) => {
-    if (!error && result && result.event === "success") {
-        console.log('Se ha subido correctamente: ', result.info);
-        newImg = result.info.secure_url;
-    }
-})
-
-
-btnImagen.addEventListener("click", function() {
-    widget_cloud.open();
-    cambiarFoto(usuario, newImg);
-}, false);
-
-*/
+cambiarFoto(usuario, imagen);
 
 mostrarPerfilInfo();
 

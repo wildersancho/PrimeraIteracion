@@ -8,11 +8,10 @@ body {
 .contenedor-perfil {
     display: flex;
     flex-direction: column;
-    width: 50%;
-    height: 20%;
-    margin-top: 2%;
+    width: 45%;
+    margin-top: 10%;
     margin-bottom: 1%;
-    margin-left: 22%;
+    margin-left: 25%;
     background-color: rgba(5, 56, 107, 90%);
     border-radius: 20px;
 }
@@ -25,24 +24,27 @@ body {
 }
 
 .contenedor-perfil>img {
+    position: relative;
     height: 200px;
     width: 200px;
     border-radius: 30px;
     border: 15px solid rgba(237, 245, 225, 20%);
-    margin-bottom: 2%;
+    margin-bottom: 5%;
     margin-left: 38%;
 }
 
 .submenu {
+    position: relative;
     display: flex;
     justify-content: space-around;
     padding-right: 5%;
     margin-bottom: 5px;
-    height: 30px;
+    height: 40px;
     flex-grow: inherit;
 }
 
 .submenu>a>input {
+    position: relative;
     border-radius: 10px;
     border: none;
     text-decoration: none;
@@ -63,6 +65,7 @@ body {
 }
 
 .info-personal {
+    position: inherit;
     display: flex;
     justify-content: space-around;
     padding-bottom: 3%;
@@ -88,39 +91,4 @@ p {
 
 .direccion-position {
     margin-left: 30%;
-}
-
-.tabla-resultados {
-    overflow: auto;
-    font-family: inherit;
-    color: rgb(237, 245, 225);
-    background-color: rgb(237, 245, 225, 15%);
-    height: 155px;
-    width: 100%;
-}
-
-.comentarios-text {
-    width: 74.8%;
-    padding: 0px;
-    margin: 0%;
-    border-bottom-left-radius: 360px;
-    background-color: rgba(255, 255, 255, 40%);
-    color: rgb(237, 245, 225);
-    height: 30px;
-    border: none;
-    text-align: end;
-}
-
-.comentarios-boton {
-    background-color: rgba(237, 245, 225, 40%);
-    color: rgb(237, 245, 225);
-    font-weight: bold;
-    border: none;
-    border-bottom-right-radius: 360px;
-    height: 30px;
-    width: 24.6%;
-}
-
-.comentarios-boton:hover {
-    background-color: rgba(237, 245, 225, 20%);
 }

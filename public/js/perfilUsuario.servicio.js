@@ -59,9 +59,9 @@ const cambiarFoto = async(usuario, foto_perfil) => {
             usuario: usuario
         },
         data: {
-            usuario: usuario,
+
             foto_perfil: foto_perfil
-        }
+        },
     }).then((response) => {
         Swal.fire({
             'icon': 'success',
