@@ -27,7 +27,7 @@ const obtenerDatos = () => {
 const validar = () => {
 
     let error = false;
-
+    let expNum = /^[0-9]$/;
 
     let campos_requeridos = document.querySelectorAll(':required');
     campos_requeridos.forEach(campo => {
@@ -40,7 +40,13 @@ const validar = () => {
         }
     });
 
-
+    if (expNum.test(input_codigo.value) == false) {
+        error = true;
+        input_codigo.classList.add('error-input');
+    } else {
+        error = false;
+        input_codigo.classList.remove('error-input');
+    }
     if (error == false) {
         obtenerDatos();
     } else {
