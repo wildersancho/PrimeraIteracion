@@ -10,20 +10,16 @@
     <link rel="stylesheet" href="css/reset.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/general_2.css">
+
     <link rel="stylesheet" href="css/perfilUsuario.css">
+
 </head>
 
 <body>
     <header id="header-principal" class="header-principal">
-        <nav class="nav-contenedor">
-            <a href="index.html"><img src="imgs/IconoMenu.png" id="logo" /></a>
-            <a href="perfilProveedorCliente.html">Buscar un servicio</a>
-            <a href="registrarProveedor.html">Ofrecer un servicio</a>
-            <a href="perfilUsuario.html">Perfil Cliente</a>
-            <a href="perfilProvedor.html">Perfil Proveedor</a>
-            <a href="perfilAdministador.html">Perfil Administrador</a>
-            <a class="cerrarSesion" href="inicioSesion.html">Cerrar Sesión</a>
+        <nav id="navDinamico" class="navDinamico">
         </nav>
     </header>
 
@@ -113,6 +109,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="https://widget.cloudinary.com/v2.0/global/all.js"></script>
+<script src="js/controladorNav.js"></script>
 <script src="js/controladorImagen.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2 "></script>
 <script src="js/perfilUsuario.servicio.js"></script>
