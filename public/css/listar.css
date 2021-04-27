@@ -1,54 +1,63 @@
 body {
     background: url(https://images.pexels.com/photos/1419923/pexels-photo-1419923.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
     background-size: cover;
+    font-family: 'Montserrat';
 }
 
 .main-content {
     margin-top: 10%;
-    margin-left: 20%;
+    margin-left: 15%;
+    margin-right: 10%;
     padding-bottom: 9%;
 }
 
 .Lista-container {
     background-color: rgb(237, 245, 225);
     border: 10px;
-    width: 70%;
+    width: 90%;
+    margin-bottom: 30px;
     text-align: center;
     overflow-y: scroll;
+    border-bottom: 2px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+thead tr th {
+    position: sticky;
+    top: 36px;
+    z-index: 10;
+    font-family: 'Montserrat';
 }
 
 .Lista-container>h3 {
-    position: relative;
-    width: 100%;
     padding: 10px;
-    background-color: rgba(5, 56, 107, 90%);
+    background-color: rgba(5, 56, 107, 100%);
     font-weight: bold;
     color: rgb(237, 245, 225);
+    position: sticky;
+    top: 0px;
+    z-index: 10;
+    border-bottom: 1px solid black;
 }
 
 th {
-    position: relative;
     font-weight: bold;
     color: rgb(237, 245, 225);
-    background-color: rgba(5, 56, 107, 60%);
+    background-color: rgba(5, 56, 107, 100%);
 }
 
 table {
-    position: relative;
+    width: 100%;
 }
 
 th,
 td {
-    position: relative;
     border: 1px solid black;
-    padding: 5px;
-    width: 100%;
-}
-
-#filtrar-name {
-    position: relative;
-    background-color: rgba(5, 56, 107, 20%);
-    width: 100%;
+    padding: 5px 15px;
+    width: 30%;
+    font-family: 'Montserrat';
+    text-align: center;
 }
 
 .footerCopyRedes {
@@ -74,6 +83,15 @@ th a input {
     background-color: rgba(250, 0, 0, 60%);
 }
 
-.default {
-    background-color: rgba(133, 133, 133, 0.6);
+button:hover {
+    background-color: #379683;
+    /*cambia color de botones cuando pasa el mause*/
+}
+
+#btnEditar {
+    font-size: 15px;
+    padding: 7.5px 30px;
+    margin-top: 10px;
+    border-radius: 10px;
+    margin-left: 10px;
 }

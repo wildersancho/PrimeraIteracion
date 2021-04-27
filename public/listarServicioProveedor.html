@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="css/reset.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/listarServicioProveedor.css">
+    <link rel="stylesheet" href="css/agregarGeneral.css">
+    <link rel="stylesheet" href="css/listar.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <link rel="stylesheet" href="css/general_2.css">
 </head>
 
@@ -25,99 +27,45 @@
         <form>
             <div class="Lista-container">
                 <h3>Mi lista de servicios</h3>
-                <table>
+                <table id="tbl-serviciosProveedor">
                     <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>Nombre de servicio</th>
+                            <th>Codigo</th>
+                            <th>Servicio</th>
                             <th>Tipo de mascota</th>
                             <th>Precio</th>
-                            <th>Habilitado</th>
-                            <th>Deshabilitado</th>
+                            <th>Editar</th>
+                            <th>Eliminar</th>
 
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>304</td>
-                            <td>Paseo</td>
-                            <td>
-                                <select>
-                                <option value="Perro y gato">Perro y gato </option>
-                                <option value="Perro">Perro</option>
-                                <option value="Gato">Gato</option>
-                                </select>
-                            </td>
-                            <td><input type="number" id="txtPrecio" value=3000></td>
-                            <td><input type="radio" name="Eliminar1" checked></td>
-                            <td><input type="radio" name="Eliminar1"></td>
-                            </td>
 
-
-                        </tr>
-                        <tr>
-                            <td>304</td>
-                            <td>Cuidado a domicilio</td>
-                            <td>
-                                <select>
-                                    <option value="Perro y gato">Perro y gato </option>
-                                    <option value="Perro">Perro</option>
-                                    <option value="Gato">Gato</option>
-                                    </select>
-                            </td>
-                            <td><input type="number" id="txtPrecio" value=3500></td>
-                            <td><input type="radio" name="Eliminar2" checked></td>
-                            <td><input type="radio" name="Eliminar2"></td>
-                        </tr>
-                        <tr>
-                            <td>304</td>
-                            <td>Alojamiento</td>
-                            <td>
-                                <select>
-                                    <option value="Perro y gato">Perro y gato </option>
-                                    <option value="Perro">Perro</option>
-                                    <option value="Gato">Gato</option>
-                                    </select>
-                            </td>
-                            <td><input type="number" id="txtPrecio" value=5000></td>
-                            <td><input type="radio" name="Eliminar3" checked></td>
-                            <td><input type="radio" name="Eliminar3"></td>
-                        </tr>
-                        <tr>
-                            <td>304</td>
-                            <td>Guarderia</td>
-                            <td>
-                                <select>
-                                    <option value="Perro y gato">Perro y gato </option>
-                                    <option value="Perro">Perro</option>
-                                    <option value="Gato">Gato</option>
-                                    </select>
-                            </td>
-                            <td><input type="number" id="txtPrecio" value=6500></td>
-                            <td><input type="radio" name="Eliminar4" checked></td>
-                            <td><input type="radio" name="Eliminar4"></td>
-                        </tr>
-
-                        <tr>
-                            <td>304</td>
-                            <td>Grooming</td>
-                            <td>
-                                <select>
-                                    <option value="Perro y gato">Perro y gato </option>
-                                    <option value="Perro">Perro</option>
-                                    <option value="Gato">Gato</option>
-                                    </select>
-                            </td>
-                            <td><input type="number" id="txtPrecio" value=4000></td>
-                            <td><input type="radio" name="Eliminar5" checked></td>
-                            <td><input type="radio" name="Eliminar5"></td>
-                        </tr>
                     </tbody>
                 </table>
             </div>
-            <button type="button" id="btnEditar">Guardar Cambios</button>
-        </form>
 
+        </form>
+        <div class="messagepop pop">
+            <form method="post" id="new_message" action="/messages">
+                <p><label for="codigoPadecimiento">Código</label><input type="text" name="codigoServicio" id="codigoServicio" required/></p>
+                <label for="nombrePadecimiento">Servicio</label>
+                <p><select name="nombreServicio" id="nombreServicio" required/>
+                    <option value="Servicio1">Servicio1</option>
+                    <option value="Servicio2">Servicio2</option>
+                    </select>
+                </p>
+                <label for="tipoMascota">Tipo de Macota</label>
+                <p><select name="Tipo Macota" id="tipoMascota" required/>
+                    <option value="Perro">Perro</option>
+                    <option value="Gato">Gato</option>
+                    </select>
+                </p>
+                <p><label for="codigoPadecimiento">Precio</label><input type="text" name="precio" id="precioServicio" required/></p>
+                <p><button type="button" id="btn-agregar">Agregar</button> o <a class="close" href="/">Cancelar</a></p>
+            </form>
+        </div>
+        <a href="/contact" id="contact">Agregar</a>
     </main>
     <footer>
         <section class="footerCopyRedes">
@@ -143,6 +91,11 @@
             </section>
     </footer>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
+<script src="/PrimeraIteracion/public/js/agregarServiciosProveedor.servicios.js"></script>
+<script src="/PrimeraIteracion/public/js/controladorAgregarServicioProveedor.js"></script>
+<script src="/PrimeraIteracion/public/js/listarControlador.js"></script>
+<script src="/PrimeraIteracion/public/js/listarServiciosProveedor.js"></script>
 
 </html>
