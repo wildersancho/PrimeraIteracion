@@ -1,14 +1,12 @@
 'use strict';
 
-const registrar_Servicio = async(codigoServicio, nombreServicio) => {
+const registrar_Servicio = async(nombreServicio) => {
     await axios({
         method: 'post',
-        url: 'http://localhost:3000/api/registrar-servicio',
+        url: 'http://localhost:3000/api/registrar-servicio_1',
         responseType: 'json',
         data: {
-            codigoServicio: codigoServicio,
-            nombreServicio: nombreServicio,
-
+            nombreServicio: nombreServicio
         }
     }).then((response) => {
         Swal.fire({
@@ -17,6 +15,7 @@ const registrar_Servicio = async(codigoServicio, nombreServicio) => {
             'text': response.msj
         }).then(() => {
             limpiar();
+            mostrar_servicios();
         });
     }).catch((response) => {
         Swal.fire({
@@ -31,7 +30,7 @@ const obtener_servicios = async() => {
     let lista_servicios = [];
     await axios({
         method: 'get',
-        url: 'http://localhost:3000/api/listar-servicios',
+        url: 'http://localhost:3000/api/listar-servicios_1',
         responseType: 'json'
     }).then((response) => {
         lista_servicios = response.data.lista_servicios;
@@ -41,15 +40,14 @@ const obtener_servicios = async() => {
     return lista_servicios;
 };
 
-const modificar_servicio = async(_id, codigoServicio, nombreServicio) => {
+const modificar_servicio = async(_id, nombreServicio) => {
     await axios({
         method: 'put',
-        url: 'http://localhost:3000/api/modificar-servicio',
+        url: 'http://localhost:3000/api/modificar-servicio_1',
         responseType: 'json',
         data: {
             _id: _id,
-            codigoServicio: codigoServicio,
-            nombreServicio: nombreServicio,
+            nombreServicio: nombreServicio
 
         }
     }).then((response) => {
@@ -73,7 +71,7 @@ const modificar_servicio = async(_id, codigoServicio, nombreServicio) => {
 const eliminar_servicio = async(_id) => {
     await axios({
         method: 'delete',
-        url: 'http://localhost:3000/api/eliminar-servicio',
+        url: 'http://localhost:3000/api/eliminar-servicio_1',
         responseType: 'json',
         data: {
             _id: _id,

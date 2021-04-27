@@ -36,23 +36,13 @@
                     Solicitar Servicio
                 </h1>
                 <section id="cliente1" class="cliente1">
-                    <div class="datos">
+                    <div class="datos" id="datos">
                         <div>
                             <label for="txtNombreProveedor" id="nombreProveedor">Nombre de Proveedor</label>
                             <input type="text" id="txtNombreProveedor" readonly="readonly">
                         </div>
                         <label for="label-tipoServicio" id="label-tipoServicio" class="label-tipoServicio">Tipo de servicio</label><br><br>
-                        <div id="buttonBox">
-                            <input type="radio" class="input-radio" name="rbtServicio" value="Paseo">
-                            <label for="label-tipoServicio" class="label-radio1" value="0">Paseo</label>
-                            <input type="radio" class="input-radio" name="rbtServicio" value="Grooming">
-                            <label for="label-tipoServicio" class="label-radio2" value="1">Grooming </label>
-                        </div>
-                        <div id="buttonBox">
-                            <input type="radio" class="input-radio" name="rbtServicio" value="Hotel">
-                            <label for="label-tipoServicio" class="label-radio3" value="3">Hotel</label>
-                            <input type="radio" class="input-radio" name="rbtServicio" value="Guarderia">
-                            <label for="label-tipoServicio" class="label-radio4" value="4">Guardería</label>
+                        <div id="radioServ">
                         </div>
                         <div class="datos" id="txtFechaServicio">
                             <label>Fecha del servicio</label>
@@ -62,7 +52,6 @@
                             <label for="txtNombreUsuario" id="nombreUsuario">Nombre de Usuario</label>
                             <input type="text" id="txtNombreUsuario" readonly="readonly">
                         </div>
-
                         <div class="datos" name='formulario1'>
                             <label for="id-provincia">Provincia</label>
                             <select class="id-provincia" id="id-provincia" onchange="asignarCanton()">

@@ -3,9 +3,8 @@
 const mongoose = require('mongoose')
 
 const schema_servicios_administrador = new mongoose.Schema({
-    codigoServicio: { type: String, required: true, unique: true },
-    nombreServicio: { type: String, required: true, unique: true },
+    nombreServicio: { type: String, required: true, unique: false },
 
 
 });
-module.exports = mongoose.model('Servicios', schema_servicios_administrador, 'servicio');
+module.exports = mongoose.model('ServiciosA', schema_servicios_administrador, 'servicioA');

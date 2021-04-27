@@ -11,7 +11,6 @@ const mostrar_servicios = async() => {
 
 
         let fila = tabla.insertRow();
-        fila.insertCell().innerHTML = servicios.codigoServicio;
         fila.insertCell().innerHTML = servicios.nombreServicio;
         let celda_editar = fila.insertCell();
         let boton_editar = document.createElement('button')
@@ -21,14 +20,12 @@ const mostrar_servicios = async() => {
         boton_editar.addEventListener('click', async() => {
             const { value: formValues } = await Swal.fire({
                 title: 'Editar Servicio',
-                html: `<label for="codigoServicio">Código</label><input id="nombre" class="swal2-input value= "${servicios.codigoServicio}">' 
-                <label for="NOmbreServicio">Nombre del Servicio</label><input id="codigo" class="swal2-input" value= "${servicios.nombreServicio}">`,
+                html: `<label for="NombreServicio">Nombre del Servicio</label><input id="nombre" class="swal2-input" value= "${servicios.nombreServicio}">`,
                 focusConfirm: false,
                 preConfirm: () => {
                     return [
                         servicios._id,
                         document.getElementById('nombre').value,
-                        document.getElementById('codigo').value
                     ]
                 }
             })
@@ -43,8 +40,7 @@ const mostrar_servicios = async() => {
                 if (accept) {
                     console.log(formValues[0]);
                     console.log(formValues[1]);
-                    console.log(formValues[2]);
-                    modificar_servicio(formValues[0], formValues[1], formValues[2]);
+                    modificar_servicio(formValues[0], formValues[1]);
                 }
             }
         });

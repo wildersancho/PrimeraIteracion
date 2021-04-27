@@ -10,12 +10,23 @@ let inputDistrito = document.querySelector('#id-distrito');
 let inputObservaciones = document.querySelector('#observaciones');
 var inputradios = document.querySelector('#label-tipoServicio');
 var selectMascota = document.querySelector('#nombreMascota');
-let inputRadioButton = document.querySelectorAll('input[name="rbtServicio"]')
 let accion = 'Registrar';
 let botonRegistrarCliente = document.querySelector('#btnRegistrarServicio');
 
 
 botonRegistrarCliente.addEventListener('click', obtenerDatosServicio);
+
+const mostrar_servicios = async() => {
+    let lista_servicios = await obtener_servicios_2();
+    let contador = 0;
+    lista_servicios.forEach((servicio) => {
+        document.getElementById('radioServ').innerHTML += `<div>
+        <input type="radio" class="input-radio" name="rbtServicio" value="${servicio.nombreServicio}">
+        <label for="label-tipoServicio" class="label-radio1" value="${contador}">${servicio.nombreServicio}</label>
+    </div>`;
+        contador++;
+    })
+}
 
 //let userName = "wsanchor";
 //window.localStorage.setItem('user', userName);
@@ -31,7 +42,6 @@ $(inputnombreProveedor).val(proveedor)
 async function obtenerDatosServicio() {
     let servicio = '';
     let radios = document.getElementsByName('rbtServicio');
-
     for (let i = 0, length = radios.length; i < length; i++) {
         if (radios[i].checked) {
             servicio = radios[i].value;
@@ -48,6 +58,7 @@ async function obtenerDatosServicio() {
     let Distrito = inputDistrito.value;
     let Observaciones = inputObservaciones.value;
     let fecha = inputfechaCliente.value;
+    let inputRadioButton = document.querySelectorAll('input[name="rbtServicio"]')
 
     error = validarCliente(usuario, tel, Provincia, Canton, Distrito, fecha, inputRadioButton);
 
@@ -107,7 +118,7 @@ function validarCliente(pnombreUsuario, ptel, pProvincia, pCanton, pDistrito, pf
     } else {
         input_tel.classList.remove('errorInput');
     }
-    if (pfechaCliente == 'Invalid Date') {
+    if (pfechaCliente == '') {
         error = true;
         inputfechaCliente.classList.add('errorInput');
         console.log("error fecha");
@@ -178,3 +189,19 @@ const limpiar = () => {
     inputDistrito.value = 'Distrito';
     inputObservaciones.value = '';
 }
+
+const obtener_servicios_2 = async() => {
+    let lista_servicios = [];
+    await axios({
+        method: 'get',
+        url: 'http://localhost:3000/api/listar-servicios_1',
+        responseType: 'json'
+    }).then((response) => {
+        lista_servicios = response.data.lista_servicios;
+    }).catch((response) => {
+        console.log(response.data.msj + " " + response.data.err)
+    });
+    return lista_servicios;
+};
+
+mostrar_servicios();
