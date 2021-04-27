@@ -56,3 +56,7 @@ app.use('/api', require('./routes/razas.routes'));
 app.use('/api', require('./routes/servicios.routes'));
 app.use('/api', require('./routes/registro-mascotas.routes'));
 app.use('/api', require('./routes/registro-cliente.routes'));
+app.use('/api', require('./routes/agregarServicioAd.routes'));
+app.use('/api', require('./routes/agregarServiciosProveedor.routes'));
+app.use('/api', require('./routes/agregarPadecimiento.routes'));
+app.use('/api', require('./routes/solicitarServicio.routes'));
