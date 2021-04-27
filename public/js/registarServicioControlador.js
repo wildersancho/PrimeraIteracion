@@ -1,133 +1,180 @@
 'use strict';
 //Datos de section de cliente
 let inputnombreUsuario = document.querySelector('#txtNombreUsuario');
+let inputnombreProveedor = document.querySelector('#txtNombreProveedor');
 let inputfechaCliente = document.querySelector('#FechaServicio');
 let input_tel = document.querySelector('#TelContacto');
 let inputProvincia = document.querySelector('#id-provincia');
 let inputCanton = document.querySelector('#id-canton');
 let inputDistrito = document.querySelector('#id-distrito');
-let inputMascota = document.querySelector('#id-mascota');
 let inputObservaciones = document.querySelector('#observaciones');
-
-let inputTipoServicio = document.querySelector('#id-tipoServicio');
+var inputradios = document.querySelector('#label-tipoServicio');
+var selectMascota = document.querySelector('#nombreMascota');
+let inputRadioButton = document.querySelectorAll('input[name="rbtServicio"]')
 let accion = 'Registrar';
-let fecha = new Date().toLocaleString();
 let botonRegistrarCliente = document.querySelector('#btnRegistrarServicio');
 
 
+botonRegistrarCliente.addEventListener('click', obtenerDatosServicio);
+
+//let userName = "wsanchor";
+//window.localStorage.setItem('user', userName);
+let usuario = window.localStorage.getItem('user');
+
+let provName = "Patitos";;
+window.localStorage.setItem('provName', provName);
+let proveedor = window.localStorage.getItem('provName');
+
+$(inputnombreUsuario).val(usuario)
+$(inputnombreProveedor).val(proveedor)
 
 async function obtenerDatosServicio() {
-    // let error = false;
-    let mascotas = inputMascota.value;
-    let observaciones = inputObservaciones.value;
-    let nombreUsuario = inputnombreUsuario.value;
-    let telefono = input_tel.value;
-    let provincia = inputProvincia.value;
-    let canton = inputCanton.value;
-    let distrito = inputDistrito.value;
-    let tipoServicio = inputTipoServicio.value;
-    let fechaSinFormato = new Date(inputfechaCliente.value);
-    let fechaClienteSplit = inputfechaCliente.value.split("-");
-    let fechaServicio = fechaClienteSplit[2] + '/' + fechaClienteSplit[1] + '/' + fechaClienteSplit[0];
+    let servicio = '';
+    let radios = document.getElementsByName('rbtServicio');
 
-    // error = validarCliente(nombreUsuario, tel, Provincia, Canton, Distrito, fechaSinFormato, tipoServicio);
+    for (let i = 0, length = radios.length; i < length; i++) {
+        if (radios[i].checked) {
+            servicio = radios[i].value;
+            break;
+        }
+    }
+    let error = false;
+    let nombreMascota = selectMascota.value;
+    usuario = inputnombreUsuario.value;
+    let nombreProveedor = inputnombreProveedor.value;
+    let tel = input_tel.value;
+    let Provincia = inputProvincia.value;
+    let Canton = inputCanton.value;
+    let Distrito = inputDistrito.value;
+    let Observaciones = inputObservaciones.value;
+    let fecha = inputfechaCliente.value;
 
+    error = validarCliente(usuario, tel, Provincia, Canton, Distrito, fecha, inputRadioButton);
 
+    if (error == true) {
+        swal.fire({
+            title: 'Registro incorrecto',
+            text: 'No se pudo registrar su cuenta, revise los campos en rojo',
+            icon: 'warning',
+            confirmButtonText: 'Entendido'
+        });
+    } else {
+        console.log(usuario);
+        console.log(tel);
+        console.log(Provincia);
+        console.log(Canton);
+        console.log(Distrito);
+        console.log(servicio);
+        console.log(nombreMascota);
+        console.log(Observaciones);
+        console.log(fecha);
+        registrar_servicio(usuario, nombreProveedor, tel, Provincia, Canton, Distrito, servicio, nombreMascota, Observaciones, fecha);
+        if (error == false) {
+            swal.fire({
+                title: 'Registro correcto',
+                icon: 'success',
+                showConfirmButton: false
+            });
 
-    registrar_solicitud_servicio(tipoServicio, fechaServicio, nombreUsuario, provincia, canton, distrito, mascotas, telefono, observaciones)
+        } else {
+            swal.fire({
+                title: 'Registro incorrecto',
+                icon: 'error',
+                confirmButtonText: 'Entendido'
+            });
+        }
+
+    }
 };
 
 
-
-
-
-
-function validarCliente() {
+function validarCliente(pnombreUsuario, ptel, pProvincia, pCanton, pDistrito, pfechaCliente, pinputRadioButton) {
     let error = false;
     let expTel = /^[0-9]{8}$/;
     console.log("validando");
 
-    let campos_requeridos = document.querySelectorAll(':required');
-    campos_requeridos.forEach(campo => {
-        //validar vacio
-        if (campo.value == '') {
-            error = true;
-            campo.classList.add('error-input');
-        } else {
-            campo.classList.remove('error-input');
-        }
-    });
-
-    if (expTel.test(input_tel.value) == false) {
+    if (pnombreUsuario == '') {
+        error = true;
+        inputnombreUsuario.classList.add('errorInput');
+        console.log("error usuario");
+    } else {
+        inputnombreUsuario.classList.remove('errorInput');
+    }
+    if (ptel == '' || expTel.test(ptel) == false) {
         error = true;
         input_tel.classList.add('errorInput');
+        console.log("error telefono");
     } else {
         input_tel.classList.remove('errorInput');
     }
-
-    if (inputProvincia.value == 'Provincia') {
+    if (pfechaCliente == 'Invalid Date') {
+        error = true;
+        inputfechaCliente.classList.add('errorInput');
+        console.log("error fecha");
+    } else {
+        inputfechaCliente.classList.remove('errorInput');
+    }
+    if (pProvincia == 'Provincia') {
         error = true;
         inputProvincia.classList.add('errorInput');
+        console.log("error Provincia");
     } else {
         inputProvincia.classList.remove('errorInput');
     }
-    if (inputCanton.value == 'Cantón') {
+    if (pCanton == 'Cantón') {
         error = true;
         inputCanton.classList.add('errorInput');
+        console.log("error Canton");
     } else {
         inputCanton.classList.remove('errorInput');
     }
-    if (inputDistrito.value == 'Distrito') {
+    if (pDistrito == 'Distrito') {
         error = true;
         inputDistrito.classList.add('errorInput');
+        console.log("error Distrito");
     } else {
         inputDistrito.classList.remove('errorInput');
     }
-
-    if (error == false) {
-        obtenerDatosServicio();
-    } else {
-        Swal.fire({
-            'icon': 'warning', //'success', //'error' //'warning'
-            'title': 'No se pudo enviar su mensaje',
-            'text': 'Por favor revise los campos resaltados'
-        });
+    for (const rb of pinputRadioButton) {
+        if (rb.checked) {
+            inputradios.classList.remove('errorInput');
+            error = false;
+            break;
+        } else {
+            error = true;
+            inputradios.classList.add('errorInput');
+            console.log("error Radios");
+        }
     }
-
+    return error;
 };
 
-// function registrarBitacora(nombreUsuario, tel, Provincia, Canton, Distrito, fechaCliente) {
-//     var infoTabla = new Array();
-//     //Agregar elemento al arreglo:
-//     let nuevo_item = [nombreUsuario, tel, Provincia, Canton, Distrito, fechaCliente, 'Paseo'];
-//     infoTabla.push(nuevo_item);
-//     createCookie(nombreUsuario, infoTabla);
-// };
+function registrarBitacora(nombreUsuario, tel, Provincia, Canton, Distrito, fechaCliente) {
+    var infoTabla = new Array();
+    //Agregar elemento al arreglo:
+    let nuevo_item = [nombreUsuario, tel, Provincia, Canton, Distrito, fechaCliente, 'Paseo'];
+    infoTabla.push(nuevo_item);
+    createCookie(nombreUsuario, infoTabla);
+};
 
-// var createCookie = function(name, value, days) {
-//     var expires;
-//     if (days) {
-//         var date = new Date();
-//         date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-//         expires = "; expires=" + date.toGMTString();
-//     } else {
-//         expires = "";
-//     }
-//     document.cookie = name + "=" + value + expires + "; path=/";
-// }
+var createCookie = function(name, value, days) {
+    var expires;
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toGMTString();
+    } else {
+        expires = "";
+    }
+    document.cookie = name + "=" + value + expires + "; path=/";
+}
+
 
 const limpiar = () => {
-    //.value permite tanto obtener el valor como asignarlo
-    inputMascota.value = "";
-    inputObservaciones.value = "";
-    inputnombreUsuario.value = "";
-    input_tel.value = "";
-    inputProvincia.value = "";
-    inputCanton.value = "";
-    inputDistrito.value = "";
-    inputTipoServicio.value = "";
-    inputfechaCliente.value = "";
-
-
+    inputfechaCliente.value = '';
+    input_tel.value = '';
+    inputProvincia.value = 'Provincia';
+    inputCanton.value = 'Cantón';
+    inputDistrito.value = 'Distrito';
+    inputObservaciones.value = '';
 }
-botonRegistrarCliente.addEventListener('click', validarCliente);
