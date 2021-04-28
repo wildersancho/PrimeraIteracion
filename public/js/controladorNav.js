@@ -18,7 +18,6 @@ const navAdmin = () => {
             document.getElementById('navDinamico').innerHTML = `<a href="index.html"><img src="imgs/IconoMenu.png" id="logo" /></a>
             <a href="perfilProveedorCliente.html">Buscar un servicio</a>
             <a href="registrarProveedor.html">Ofrecer un servicio</a>
-            <a class="icono-menu" onclick="cambiar_estilo_navegacion();">☰</a>
             <a href="perfilAdministador.html">Mi Perfil</a>
             <a class="cerrarSesion" href="inicioSesion.html">Cerrar Sesión</a>`;
         }
