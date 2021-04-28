@@ -32,7 +32,6 @@ const navProveedor = () => {
             document.getElementById('navDinamico').innerHTML = `<a href="index.html"><img src="imgs/IconoMenu.png" id="logo" /></a>
             <a href="perfilProveedorCliente.html">Buscar un servicio</a>
             <a href="registrarProveedor.html">Ofrecer un servicio</a>
-            <a class="icono-menu" onclick="cambiar_estilo_navegacion();">☰</a>
             <a href="perfilProvedor.html">Mi Perfil</a>
             <a class="cerrarSesion" href="inicioSesion.html"onclick="cerrarSesion()" >Cerrar Sesión</a>`;
         }
@@ -45,7 +44,6 @@ const navCliente = () => {
             document.getElementById('navDinamico').innerHTML = `<a href="index.html"><img src="imgs/IconoMenu.png" id="logo" /></a>
             <a href="perfilProveedorCliente.html">Buscar un servicio</a>
             <a href="registrarProveedor.html">Ofrecer un servicio</a>
-            <a class="icono-menu" onclick="cambiar_estilo_navegacion();">☰</a>
             <a href="perfilUsuario.html">Mi Perfil</a>
             <a class="cerrarSesion" href="inicioSesion.html">Cerrar Sesión</a>`;
         }
@@ -56,7 +54,6 @@ const navGeneral = () => {
         document.getElementById('navDinamico').innerHTML = `<a href="index.html"><img src="imgs/IconoMenu.png" id="logo" /></a>
             <a href="perfilProveedorCliente.html">Buscar un servicio</a>
             <a href="registrarProveedor.html">Ofrecer un servicio</a>
-            <a class="icono-menu" onclick="cambiar_estilo_navegacion();">☰</a>
             <a class="cerrarSesion" href="inicioSesion.html">Inicio Sesion</a>`;
 
     }
