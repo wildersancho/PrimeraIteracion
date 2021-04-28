@@ -39,7 +39,7 @@ async function obtenerDatosProveedor() {
     let fechaProveedorSplit = inputfechaProveedor.value.split("-");
     let fechaProveedor = fechaProveedorSplit[2] + '/' + fechaProveedorSplit[1] + '/' + fechaProveedorSplit[0];
     let edadProveedor = Number(inputedadProveedor.value);
-    let cantidadServicios = Number(inputcantidadMascota.value);
+    let cantidadServicios = Number(inputcantidadServicios.value);
     let provincia = inputProvincia.value;
     let canton = inputCanton.value;
     let distrito = inputDistrito.value;
@@ -189,9 +189,9 @@ function validarProveedor(pnombreUsuario, ptipoIDProveedor, pidentificacionProve
 
     if (pcantidadServicios < 1) {
         error = true;
-        inputcantidadMascota.classList.add('errorInput');
+        inputcantidadServicios.classList.add('errorInput');
     } else {
-        inputcantidadMascota.classList.remove('errorInput');
+        inputcantidadServicios.classList.remove('errorInput');
     }
 
     for (const rb of pinputRadioButton) {
