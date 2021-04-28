@@ -23,9 +23,6 @@ let fecha = new Date().toLocaleString();
 let botonRegistrarCliente = document.querySelector('#btnRegistrarCliente');
 let imagen = imgPlaceholder;
 
-
-
-
 async function obtenerDatosCliente() {
 
     let cargarImg = imagen.scr;
@@ -43,7 +40,6 @@ async function obtenerDatosCliente() {
     let fechaCliente = fechaClienteSplit[2] + '/' + fechaClienteSplit[1] + '/' + fechaClienteSplit[0];
     let edadCliente = Number(inputedadCliente.value);
     let cantidadMascotas = Number(inputcantidadMascota.value);
-
 
     error = validarCliente(nombreUsuario, tipoIDCliente, identificacionCliente, nombreCliente, primerApellidoCliente, email, fechaSinFormato, edadCliente, cantidadMascotas, inputRadioButton);
     let nombre = nombreCliente + " " + segundoNombreCliente + " " + primerApellidoCliente + " " + segundoApellidoCliente;
@@ -83,6 +79,35 @@ async function obtenerDatosCliente() {
 };
 
 
+
+async function validarUsuarioDuplicado() {
+    let userInput = inputnombreUsuario;
+
+    let es_duplicado;
+
+    let popup = document.getElementById('user-popup');
+    popup.innerHTML = "";
+
+    let lista_clientes = await listarClientes();
+
+    lista_clientes.forEach((user) => {
+        let userDB = user.usuario;
+        if (userInput.value == userDB) {
+            es_duplicado = true;
+        }
+    });
+
+
+    if (es_duplicado == true) {
+        userInput.classList.add('errorInput');
+        popup.innerHTML = "Usuario ya existe";
+    } else if (es_duplicado == false) {
+        userInput.classList.remove('errorInput');
+
+    }
+
+}
+
 function validarCliente(pnombreUsuario, ptipoIDCliente, pidentificacionCliente, pnombreCliente, pprimerApellidoCliente, pemail, pfechaCliente, pedadCliente, pcantidadMascotas, pinputRadioButton) {
     let error = false;
     let expLetras = /^[a-z A-ZáéíóúñÑÁÉÍÓÚüÜ]+$/;
@@ -90,6 +115,9 @@ function validarCliente(pnombreUsuario, ptipoIDCliente, pidentificacionCliente, 
     let regExpAlfanumericos = /^[a-z]+$/;
     let expCorreo = /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
     console.log("validando");
+
+    validarUsuarioDuplicado();
+
 
     if (pnombreUsuario == '') {
         error = true;

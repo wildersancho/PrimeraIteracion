@@ -1,6 +1,5 @@
 let btnImagen = document.querySelector('#btn-subida');
 let imgPlaceholder = document.querySelector('#img-mascota');
-let modificarImg;
 
 
 var widget_cloud = cloudinary.createUploadWidget({
@@ -10,13 +9,12 @@ var widget_cloud = cloudinary.createUploadWidget({
     if (!error && result && result.event === "success") {
         console.log('Se ha subido correctamente: ', result.info);
         imgPlaceholder.scr = result.info.secure_url;
-        modificarImg = result.info.secure_url;
+
     }
 })
 
 
 btnImagen.addEventListener("click", function() {
     widget_cloud.open();
-
 
 }, false);

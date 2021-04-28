@@ -256,3 +256,8 @@ option {
 #btn-subida:hover {
     background-color: #05386B;
 }
+
+#user-popup {
+    color: #dfe4ea;
+    margin-left: 23%;
+}

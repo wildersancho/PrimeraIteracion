@@ -1,11 +1,10 @@
-//Implementar el modo estricto en todos los JS
 'use strict';
 
 let btnEditar = document.getElementById("btn-editar");
 let btnFoto = document.getElementById("btn-foto");
 
 let usuario = window.localStorage.getItem('user');
-let imagen = modificarImg;
+
 
 
 //Boton Editar
@@ -19,7 +18,6 @@ const mostrar_editar = async(infoPerfil) => {
             <label for="nombre">Editar Nombre: </label>
             <input type="text" id="nombre" class="emptyFields" value=${infoPerfil.nombre}>
         </div>
-
         <div>        
             <label for="cedula">Numero identidad: </label>
             <input type="text" id="cedula" class="emptyFields" value=${infoPerfil.num_ID} disabled>
@@ -29,13 +27,11 @@ const mostrar_editar = async(infoPerfil) => {
             <label for="Edad">Edad: </label>
             <input type="Number" id="Edad" class="emptyFields" value=${infoPerfil.num_edad}>
         </div>
-
          
         <div>        
             <label for="Correo">Correo: </label>
             <input type="email" id="Correo" class="emptyFields" value=${infoPerfil.correo} disabled>
         </div>
-
         </div>`,
         focusConfirm: false,
         preConfirm: () => {
@@ -78,7 +74,7 @@ const mostrarPerfilInfo = async() => {
 
     cargarInfo.forEach((infoUsers) => {
 
-        cambiarFoto(usuario, imagen);
+
         usuarioPerfil.innerHTML = infoUsers.usuario;
         nombrePerfil.innerHTML = infoUsers.nombre;
         idPerfil.innerHTML = infoUsers.num_ID;
@@ -99,6 +95,5 @@ const mostrarPerfilInfo = async() => {
 
 }
 
-cambiarFoto(usuario, imagen);
 
 mostrarPerfilInfo();

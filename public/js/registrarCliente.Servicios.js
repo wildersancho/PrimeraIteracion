@@ -34,19 +34,19 @@ const registrarClientes = async(tipo_ID, num_ID, correo, usuario, nombre, fechaE
 };
 
 const listarClientes = async() => {
-    let arregloMascota = [];
+    let arregloClientes = [];
 
     await axios({
         method: 'get',
         url: 'http://localhost:3000/api/listar-clientes',
         responseType: 'json',
     }).then((response) => {
-        arregloMascota = response.data.lista_clientes;
+        arregloClientes = response.data.lista_clientes;
         //lista_usuarios se encuentra declarada en el route de get
     }).catch((response) => {
         console.log(response.data.err);
     })
-    return arregloMascota;
+    return arregloClientes;
 }
 
 const eliminarCampos = async(_id) => {

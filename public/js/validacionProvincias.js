@@ -41,6 +41,7 @@ function provinciaSelect(arreglo, select) {
 //Funcion cargado en el "Onclick" del HTML
 function asignarCanton() {
 
+
     switch (provincia.value) {
         case heredia.value:
             provinciaSelect(cantonesHeredia, canton);
