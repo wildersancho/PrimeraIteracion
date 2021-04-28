@@ -50,11 +50,7 @@
             <form method="post" id="new_message" action="/messages">
                 <p><label for="codigoPadecimiento">Código</label><input type="text" name="codigoServicio" id="codigoServicio" required/></p>
                 <label for="nombrePadecimiento">Servicio</label>
-                <p><select name="nombreServicio" id="nombreServicio" required/>
-                    <option value="Servicio1">Servicio1</option>
-                    <option value="Servicio2">Servicio2</option>
-                    </select>
-                </p>
+                <div id="encargados" class="encargados"></div>
                 <label for="tipoMascota">Tipo de Macota</label>
                 <p><select name="Tipo Macota" id="tipoMascota" required/>
                     <option value="Perro">Perro</option>

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Documento HTML5">
-    <title>Listar Solicitudes Proveedor</title>
+    <title>Listar Proveedores</title>
     <link rel="stylesheet" href="css/reset.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
@@ -18,118 +18,45 @@
     <header id="header-principal" class="header-principal">
         <nav class="nav-contenedor">
             <a href="index.html"><img src="imgs/IconoMenu.png" id="logo" /></a>
-            <a href="perfilProveedorCliente.html">Buscar un servicio</a>
-            <a href="registrarProveedor.html">Ofrecer un servicio</a>
-            <a href="perfilUsuario.html">Perfil Cliente</a>
-            <a href="perfilProvedor.html">Perfil Proveedor</a>
-            <a href="perfilAdministador.html">Perfil Administrador</a>
+            <a href="perfilAdministador.html">Mi Perfil</a>
             <a class="cerrarSesion" href="inicioSesion.html">Cerrar Sesión</a>
         </nav>
     </header>
 
     <main class="main-content">
         <div class="Lista-container">
-            <h3>Listar Solicitudes Proveedor</h3>
-            <table>
+            <h3>Lista de Solicitudes Proveedores</h3>
+            <input type="text" placeholder="Filtrar Nombre" id="filtrar-name">
+            <table id="table-usuarios">
                 <thead>
                     <tr>
                         <th>Nombre de usuario</th>
-                        <th>Fecha del servicio</th>
-
-                        <th>Nombre Mascotas</th>
-                        <th>Tipo de servicio</th>
-                        <th>Estado</th>
-                        <th>Código</th>
-
-
-
+                        <th>Username</th>
+                        <th>Correo</th>
+                        <th>Edad</th>
+                        <th>Cédula</th>
+                        <th>Cantidad Servicios</th>
+                        <th colspan="2">Respuesta Solicitud</th>
+                        <!-- <th>Perfil</th> -->
+                        <!-- <th>Modificar info</th>
+                        <th>Estado Usuario</th>
+                        <th colspan="2">Cambiar estado</th>
+                        <th>Eliminar</th> -->
 
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Jonathanh3</td>
-                        <td><input class="date" type="date" value="2018-07-22" min="2018-07-22" max="2018-07-22"></td>
-                        <td>Toby</td>
-                        <td>Guardería</td>
-                        <td><input id="aceptado" type="text" value="Pendiente" disabled></td>
-                        <td>123</td>
-                    </tr>
-                    <tr>
-                        <td>Jonathanh3</td>
-                        <td><input class="date" type="date" value="2018-07-22" min="2018-07-22" max="2018-07-22"></td>
-                        <td>Toby</td>
-                        <td>Guardería</td>
-                        <td><input id="aceptado" type="text" value="Pendiente" disabled></td>
-                        <td>123</td>
-                    </tr>
-                    <tr>
-                        <td>Jonathanh3</td>
-                        <td><input class="date" type="date" value="2018-07-22" min="2018-07-22" max="2018-07-22"></td>
-                        <td>Toby</td>
-                        <td>Guardería</td>
-                        <td><input id="aceptado" type="text" value="Pendiente" disabled></td>
-                        <td>123</td>
-                    </tr>
-                    <tr>
-                        <td>Jonathanh3</td>
-                        <td><input class="date" type="date" value="2018-07-22" min="2018-07-22" max="2018-07-22"></td>
-                        <td>Toby</td>
-                        <td>Guardería</td>
-                        <td><input id="aceptado" type="text" value="Pendiente" disabled></td>
-                        <td>123</td>
-                    </tr>
-
-                    <tr>
-                        <td>Jonathanh3</td>
-                        <td><input class="date" type="date" value="2018-07-22" min="2018-07-22" max="2018-07-22"></td>
-                        <td>Toby</td>
-                        <td>Guardería</td>
-                        <td><input id="aceptado" type="text" value="Pendiente" disabled></td>
-                        <td>123</td>
-                    </tr>
-                    <tr>
-                        <td>Jonathanh3</td>
-                        <td><input class="date" type="date" value="2018-07-22" min="2018-07-22" max="2018-07-22"></td>
-                        <td>Toby</td>
-                        <td>Guardería</td>
-                        <td><input id="aceptado" type="text" value="Brindado" disabled></td>
-                        <td>123</td>
-                    </tr>
-                    <tr>
-                        <td>Jonathanh3</td>
-                        <td><input class="date" type="date" value="2018-07-22" min="2018-07-22" max="2018-07-22"></td>
-                        <td>Toby</td>
-                        <td>Guardería</td>
-                        <td><input id="aceptado" type="text" value="Brindado" disabled></td>
-                        <td>123</td>
-                    </tr>
-                    <tr>
-                        <td>Jonathanh3</td>
-                        <td><input class="date" type="date" value="2018-07-22" min="2018-07-22" max="2018-07-22"></td>
-                        <td>Toby</td>
-                        <td>Guardería</td>
-                        <td><input id="aceptado" type="text" value="Brindado" disabled></td>
-                        <td>123</td>
-                    </tr>
-                    <tr>
-                        <td>Jonathanh3</td>
-                        <td><input class="date" type="date" value="2018-07-22" min="2018-07-22" max="2018-07-22"></td>
-                        <td>Toby</td>
-                        <td>Guardería</td>
-                        <td><input id="aceptado" type="text" value="Brindado" disabled></td>
-                        <td>123</td>
-                    </tr>
-                    <tr>
-                        <td>Jonathanh3</td>
-                        <td><input class="date" type="date" value="2018-07-22" min="2018-07-22" max="2018-07-22"></td>
-                        <td>Toby</td>
-                        <td>Guardería</td>
-                        <td><input id="aceptado" type="text" value="Brindado" disabled></td>
-                        <td>123</td>
-                    </tr>
-
                 </tbody>
+            </table>
+            <table>
+
+
+                <tr class="agregar">
+                    <th>
+
+                        <!-- <a href="registroProveedor.html"><input type="button" value="Agregar Proveedor"></a> -->
+                    </th>
+                </tr>
             </table>
         </div>
 
@@ -158,7 +85,11 @@
             </section>
     </footer>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
-<script src="js/registrar-proveedor.js"></script>
+<script src="js/registrarProveedor.Servicios.js"></script>
+<script src="js/listarSolicitudesProveedorControlador.js"></script>
+
+</body>
 
 </html>
