@@ -9,11 +9,6 @@ const input_precio = document.querySelector('#precioServicio');
 
 
 
-
-
-
-
-
 const obtenerDatos = () => {
     let codigoServicio = input_codigo.value;
     let nombreServicio = input_nombre.value;
@@ -27,11 +22,10 @@ const obtenerDatos = () => {
 
 };
 
-
 const validar = () => {
 
     let error = false;
-    let expNum = /^[0-9]$/;
+    let expNum = /^[0-9]+$/;
 
     let campos_requeridos = document.querySelectorAll(':required');
     campos_requeridos.forEach(campo => {
@@ -77,5 +71,6 @@ const limpiar = () => {
     input_precio.value = "";
 
 }
+
 
 botonAgregar.addEventListener('click', validar);
