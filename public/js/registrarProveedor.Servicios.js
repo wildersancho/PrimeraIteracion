@@ -1,4 +1,4 @@
-const registrarProveedores = async(tipo_ID, num_ID, correo, usuario, nombre, fechaEdad, num_edad, cant_servicios, foto_perfil, estado_cuenta, provincia, canton, distrito, direccion) => {
+const registrarProveedores = async(tipo_ID, num_ID, correo, usuario, nombre, fechaEdad, num_edad, cant_servicios, foto_perfil, solicitud, provincia, canton, distrito, direccion) => {
     await axios({
         method: 'post',
         url: 'http://localhost:3000/api/registrar-proveedores',
@@ -15,6 +15,7 @@ const registrarProveedores = async(tipo_ID, num_ID, correo, usuario, nombre, fec
             foto_perfil: foto_perfil,
             estado_cuenta: "Habilitado",
             FechaReg: new Date(),
+            solicitud: solicitud,
             provincia: provincia,
             canton: canton,
             distrito: distrito,
@@ -39,19 +40,19 @@ const registrarProveedores = async(tipo_ID, num_ID, correo, usuario, nombre, fec
 
 
 const listarProveedores = async() => {
-    let arregloMascota = [];
+    let arregloProveedor = [];
 
     await axios({
         method: 'get',
         url: 'http://localhost:3000/api/listar-proveedores',
         responseType: 'json',
     }).then((response) => {
-        arregloMascota = response.data.lista_proveedores;
+        arregloProveedor = response.data.lista_proveedores;
         //lista_usuarios se encuentra declarada en el route de get
     }).catch((response) => {
         console.log(response.data.err);
     })
-    return arregloMascota;
+    return arregloProveedor;
 }
 
 const eliminarCampos = async(_id) => {
