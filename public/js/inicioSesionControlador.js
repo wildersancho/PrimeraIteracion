@@ -75,7 +75,6 @@ const validar_tipo_usuario = async() => {
         let t1 = input_nombre.value
         let indx = arrProveedores.indexOf(t1);
         let passwd = arrPassP[indx];
-        console.log("found");
         validacionPass = (validarPass(passwd));
         if (validacionPass) {
             tipo = 2;
@@ -84,6 +83,7 @@ const validar_tipo_usuario = async() => {
         let t1 = input_nombre.value
         let indx = arrClientes.indexOf(t1);
         let passwd = arrPass[indx];
+        console.log("found");
         validacionPass = (validarPass(passwd));
         if (validacionPass) {
             tipo = 3;
