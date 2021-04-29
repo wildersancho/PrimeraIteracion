@@ -25,6 +25,7 @@ let botonRegistrarProveedor = document.querySelector('#btnRegistrarProveedor');
 
 
 let selectUser = document.getElementById('label-tipoServicio');
+let imagen = imgPlaceholder;
 
 
 async function tipoServicios() {
@@ -102,7 +103,7 @@ async function obtenerDatosProveedor() {
 
 
                     registrar_Servicio_Proveedor(nombreUsuario, selectUser.value, tipoMascota, precio);
-                    registrarProveedores(tipoIDProveedor, identificacionProveedor, email, selectUser.value, nombreUsuario, nombre, fechaSinFormato, edadProveedor, foto_perfil, provincia, canton, distrito, direccion);
+                    registrarProveedores(tipoIDProveedor, identificacionProveedor, email, selectUser.value, nombreUsuario, nombre, fechaSinFormato, edadProveedor, imagen.scr, provincia, canton, distrito, direccion);
                 }
 
             }
