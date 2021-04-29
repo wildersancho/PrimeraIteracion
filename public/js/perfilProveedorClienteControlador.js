@@ -9,6 +9,7 @@ const boton_enviar = document.querySelector('#comentarios-boton');
 var addComentarios = new Array();
 var tabla_reservas = document.querySelector('#tbl-comentarios tbody');
 
+
 const obtenerDatos = () => {
     console.log(`Nuevo Comentario: ${comentarios.value}`);
     //Agregar elemento al arreglo:
@@ -19,6 +20,48 @@ const obtenerDatos = () => {
     eraseText();
 };
 
+const mostrarPerfilProv = async() => {
+    let usuario = 'wsanchor'
+    let cargarInfo = await mostrarPerfilP(usuario);
+    console.log(cargarInfo);
+    cargarInfo.forEach((infoUsers) => {
+
+        document.getElementById('DatosGenerales').innerHTML = `<h3>Nombre</h3>
+        <p>${infoUsers.usuario}</p>
+        <h3>Correo</h3>
+        <p>${infoUsers.correo}</p>
+        <h3>Teléfono</h3>
+        <p>12345678</p>
+        <h3>Rating</h3>
+        <p>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+        </p>`
+
+        document.getElementById('info-personal').innerHTML = `<div>
+    <h3>Ubicación</h3>
+        <p id="Ubicacion">${infoUsers.provincia}</p>
+    </div>
+    <div>
+        <h3>Encargado</h3>
+        <p id="Encargado">${infoUsers.nombre}</p>
+    </div>
+    <div>
+        <h3>Estado</h3>
+        <p id="Estado">Habilitado</p>
+    </div>`
+
+        /* if (fotoPerfil.src != infoUsers.foto_perfil) {
+             fotoPerfil.src = 'imgs/profile_default.jpg';
+         }*/
+    });
+
+    let cargarInfo2 = await mostrarInfoP2(usuario);
+
+}
 
 //TABLA dinamica
 const llenar_tabla = () => {
@@ -35,3 +78,4 @@ function eraseText() {
 }
 
 boton_enviar.addEventListener('click', obtenerDatos);
+mostrarPerfilProv();

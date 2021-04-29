@@ -224,4 +224,19 @@ router.put('/modificar-proveedor', (req, res) => {
 });
 
 
+router.get('/perfilProv', (req, res) => {
+    let usuario = req.query.usuario;
+    formModelo.find({ usuario: usuario }, (err, lista_clientes) => {
+        if (err) {
+            res.json({
+                msj: "No se pudieron mostrar los usuarios",
+                err
+            });
+        } else {
+            res.json({ lista_clientes })
+        }
+    })
+});
+
+
 module.exports = router;

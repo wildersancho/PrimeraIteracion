@@ -4,12 +4,12 @@ const express = require('express');
 //pedimos un rauter a express, para redireccionar el trafico
 const router = express.Router();
 //utilizamos el modelo creado
-const Serviciop = require('../models/agregarServiciosProveedor.models');
+const servicioP = require('../models/agregarServiciosProveedor.models');
 
 //req --> request o peticion.
 //res -> response o respuesta.
 router.get('/listar-serviciosp', (req, res) => {
-    Serviciop.find((err, lista_servicios_proveedor) => {
+    servicioP.find((err, lista_servicios_proveedor) => {
         if (err) {
             res.json({
                 msj: "No se pudo listar los servicios",
@@ -20,33 +20,46 @@ router.get('/listar-serviciosp', (req, res) => {
         }
     });
 });
-router.post('/registrar-serviciop', (req, res) => {
-    let nuevo_servicios_proveedor = new Serviciop({
 
+router.get('/listar-serviciosp2', (req, res) => {
+    let usuario = req.query.usuario;
+    servicioP.find({ usuario: usuario }, (err, lista_servicios_proveedor) => {
+        if (err) {
+            res.json({
+                msj: "No se pudieron mostrar los usuarios",
+                err
+            });
+        } else {
+            res.json({ lista_servicios_proveedor })
+        }
+    })
+});
+
+
+router.post('/registrar-serviciop', (req, res) => {
+    let nuevo_servicios_proveedor = new servicioP({
+        Proveedor: req.body.Proveedor,
         nombreServicio: req.body.nombreServicio,
         tipoMascota: req.body.tipoMascota,
-        precio: req.body.precio,
-
-
+        precio: req.body.precio
     });
-
-    nuevo_servicios_proveedor.save((err, serviciop_db) => {
+    nuevo_servicios_proveedor.save((err, servicioP_db) => {
         if (err) {
             res.json({
                 msj: "No se pudo registrar el servicio",
                 err
-            });
+            })
         } else {
             res.json({
                 msj: "El servicio se registró exitosamente.",
-                serviciop_db
+                servicioP_db
             })
         }
     });
 });
 
 router.put('/modificar-serviciop', (req, res) => {
-    Serviciop.updateOne({
+    servicioP.updateOne({
         _id: req.body._id
     }, {
         $set: req.body
@@ -66,7 +79,7 @@ router.put('/modificar-serviciop', (req, res) => {
 });
 router.delete('/eliminar-serviciop', (req, res) => {
     let _id = req.body._id;
-    Serviciop.findOneAndRemove({ _id: _id }, (err) => {
+    servicioP.findOneAndRemove({ _id: _id }, (err) => {
         if (err) {
             res.json({
                 msj: 'No se pudo eliminar el Servicio',
