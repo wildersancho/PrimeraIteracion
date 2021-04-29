@@ -226,7 +226,6 @@ router.put('/modificar-proveedor', (req, res) => {
     });
 });
 
-
 router.get('/perfilProv', (req, res) => {
     let usuario = req.query.usuario;
     formModelo.find({ usuario: usuario }, (err, lista_clientes) => {

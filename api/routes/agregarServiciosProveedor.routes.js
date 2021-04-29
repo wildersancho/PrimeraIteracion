@@ -22,15 +22,15 @@ router.get('/listar-serviciosp', (req, res) => {
 });
 
 router.get('/listar-serviciosp2', (req, res) => {
-    let usuario = req.query.usuario;
-    servicioP.find({ usuario: usuario }, (err, lista_servicios_proveedor) => {
+    let Proveedor = req.query.Proveedor;
+    servicioP.find({ Proveedor: Proveedor }, (err, lista_servicios_proveedor_2) => {
         if (err) {
             res.json({
                 msj: "No se pudieron mostrar los usuarios",
                 err
             });
         } else {
-            res.json({ lista_servicios_proveedor })
+            res.json({ lista_servicios_proveedor_2 })
         }
     })
 });
