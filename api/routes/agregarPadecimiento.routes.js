@@ -22,7 +22,7 @@ router.get('/listar-padecimientos', (req, res) => {
 });
 router.post('/registrar-padecimiento', (req, res) => {
     let nuevo_padecimiento = new Padecimiento({
-        codigoPadecimiento: req.body.codigoPadecimiento,
+
         nombrePadecimiento: req.body.nombrePadecimiento,
 
 

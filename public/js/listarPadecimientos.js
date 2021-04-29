@@ -12,7 +12,7 @@ const mostrar_padecimientos = async() => {
 
         let fila = tabla.insertRow();
         fila.insertCell().innerHTML = padecimientos.nombrePadecimiento;
-        fila.insertCell().innerHTML = padecimientos.codigoPadecimiento;
+
         //Editar
         let celda_editar = fila.insertCell();
         let boton_editar = document.createElement('button')
@@ -22,13 +22,12 @@ const mostrar_padecimientos = async() => {
         boton_editar.addEventListener('click', async() => {
             const { value: formValues } = await Swal.fire({
                 title: 'Editar Padecimiento',
-                html: `<label for="codigoPadecimiento">Código</label><input id="codigo" class="swal2-input value= "${padecimientos.codigoPadecimiento}">' 
-                <label for="codigoPadecimiento">Nombre</label><input id="nombre" class="swal2-input" value= "${padecimientos.nombrePadecimiento}">`,
+                html: `'<label for="nombre">Nombre</label><input id="nombre" class="swal2-input" value= "${padecimientos.nombrePadecimiento}">`,
                 focusConfirm: false,
                 preConfirm: () => {
                     return [
                         padecimientos._id,
-                        document.getElementById('codigo').value,
+
                         document.getElementById('nombre').value
                     ]
                 }
@@ -42,7 +41,7 @@ const mostrar_padecimientos = async() => {
                     showCancelButton: true
                 });
                 if (accept) {
-                    modificar_padecimiento(formValues[0], formValues[1], formValues[2]);
+                    modificar_padecimiento(formValues[0], formValues[1]);
                 }
             }
         });

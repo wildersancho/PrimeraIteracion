@@ -30,7 +30,7 @@
                 <table id="tbl-serviciosProveedor">
                     <thead>
                         <tr>
-                            <th>Codigo</th>
+
                             <th>Servicio</th>
                             <th>Tipo de mascota</th>
                             <th>Precio</th>
@@ -46,19 +46,23 @@
             </div>
 
         </form>
-        <div class="messagepop pop">
+        <div class="messagepop pop" id="pop">
             <form method="post" id="new_message" action="/messages">
-                <p><label for="codigoPadecimiento">Código</label><input type="text" name="codigoServicio" id="codigoServicio" required/></p>
-                <label for="nombrePadecimiento">Servicio</label>
-                <div id="encargados" class="encargados"></div>
-                <label for="tipoMascota">Tipo de Macota</label>
-                <p><select name="Tipo Macota" id="tipoMascota" required/>
+
+                <label for="nombrePadecimiento" class="labelAgregar">Servicio</label>
+                <p><select name="nombreServicio" id="nombreServicio" class="selectAgregar" required/>
+                    <option value="Servicio1">Tipo servicio</option>
+
+                    </select>
+                </p>
+                <label for="tipoMascota" class="labelAgregar">Tipo de Macota</label>
+                <p><select name="Tipo Macota" id="tipoMascota" class="selectAgregar" required/>
                     <option value="Perro">Perro</option>
                     <option value="Gato">Gato</option>
                     </select>
                 </p>
-                <p><label for="codigoPadecimiento">Precio</label><input type="text" name="precio" id="precioServicio" required/></p>
-                <p><button type="button" id="btn-agregar">Agregar</button> o <a class="close" href="/">Cancelar</a></p>
+                <p><label for="codigoPadecimiento" class="labelAgregar">Precio</label><input class="inputAgregar" type="text" name="precio" id="precioServicio" required/></p>
+                <p><button type="button" id="btn-agregar" class="buttonAgregar">Agregar</button> o <button class="buttonAgregar"><a class="close" href="/">Cancelar</a></button></p>
             </form>
         </div>
         <a href="/contact" id="contact">Agregar</a>
@@ -90,6 +94,7 @@
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
 <script src="js/agregarServiciosProveedor.servicios.js"></script>
+<script src="js/agregarServiciosAd.servicios.js"></script>
 <script src="js/controladorAgregarServicioProveedor.js"></script>
 <script src="js/listarControlador.js"></script>
 <script src="js/listarServiciosProveedor.js"></script>

@@ -8,7 +8,7 @@ const Servicio = require('../models/agregarServicioAd.models');
 
 //req --> request o peticion.
 //res -> response o respuesta.
-router.get('/listar-servicios_1', (req, res) => {
+router.get('/listar-servicios_2', (req, res) => {
     Servicio.find((err, lista_servicios) => {
         if (err) {
             res.json({
@@ -20,10 +20,14 @@ router.get('/listar-servicios_1', (req, res) => {
         }
     });
 });
-router.post('/registrar-servicio_1', (req, res) => {
+router.post('/registrar-servicio_2', (req, res) => {
     let nuevo_servicios = new Servicio({
-        nombreServicio: req.body.nombreServicio
+
+        nombreServicio: req.body.nombreServicio,
+
+
     });
+
     nuevo_servicios.save((err, servicio_db) => {
         if (err) {
             res.json({
@@ -39,7 +43,7 @@ router.post('/registrar-servicio_1', (req, res) => {
     });
 });
 
-router.put('/modificar-servicio_1', (req, res) => {
+router.put('/modificar-servicio_2', (req, res) => {
     Servicio.updateOne({
         _id: req.body._id
     }, {
@@ -58,7 +62,7 @@ router.put('/modificar-servicio_1', (req, res) => {
         }
     });
 });
-router.delete('/eliminar-servicio_1', (req, res) => {
+router.delete('/eliminar-servicio_2', (req, res) => {
     let _id = req.body._id;
     Servicio.findOneAndRemove({ _id: _id }, (err) => {
         if (err) {

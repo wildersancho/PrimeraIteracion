@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="css/solicitudServicio.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <link rel="stylesheet" href="css/general_2.css">
 
 </head>
@@ -36,63 +35,67 @@
                     Solicitar Servicio
                 </h1>
                 <section id="cliente1" class="cliente1">
-                    <div class="datos" id="datos">
-                        <div>
-                            <label for="txtNombreProveedor" id="nombreProveedor">Nombre de Proveedor</label>
-                            <input type="text" id="txtNombreProveedor" readonly="readonly">
-                        </div>
-                        <label for="label-tipoServicio" id="label-tipoServicio" class="label-tipoServicio">Tipo de servicio</label><br><br>
-                        <div id="radioServ">
-                        </div>
-                        <div class="datos" id="txtFechaServicio">
-                            <label>Fecha del servicio</label>
-                            <input type="date" id="FechaServicio">
-                        </div>
-                        <div>
-                            <label for="txtNombreUsuario" id="nombreUsuario">Nombre de Usuario</label>
-                            <input type="text" id="txtNombreUsuario" readonly="readonly">
-                        </div>
-                        <div class="datos" name='formulario1'>
-                            <label for="id-provincia">Provincia</label>
-                            <select class="id-provincia" id="id-provincia" onchange="asignarCanton()">
+                    <div class="datos">
+                        <label for="label-tipoServicio" id="label-tipoServicio" class="label-tipoServicio">Tipo de servicio</label>
+
+                        <select name="tipoServicio" id="id-tipoServicio" required>
+                               <option value="Guarderia">Guarderia</option>
+                               <option value="Paseo">Paseo</option>
+                               <option value="Hotel">Hotel</option>
+                        </select>
+
+                    </div>
+
+                    <div class="datos" id="txtFechaServicio">
+                        <label>Fecha del servicio</label>
+                        <input type="date" id="FechaServicio" required>
+                    </div>
+                    <div>
+                        <label for="txtNombreUsuario" id="nombreUsuario">Nombre de Usuario</label>
+                        <input type="text" id="txtNombreUsuario" required>
+                    </div>
+
+                    <div class="datos" name='formulario1'>
+                        <label for="id-provincia">Provincia</label>
+                        <select class="id-provincia" id="id-provincia" onchange="asignarCanton()" required>
                                 <option>Provincia</option>
                                 <option id = "Heredia" value="Heredia">Heredia</option>
                                 <option id = "Cartago" value="Cartago">Cartago</option>
                                 <option id="SanJose" value="SanJose">San José</option>
                             </select>
-                        </div>
-                        <div class="datos">
-                            <label for="id-canton">Cantón</label>
-                            <select class="id-canton" id="id-canton" onchange="asignarDistrito()">
+                    </div>
+                    <div class="datos">
+                        <label for="id-canton">Cantón</label>
+                        <select class="id-canton" id="id-canton" onchange="asignarDistrito()" required>
                                     <option>Cantón</option>
                                 </select>
-                        </div>
-                        <div class="datos">
-                            <label for="id-distrito">Distrito</label>
-                            <select class="id-distrito" id="id-distrito">
+                    </div>
+                    <div class="datos">
+                        <label for="id-distrito">Distrito</label>
+                        <select class="id-distrito" id="id-distrito" required>
                                             <option>Distrito</option>
                                         </select>
-                        </div>
+                    </div>
 
                 </section>
 
                 <section id="cliente2">
                     <div class="datos">
                         <label for="nombreMascota">Macotas</label>
-                        <select name="nombreMascota" id="nombreMascota">
-                               <option value="Macota1">Macota1</option>
-                               <option value="Macota2">Macota2</option>
-                               <option value="Macota3">Macota3</option>
+                        <select name="nombreMascota" id="id-mascota" required>
+                               <option value="M1">Macota1</option>
+                               <option value="M2">Macota2</option>
+                               <option value="M3">Macota3</option>
                             </select>
                     </div>
                     <div>
 
                         <label for="TelContacto">Teléfono de contacto</label>
-                        <input type="text" id="TelContacto">
+                        <input type="text" id="TelContacto" required>
                     </div>
                     <div>
                         <label for="Observaciones">Observaciones</label>
-                        <textarea name="observaciones" id="observaciones" wrap="off"></textarea>
+                        <textarea name="observaciones" wrap="off" id="observaciones"></textarea>
                     </div>
                     <button type="button" id="btnRegistrarServicio">Solicitar</button>
 
@@ -127,10 +130,10 @@
     <script src="js/registroBitacoraServicio.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
-    <script src="https://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
-    <script src="js/validacionProvincias.js"></script>
+    <script src="js/solicitarServicio.servicios.js"></script>
     <script src="js/registarServicioControlador.js"></script>
-    <script src="js/serviciosServicio.js"></script>
+    <script src="js/validacionProvincias.js"></script>
+    </script>
 </body>
 
 </html>

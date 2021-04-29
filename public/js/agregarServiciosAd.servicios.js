@@ -3,10 +3,12 @@
 const registrar_Servicio = async(nombreServicio) => {
     await axios({
         method: 'post',
-        url: 'http://localhost:3000/api/registrar-servicio_1',
+        url: 'http://localhost:3000/api/registrar-servicio_2',
         responseType: 'json',
         data: {
-            nombreServicio: nombreServicio
+
+            nombreServicio: nombreServicio,
+
         }
     }).then((response) => {
         Swal.fire({
@@ -15,7 +17,6 @@ const registrar_Servicio = async(nombreServicio) => {
             'text': response.msj
         }).then(() => {
             limpiar();
-            mostrar_servicios();
         });
     }).catch((response) => {
         Swal.fire({
@@ -30,7 +31,7 @@ const obtener_servicios = async() => {
     let lista_servicios = [];
     await axios({
         method: 'get',
-        url: 'http://localhost:3000/api/listar-servicios_1',
+        url: 'http://localhost:3000/api/listar-servicios_2',
         responseType: 'json'
     }).then((response) => {
         lista_servicios = response.data.lista_servicios;
@@ -43,11 +44,12 @@ const obtener_servicios = async() => {
 const modificar_servicio = async(_id, nombreServicio) => {
     await axios({
         method: 'put',
-        url: 'http://localhost:3000/api/modificar-servicio_1',
+        url: 'http://localhost:3000/api/modificar-servicio_2',
         responseType: 'json',
         data: {
             _id: _id,
-            nombreServicio: nombreServicio
+
+            nombreServicio: nombreServicio,
 
         }
     }).then((response) => {
@@ -71,7 +73,7 @@ const modificar_servicio = async(_id, nombreServicio) => {
 const eliminar_servicio = async(_id) => {
     await axios({
         method: 'delete',
-        url: 'http://localhost:3000/api/eliminar-servicio_1',
+        url: 'http://localhost:3000/api/eliminar-servicio_2',
         responseType: 'json',
         data: {
             _id: _id,

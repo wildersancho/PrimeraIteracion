@@ -1,12 +1,12 @@
 'use strict';
 
-const registrar_padecimiento = async(codigoPadecimiento, nombrePadecimiento) => {
+const registrar_padecimiento = async(nombrePadecimiento) => {
     await axios({
         method: 'post',
         url: 'http://localhost:3000/api/registrar-padecimiento',
         responseType: 'json',
         data: {
-            codigoPadecimiento: codigoPadecimiento,
+
             nombrePadecimiento: nombrePadecimiento,
 
         }
@@ -41,14 +41,14 @@ const obtener_padecimientos = async() => {
     return lista_padecimientos;
 };
 
-const modificar_padecimiento = async(_id, codigoPadecimiento, nombrePadecimiento) => {
+const modificar_padecimiento = async(_id, nombrePadecimiento) => {
     await axios({
         method: 'put',
         url: 'http://localhost:3000/api/modificar-padecimiento',
         responseType: 'json',
         data: {
             _id: _id,
-            codigoPadecimiento: codigoPadecimiento,
+
             nombrePadecimiento: nombrePadecimiento,
 
         }

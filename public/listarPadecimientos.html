@@ -37,7 +37,7 @@
                 <thead>
                     <tr>
                         <th>Nombre del Padecimiento</th>
-                        <th>Código</th>
+
                         <th>Modificar</th>
                         <th>Eliminar</th>
                     </tr>
@@ -49,11 +49,11 @@
             </table>
         </div>
 
-        <div class="messagepop pop">
+        <div class="messagepop pop" id="pop">
             <form method="post" id="new_message" action="/messages">
-                <p><label for="codigoPadecimiento">Código</label><input type="text" name="codigoPadecimiento1" id="codigoPadecimiento" required/></p>
-                <p><label for="nombrePadecimiento">Nombre</label><input type="text" name="nombrePadecimiento1" id="nombrePadecimiento" required/></p>
-                <p><button type="button" id="btn-agregar">Agregar</button> o <a class="close" href="/">Cancelar</a></p>
+
+                <p><label for="nombrePadecimiento" class="labelAgregar">Nombre</label><input class="inputAgregar" type="text" name="nombrePadecimiento1" id="nombrePadecimiento" required/></p>
+                <p><button type="button" class="buttonAgregar" id="btn-agregar">Agregar</button> o <button class="buttonAgregar"><a class="close" href="/">Cancelar</a></button></p>
             </form>
         </div>
         <a href="/contact" id="contact">Agregar</a>

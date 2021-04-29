@@ -2,6 +2,7 @@
 
 
 const botonAgregar = document.querySelector('#btn-agregar');
+
 const input_nombre = document.querySelector('#nombreServicio');
 
 
@@ -12,7 +13,10 @@ const input_nombre = document.querySelector('#nombreServicio');
 
 
 const obtenerDatos = () => {
+
     let nombreServicio = input_nombre.value;
+
+
 
     registrar_Servicio(nombreServicio);
 
@@ -23,17 +27,26 @@ const obtenerDatos = () => {
 const validar = () => {
 
     let error = false;
+    let expLetras = /^[A-Z]+$/i;
 
-    let campos_requeridos = document.querySelectorAll(':required');
-    campos_requeridos.forEach(campo => {
-        //validar vacio
-        if (campo.value == '') {
-            error = true;
-            campo.classList.add('error-input');
-        } else {
-            campo.classList.remove('error-input');
-        }
-    });
+
+
+    if (expLetras.test(input_nombre.value) == false) {
+        error = true;
+        input_nombre.classList.add('error-input');
+    } else {
+        input_nombre.classList.remove('error-input');
+    }
+    if (input_nombre.value == '') {
+        error = true;
+        input_nombre.classList.add('error-input');
+    } else {
+        input_nombre.classList.remove('error-input');
+    }
+
+
+
+
     if (error == false) {
         obtenerDatos();
     } else {
@@ -46,6 +59,7 @@ const validar = () => {
 }
 const limpiar = () => {
     //.value permite tanto obtener el valor como asignarlo
+
     input_nombre.value = "";
 
 }

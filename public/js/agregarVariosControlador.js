@@ -2,7 +2,7 @@
 
 
 const botonAgregar = document.querySelector('#btn-agregar');
-const input_codigo = document.querySelector('#codigoPadecimiento');
+
 const input_nombre = document.querySelector('#nombrePadecimiento');
 
 
@@ -13,39 +13,39 @@ const input_nombre = document.querySelector('#nombrePadecimiento');
 
 
 const obtenerDatos = () => {
-    let codigoPadecimiento = input_codigo.value;
+
     let nombrePadecimiento = input_nombre.value;
 
 
 
-    registrar_padecimiento(codigoPadecimiento, nombrePadecimiento);
+    registrar_padecimiento(nombrePadecimiento);
 
 
 };
 
 
 const validar = () => {
-    let expNum = /^([0-9])*$/;
+    // let expNum = /^([0-9])*$/;
     let error = false;
 
 
-    let campos_requeridos = document.querySelectorAll(':required');
-    campos_requeridos.forEach(campo => {
-        //validar vacio
-        if (campo.value == '') {
-            error = true;
-            campo.classList.add('error-input');
-        } else {
-            campo.classList.remove('error-input');
-        }
-    });
-    if (expNum.test(input_codigo.value) == false) {
-        error = true;
-        input_codigo.classList.add('error-input');
-    } else {
-        error = false;
-        input_codigo.classList.remove('error-input');
-    }
+    // let campos_requeridos = document.querySelectorAll(':required');
+    // campos_requeridos.forEach(campo => {
+    //     //validar vacio
+    //     if (campo.value == '') {
+    //         error = true;
+    //         campo.classList.add('error-input');
+    //     } else {
+    //         campo.classList.remove('error-input');
+    //     }
+    // });
+    // if (expNum.test(input_codigo.value) == false) {
+    //     error = true;
+    //     input_codigo.classList.add('error-input');
+    // } else {
+    //     error = false;
+    //     input_codigo.classList.remove('error-input');
+    // }
 
     if (error == false) {
         obtenerDatos();
@@ -59,7 +59,7 @@ const validar = () => {
 }
 const limpiar = () => {
     //.value permite tanto obtener el valor como asignarlo
-    input_codigo.value = "";
+
     input_nombre.value = "";
 
 }

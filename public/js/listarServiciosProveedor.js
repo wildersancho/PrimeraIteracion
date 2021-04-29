@@ -11,7 +11,7 @@ const mostrar_servicios_proveedor = async() => {
 
 
         let fila = tabla.insertRow();
-        fila.insertCell().innerHTML = servicios.codigoServicio;
+
         fila.insertCell().innerHTML = servicios.nombreServicio;
         fila.insertCell().innerHTML = servicios.tipoMascota;
         fila.insertCell().innerHTML = servicios.precio;
@@ -23,10 +23,11 @@ const mostrar_servicios_proveedor = async() => {
         boton_editar.addEventListener('click', async() => {
             const { value: formValues } = await Swal.fire({
                 title: 'Editar Servicio',
-                html: `<label for="codigoServicio">Código</label><input id="codigo" class="swal2-input value= "${servicios.codigoServicio}">' 
-                <label for="nombreServicio">Servicio</label><p><select name="nombreServicio" id="nombreServicio" class="swal2-input" value= "${servicios.precio}" required/>
-                <option value="Servicio1">Servicio1</option>
-                <option value="Servicio2">Servicio2</option>
+                html: `
+                <label for="nombreServicio">Servicio</label><p>
+                <select name="nombreServicio" id="nombreServicio" class="swal2-input" value="${cambiarServicio()}" required/>
+                <option value= "${servicios.nombreServicio}">Servicio1</option>
+                
                 </select>
                 </p>
                 <label for="tipoMascota">Tipo de Mascota</label>
@@ -42,7 +43,7 @@ const mostrar_servicios_proveedor = async() => {
                 preConfirm: () => {
                     return [
                         servicios._id,
-                        document.getElementById('codigo').value,
+
                         document.getElementById('nombreServicio').value,
                         document.getElementById('tipoMascota').value,
                         document.getElementById('precio').value
@@ -59,7 +60,7 @@ const mostrar_servicios_proveedor = async() => {
                 });
                 if (accept) {
 
-                    modificar_servicio_proveedor(formValues[0], formValues[1], formValues[2], formValues[3], formValues[4]);
+                    modificar_servicio_proveedor(formValues[0], formValues[1], formValues[2], formValues[3]);
                 }
             }
         });

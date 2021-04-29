@@ -37,6 +37,7 @@
                 <table id="tbl-serviciosAdministrador">
                     <thead>
                         <tr>
+
                             <th>Nombre de servicio</th>
                             <th>Editar</th>
                             <th>Eliminar</th>
@@ -49,10 +50,11 @@
                 </table>
             </div>
         </form>
-        <div class="messagepop pop">
+        <div class="messagepop pop" id="pop">
             <form method="post" id="new_message" action="/messages">
-                <p><label for="nombrePadecimiento">Nombre</label><input type="text" name="nombreServicio" id="nombreServicio" required/></p>
-                <p><button type="button" id="btn-agregar">Agregar</button> o <a class="close" href="/">Cancelar</a></p>
+
+                <p><label for="nombrePadecimiento" class="labelAgregar">Nombre</label><input class="inputAgregar" type="text" name="nombreServicio" id="nombreServicio" required/></p>
+                <p><button type="button" id="btn-agregar" id="btn-agregar" class="buttonAgregar">Agregar</button> o <button class="buttonAgregar" id="btn-agregar"><a class="close" href="/">Cancelar</a></button></p>
             </form>
         </div>
         <a href="/contact" id="contact">Agregar</a>

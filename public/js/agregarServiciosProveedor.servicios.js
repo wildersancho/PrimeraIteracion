@@ -1,12 +1,12 @@
 'use strict';
 
-const registrar_Servicio_Proveedor = async(codigoServicio, nombreServicio, tipoMascota, precio) => {
+const registrar_Servicio_Proveedor = async(nombreServicio, tipoMascota, precio) => {
     await axios({
         method: 'post',
-        url: 'http://localhost:3000/api/registrar-servicio-proveedor',
+        url: 'http://localhost:3000/api/registrar-serviciop',
         responseType: 'json',
         data: {
-            codigoServicio: codigoServicio,
+
             nombreServicio: nombreServicio,
             tipoMascota: tipoMascota,
             precio: precio
@@ -32,7 +32,7 @@ const obtener_servicios_proveedor = async() => {
     let lista_servicios_proveedor = [];
     await axios({
         method: 'get',
-        url: 'http://localhost:3000/api/listar-servicios-proveedor',
+        url: 'http://localhost:3000/api/listar-serviciosp',
         responseType: 'json'
     }).then((response) => {
         lista_servicios_proveedor = response.data.lista_servicios_proveedor;
@@ -42,14 +42,14 @@ const obtener_servicios_proveedor = async() => {
     return lista_servicios_proveedor;
 };
 
-const modificar_servicio_proveedor = async(_id, codigoServicio, nombreServicio, tipoMascota, precio) => {
+const modificar_servicio_proveedor = async(_id, nombreServicio, tipoMascota, precio) => {
     await axios({
         method: 'put',
-        url: 'http://localhost:3000/api/modificar-servicio-proveedor',
+        url: 'http://localhost:3000/api/modificar-serviciop',
         responseType: 'json',
         data: {
             _id: _id,
-            codigoServicio: codigoServicio,
+
             nombreServicio: nombreServicio,
             tipoMascota: tipoMascota,
             precio: precio
@@ -76,7 +76,7 @@ const modificar_servicio_proveedor = async(_id, codigoServicio, nombreServicio, 
 const eliminar_servicio_proveedor = async(_id) => {
     await axios({
         method: 'delete',
-        url: 'http://localhost:3000/api/eliminar-servicio-proveedor',
+        url: 'http://localhost:3000/api/eliminar-serviciop',
         responseType: 'json',
         data: {
             _id: _id,
