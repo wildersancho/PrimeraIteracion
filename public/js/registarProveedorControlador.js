@@ -97,8 +97,11 @@ async function obtenerDatosProveedor() {
                 inputemail.classList.remove('errorInput');
                 if (error == false) {
 
-                    let tipoServicio = "Placeholder";
-                    //  registrar_Servicio_Proveedor(nombreServicio, tipoMascota, precio);
+                    let tipoMascota = "Placeholder";
+                    let precio = "Placeholder";
+
+
+                    registrar_Servicio_Proveedor(nombreUsuario, selectUser.value, tipoMascota, precio);
                     registrarProveedores(tipoIDProveedor, identificacionProveedor, email, selectUser.value, nombreUsuario, nombre, fechaSinFormato, edadProveedor, foto_perfil, provincia, canton, distrito, direccion);
                 }
 

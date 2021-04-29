@@ -5,6 +5,7 @@ const router = express.Router();
 
 
 const formModelo = require('../models/registro-proveedores.model');
+const emailer = require('../templates/registro-correo');
 
 
 router.get('/listar-proveedores', (req, res) => {
@@ -58,6 +59,7 @@ router.post('/registrar-proveedores', (req, res) => {
                 msj: 'El proveedor se guardo exitosamente',
                 form_db
             });
+            emailer.send_email(form_db.nombre, form_db.usuario, form_db.correo);
         }
     })
 });
@@ -98,6 +100,7 @@ router.delete('/eliminar-proveedor', (req, res) => {
             res.json({
                 msj: 'el proveedor se borro exitosamente'
             });
+
         }
     });
 

@@ -18,7 +18,7 @@ const registrar_Servicio_Proveedor = async(Proveedor, nombreServicio, tipoMascot
             'title': 'El servicio ha sido enviado',
             'text': response.msj
         }).then(() => {
-            limpiar();
+            location.reload();
         });
     }).catch((response) => {
         Swal.fire({
