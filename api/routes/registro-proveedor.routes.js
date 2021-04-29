@@ -30,15 +30,16 @@ router.post('/registrar-proveedores', (req, res) => {
         tipo_ID: req.body.tipo_ID,
         num_ID: req.body.num_ID,
         correo: req.body.correo,
+        password: randomPassword(),
+        tipoServicio: req.body.tipoServicio,
         usuario: req.body.usuario,
         nombre: req.body.nombre,
         fechaEdad: req.body.fechaEdad,
         num_edad: req.body.num_edad,
-        cant_servicios: req.body.cant_servicios,
         foto_perfil: req.body.foto_perfil,
         estado_cuenta: req.body.estado_cuenta,
         FechaReg: new Date(),
-        solicitud: "Pendiente",
+        solicitud: 'Pending',
         provincia: req.body.provincia,
         canton: req.body.canton,
         distrito: req.body.distrito,
@@ -60,6 +61,27 @@ router.post('/registrar-proveedores', (req, res) => {
         }
     })
 });
+
+const randomPassword = () => {
+    var passwordContainer = '';
+
+    var possibleChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' +
+        'abcdefghijklmnopqrstuvwxyz' + '0123456789@#$';
+
+    let randomNum;
+    for (let i = 1; i <= 8; i++) {
+
+        randomNum = Math.random();
+
+        var posicion_caracter = Math.floor(randomNum *
+            possibleChars.length + 1);
+
+
+        passwordContainer += possibleChars.charAt(posicion_caracter)
+    }
+
+    return passwordContainer;
+}
 
 
 router.delete('/eliminar-proveedor', (req, res) => {

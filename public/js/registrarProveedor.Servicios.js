@@ -1,4 +1,4 @@
-const registrarProveedores = async(tipo_ID, num_ID, correo, usuario, nombre, fechaEdad, num_edad, cant_servicios, foto_perfil, solicitud, provincia, canton, distrito, direccion) => {
+const registrarProveedores = async(tipo_ID, num_ID, correo, tipoServicio, usuario, nombre, fechaEdad, num_edad, foto_perfil, provincia, canton, distrito, direccion) => {
     await axios({
         method: 'post',
         url: 'http://localhost:3000/api/registrar-proveedores',
@@ -7,15 +7,14 @@ const registrarProveedores = async(tipo_ID, num_ID, correo, usuario, nombre, fec
             tipo_ID: tipo_ID,
             num_ID: num_ID,
             correo: correo,
+            tipoServicio: tipoServicio,
             usuario: usuario,
             nombre: nombre,
             fechaEdad: fechaEdad,
             num_edad: num_edad,
-            cant_servicios: cant_servicios,
             foto_perfil: foto_perfil,
             estado_cuenta: "Habilitado",
             FechaReg: new Date(),
-            solicitud: solicitud,
             provincia: provincia,
             canton: canton,
             distrito: distrito,

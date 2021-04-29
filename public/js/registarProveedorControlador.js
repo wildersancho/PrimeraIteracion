@@ -10,7 +10,6 @@ let inputprimerApellidoProveedor = document.querySelector('#txtPrimerApellidoPro
 let inputsegundoApellidoProveedor = document.querySelector('#txtSegundoApellidoProveedor');
 let inputfechaProveedor = document.querySelector('#txtFechaProveedor');
 let inputedadProveedor = document.querySelector('#txtEdadProveedor');
-let inputcantidadServicios = document.querySelector('#txtCantidadServicios');
 let inputProvincia = document.querySelector('#id-provincia');
 let inputCanton = document.querySelector('#id-canton');
 let inputDistrito = document.querySelector('#id-distrito');
@@ -24,6 +23,26 @@ let accion = 'Registrar';
 let fecha = new Date().toLocaleString();
 let botonRegistrarProveedor = document.querySelector('#btnRegistrarProveedor');
 
+
+let selectUser = document.getElementById('label-tipoServicio');
+
+
+async function tipoServicios() {
+
+    let servicioListar = await obtener_servicios();
+
+    servicioListar.forEach((servicio) => {
+
+
+        var option = document.createElement('option');
+        option.text = servicio.nombreServicio;
+        selectUser.add(option);
+
+    });
+    return selectUser;
+}
+
+tipoServicios();
 
 async function obtenerDatosProveedor() {
     let error = false;
@@ -39,13 +58,17 @@ async function obtenerDatosProveedor() {
     let fechaProveedorSplit = inputfechaProveedor.value.split("-");
     let fechaProveedor = fechaProveedorSplit[2] + '/' + fechaProveedorSplit[1] + '/' + fechaProveedorSplit[0];
     let edadProveedor = Number(inputedadProveedor.value);
-    let cantidadServicios = Number(inputcantidadServicios.value);
+
     let provincia = inputProvincia.value;
     let canton = inputCanton.value;
     let distrito = inputDistrito.value;
     let direccion = inputDireccion.value;
 
-    error = validarProveedor(nombreUsuario, tipoIDProveedor, identificacionProveedor, nombreProveedor, primerApellidoProveedor, email, fechaSinFormato, edadProveedor, cantidadServicios, inputRadioButton, provincia, canton, distrito, direccion);
+
+
+
+
+    error = validarProveedor(nombreUsuario, tipoIDProveedor, identificacionProveedor, nombreProveedor, primerApellidoProveedor, email, fechaSinFormato, edadProveedor, inputRadioButton, provincia, canton, distrito, direccion);
     let nombre = nombreProveedor + " " + segundoNombreProveedor + " " + primerApellidoProveedor + " " + segundoApellidoProveedor;
     let foto_perfil = "pending";
 
@@ -73,9 +96,10 @@ async function obtenerDatosProveedor() {
             if (emailRepetido) {} else {
                 inputemail.classList.remove('errorInput');
                 if (error == false) {
-                    let estado_cuenta = 'Pendiente';
 
-                    registrarProveedores(tipoIDProveedor, identificacionProveedor, email, nombreUsuario, nombre, fechaSinFormato, edadProveedor, cantidadServicios, foto_perfil, estado_cuenta, provincia, canton, distrito, direccion);
+                    let tipoServicio = "Placeholder";
+                    //  registrar_Servicio_Proveedor(nombreServicio, tipoMascota, precio);
+                    registrarProveedores(tipoIDProveedor, identificacionProveedor, email, selectUser.value, nombreUsuario, nombre, fechaSinFormato, edadProveedor, foto_perfil, provincia, canton, distrito, direccion);
                 }
 
             }
@@ -85,7 +109,7 @@ async function obtenerDatosProveedor() {
 };
 
 
-function validarProveedor(pnombreUsuario, ptipoIDProveedor, pidentificacionProveedor, pnombreProveedor, pprimerApellidoProveedor, pemail, pfechaProveedor, pedadProveedor, pcantidadServicios, pinputRadioButton, provincia, canton, distrito, direccion) {
+function validarProveedor(pnombreUsuario, ptipoIDProveedor, pidentificacionProveedor, pnombreProveedor, pprimerApellidoProveedor, pemail, pfechaProveedor, pedadProveedor, pinputRadioButton, provincia, canton, distrito, direccion) {
     let error = false;
     let expLetras = /^[a-z A-ZáéíóúñÑÁÉÍÓÚüÜ]+$/;
     let regExpNumeros = /^[0-9]+$/;
@@ -186,14 +210,6 @@ function validarProveedor(pnombreUsuario, ptipoIDProveedor, pidentificacionProve
     } else {
         inputedadProveedor.classList.remove('errorInput');
     }
-
-    if (pcantidadServicios < 1) {
-        error = true;
-        inputcantidadServicios.classList.add('errorInput');
-    } else {
-        inputcantidadServicios.classList.remove('errorInput');
-    }
-
     for (const rb of pinputRadioButton) {
         if (rb.checked) {
             inputradios.classList.remove('errorInput');
@@ -230,30 +246,3 @@ $("#radio2").click(function() {
 
 botonRegistrarProveedor.addEventListener('click', obtenerDatosProveedor);
 inputfechaProveedor.addEventListener('change', calcularEdad);
-
-const mostrar_servicios = async() => {
-    let lista_servicios = await obtener_servicios_2();
-    let contador = 0;
-    lista_servicios.forEach((servicio) => {
-        document.getElementById('radioServ').innerHTML += `<div>
-        <input type="radio" class="input-radio" name="rbtServicio" value="${servicio.nombreServicio}">
-        <label for="label-tipoServicio" class="label-radio1" value="${contador}">${servicio.nombreServicio}</label>
-    </div>`;
-        contador++;
-    })
-}
-const obtener_servicios_2 = async() => {
-    let lista_servicios = [];
-    await axios({
-        method: 'get',
-        url: 'http://localhost:3000/api/listar-servicios_1',
-        responseType: 'json'
-    }).then((response) => {
-        lista_servicios = response.data.lista_servicios;
-    }).catch((response) => {
-        console.log(response.data.msj + " " + response.data.err)
-    });
-    return lista_servicios;
-};
-
-mostrar_servicios();
