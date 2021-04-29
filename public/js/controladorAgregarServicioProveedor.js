@@ -38,7 +38,7 @@ const obtenerDatos = () => {
     let nombreServicio = input_nombre.value;
     let tipoMascota = input_tipo_mascota.value;
     let precio = input_precio.value;
-    let Proveedor = 'wsanchor'
+    let Proveedor = window.localStorage.getItem('user');
     registrar_Servicio_Proveedor(Proveedor, nombreServicio, tipoMascota, precio);
 
 

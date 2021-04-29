@@ -8,7 +8,7 @@ const boton_enviar = document.querySelector('#comentarios-boton');
 //TABLA dinamica ~ Variables
 var addComentarios = new Array();
 var tabla_reservas = document.querySelector('#tbl-comentarios tbody');
-
+let tabla = document.querySelector('#servicios-precios tbody');
 
 const obtenerDatos = () => {
     console.log(`Nuevo Comentario: ${comentarios.value}`);
@@ -21,11 +21,11 @@ const obtenerDatos = () => {
 };
 
 const mostrarPerfilProv = async() => {
-    let usuario = 'wsanchor'
+    let usuario = window.localStorage.getItem('user');
     let cargarInfo = await mostrarPerfilP(usuario);
     console.log(cargarInfo);
     cargarInfo.forEach((infoUsers) => {
-
+        console.log(infoUsers.correo);
         document.getElementById('DatosGenerales').innerHTML = `<h3>Nombre</h3>
         <p>${infoUsers.usuario}</p>
         <h3>Correo</h3>
@@ -53,14 +53,16 @@ const mostrarPerfilProv = async() => {
         <h3>Estado</h3>
         <p id="Estado">Habilitado</p>
     </div>`
-
-        /* if (fotoPerfil.src != infoUsers.foto_perfil) {
-             fotoPerfil.src = 'imgs/profile_default.jpg';
-         }*/
+            /* if (fotoPerfil.src != infoUsers.foto_perfil) {
+                 fotoPerfil.src = 'imgs/profile_default.jpg';
+             }*/
     });
-
-    let cargarInfo2 = await mostrarInfoP2(usuario);
-
+    let cargarInfo2 = await mostrarPerfilP2(usuario);
+    cargarInfo2.forEach((infoUsers2) => {
+        let fila = tabla.insertRow();
+        fila.insertCell().innerHTML = infoUsers2.nombreServicio;
+        fila.insertCell().innerHTML = infoUsers2.precio;
+    });
 }
 
 //TABLA dinamica

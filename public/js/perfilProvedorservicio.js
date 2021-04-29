@@ -16,20 +16,20 @@ const mostrarPerfilP = async(usuario) => {
 }
 
 
-const mostrarPerfilP2 = async(usuario) => {
-    let lista_datos = []
+const mostrarPerfilP2 = async(Proveedor) => {
+    let lista_datos_2 = []
     await axios({
         method: 'get',
         url: 'http://localhost:3000/api/listar-serviciosp2',
         responseType: 'json',
         params: {
-            usuario: usuario
+            Proveedor: Proveedor
         }
     }).then((response) => {
-        lista_datos = response.data.lista_clientes;
+        lista_datos_2 = response.data.lista_servicios_proveedor_2;
     }).catch((response) => {
         console.log(response.data.err);
     });
-    return lista_datos;
+    return lista_datos_2;
 
 }
