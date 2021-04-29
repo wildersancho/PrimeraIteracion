@@ -1,12 +1,12 @@
 'use strict';
 
-const registrar_Servicio_Proveedor = async(nombreServicio, tipoMascota, precio) => {
+const registrar_Servicio_Proveedor = async(Proveedor, nombreServicio, tipoMascota, precio) => {
     await axios({
         method: 'post',
         url: 'http://localhost:3000/api/registrar-serviciop',
         responseType: 'json',
         data: {
-
+            Proveedor: Proveedor,
             nombreServicio: nombreServicio,
             tipoMascota: tipoMascota,
             precio: precio

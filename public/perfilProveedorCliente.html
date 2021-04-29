@@ -32,22 +32,7 @@
             <div class="firstSection">
                 <h1 id="titulo">Perfil Proveedor</h1>
                 <img src="../public/imgs/pexels-kelvin-valerio-617278.jpg" alt="Fotos de perfil de perros">
-                <div class="DatosGenerales">
-                    <h3>Nombre</h3>
-                    <p>Patitas</p>
-                    <h3>Correo</h3>
-                    <p>patitas@gmail.com</p>
-                    <h3>Teléfono</h3>
-                    <p>12345678</p>
-                    <h3>Rating</h3>
-                    <p>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
-                    </p>
-
+                <div class="DatosGenerales" id="DatosGenerales">
                 </div>
                 <div class="submenu">
                     <a href="SolicitarServicio.html"><input type="button" value="Solicitar Servicio"></a>
@@ -57,24 +42,7 @@
                     <a href=""><input type="button" value="Reportar"></a>
                 </div>
             </div>
-            <div class="info-personal">
-
-                <div>
-                    <h3>Ubicación</h3>
-                    <p id="fecha-nacimiento">Heredia</p>
-                </div>
-                <div>
-                    <h3>Encargado</h3>
-                    <p id="fecha-nacimiento">Wilder Sancho</p>
-                </div>
-                <div>
-                    <h3>Tipo de Servicio</h3>
-                    <p id="fecha-nacimiento">Grooming</p>
-                </div>
-                <div>
-                    <h3>Estado</h3>
-                    <p id="fecha-nacimiento">Habilitado</p>
-                </div>
+            <div class="info-personal" id="info-personal">
             </div>
             <div class="perfil-comentarios">
                 <div id="caja-comentarios" class="caja-comentarios">
@@ -163,7 +131,10 @@
             </section>
         </section>
 </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2 "></script>
+<script src="js/perfilProvedorservicio.js"></script>
 <script src="js/perfilProveedorClienteControlador.js"></script>
 
 </html>

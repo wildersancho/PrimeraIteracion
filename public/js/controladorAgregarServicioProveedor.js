@@ -38,10 +38,8 @@ const obtenerDatos = () => {
     let nombreServicio = input_nombre.value;
     let tipoMascota = input_tipo_mascota.value;
     let precio = input_precio.value;
-
-
-
-    registrar_Servicio_Proveedor(nombreServicio, tipoMascota, precio);
+    let Proveedor = 'wsanchor'
+    registrar_Servicio_Proveedor(Proveedor, nombreServicio, tipoMascota, precio);
 
 
 };
