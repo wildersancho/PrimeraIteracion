@@ -40,8 +40,11 @@ const validar_tipo_usuario = async() => {
     const passAdmin = "Admin123";
     const lista_usuarios_proveedor = new Array("Wilder", "Yensy");
     let lista_usuarios_cliente = await obtener_clientes();
+    let lista_usuarios_proveedores = await obtener_proveedores();
     var arrClientes = new Array(100);
     var arrPass = new Array(100);
+    var arrProveedores = new Array(100);
+    var arrPassP = new Array(100);
     let validacionPass;
     lista_usuarios_cliente.forEach((cliente) => {
         arrClientes.push(cliente.usuario);
@@ -51,6 +54,16 @@ const validar_tipo_usuario = async() => {
         arrPass.push(pass.password);
         console.log(pass.password);
     });
+
+    lista_usuarios_proveedores.forEach((proveedor) => {
+        arrProveedores.push(proveedor.usuario);
+        console.log(proveedor.usuario);
+    });
+    lista_usuarios_proveedores.forEach((passP) => {
+        arrPassP.push(passP.password);
+        console.log(passP.password);
+    });
+
     let tipo = 4;
     console.log(tipo);
     if (lista_usuarios_admin.find(nombre => nombre.toLowerCase() == input_nombre.value.toLowerCase())) {
@@ -58,9 +71,16 @@ const validar_tipo_usuario = async() => {
         if (validacionPass) {
             tipo = 1;
         }
-    } else if (lista_usuarios_proveedor.find(nombre => nombre.toLowerCase() == input_nombre.value.toLowerCase())) {
-        tipo = 2;
-    } else if (arrClientes.find(nombre => nombre == input_nombre.value)) {
+    } else if (arrProveedores.find(nombre2 => nombre2 == input_nombre.value)) {
+        let t1 = input_nombre.value
+        let indx = arrProveedores.indexOf(t1);
+        let passwd = arrPassP[indx];
+        console.log("found");
+        validacionPass = (validarPass(passwd));
+        if (validacionPass) {
+            tipo = 2;
+        }
+    } else if (arrClientes.find(nombre3 => nombre3 == input_nombre.value)) {
         let t1 = input_nombre.value
         let indx = arrClientes.indexOf(t1);
         let passwd = arrPass[indx];
