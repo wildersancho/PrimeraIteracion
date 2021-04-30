@@ -24,8 +24,6 @@ router.post('/registrar-servicio_2', (req, res) => {
     let nuevo_servicios = new Servicio({
 
         nombreServicio: req.body.nombreServicio,
-
-
     });
 
     nuevo_servicios.save((err, servicio_db) => {

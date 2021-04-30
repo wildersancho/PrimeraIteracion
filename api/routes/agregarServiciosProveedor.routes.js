@@ -8,7 +8,7 @@ const servicioP = require('../models/agregarServiciosProveedor.models');
 
 //req --> request o peticion.
 //res -> response o respuesta.
-router.get('/listar-serviciosp', (req, res) => {
+/*router.get('/listar-serviciosp', (req, res) => {
     servicioP.find((err, lista_servicios_proveedor) => {
         if (err) {
             res.json({
@@ -19,18 +19,18 @@ router.get('/listar-serviciosp', (req, res) => {
             res.json({ lista_servicios_proveedor });
         }
     });
-});
+});*/
 
 router.get('/listar-serviciosp', (req, res) => {
     let Proveedor = req.query.Proveedor;
-    servicioP.find({ Proveedor: Proveedor }, (err, lista_servicios_proveedor_2) => {
+    servicioP.find({ Proveedor: Proveedor }, (err, lista_servicios_proveedor) => {
         if (err) {
             res.json({
                 msj: "No se pudieron mostrar los usuarios",
                 err
             });
         } else {
-            res.json({ lista_servicios_proveedor_2 })
+            res.json({ lista_servicios_proveedor })
         }
     })
 });

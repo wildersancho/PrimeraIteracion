@@ -192,26 +192,6 @@ function validarCliente(pnombreUsuario, ptel, pProvincia, pCanton, pDistrito, pf
     return error;
 };
 
-/*function registrarBitacora(nombreUsuario, tel, Provincia, Canton, Distrito, fechaCliente) {
-    var infoTabla = new Array();
-    //Agregar elemento al arreglo:
-    let nuevo_item = [nombreUsuario, tel, Provincia, Canton, Distrito, fechaCliente, 'Paseo'];
-    infoTabla.push(nuevo_item);
-    createCookie(nombreUsuario, infoTabla);
-};
-
-var createCookie = function(name, value, days) {
-    var expires;
-    if (days) {
-        var date = new Date();
-        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-        expires = "; expires=" + date.toGMTString();
-    } else {
-        expires = "";
-    }
-    document.cookie = name + "=" + value + expires + "; path=/";
-}*/
-
 
 const limpiar = () => {
     inputfechaCliente.value = '';

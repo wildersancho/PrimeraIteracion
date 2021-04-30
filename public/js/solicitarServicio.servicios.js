@@ -1,4 +1,22 @@
 'use strict';
+const obtener_servicios_proveedor = async(Proveedor) => {
+    console.log(Proveedor);
+    let lista_servicios_proveedor = [];
+    await axios({
+        method: 'get',
+        url: 'http://localhost:3000/api//listar-serviciosp',
+        responseType: 'json',
+        params: {
+            Proveedor: Proveedor
+        }
+    }).then((response) => {
+        lista_servicios_proveedor = response.data.lista_servicios_proveedor;
+    }).catch((response) => {
+        console.log(response.data.msj + " " + response.data.err)
+    });
+    return lista_servicios_proveedor;
+
+};
 
 const registrar_solicitud_servicio = async(usuario, nombreProveedor, tel, Provincia, Canton, Distrito, servicio, nombreMascota, Observaciones, fecha) => {
     await axios({

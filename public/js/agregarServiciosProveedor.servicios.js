@@ -28,19 +28,25 @@ const registrar_Servicio_Proveedor = async(Proveedor, nombreServicio, tipoMascot
         }).then(() => {});
     });
 };
-const obtener_servicios_proveedor = async() => {
+const obtener_servicios_proveedor = async(Proveedor) => {
+    console.log(Proveedor);
     let lista_servicios_proveedor = [];
     await axios({
         method: 'get',
-        url: 'http://localhost:3000/api/listar-serviciosp',
-        responseType: 'json'
+        url: 'http://localhost:3000/api//listar-serviciosp',
+        responseType: 'json',
+        params: {
+            Proveedor: Proveedor
+        }
     }).then((response) => {
         lista_servicios_proveedor = response.data.lista_servicios_proveedor;
     }).catch((response) => {
         console.log(response.data.msj + " " + response.data.err)
     });
     return lista_servicios_proveedor;
+
 };
+
 
 const modificar_servicio_proveedor = async(_id, nombreServicio, tipoMascota, precio) => {
     await axios({
