@@ -30,6 +30,8 @@ const navProveedor = () => {
         if (tipoProveedor == 2) {
             document.getElementById('navDinamico').innerHTML = `<a href="index.html"><img src="imgs/IconoMenu.png" id="logo" /></a>
             <a href="listarProveedoresCliente.html">Buscar un servicio</a>
+            <a href="registrarProveedor.html">Ofrecer un servicio</a>
+
             <a href="perfilProvedor.html">Mi Perfil</a>
             <a class="cerrarSesion" href="inicioSesion.html"onclick="cerrarSesion()" >Cerrar Sesión</a>`;
         }

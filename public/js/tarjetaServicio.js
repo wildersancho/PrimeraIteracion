@@ -53,6 +53,7 @@ const obtener_tarjetas = async(usuario) => {
 }
 
 
+
 const eliminar_tarjeta = async(_id) => {
     await axios({
         method: 'delete',
