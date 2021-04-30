@@ -21,7 +21,7 @@ router.get('/listar-serviciosp', (req, res) => {
     });
 });
 
-router.get('/listar-serviciosp2', (req, res) => {
+router.get('/listar-serviciosp', (req, res) => {
     let Proveedor = req.query.Proveedor;
     servicioP.find({ Proveedor: Proveedor }, (err, lista_servicios_proveedor_2) => {
         if (err) {

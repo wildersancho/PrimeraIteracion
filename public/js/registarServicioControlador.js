@@ -1,7 +1,5 @@
 'use strict';
 //Datos de section de cliente
-let inputnombreUsuario = document.querySelector('#txtNombreUsuario');
-let inputnombreProveedor = document.querySelector('#txtNombreProveedor');
 let inputfechaCliente = document.querySelector('#FechaServicio');
 let input_tel = document.querySelector('#TelContacto');
 let inputProvincia = document.querySelector('#id-provincia');
@@ -12,44 +10,76 @@ var inputradios = document.querySelector('#label-tipoServicio');
 var selectMascota = document.querySelector('#nombreMascota');
 let accion = 'Registrar';
 let botonRegistrarCliente = document.querySelector('#btnRegistrarServicio');
+let inputFirstSection = document.querySelector('#firstSection')
 
 
 botonRegistrarCliente.addEventListener('click', obtenerDatosServicio);
-
-const mostrar_servicios = async() => {
-    let lista_servicios = await obtener_servicios_2();
-    let contador = 0;
-    lista_servicios.forEach((servicio) => {
-        document.getElementById('radioServ').innerHTML += `<div>
-        <input type="radio" class="input-radio" name="rbtServicio" value="${servicio.nombreServicio}">
-        <label for="label-tipoServicio" class="label-radio1" value="${contador}">${servicio.nombreServicio}</label>
-    </div>`;
-        contador++;
-    })
-}
-
-//let userName = "wsanchor";
-//window.localStorage.setItem('user', userName);
 let usuario = window.localStorage.getItem('user');
-
-//let provName = "Patitos";;
-//window.localStorage.setItem('provName', provName);
 let proveedor = window.localStorage.getItem('provName');
 
-inputnombreUsuario.innerHTML = "additional HTML code"
+/*const mostrar_servicios = async() => {
+    let lista_servicios = await obtener_servicios_2(proveedor);
+    let contador = 0;
+    lista_servicios.forEach((servicio) => {
+        console.log(servicio.servicio);
+        document.getElementById('id-tipoServicio').innerHTML = `
+        <option value="Guarderia">${servicio.servicio}</option>`;
+        contador++;
+    })
+}*/
 
-$(inputnombreUsuario).val(usuario)
-$(inputnombreProveedor).val(proveedor)
+inputFirstSection.innerHTML = `<div>
+<label for="txtNombreUsuario" id="nombreUsuario">Nombre de Usuario</label>
+<input type="text" id="txtNombreUsuario" required value="${usuario}" readonly>
+</div><div>
+<label for="txtNombreProveedor" id="nombreProveedor">Nombre de Proveedor</label>
+<input type="text" id="txtNombreProveedor" required value="${proveedor}" readonly>
+</div>`
+
+let inputnombreUsuario = document.querySelector('#txtNombreUsuario');
+let inputnombreProveedor = document.querySelector('#txtNombreProveedor');
+
+
+
+const obtener_servicios_2 = async(usuario) => {
+    let lista_servicios = []
+    await axios({
+        method: 'get',
+        url: 'http://localhost:3000/api/listar-servicios',
+        responseType: 'json',
+        params: {
+            usuario: usuario
+        }
+    }).then((response) => {
+        lista_servicios = response.data.lista_servicios;
+    }).catch((response) => {
+        console.log(response.data.err);
+    });
+    return lista_servicios;
+}
+
+let select_servicio = document.getElementById('id-tipoServicio');
+
+
+async function cambiarServicio() {
+    let lista_servicios = await obtener_servicios_2(proveedor);
+    var arrServicios = new Array(100);
+    console.log(lista_servicios);
+    lista_servicios.forEach((servicio) => {
+        arrServicios.push(servicio.servicio);
+        var option = document.createElement('option');
+        option.text = servicio.servicio;
+        select_servicio.add(option)
+
+    });
+
+    return select_servicio;
+}
+
+cambiarServicio();
 
 async function obtenerDatosServicio() {
-    let servicio = '';
-    let radios = document.getElementsByName('rbtServicio');
-    for (let i = 0, length = radios.length; i < length; i++) {
-        if (radios[i].checked) {
-            servicio = radios[i].value;
-            break;
-        }
-    }
+    let servicio = select_servicio.value;
     let error = false;
     let nombreMascota = selectMascota.value;
     usuario = inputnombreUsuario.value;
@@ -81,7 +111,7 @@ async function obtenerDatosServicio() {
         console.log(nombreMascota);
         console.log(Observaciones);
         console.log(fecha);
-        registrar_servicio(usuario, nombreProveedor, tel, Provincia, Canton, Distrito, servicio, nombreMascota, Observaciones, fecha);
+        registrar_solicitud_servicio(usuario, nombreProveedor, tel, Provincia, Canton, Distrito, servicio, nombreMascota, Observaciones, fecha);
         if (error == false) {
             swal.fire({
                 title: 'Registro correcto',
@@ -162,7 +192,7 @@ function validarCliente(pnombreUsuario, ptel, pProvincia, pCanton, pDistrito, pf
     return error;
 };
 
-function registrarBitacora(nombreUsuario, tel, Provincia, Canton, Distrito, fechaCliente) {
+/*function registrarBitacora(nombreUsuario, tel, Provincia, Canton, Distrito, fechaCliente) {
     var infoTabla = new Array();
     //Agregar elemento al arreglo:
     let nuevo_item = [nombreUsuario, tel, Provincia, Canton, Distrito, fechaCliente, 'Paseo'];
@@ -180,7 +210,7 @@ var createCookie = function(name, value, days) {
         expires = "";
     }
     document.cookie = name + "=" + value + expires + "; path=/";
-}
+}*/
 
 
 const limpiar = () => {
@@ -191,19 +221,3 @@ const limpiar = () => {
     inputDistrito.value = 'Distrito';
     inputObservaciones.value = '';
 }
-
-const obtener_servicios_2 = async() => {
-    let lista_servicios = [];
-    await axios({
-        method: 'get',
-        url: 'http://localhost:3000/api/listar-servicios_1',
-        responseType: 'json'
-    }).then((response) => {
-        lista_servicios = response.data.lista_servicios;
-    }).catch((response) => {
-        console.log(response.data.msj + " " + response.data.err)
-    });
-    return lista_servicios;
-};
-
-mostrar_servicios();
