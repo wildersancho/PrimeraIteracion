@@ -6,9 +6,7 @@ const registrar_padecimiento = async(nombrePadecimiento) => {
         url: 'http://localhost:3000/api/registrar-padecimiento',
         responseType: 'json',
         data: {
-
             nombrePadecimiento: nombrePadecimiento,
-
         }
     }).then((response) => {
         Swal.fire({

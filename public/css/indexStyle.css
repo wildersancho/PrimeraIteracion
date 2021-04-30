@@ -142,19 +142,19 @@ main section h1 {
     float: flex;
 }
 
-#tbl-proveedores td {
+#table-proveedores td {
     border: #05386B 2px solid;
     font-size: 18px;
     background-color: #ffffff;
 }
 
-#tbl-proveedores tr {
+#table-proveedores tr {
     border: #05386B 2px solid;
     color: #05386B;
     background-color: #ffffff;
 }
 
-#tbl-proveedores th {
+#table-proveedores th {
     padding: 5px;
     border: #05386B 2px solid;
     font-size: 30px;
