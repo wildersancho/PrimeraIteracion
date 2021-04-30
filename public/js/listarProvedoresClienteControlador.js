@@ -22,7 +22,7 @@ const mostrarProveedores = async() => {
             let fila = tabla.insertRow();
             if (proveedor.usuario.toUpperCase().includes(filtro) || proveedor.tipoServicio.toUpperCase().includes(filtro)) {
                 fila.insertCell().innerHTML = proveedor.usuario;
-                fila.insertCell().innerHTML = proveedor.correo;
+                fila.insertCell().innerHTML = proveedor.calificacion;
                 fila.insertCell().innerHTML = proveedor.tipoServicio;
                 fila.insertCell().innerHTML = proveedor.provincia;
 
