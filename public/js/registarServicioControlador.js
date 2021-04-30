@@ -60,13 +60,17 @@ const obtener_servicios_2 = async(usuario) => {
 
 let select_servicio = document.getElementById('id-tipoServicio');
 
+
 async function cambiarServicio() {
     let lista_servicios = await obtener_servicios_2(proveedor);
+    var arrServicios = new Array(100);
     console.log(lista_servicios);
     lista_servicios.forEach((servicio) => {
+        arrServicios.push(servicio.servicio);
         var option = document.createElement('option');
         option.text = servicio.servicio;
         select_servicio.add(option)
+
     });
 
     return select_servicio;
