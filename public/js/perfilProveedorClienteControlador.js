@@ -21,7 +21,7 @@ const obtenerDatos = () => {
 };
 
 const mostrarPerfilProv = async() => {
-    let usuario = window.localStorage.getItem('user');
+    let usuario = window.localStorage.getItem('provName');
     let cargarInfo = await mostrarPerfilP(usuario);
     console.log(cargarInfo);
     cargarInfo.forEach((infoUsers) => {

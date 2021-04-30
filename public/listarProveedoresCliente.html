@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Documento HTML5">
+    <title>Listar Proveedores
+    </title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="/public/css/listar.css">
+    <link rel="stylesheet" href="/public/css/general_2.css">
+    <link rel="stylesheet" href="/public/css/perfilMascota.css">
+</head>
+
+<body>
+    <header id="header-principal" class="header-principal">
+        <nav id="navDinamico" class="navDinamico">
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="Lista-container">
+
+            <h3>Lista de Proveedores</h3>
+            <input type="text" placeholder="Filtrar Nombre o Servicio" id="filtrar-name">
+
+            <table id="table-proveedores">
+                <thead>
+                    <tr>
+                        <th>Proveedor</th>
+                        <th>Correo</th>
+                        <th>Servicios</th>
+                        <th>Ubicación</th>
+                        <th>Perfil</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+    <footer>
+        <section class="footerCopyRedes">
+            <section class="mainCopyRedes">
+                <section class="footerCopy">
+                    <h5>CONTÁCTENOS:</h5>
+                    <h6>Email</h6>
+                    <p> http://www.abaanimal.org/</p>
+                    <h6>Teléfono</h6>
+                    <p>(506) 8849-0592</p>
+                </section>
+                <section class="footerCopy2">
+                    <h5>POLITÍCAS</h5>
+                    <p>Costa Rica tiene ley contra el maltrato y crueldad animal, instamos a todos los ciudadanos a utilizar la nueva ley 9458. Por este medio les proveeremos información sobre como aplicar la ley de bienestar animal en los distintos casos
+                        que puedan presentarse.</p>
+
+                </section>
+                <section class="footerRedes" id="footerRedes">
+                    <a href="https://www.facebook.com/" class="fab fa-facebook-f facebook"></a>
+                    <a href="https://twitter.com/" class="fab fa-twitter twitter"></a>
+                    <a href="https://www.instagram.com/" class="fab fa-instagram instagram"></a>
+                </section>
+            </section>
+    </footer>
+    <script src="js/controladorNav.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js "></script>
+    <script src="js/registrarMascotas.Servicios.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
+    <script src="js/listarProveedoresServicios.js"></script>
+    <script src="js/listarProvedoresClienteControlador.js"></script>
+</body>
+
+
+</html>

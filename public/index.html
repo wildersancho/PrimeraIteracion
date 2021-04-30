@@ -48,51 +48,33 @@
         <section class="opinions">
         </section>
         <section class="info">
-            <h1>Buscar Proveedores</h1>
-            <div>
-                <select name="filtros" class="txtFiltrar" id="txtTipo" onchange="mostrar('txtTipo')">
-                        <option value="" disabled selected>Tipo de Servicio</option>
-                        <option value="Cuidado">Cuidado a Domicilio</option>
-                        <option value="Alojamiento">Alojamiento</option>
-                        <option value="Guarderia">Guarderia</option>
-                        <option value="Grooming">Grooming</option>
-                        <option value="Paseos">Paseos</option>
-                    </select>
-            </div><br>
-            <div id="buscar">
-                <input type="text" id="txtBuscar" placeholder="Ingrese un criterio de búsqueda...">
-                <button type="button" id="btnBuscar">Buscar</button>
-            </div>
+            <h1>Buscar Proveedores</h1><br>
             <div id="MainTable">
-                <table class="tbl-proveedores" id="tbl-proveedores">
-                    <tr>
-                        <th>Nombre de Empresa</th>
-                        <th>Correo</th>
-                        <th>Número</th>
-                        <th>Ubicación</th>
-                        <th>Tipo de Servicio</th>
-                    </tr>
-                    <tr>
-                        <td>Patitas</td>
-                        <td>patitas@gmail.com</td>
-                        <td>12345678</td>
-                        <td>Heredia</td>
-                        <td>Grooming</td>
-                    </tr>
-                    <tr>
-                        <td>Perritos</td>
-                        <td>perritos@gmail.com</td>
-                        <td>87654321</td>
-                        <td>San José</td>
-                        <td>Hotel</td>
-                    </tr>
+                <h3>Lista de Proveedores</h3>
+                <input type="text" placeholder="Filtrar Nombre o Servicio" id="filtrar-name">
+                <table id="table-proveedores">
+                    <thead>
+                        <tr>
+                            <th>Proveedor</th>
+                            <th>Correo</th>
+                            <th>Servicios</th>
+                            <th>Ubicación</th>
+                            <th>Perfil</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
                 </table>
             </div>
         </section>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js "></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
     <script src="js/controladorGeneral.js"></script>
     <script src="js/controladorNav.js"></script>
+    <script src="js/listarProveedoresServicios.js"></script>
+    <script src="js/listarProvedoresClienteControlador.js"></script>
+
 </body>
 <footer>
     <section class="footerCopyRedes">

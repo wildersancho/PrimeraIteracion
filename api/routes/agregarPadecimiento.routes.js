@@ -22,12 +22,8 @@ router.get('/listar-padecimientos', (req, res) => {
 });
 router.post('/registrar-padecimiento', (req, res) => {
     let nuevo_padecimiento = new Padecimiento({
-
-        nombrePadecimiento: req.body.nombrePadecimiento,
-
-
+        nombrePadecimiento: req.body.nombrePadecimiento
     });
-
     nuevo_padecimiento.save((err, padecimiento_db) => {
         if (err) {
             res.json({

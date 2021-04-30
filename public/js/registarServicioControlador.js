@@ -32,9 +32,11 @@ const mostrar_servicios = async() => {
 //window.localStorage.setItem('user', userName);
 let usuario = window.localStorage.getItem('user');
 
-let provName = "Patitos";;
-window.localStorage.setItem('provName', provName);
+//let provName = "Patitos";;
+//window.localStorage.setItem('provName', provName);
 let proveedor = window.localStorage.getItem('provName');
+
+inputnombreUsuario.innerHTML = "additional HTML code"
 
 $(inputnombreUsuario).val(usuario)
 $(inputnombreProveedor).val(proveedor)
