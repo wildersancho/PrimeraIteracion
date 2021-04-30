@@ -37,12 +37,6 @@ const mostrar_editar = async(usuario) => {
             <input type="Number" id="cedula" class="emptyFields" value=${usuario.num_ID}>
         </div>
 
-        <div>        
-        <label for="mascotas">Cantidad Mascotas: </label>
-        <input type="text" id="mascotas" class="emptyFields" value=${usuario.cant_mascotas}>
-    </div>
-
-
 
         </div>`,
         focusConfirm: false,
@@ -54,7 +48,6 @@ const mostrar_editar = async(usuario) => {
                 document.querySelector('#Correo').value,
                 document.querySelector('#Edad').value,
                 document.querySelector('#cedula').value,
-                document.querySelector('#mascotas').value,
             ]
         }
     });
@@ -66,7 +59,7 @@ const mostrar_editar = async(usuario) => {
             showCancelButton: true
         });
         if (accept) {
-            modificar_cliente(formValues[0], formValues[1], formValues[2], formValues[3], formValues[4], formValues[5], formValues[6]);
+            modificar_cliente(formValues[0], formValues[1], formValues[2], formValues[3], formValues[4]);
             location.reload();
         }
     }
@@ -89,8 +82,6 @@ const mostrarUsuarios = async() => {
                 fila.insertCell().innerHTML = usuario.correo;
                 fila.insertCell().innerHTML = usuario.num_edad;
                 fila.insertCell().innerHTML = usuario.num_ID;
-                fila.insertCell().innerHTML = usuario.cant_mascotas;
-
                 //Editar perfil
                 let mod_perfil = document.createElement('button');
                 mod_perfil.type = "button";

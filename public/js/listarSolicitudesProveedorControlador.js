@@ -37,11 +37,6 @@ const mostrar_editar = async(usuario) => {
             <input type="Number" id="cedula" class="emptyFields" value=${usuario.num_ID}>
         </div>
 
-        <div>        
-        <label for="servicios">Cantidad Servicios: </label>
-        <input type="text" id="servicios" class="emptyFields" value=${usuario.cant_servicios}>
-    </div>
-
 
 
         </div>`,
@@ -54,7 +49,6 @@ const mostrar_editar = async(usuario) => {
                 document.querySelector('#Correo').value,
                 document.querySelector('#Edad').value,
                 document.querySelector('#cedula').value,
-                document.querySelector('#servicios').value,
             ]
         }
     });
@@ -66,7 +60,7 @@ const mostrar_editar = async(usuario) => {
             showCancelButton: true
         });
         if (accept) {
-            modificar_proveedor(formValues[0], formValues[1], formValues[2], formValues[3], formValues[4], formValues[5], formValues[6]);
+            modificar_proveedor(formValues[0], formValues[1], formValues[2], formValues[3], formValues[4]);
             location.reload();
         }
     }
@@ -106,11 +100,6 @@ const verPerfil = async(usuario) => {
         <div>        
             <h2>Cédula: </h2>
             <p>${usuario.num_ID}</p>
-        </div>
-
-        <div>        
-        <h2>Cantidad Servicios: </h2>
-        <p>${usuario.cant_servicios}</p>
         </div>`,
 
     });
@@ -133,7 +122,6 @@ const mostrarUsuarios = async() => {
                 fila.insertCell().innerHTML = usuario.correo;
                 fila.insertCell().innerHTML = usuario.num_edad;
                 fila.insertCell().innerHTML = usuario.num_ID;
-                fila.insertCell().innerHTML = usuario.cant_servicios;
 
 
                 let btn_Aprobar = document.createElement('button');
