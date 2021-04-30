@@ -98,8 +98,8 @@ async function obtenerDatosProveedor() {
                 inputemail.classList.remove('errorInput');
                 if (error == false) {
 
-                    let tipoMascota = "Placeholder";
-                    let precio = "Placeholder";
+                    let tipoMascota = "Perro";
+                    let precio = "0";
 
 
                     registrar_Servicio_Proveedor(nombreUsuario, selectUser.value, tipoMascota, precio);

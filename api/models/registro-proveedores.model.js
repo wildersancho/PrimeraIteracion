@@ -8,6 +8,7 @@ const schema_proveedor = new mongoose.Schema({
     correo: { type: String, required: true, unique: false },
     password: { type: String, required: true, unique: false },
     tipoServicio: { type: String, required: true, unique: false },
+    calificacion: { type: Number, required: true, unique: false },
     usuario: { type: String, required: true, unique: false },
     nombre: { type: String, required: true, unique: false },
     fechaEdad: { type: Date, required: true, unique: false },

@@ -33,6 +33,7 @@ router.post('/registrar-proveedores', (req, res) => {
         correo: req.body.correo,
         password: randomPassword(),
         tipoServicio: req.body.tipoServicio,
+        calificacion: randomCalification(),
         usuario: req.body.usuario,
         nombre: req.body.nombre,
         fechaEdad: req.body.fechaEdad,
@@ -83,6 +84,14 @@ const randomPassword = () => {
     }
 
     return passwordContainer;
+}
+
+
+const randomCalification = () => {
+    let container;
+    container = Math.floor(Math.random() * 5);
+
+    return container;
 }
 
 
