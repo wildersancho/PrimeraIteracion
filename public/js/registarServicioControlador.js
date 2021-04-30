@@ -41,34 +41,17 @@ let inputnombreProveedor = document.querySelector('#txtNombreProveedor');
 
 
 
-const obtener_servicios_2 = async(usuario) => {
-    let lista_servicios = []
-    await axios({
-        method: 'get',
-        url: 'http://localhost:3000/api/listar-servicios',
-        responseType: 'json',
-        params: {
-            usuario: usuario
-        }
-    }).then((response) => {
-        lista_servicios = response.data.lista_servicios;
-    }).catch((response) => {
-        console.log(response.data.err);
-    });
-    return lista_servicios;
-}
-
 let select_servicio = document.getElementById('id-tipoServicio');
 
 
 async function cambiarServicio() {
-    let lista_servicios = await obtener_servicios_2(proveedor);
+    let lista_servicios = await obtener_servicios_proveedor(proveedor);
     var arrServicios = new Array(100);
     console.log(lista_servicios);
     lista_servicios.forEach((servicio) => {
-        arrServicios.push(servicio.servicio);
+        arrServicios.push(servicio.nombreServicio);
         var option = document.createElement('option');
-        option.text = servicio.servicio;
+        option.text = servicio.nombreServicio;
         select_servicio.add(option)
 
     });

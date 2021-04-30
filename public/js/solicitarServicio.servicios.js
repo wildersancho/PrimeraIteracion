@@ -18,6 +18,7 @@ const obtener_servicios_proveedor = async(Proveedor) => {
 
 };
 
+
 const registrar_solicitud_servicio = async(usuario, nombreProveedor, tel, Provincia, Canton, Distrito, servicio, nombreMascota, Observaciones, fecha) => {
     await axios({
         method: 'post',
