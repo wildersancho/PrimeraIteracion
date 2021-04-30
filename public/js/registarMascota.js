@@ -13,8 +13,6 @@ let inputTipoRaza = document.querySelector('#id-raza');
 
 let inputPadecimientos = document.querySelector('#id-padecimientos');
 
-let inputVacunas = document.querySelector('#id-vacunas');
-
 var inputradiosMascotas = document.querySelector('#label-tipoMascota');
 
 let botonRegistrarMascota = document.querySelector('#btnRegistrarMascota');
@@ -23,7 +21,30 @@ let imagen = imgPlaceholder;
 
 //Select raza cargarlo desde otro DB
 let select_raza = document.getElementById("id-raza");
+let select_vacunas = document.getElementById("id-vacunas");
 
+
+//Select Mascota
+
+async function cambiarMascota() {
+    let listar_Vacunas = await obtener_vacunas();
+
+
+    listar_Vacunas.forEach((animal) => {
+
+        var option = document.createElement('option');
+        option.text = animal.vacuna;
+        select_vacunas.add(option);
+    });
+
+    return select_vacunas;
+}
+
+
+
+
+
+//Select Raza
 
 async function cambiarRaza() {
     let lista_razas = await obtener_razas();
@@ -34,18 +55,18 @@ async function cambiarRaza() {
         var option = document.createElement('option');
         option.text = raza.raza;
         select_raza.add(option);
-
-
     });
 
     return select_raza;
 }
 
+cambiarMascota();
 cambiarRaza();
 
 
 async function obtenerDatosCliente() {
 
+    let vacunas = select_vacunas.value;
     let error = false;
     let nombreMascota = inputnombreMascota.value;
     let telContacto = inputTelContacto.value;
@@ -64,12 +85,8 @@ async function obtenerDatosCliente() {
         radiusMascota = "Perro";
     }
 
-    let vacunas = inputVacunas.value;
 
     let caracteristicas = document.getElementById('caracteristicas').value;
-
-
-
     error = validarCliente(nombreMascota,
         telContacto, radioGato, radioPerro, tipoRaza, padecimientos, vacunas);
 
@@ -119,9 +136,9 @@ function validarCliente(pnombreMascota, ptelContacto, pRadioGato, pRadioPerro, p
     }
     if (pVacunas == 'Tipo de vacunas') {
         error = true;
-        inputVacunas.classList.add('errorInput');
+        select_vacunas.classList.add('errorInput');
     } else {
-        inputVacunas.classList.remove('errorInput');
+        select_vacunas.classList.remove('errorInput');
     }
 
     if (pRadioGato.checked || pRadioPerro.checked) {

@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Documento HTML5">
-    <title>Listar vacunas</title>
+    <title>Listar Padecimientos</title>
     <link rel="stylesheet" href="css/reset.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/listarVacuna.css">
+    <link rel="stylesheet" href="css/listar.css">
     <link rel="stylesheet" href="css/general_2.css">
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <link rel="stylesheet" href="css/agregarGeneral.css">
@@ -23,114 +23,21 @@
     </header>
 
     <main class="main-content">
-
         <div class="Lista-container">
-            <h3>Lista de Vacunas</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Nombre de vacuna</th>
-                        <th>Código</th>
-                        <th>Eliminar</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Distemper</td>
-                        <td>1234</td>
-                        <td><input type="button" value="Eliminar"></td>
-                    </tr>
-                    <tr>
-                        <td>Parvovirus</td>
-                        <td>1235</td>
-                        <td><input type="button" value="Eliminar"></td>
-                    </tr>
-                    <tr>
-                        <td>Hepatitis</td>
-                        <td>1236</td>
-                        <td><input type="button" value="Eliminar"></td>
-                    </tr>
-                    <tr>
-                        <td>Lorem Ipsum</td>
-                        <td>1237</td>
-                        <td><input type="button" value="Eliminar"></td>
-                    </tr>
-
-                    <tr>
-                        <td>Rabia</td>
-                        <td>1238</td>
-                        <td><input type="button" value="Eliminar"></td>
-                    </tr>
-                    <tr>
-                        <td>Leptospirosis</td>
-                        <td>1239</td>
-                        <td><input type="button" value="Eliminar"></td>
-                    </tr>
-                    <tr>
-                        <td>Lorem Ipsum</td>
-                        <td>1238</td>
-                        <td><input type="button" value="Eliminar"></td>
-                    </tr>
-                    <tr>
-                        <td>Lorem Ipsum</td>
-                        <td>1239</td>
-                        <td><input type="button" value="Eliminar"></td>
-                    </tr>
-                    <tr>
-                        <td>Lorem Ipsum</td>
-                        <td>1238</td>
-                        <td><input type="button" value="Eliminar"></td>
-                    </tr>
-                    <tr>
-                        <td>Lorem Ipsum</td>
-                        <td>1239</td>
-                        <td><input type="button" value="Eliminar"></td>
-                    </tr>
-                    <tr>
-                        <td>Lorem Ipsum</td>
-                        <td>1238</td>
-                        <td><input type="button" value="Eliminar"></td>
-                    </tr>
-                    <tr>
-                        <td>Lorem Ipsum</td>
-                        <td>1239</td>
-                        <td><input type="button" value="Eliminar"></td>
-                    </tr>
-                    <tr>
-                        <td>Lorem Ipsum</td>
-                        <td>1238</td>
-                        <td><input type="button" value="Eliminar"></td>
-                    </tr>
-                    <tr>
-                        <td>Lorem Ipsum</td>
-                        <td>1239</td>
-                        <td><input type="button" value="Eliminar"></td>
-                    </tr>
-                    <tr>
-                        <td>Lorem Ipsum</td>
-                        <td>1238</td>
-                        <td><input type="button" value="Eliminar"></td>
-                    </tr>
-                    <tr>
-                        <td>Lorem Ipsum</td>
-                        <td>1239</td>
-                        <td><input type="button" value="Eliminar"></td>
-
-                    </tr>
-                </tbody>
+            <h3>Lista de vacunas</h3>
+            <table id="tbl-vacunas" class="tbl-vacunas">
+                <tbody></tbody>
             </table>
         </div>
-        <!-- <button type="button" id="btnEditar">Editar </button>
-            <button type="button" id="btnEditar">Guardar cambios </button> -->
         <div class="messagepop pop">
-            <form method="post" id="new_message" action="/messages">
-                <p><label for="codigoVacuna">Código</label><input type="number" name="codigoVacuna" id="codigoVacuna" /></p>
-                <p><label for="nombreVacuna">Nombre</label><input type="text" name="nombreVacuna" id="nombreVacuna" /></p>
-                <p><input type="submit" value="Agregar" name="commit" id="message_submit" /> o <a class="close" href="/">Cancelar</a></p>
+            <form id="new_message">
+                <p><label for="tipoMascota">Mascota</label><select name="tipoMascota" id="tipoMascota"><option value="Perro">Perro</option><option value="Gato">Gato</option></select></p>
+                <p><label for="nombreVacuna">Nombre de vacuna</label><input type="text" name="nombreVacuna" id="nombreVacuna"></p>
+                <button type="button" id="message_submit">Agregar</button>
+                <a class="close" id="close" href="/">Cancelar</a></p>
             </form>
         </div>
-        <a href="/contact" id="contact">Agregar</a>
-
+        <a id="contact">Agregar</a>
     </main>
     <footer>
         <section class="footerCopyRedes">
@@ -158,6 +65,12 @@
 </body>
 <script src="js/controladorNav.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
-<script src="/public/js/listarControlador.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="js/vacunaServicio.js"></script>
+<script src="js/listarControlador.js"></script>
+
+<script src="js/registrarVacunaControlador.js"></script>
+<script src="js/listarVacunasControlador.js"></script>
+
 
 </html>

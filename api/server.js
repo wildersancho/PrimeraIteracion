@@ -60,4 +60,4 @@ app.use('/api', require('./routes/agregarServicioAd.routes'));
 app.use('/api', require('./routes/agregarServiciosProveedor.routes'));
 app.use('/api', require('./routes/agregarPadecimiento.routes'));
 app.use('/api', require('./routes/registro-proveedor.routes'));
-//app.use('/api', require('./routes/solicitarServicio.routes'));
+app.use('/api', require('./routes/vacunas.routes'));
